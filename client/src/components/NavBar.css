@@ -1,0 +1,32 @@
+.NavBar {
+    height: 95%;
+    background-color: red
+}
+.navbar {
+    font-size: 20px;
+    background-color: black; 
+}
+.logo1 {
+    width: 150px;
+}
+
+.title {
+    color: skyblue;
+}
+.navMenu {
+    color: skyblue;
+    padding: 10px;
+}
+@media screen and (min-width: 980px) {
+    .mr-auto {
+        margin-left: 30%;
+    }
+    .logo1 {
+        margin-left: 20%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .logo1 {
+        width: 110px;
+    }
+}

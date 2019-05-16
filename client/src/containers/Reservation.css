@@ -1,0 +1,34 @@
+.reservation {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 100%;
+        height: 95%;
+        font-size: 11px;
+}
+.title {
+    color:skyblue;
+    text-align: center;
+}
+.form {
+    margin-left: 8px;
+}
+.service {
+    margin-top: 3%;
+    line-height: 1px;
+}
+.date {
+    width: 45%;
+}
+.hour {
+    width: 45%;
+}
+@media screen and (min-height: 750px) {
+    .reservation {
+        font-size: 13px;
+    }
+    .service {
+        margin-top: 15%;
+        margin-bottom: 15%;
+    }
+}
