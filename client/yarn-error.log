@@ -20,7 +20,7 @@ npm manifest:
   {
     "name": "cleaners",
     "version": "0.1.0",
-    "private": true,
+    "private": false,
     "dependencies": {
       "bootstrap": "^4.3.1",
       "install": "^0.12.2",
