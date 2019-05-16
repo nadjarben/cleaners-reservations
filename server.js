@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors')
-//const product = require('./routes/api/products');
+const reservation = require('./routes/api/reservations');
 //const cartProduct = require('./routes/api/cartProducts')
 //const stripe = require("stripe")("sk_test_SB12cBiQkwOFe3EDadGXrwPN");
 const app = express();
@@ -23,7 +23,7 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
-//app.use('/api/products', product);
+app.use('/api/reservations', reservation);
 //app.use('/api/cartProducts', cartProduct);
 // app.use('/api/stars', star)
 
