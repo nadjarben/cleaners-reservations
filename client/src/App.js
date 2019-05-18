@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Reservation from './containers/Reservation.js'; 
 import Home from './containers/Home.js'; 
 import Tarifs from './containers/Tarifs';
 import Contacts from './containers/Contacts';
-import './App.css'
+import './App.css';
+import store from './store';
+import { Provider } from 'react-redux';
+
 class App extends Component {
   render() {
     return( 
+      <Provider store={store}>
       <div className="App">
         <Router>
           <NavBar />
@@ -18,6 +22,7 @@ class App extends Component {
           <Route exact path="/contacts" component={Contacts}/>
         </Router>
       </div>
+      </Provider>
     );
   }
 }
