@@ -51,7 +51,8 @@ router.post('/', (req, res) => {
                 info: result.info,
                 request: {
                     type: 'POST',
-                    url: 'http://localhost:8001/api/reservations/' + result._id
+                    //url: 'http://localhost:8001/api/reservations/' + result._id
+                    url: 'https://cleaners-reservation.herokuapp.com/api/reservations/' + result._id
                 }
             }
         });
