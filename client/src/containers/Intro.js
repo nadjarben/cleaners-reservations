@@ -6,14 +6,14 @@ class Intro extends React.Component{
         componentWillMount(){
             setTimeout(() => { 
                 this.props.history.push('/home');
-        }, 2500)
+        }, 3500)
         }
   render(){
       return(
           
         <div className="Home">
         <div className="fickr">
-             <img className="imgHome" width="75%" height="75%" align="center" src={logo} alt="yfo"/>
+             <img className="imgHome" width="75%" height="75%" align="center" src={logo} alt="logo"/>
         </div>
         </div>
       )

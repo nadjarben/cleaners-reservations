@@ -4,6 +4,7 @@ import './Reservation.css';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { postReservation } from '../store/actions/reservationActions';
+import NavBar from '../components/NavBar';
 
 class Reservation extends Component {
   state = {
@@ -35,6 +36,8 @@ class Reservation extends Component {
 
     render() {
         return(
+          <div>
+            <NavBar />
         <div className="reservation">
             <div className="service">
                 <p>* free service with a minimum of 100 nis orders</p>
@@ -93,6 +96,7 @@ class Reservation extends Component {
     Submit
   </Button>
 </Form>
+        </div>
         </div>
         );
     }

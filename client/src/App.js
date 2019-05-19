@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Intro from './containers/Intro.js'; 
-import NavBar from './components/NavBar';
 import Reservation from './containers/Reservation.js'; 
 import Home from './containers/Home.js'; 
 import Tarifs from './containers/Tarifs';
@@ -23,7 +22,6 @@ class App extends Component {
       <div className="App">
         <Router>
           <Route exact path="/" component={Intro}/>
-          <NavBar />
           <Route exact path="/home" component={Home}/>
           <Route exact path="/reservation" component={Reservation}/>
           <Route exact path="/tarifs" component={Tarifs}/>

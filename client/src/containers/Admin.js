@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fetchReservations } from '../store/actions/reservationActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import NavBar from '../components/NavBar';
 import Commande from '../components/Commande';
 import './Admin.css';
 
@@ -23,8 +23,11 @@ class Admin extends Component {
             );
           });
             return (
+                <div>
+                    <NavBar />
                 <div className="admin">
                     <ul className="list-group">{r}</ul>
+                </div>
                 </div>
             )
         }

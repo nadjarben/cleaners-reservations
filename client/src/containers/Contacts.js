@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './Contact.css';
+import NavBar from '../components/NavBar';
+
 class Contacts extends Component {
     render() {
         return (
+          <div>
+            <NavBar />
             <div className="container">
             <Form>
             <Form.Group controlId="formBasicName">
@@ -29,6 +33,7 @@ class Contacts extends Component {
     Submit
   </Button>
 </Form>;
+            </div>
             </div>
         );
     }
