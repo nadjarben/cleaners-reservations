@@ -22,7 +22,6 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router>
-          <Route path="/" component={Intro}/>
           <Route exact path="/home" component={Home}/>
           <Route exact path="/reservation" component={Reservation}/>
           <Route exact path="/tarifs" component={Tarifs}/>
