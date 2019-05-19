@@ -4,3 +4,6 @@
     font-style: bold;
     cursor: pointer;
   }
+  .modal-header {
+      background-color: skyblue;
+  }

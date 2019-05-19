@@ -12,11 +12,9 @@
 
 .title {
     color: skyblue;
-    font-style: bold;
 }
 .title:hover{
     color:skyblue;
-    text-decoration: none;
 }
 
 .navMenu {
@@ -25,18 +23,66 @@
 .navMenu:hover {
     color:skyblue;
 }
+.dropdown {
+    width:70px;
+    height: 50px;
+    background-color: black;
+}
 @media screen and (min-width: 980px) {
     .mr-auto {
         margin-left: 30%;
     }
     .logo1 {
         text-align: center;
-        margin-left: 50%;
+        margin-left: 30%;
         width: 450px;
     }
 }
-@media screen and (max-width: 350px) {
+/* Iphone5 */
+@media screen and (min-width: 290px) and (max-width: 344px) {
     .logo1 {
-        width: 110px;
+        width: 90px;
+        height: 10px;
+    }
+    .title {
+        font-size: 13px;
+        margin-left: -12px;
+        margin-right: -28px;
+    }
+    .dropdown {
+        background-color: #303440
     }
 }
+/* IphoneX + 6 */
+@media screen and (min-width: 345px) and (max-width: 405px) {
+    .logo1 {
+        width: 110px;
+        height: 10px;
+    }
+    .title {
+        font-size: 13px;
+        margin-left: -8px;
+        margin-right: -28px;
+    }
+    .dropdown {
+        margin-right: 0px;
+        background-color: #303440
+    }
+}
+/* IphonePlus */
+@media screen and (min-width: 410px) and (max-width: 454px) {
+    .logo1 {
+        width: 110px;
+        height: 10px;
+    }
+    .title {
+        font-size: 13px;
+        margin-left: -8px;
+        margin-right: -28px;
+    }
+    .dropdown {
+        margin-right: 0px;
+        background-color: #303440
+    }
+}
+

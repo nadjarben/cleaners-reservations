@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Intro from './containers/Intro.js'; 
 import NavBar from './components/NavBar';
 import Reservation from './containers/Reservation.js'; 
 import Home from './containers/Home.js'; 
@@ -7,28 +8,40 @@ import Tarifs from './containers/Tarifs';
 import Contacts from './containers/Contacts';
 import Admin from './containers/Admin';
 import './App.css';
-import store from './store';
-import { Provider } from 'react-redux';
+import propTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { IntlProvider } from 'react-intl';
+import messages from './messages';
 
 class App extends Component {
+
   render() {
+    const { lang } = this.props;
     return( 
-      <Provider store={store}>
+        <IntlProvider locale={lang} 
+        messages={messages[lang]}>
       <div className="App">
         <Router>
+          <Route exact path="/" component={Intro}/>
           <NavBar />
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/home" component={Home}/>
           <Route exact path="/reservation" component={Reservation}/>
           <Route exact path="/tarifs" component={Tarifs}/>
           <Route exact path="/contacts" component={Contacts}/>
           <Route exact path="/admin" component={Admin}/>
         </Router>
       </div>
-      </Provider>
+      </IntlProvider>
     );
   }
 }
 
+App.propTypes = {
+  lang: propTypes.string.isRequired
+}
 
+const mapStateToProps = state =>  ({
+  lang: state.locale.lang
+});
 
-export default App
+export default connect(mapStateToProps)(App)

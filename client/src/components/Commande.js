@@ -23,7 +23,7 @@ import './Commande.css';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{reservation.name} {reservation.surname} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader close={closeBtn}>
+                    <ModalHeader className="modal-header" close={closeBtn}>
                         <h2>{reservation.name} {reservation.surname}</h2>
                     </ModalHeader>
                     <ModalBody>

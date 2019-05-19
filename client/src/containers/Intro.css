@@ -1,0 +1,68 @@
+.Home {
+    
+    position: relative;
+    align-content: center;
+   
+}
+.imgHome {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70%;
+}
+
+
+a{
+  display:block;
+  color:#fff; 
+  text-decoration:none;
+  text-align:center;
+  top: 25%;
+  left: 35%;
+  text-shadow: 0px 0px 10px #ccc;
+}
+
+
+.fickr {
+	-webkit-animation-name: flickr;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 10s; 
+    -webkit-transform-style: preserve-3d;}
+
+@-webkit-keyframes flickr {
+    0% { opacity: 0;    }
+    10%   { opacity: 1; }
+    15%   { opacity: 0; }
+    20%   { opacity: .5; }
+    25%   { opacity: .2; }
+    30%,100%   { opacity: 1; }
+  }
+
+.here {
+	-webkit-animation-name: intro;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 596ms; 
+    -webkit-animation-delay: 570ms;
+    -webkit-transform-style: preserve-3d;}
+
+.now {
+	-webkit-animation-name: intro;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 10;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1090ms;
+    -webkit-transform-style: preserve-3d;}
+
+@-webkit-keyframes intro {
+    0% { opacity: 0; }
+    10%   { opacity: 1; }
+    15%   { opacity: 0; }
+    20%   { opacity: .5; }
+    25%   { opacity: .2; }
+    30%,75%   { opacity: 1; }
+    79%   { opacity: 0; }
+    80%   { opacity: 1; }
+    100% { opacity: 1;    }
+  }
