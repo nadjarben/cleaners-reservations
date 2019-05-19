@@ -11,7 +11,6 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './messages';
-import NavBar from './components/NavBar';
 
 class App extends Component {
 
@@ -22,8 +21,7 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router>
-        <NavBar />
-          <Route exact path="/" component={Intro}/>
+          <Intro />
           <Route exact path="/home" component={Home}/>
           <Route exact path="/reservation" component={Reservation}/>
           <Route exact path="/tarifs" component={Tarifs}/>
