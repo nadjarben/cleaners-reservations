@@ -9,8 +9,6 @@ import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
 import he from 'react-intl/locale-data/he';
 import { localeSet } from './store/actions/localeActions';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Intro from './containers/Intro';
 
 addLocaleData(en);
 addLocaleData(fr);
@@ -22,9 +20,6 @@ if (localStorage.alhubLang) {
 
 ReactDOM.render(
 <Provider store={store}>
-<Router>
-<Route exact path="/" component={Intro}/>
-</Router>
 <App />
 </Provider>, document.getElementById('.container'));
 

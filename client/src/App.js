@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Intro from './containers/Intro.js'; 
+import NavBar from './components/NavBar';
 import Reservation from './containers/Reservation.js'; 
 import Home from './containers/Home.js'; 
 import Tarifs from './containers/Tarifs';
@@ -11,7 +12,6 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './messages';
-import NavBar from './components/NavBar';
 
 class App extends Component {
 
@@ -22,11 +22,12 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router>
-          <Route exact path="/home" component={Home}/>
-          <Route exact path="/reservation" component={Reservation}/>
-          <Route exact path="/tarifs" component={Tarifs}/>
-          <Route exact path="/contacts" component={Contacts}/>
-          <Route exact path="/admin" component={Admin}/>
+          <Route exact path="/" component={Intro}/>
+          <Route path="/home" component={Home}/>
+          <Route path="/reservation" component={Reservation}/>
+          <Route path="/tarifs" component={Tarifs}/>
+          <Route path="/contacts" component={Contacts}/>
+          <Route path="/admin" component={Admin}/>
         </Router>
       </div>
       </IntlProvider>
