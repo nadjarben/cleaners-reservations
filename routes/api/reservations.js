@@ -3,6 +3,9 @@ const router = express.Router();
 const mongoose = require('mongoose')
 const Reservation = require('../../models/reservation');
 
+const API = //'http://localhost:8001/api/reservations/'
+            'https://cleaners-reservation.herokuapp.com/api/reservations/' 
+
 
 router.get('/',(req,res,next) => {
     Reservation.find()
@@ -43,8 +46,7 @@ router.post('/', (req, res) => {
                 info: result.info,
                 request: {
                     type: 'POST',
-                    url: 'http://localhost:8001/api/reservations/' + result._id
-                    //url: 'https://cleaners-reservation.herokuapp.com/api/reservations/' + result._id
+                    url: API + result._id
                 }
             }
         });
