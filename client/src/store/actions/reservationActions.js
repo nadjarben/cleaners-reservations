@@ -2,7 +2,7 @@ import axios from 'axios';
 import { POST_RESERVATION, FETCH_RESERVATIONS } from './types';
 
 
-const reservationsAPI = //'http://localhost:8001/api/reservations/' 
+const reservationsAPI = //'http://localhost:8080/api/reservations/' 
                         'https://cleaners-reservation.herokuapp.com/api/reservations/'
 
 export const postReservation = (name, surname, phone, email, address, city, date, hour, info) => dispatch => {
