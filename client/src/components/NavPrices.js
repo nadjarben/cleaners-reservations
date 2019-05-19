@@ -119,6 +119,7 @@ export default class NavPrices extends React.Component {
               </Row>
           </TabPane>
           <TabPane tabId="2">
+          <p className="priceMajored">*** Les prix en express (24h sont majores de 50%)</p>
             <Row>
             <table class="table">
                 <thead>

@@ -1,24 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose')
-
 const Reservation = require('../../models/reservation');
 
 
-// @route   GET api/items
-// @desc    Get All Items
-// @access  Public
-// router.get('/', (req, res) => {
-//   Product.find().populate('stars').exec()
-
-//     .then(products => res.json(products));
-// });
-
 router.get('/',(req,res,next) => {
-  Reservation.find()
-  
-  .then(reservations =>  res.json(reservations) );
-})
+    Reservation.find()
+    
+    .then(reservations =>  res.json(reservations) );
+  })
 
 router.post('/', (req, res) => {
     Reservation.find({ _id: req.body.reservationId})
@@ -26,6 +16,7 @@ router.post('/', (req, res) => {
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         surname: req.body.surname,
+        phone: req.body.phone,
         email: req.body.email,
         address: req.body.address,
         city: req.body.city,
@@ -43,6 +34,7 @@ router.post('/', (req, res) => {
                 _id: result._id,
                 name: result.name,
                 surname: result.surname,
+                phone: result.phone,
                 email: result.email,
                 address: result.address,
                 city: result.city,
@@ -51,8 +43,8 @@ router.post('/', (req, res) => {
                 info: result.info,
                 request: {
                     type: 'POST',
-                    //url: 'http://localhost:8001/api/reservations/' + result._id
-                    url: 'http://cleaners-reservation.herokuapp.com/api/reservations/' + result._id
+                    url: 'http://localhost:8001/api/reservations/' + result._id
+                    //url: 'https://cleaners-reservation.herokuapp.com/api/reservations/' + result._id
                 }
             }
         });

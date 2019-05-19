@@ -31,11 +31,14 @@ export default class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <Navbar color="dark" className="navbar-dark navbar-expand-sm">
-          <NavbarBrand><Link className="title" to="/">The Cleaners</Link></NavbarBrand>
-          <img src={logo1} alt="logo1" className="logo1" />
+          <NavbarBrand><Link className="title" to="/">THE CLEANERS</Link></NavbarBrand>
+          <Link to="/"><img src={logo1} alt="logo1" className="logo1" /></Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+            <NavItem>
+                <NavLink onClick={this.toggle}><Link to="/admin" className="navMenu">Admin</Link></NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink onClick={this.toggle}><Link to="/reservation" className="navMenu">Reservation</Link></NavLink>
               </NavItem>

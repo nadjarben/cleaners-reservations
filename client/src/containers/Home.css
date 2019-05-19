@@ -22,11 +22,22 @@
         border-radius:50%;
         color:darkblue;
     }
+.bouton18:hover {
+    background-color: black;
+    width:20%;
+}
+.text-button {
+    margin-top: 15%;
+}
+.text-button:hover {
+    text-decoration: none;
+    color: skyblue;
+}
 @media screen and (min-width: 980px) {
     .logo {
-        width: 500px;
-        height: 500px;
-        margin-left: 30%
+        width: 30%;
+        height: 400px;
+        margin-left: 35%
     }
 }
 @media screen and (min-height: 650px) {

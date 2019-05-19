@@ -1,0 +1,6 @@
+.list-group-item:hover { 
+    background-color: skyblue;
+    font-size: 200%;
+    font-style: bold;
+    cursor: pointer;
+  }

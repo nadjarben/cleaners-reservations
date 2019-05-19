@@ -1,6 +1,6 @@
 .NavBar {
     height: 95%;
-    background-color: red
+    background-color: dark;
 }
 .navbar {
     font-size: 20px;
@@ -12,17 +12,28 @@
 
 .title {
     color: skyblue;
+    font-style: bold;
 }
+.title:hover{
+    color:skyblue;
+    text-decoration: none;
+}
+
 .navMenu {
     color: skyblue;
-    padding: 10px;
+    padding: 15%;
+}
+.navMenu:hover {
+    color:skyblue;
 }
 @media screen and (min-width: 980px) {
     .mr-auto {
         margin-left: 30%;
     }
     .logo1 {
-        margin-left: 20%;
+        text-align: center;
+        margin-left: 50%;
+        width: 450px;
     }
 }
 @media screen and (max-width: 350px) {

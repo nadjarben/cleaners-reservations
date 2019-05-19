@@ -1,8 +1,8 @@
-import { POST_RESERVATION } from '../actions/types';
+import { POST_RESERVATION, FETCH_RESERVATIONS } from '../actions/types';
 
 
 const initialState = {
-  reservations: []
+  reservation: []
 };
 
 export default function(state = initialState, action) {
@@ -10,8 +10,13 @@ export default function(state = initialState, action) {
       case POST_RESERVATION:
       return {
         ...state,
-        reservations: action.payload
+        postedReservation: action.payload
       };
+      case FETCH_RESERVATIONS:
+        return {
+          ...state,
+          reservation: action.payload
+        }
       default:
       return state;
     }
