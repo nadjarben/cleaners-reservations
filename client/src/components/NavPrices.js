@@ -1,6 +1,7 @@
 import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row} from 'reactstrap';
 import classnames from 'classnames';
+import { FormattedMessage } from 'react-intl'; 
 import './NavPrices.css'
 
 export default class NavPrices extends React.Component {
@@ -29,7 +30,7 @@ export default class NavPrices extends React.Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              Repassage
+              <FormattedMessage id="prices.header" />
             </NavLink>
           </NavItem>
           <NavItem>
@@ -37,7 +38,7 @@ export default class NavPrices extends React.Component {
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
-              Lavage
+              <FormattedMessage id="prices.header2" />
             </NavLink>
           </NavItem>
           <NavItem>
@@ -45,7 +46,7 @@ export default class NavPrices extends React.Component {
               className={classnames({ active: this.state.activeTab === '3' })}
               onClick={() => { this.toggle('3'); }}
             >
-              Nettoyage a sec
+              <FormattedMessage id="prices.header3" />
             </NavLink>
           </NavItem>
           <NavItem>

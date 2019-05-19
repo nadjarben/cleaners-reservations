@@ -1,18 +1,17 @@
-.Home {
-    
+.Intro {
     position: relative;
     align-content: center;
-   
+    background-color: black;
 }
 .imgHome {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 70%;
+    margin-top: 50%;
 }
 
 
-a{
+b{
   display:block;
   color:#fff; 
   text-decoration:none;
@@ -65,4 +64,15 @@ a{
     79%   { opacity: 0; }
     80%   { opacity: 1; }
     100% { opacity: 1;    }
+  }
+  @media screen and (min-width: 800px) and (max-width: 1024px) {
+    .imgHome {
+        margin-top: 25%;
+    }
+  }
+  @media screen and (min-width: 1025px) {
+    .imgHome {
+        margin-top: 2%;
+        width:40%;
+    }
   }

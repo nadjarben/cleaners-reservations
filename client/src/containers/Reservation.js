@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { postReservation } from '../store/actions/reservationActions';
 import NavBar from '../components/NavBar';
+import { FormattedMessage } from 'react-intl'; 
 
 class Reservation extends Component {
   state = {
@@ -40,9 +41,9 @@ class Reservation extends Component {
             <NavBar />
         <div className="reservation">
             <div className="service">
-                <p>* free service with a minimum of 100 nis orders</p>
-                <p>* 20 nis for delivery</p>
-                <p>* We will call you in the hour to confirm order</p>
+                <p><FormattedMessage id="reservation.min" /></p>
+                <p><FormattedMessage id="reservation.min2" /></p>
+                <p><FormattedMessage id="reservation.min3" /></p>
             </div>
             <Form className="form" >
   <Form.Row>
@@ -77,18 +78,18 @@ class Reservation extends Component {
 
   <Form.Row>
     <Form.Group className="date" controlId="formGridDate"  >
-    <Form.Label>Date :</Form.Label>
+    <Form.Label><FormattedMessage id="reservation.date" /></Form.Label>
       <Form.Control required="true" type= "date" name="date" value={this.state.date } onChange={ this.handleChange } />
     </Form.Group>
 
     <Form.Group className="hour" controlId="formGridHour">
-    <Form.Label>Hour :</Form.Label>
+    <Form.Label><FormattedMessage id="reservation.hour" /></Form.Label>
       <Form.Control required="true" type= "time" placeholder="10:30" name="hour" value={this.state.hour} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
 
   <Form.Group className="informations" controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Complementaries Informations (digicode, commentaries ...)</Form.Label>
+    <Form.Label><FormattedMessage id="reservation.info" /></Form.Label>
     <Form.Control as="textarea" rows="2" name="info" value={this.state.info } onChange={ this.handleChange } />
   </Form.Group>
 
