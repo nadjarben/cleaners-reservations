@@ -30,8 +30,6 @@ app.use('/api/reservations', reservation);
 const router = require('express').Router();
 
 
-
-
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -43,5 +41,4 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const port = process.env.PORT || 8080;
-
 app.listen(port, () => console.log(`Server started on port ${port}`));
