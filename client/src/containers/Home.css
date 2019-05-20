@@ -17,10 +17,10 @@
         width:155px;
         height:125px;
         background: skyblue;
-        box-shadow:2px 2px 8px darkblue;
+        box-shadow:2px 2px 8px red;
         font:bold 15px Arial;
         border-radius:50%;
-        color:darkblue;
+        color: red;
     }
 .bouton18:hover {
     background-color: black;
