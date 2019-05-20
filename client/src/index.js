@@ -9,7 +9,7 @@ import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
 import he from 'react-intl/locale-data/he';
 import { localeSet } from './store/actions/localeActions';
-import * as serviceWorker from './serviceWorker';
+//import * as serviceWorker from './serviceWorker';
 
 addLocaleData(en);
 addLocaleData(fr);
@@ -18,6 +18,7 @@ addLocaleData(he);
 if (localStorage.alhubLang) {
     store.dispatch(localeSet(localStorage.alhubLang)
     )};
+/*
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(serviceWorker, { scope: './' })
         .then(registration => {
@@ -27,6 +28,7 @@ if ('serviceWorker' in navigator) {
             console.log('serviceWorker failed', err)
         })
     }
+*/
 ReactDOM.render(
 <Provider store={store}>
 <App />
@@ -36,4 +38,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
+//serviceWorker.register();
