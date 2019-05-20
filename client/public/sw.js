@@ -6,8 +6,6 @@ var cacheFiles = [
 	'./',
 	'./index.html',
     '../src/containers/Home.js',
-    '../src/containers/Admin.js',
-    '../src/containers/Admin.css',
     '../src/containers/Intro.js',
     '../src/containers/Reservation.js',
     '../src/containers/Contact.js',
