@@ -4,16 +4,7 @@ var cacheName = 'v1';
 // Default files to always cache
 var cacheFiles = [
 	'./',
-	'./index.html',
-    '../src/containers/Home.js',
-    '../src/containers/Intro.js',
-    '../src/containers/Reservation.js',
-    '../src/containers/Contact.js',
-    '../src/containers/Home.css',
-    '../src/containers/Intro.css',
-    '../src/containers/Reservation.css',
-    '../src/containers/Contact.css',
-    '../src/images/logo.png'
+	'./index.html'
 ]
 
 
