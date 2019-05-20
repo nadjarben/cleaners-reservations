@@ -27,6 +27,8 @@
 }
 .text-button {
     margin-top: 15%;
+    color: red;
+    font-size: 19px;
 }
 .text-button:hover {
     text-decoration: none;
