@@ -30,7 +30,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id=".container"></div>
     <!--
-      Thiss HTML file is a template.
+      This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
       You can add webfonts, meta tags, or analytics to this file.
@@ -41,6 +41,7 @@
     -->
   </body>
     <script>
+      var p = navigator.serviceWorker.register(SW_URL, [options]);
       (function () {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/sw.js').then(response => {
