@@ -13,7 +13,7 @@ class Intro extends React.Component{
         <div className="introd">
         <div className="Intro">
         <div className="fickr">
-             <img className="imgHome" width="75%" height="75%" align="center" src={logo} alt="logo"/>
+             <img className="imgHome" width="76%" height="75%" align="center" src={logo} alt="logo"/>
         </div>
         </div>
         </div>
