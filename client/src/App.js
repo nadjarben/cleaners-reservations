@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {  Router, Route } from 'react-router-dom';
 import Intro from './containers/Intro.js'; 
 import Reservation from './containers/Reservation.js'; 
 import Home from './containers/Home.js'; 
