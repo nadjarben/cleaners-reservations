@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo1 from '../images/logo1.png';
-import flag from '../images/flag.png';
 import flaghe from '../images/flag-he.png';
 import flagen from '../images/flag-en.png';
 import flagfr from '../images/flag-fr.png';
@@ -12,22 +11,40 @@ import {
   Dropdown, DropdownToggle, DropdownMenu, DropdownItem
  } from 'reactstrap';
  import { FormattedMessage } from 'react-intl'; 
-import PropTypes from 'prop-types';
+ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setLocale } from '../store/actions/localeActions';
 
 class NavBar extends React.Component {
+  
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.toggleDrop = this.toggleDrop.bind(this);
     this.state = {
       isOpen: false,
-      dropdownOpen: false
+      dropdownOpen: false,
     };
   }
-
+  
+  changeFlag() {
+    const lang = this.props.lang
+    if(lang === 'he') {
+      return (
+        <img src={flaghe} alt="flag" width="25px" />
+      )
+    }
+      if(lang === 'en') {
+        return (
+          <img src={flagen} alt="flag" width="25px" />
+        )
+      }
+        if(lang === 'fr') {
+          return (
+            <img src={flagfr} alt="flag" width="25px" />
+        )
+    }
+  }
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -46,7 +63,7 @@ class NavBar extends React.Component {
           <NavbarBrand><Link className="title" to="/home">THE CLEANERS</Link></NavbarBrand>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDrop} className="dropdown">
         <DropdownToggle caret className="droptoggle">
-        <img src={flag} alt="flag" width="25px" />
+        {this.changeFlag()}
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem>
@@ -103,11 +120,12 @@ class NavBar extends React.Component {
 }
 
 NavBar.propTypes = {
-  setLocale: PropTypes.func.isRequired
+  lang: propTypes.string.isRequired
 }
 
 const mapStateToProps = state => ({
-  setLocale: state.locale
+  setLocale: state.locale,
+  lang: state.locale.lang
 });
 
 export default connect(mapStateToProps, {setLocale})(NavBar)
