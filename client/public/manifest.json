@@ -11,18 +11,7 @@
       "src": "logoCleaners192.png",
       "sizes": "192x192",
       "type": "image/png"
-    },
-    {
-      "src": "logoCleaners.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "logoCleaners.png",
-      "sizes": "96x96",
-      "type": "image/png"
     }
-    
   ],
   "start_url": "/",
   "display": "standalone",
