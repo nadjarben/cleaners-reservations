@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import Intro from './containers/Intro.js'; 
 import Reservation from './containers/Reservation.js'; 
 import Home from './containers/Home.js'; 
@@ -11,7 +11,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './messages';
-import  configureHistory  from './configureHistory';
+import configureHistory  from './configureHistory';
 
 
 class App extends Component {
