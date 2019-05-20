@@ -9,7 +9,7 @@ import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
 import he from 'react-intl/locale-data/he';
 import { localeSet } from './store/actions/localeActions';
-//import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 addLocaleData(en);
 addLocaleData(fr);
@@ -28,4 +28,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-//registerServiceWorker();
+registerServiceWorker();
