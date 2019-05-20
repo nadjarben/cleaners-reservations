@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Intro from './containers/Intro.js'; 
-import NavBar from './components/NavBar';
 import Reservation from './containers/Reservation.js'; 
 import Home from './containers/Home.js'; 
 import Tarifs from './containers/Tarifs';
@@ -12,16 +11,20 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './messages';
+import  configureHistory  from './configureHistory';
+
 
 class App extends Component {
+  
 
   render() {
+    const history = configureHistory()
     const { lang } = this.props;
     return( 
         <IntlProvider locale={lang} 
         messages={messages[lang]}>
       <div className="App">
-        <Router>
+        <Router history = {history}>
           <Route exact path="/" component={Intro}/>
           <Route path="/home" component={Home}/>
           <Route path="/reservation" component={Reservation}/>
