@@ -10,10 +10,11 @@ class Intro extends React.Component{
         }
   render(){
       return(
-          
+        <div className="introd">
         <div className="Intro">
         <div className="fickr">
              <img className="imgHome" width="75%" height="75%" align="center" src={logo} alt="logo"/>
+        </div>
         </div>
         </div>
       )

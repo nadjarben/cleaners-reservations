@@ -1,6 +1,12 @@
 .NavBar {
     height: 95%;
     background-color: dark;
+    color:#fff; 
+    text-decoration:none;
+    text-align:right;
+    top: 25%;
+    left: 35%;
+    text-shadow: 0px 0px 10px #ccc;
 }
 .navbar {
     font-size: 20px;
