@@ -5,10 +5,14 @@ var cacheName = 'v1';
 var cacheFiles = [
 	'./',
 	'./index.html',
-	'./js/app.js',
-	'./css/reset.css',
-	'./css/style.css',
-	'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic'
+    '../src/containers/Home.js',
+    '../src/containers/Intro.js',
+    '../src/containers/Reservation.js',
+    '../src/containers/Contact.js',
+    '../src/containers/Home.css',
+    '../src/containers/Intro.css',
+    '../src/containers/Reservation.css',
+    '../src/containers/Contact.css'
 ]
 
 
