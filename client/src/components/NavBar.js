@@ -45,7 +45,7 @@ class NavBar extends React.Component {
         <Navbar color="red" className="navbar-dark navbar-expand-sm">
           <NavbarBrand><Link className="title" to="/home">THE CLEANERS</Link></NavbarBrand>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDrop} className="dropdown">
-        <DropdownToggle caret className="dropdown">
+        <DropdownToggle caret className="droptoggle">
         <img src={flag} alt="flag" width="25px" />
         </DropdownToggle>
         <DropdownMenu>
@@ -70,24 +70,24 @@ class NavBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-            <NavItem>
+            <NavItem className="navitem">
                 <NavLink onClick={this.toggle}><Link to="/admin" className="navMenu">Admin</Link></NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className="navitem">
                 <NavLink onClick={this.toggle}>
                   <Link to="/reservation" className="navMenu">
                     <FormattedMessage id="nav.reservation" defaultMessgae="Reservation"/>
                   </Link>
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className="navitem">
                 <NavLink onClick={this.toggle}>
                     <Link to="/tarifs" className="navMenu">
                       <FormattedMessage id="nav.prices" defaultMessgae="Prices"/>
                     </Link>
                   </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className="navitem">
                 <NavLink onClick={this.toggle}>
                   <Link to="/contacts" className="navMenu">
                     <FormattedMessage id="nav.contacts" defaultMessgae="Contacts"/>
