@@ -5,3 +5,4 @@ self.addEventListener('install', function(event) {
 self.addEventListener('activate', function(event) {
     console.log('Activated sw.js', event);
 });
+
