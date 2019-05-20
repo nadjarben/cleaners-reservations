@@ -22,7 +22,7 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router>
-          <Route path="/" component={Intro}/>
+          <Route exact path="/" component={Intro}/>
           <Route path="/home" component={Home}/>
           <Route path="/reservation" component={Reservation}/>
           <Route path="/tarifs" component={Tarifs}/>
