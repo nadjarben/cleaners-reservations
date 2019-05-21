@@ -18,7 +18,6 @@ if (localStorage.alhubLang) {
     store.dispatch(localeSet(localStorage.alhubLang)
     )};
     
-
 ReactDOM.render(
 <Provider store={store}>
 <App />
