@@ -24,7 +24,7 @@ class App extends Component {
         <IntlProvider locale={lang} 
         messages={messages[lang]}>
       <div className="App">
-        <Router history = {history}>
+        <Router >
           <Route exact path="/" component={Intro}/>
           <Route path="/home" component={Home}/>
           <Route path="/reservation" component={Reservation}/>
