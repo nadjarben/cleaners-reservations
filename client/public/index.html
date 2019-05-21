@@ -43,4 +43,42 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+  const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test( userAgent );
+  }
+  // Detects if device is in standalone mode
+  const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+  // Checks if should display install popup notification:
+  if (isIos() && !isInStandaloneMode()) {
+    // this.setState({ showInstallMessage: true });
+    showIosInstall();
+  }
+
+  function showIosInstall() {
+        let iosPrompt = document.querySelector(".ios-prompt");
+        iosPrompt.style.display = "block";
+        iosPrompt.addEventListener("click", () => {
+          iosPrompt.style.display = "none";
+        });
+      }
+</script>
+<style>
+ .ios-prompt {
+        background-color: #fcfcfc;
+        border: 1px solid #666;
+        display: none;
+        padding: 0.8rem 1rem 0 0.5rem;
+        text-decoration: none;
+        font-size: 16px;
+        color: #555;
+        position: absolute;
+        margin: 0 auto 1rem;
+        left: 1rem;
+        right: 1rem;
+        bottom: 0;
+      }
+    </style>
+</style>
 </html>
