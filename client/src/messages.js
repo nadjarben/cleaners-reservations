@@ -1,4 +1,37 @@
 export default {
+
+
+    he: {
+        //Navbar
+        'nav.reservation': 'הסתייגויות',
+        'nav.prices': 'מחירים',
+        'nav.contacts': 'קשר',
+        'nav.lang': 'flaghe',
+
+        //Home
+        'home.intro': 'ממוקם באשדוד, מכבסה את השירותים מציעה את שירותיה של הבגדים שלך ואת פשתן. אכפת לנו מהסיפוק של הלקוחות שלנו ומציעים להם שירותי כביסה וגיהוץ המותאמים לצרכיהם. אתה כבר לא צריך לדאוג כביסה שלך, אנחנו מטפלים בזה בשבילך במחירים ללא תחרות.',
+        'home.button': 'הזמנת משלוח',
+
+        //Reservation
+        'reservation.min': 'משלוח חינם למינימום של ₪ 100',
+        'reservation.min2': 'משלוח ₪ 25',
+        'reservation.min3': 'אנו ניצור איתך קשר תוך שעה אחת כדי לאשר את המסירה',
+        'reservation.name': 'שם פרטי',
+        'reservation.lastname': 'שם משפחה',
+        'reservation.phone': 'טלפון',
+        'reservation.email': 'הדוא"ל',
+        'reservation.address': 'כתובת',
+        'reservation.city': 'העי',
+        'reservation.date': 'תאריך',
+        'reservation.hour': 'שעה',
+        'reservation.info': '... (מידע נוסף (קוד, הערות',
+
+        //Prices
+        'prices.header':'גיהוץ',
+        'prices.header2': 'ניקוי',
+        'prices.header3': 'ניקוי יבש'
+    },
+
     en: {
         //Navbar
         'nav.reservation': 'Reservation',
@@ -56,35 +89,5 @@ export default {
         'prices.header':'Repassage',
         'prices.header2': 'Nettoyage',
         'prices.header3': 'Nettoyage a sec'
-    },
-    he: {
-        //Navbar
-        'nav.reservation': 'הסתייגויות',
-        'nav.prices': 'מחירים',
-        'nav.contacts': 'קשר',
-        'nav.lang': 'flaghe',
-
-        //Home
-        'home.intro': 'ממוקם באשדוד, מכבסה את השירותים מציעה את שירותיה של הבגדים שלך ואת פשתן. אכפת לנו מהסיפוק של הלקוחות שלנו ומציעים להם שירותי כביסה וגיהוץ המותאמים לצרכיהם. אתה כבר לא צריך לדאוג כביסה שלך, אנחנו מטפלים בזה בשבילך במחירים ללא תחרות.',
-        'home.button': 'הזמנת משלוח',
-
-        //Reservation
-        'reservation.min': 'משלוח חינם למינימום של ₪ 100',
-        'reservation.min2': 'משלוח ₪ 25',
-        'reservation.min3': 'אנו ניצור איתך קשר תוך שעה אחת כדי לאשר את המסירה',
-        'reservation.name': 'שם פרטי',
-        'reservation.lastname': 'שם משפחה',
-        'reservation.phone': 'טלפון',
-        'reservation.email': 'הדוא"ל',
-        'reservation.address': 'כתובת',
-        'reservation.city': 'העי',
-        'reservation.date': 'תאריך',
-        'reservation.hour': 'שעה',
-        'reservation.info': '... (מידע נוסף (קוד, הערות',
-
-        //Prices
-        'prices.header':'גיהוץ',
-        'prices.header2': 'ניקוי',
-        'prices.header3': 'ניקוי יבש'
     }
 }

@@ -163,7 +163,7 @@
     .logo {
         width: 250px;
         height: 250px;
-        margin-top: 8px;
+        margin-top: 2%;
         }
     .logo1 {
         width: 110px;
@@ -173,11 +173,11 @@
         font-size: 13px;
     }
     .text-center {
-        margin-top: 8px;
-        font-size: 16px;
+        margin-top: 2%;
+        font-size: 15px;
     }
     .bouton18 {
-        margin-top: 8px;
+        margin-top: 2%;
         width:135px;
         height:125px;
     }
