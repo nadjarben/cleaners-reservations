@@ -186,9 +186,10 @@
 @media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 811px) and (max-height: 911px) {
     .logo {
         margin-top: 30px;
+        width: 
     }
     .logo1 {
-        width: 110px;
+        width: 120px;
         height: 20px;
     }
     .title {
@@ -201,8 +202,8 @@
     }
     .bouton18 {
         margin-top: 25px;
-        width:155px;
-        height:145px;
+        width:135px;
+        height:125px;
     }
 }
 /*iphone 8plus */
