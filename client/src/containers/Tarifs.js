@@ -11,7 +11,6 @@ class Tarifs extends Component {
             <div className="container">
             <NavPrices />
             </div>
-            <p>allo</p>
             </div>
         );
     }
