@@ -17,7 +17,6 @@ addLocaleData(he);
 if (localStorage.alhubLang) {
     store.dispatch(localeSet(localStorage.alhubLang)
     )};
-
     
 
 ReactDOM.render(
