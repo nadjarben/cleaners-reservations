@@ -11,12 +11,14 @@ class Home extends Component {
             <div>
                 <NavBar />
             <div className="Home">
+                <div className="text-center">
                 <img className="logo" src={logo} alt="logoCleaners"></img>
-				<p className="lead text-center"><FormattedMessage id="home.intro" defaultMessgae=""/></p>
+                </div>
+				<p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
 				<div className="text-center">
                     <button className="bouton18">
                         <Link to="/reservation">
-                            <p className="text-button"><FormattedMessage id="home.button" defaultMessgae="BOOK A DELIVERY"/></p>
+                            <p className="text-button"><FormattedMessage id="home.button" defaultMessage="BOOK A DELIVERY"/></p>
                         </Link>
                     </button>
                 </div>

@@ -10,7 +10,6 @@
     float: center;
     width: 70%;
     height: 50%;
-    margin-left: 16%;
     margin-top: 10px;
     }
     .bouton18 {
@@ -38,7 +37,6 @@
     .logo {
         width: 30%;
         height: 400px;
-        margin-left: 35%
     }
 }
 /*ipad */
@@ -46,7 +44,6 @@
     .logo {
         margin-top: 1%;
         width: 420px;
-        margin-left: 28%;
     }
     .logo1 {
         width: 300px;
@@ -72,7 +69,6 @@
     .logo {
         margin-top: 5%;
         width: 520px;
-        margin-left: 30%;
     }
     .logo1 {
         width: 300px;
@@ -140,7 +136,7 @@
     }
 }
 /*pixel2 */
-@media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 736px) and (max-height: 810px) {
+@media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 730px) and (max-height: 810px) {
     .logo {
         margin-top: 20px;
     }
@@ -159,6 +155,76 @@
         margin-top: 15px;
         width:145px;
         height:135px;
+
+    }
+}
+/*iphone 6/7/8 */
+@media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 600px) and (max-height: 735px) {
+    .logo {
+        width: 250px;
+        height: 250px;
+        margin-top: 8px;
+        }
+    .logo1 {
+        width: 110px;
+        height: 20px;
+    }
+    .title {
+        font-size: 13px;
+    }
+    .text-center {
+        margin-top: 8px;
+        font-size: 16px;
+    }
+    .bouton18 {
+        margin-top: 8px;
+        width:135px;
+        height:125px;
+    }
+}
+/*iphone X */
+@media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 811px) and (max-height: 911px) {
+    .logo {
+        margin-top: 30px;
+    }
+    .logo1 {
+        width: 110px;
+        height: 20px;
+    }
+    .title {
+        font-size: 13px;
+        margin-left: -8px;
+    }
+    .text-center {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .bouton18 {
+        margin-top: 25px;
+        width:155px;
+        height:145px;
+    }
+}
+/*iphone 8plus */
+@media screen and (min-width: 400px) and (max-width: 415px) and (min-height: 820px) and (max-height: 900px) {
+    .logo {
+        margin-top: 30px;
+    }
+    .logo1 {
+        width: 110px;
+        height: 20px;
+    }
+    .title {
+        font-size: 13px;
+    }
+    .text-center {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .bouton18 {
+        margin-top: 30px;
+        width:165px;
+        height:155px;
 
     }
 }
