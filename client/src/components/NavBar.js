@@ -60,7 +60,7 @@ class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <Navbar color="red" className="navbar-dark navbar-expand-sm">
-          <NavbarBrand><Link className="title" to='/home'>THE CLEANERS</Link></NavbarBrand>
+          <NavbarBrand><Link className="title" to="/home">THE CLEANERS</Link></NavbarBrand>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDrop} className="dropdown">
         <DropdownToggle caret className="droptoggle">
         {this.changeFlag()}
@@ -106,7 +106,7 @@ class NavBar extends React.Component {
               </NavItem>
               <NavItem className="navitem">
                 <NavLink onClick={this.toggle}>
-                  <Link to='/contacts' className="navMenu">
+                  <Link to="/contacts" className="navMenu">
                     <FormattedMessage id="nav.contacts" defaultMessgae="Contacts"/>
                   </Link>
                 </NavLink>

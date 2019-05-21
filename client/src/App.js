@@ -11,14 +11,14 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './messages';
-import configureHistory  from './configureHistory';
+//import configureHistory  from './configureHistory';
 
 
 class App extends Component {
   
 
   render() {
-    const history = configureHistory()
+  //  const history = configureHistory()
     const { lang } = this.props;
     return( 
         <IntlProvider locale={lang} 
