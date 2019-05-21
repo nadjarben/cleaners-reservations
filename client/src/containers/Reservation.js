@@ -45,7 +45,7 @@ class Reservation extends Component {
                 <p><FormattedMessage id="reservation.min2" /></p>
                 <p><FormattedMessage id="reservation.min3" /></p>
             </div>
-            <Form className="form" >
+            <Form onSubmit={e => this.handleSubmit(e)} className="form" >
   <Form.Row>
     <Form.Group controlId="formGridFirstName" >
       <Form.Control required="true" type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
@@ -93,7 +93,7 @@ class Reservation extends Component {
     <Form.Control as="textarea" rows="2" name="info" value={this.state.info } onChange={ this.handleChange } />
   </Form.Group>
 
-  <Button onClick={this.handleSubmit} variant="primary" className="button-submit" >
+  <Button type="submit" variant="primary" className="button-submit" >
     Submit
   </Button>
 </Form>

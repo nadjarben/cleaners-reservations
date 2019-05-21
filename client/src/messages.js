@@ -3,9 +3,9 @@ export default {
 
     he: {
         //Navbar
-        'nav.reservation': 'הסתייגויות',
+        'nav.reservation': 'להזמין',
         'nav.prices': 'מחירים',
-        'nav.contacts': 'קשר',
+        'nav.contacts': 'צור קשר',
         'nav.lang': 'flaghe',
 
         //Home
@@ -34,7 +34,7 @@ export default {
 
     en: {
         //Navbar
-        'nav.reservation': 'Reservation',
+        'nav.reservation': 'Book',
         'nav.prices': 'Prices',
         'nav.contacts': 'Contacts',
 
@@ -63,7 +63,7 @@ export default {
     },
     fr: {
         //Navbar
-        'nav.reservation': 'Reservation',
+        'nav.reservation': 'Reserver',
         'nav.prices': 'Tarifs',
         'nav.contacts': 'Contacts',
 
