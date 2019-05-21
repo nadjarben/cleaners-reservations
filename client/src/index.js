@@ -18,6 +18,27 @@ if (localStorage.alhubLang) {
     store.dispatch(localeSet(localStorage.alhubLang)
     )};
 
+    // On page load
+(function() {
+    // Check if iOS
+    if(!(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)){ return false; }
+  
+    // Check if already in webapp
+    if(window.navigator.standalone == true){ return false; }
+  
+    // Check if you already asked them to add to homescreen
+    if(document.cookie.search("alreadAsked") >= 0){ return false; }
+  
+    // Ask user to add to homescreen
+    document.getElementById("hiddenPrompt").style.display = 'inherit';
+  });
+  
+  // After clicking a button to dismiss prompt
+  function hidePromptInFuture(){
+    // Do not show prompt again
+    document.cookie = "alreadAsked=true; expires=Thu, 18 Dec 2099 12:00:00 UTC";
+  }
+
 ReactDOM.render(
 <Provider store={store}>
 <App />
