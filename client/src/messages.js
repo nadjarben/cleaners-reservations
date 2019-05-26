@@ -25,6 +25,8 @@ export default {
         'reservation.date': 'תאריך',
         'reservation.hour': 'שעה',
         'reservation.info': '... (מידע נוסף (קוד, הערות',
+        'reservation.confirm': 'הפקודה שלך ( מזמין ) טוב נעבר, אנחנו בנושא נוודא אותך על ידי מסר בתוך השעה, במקרה של לא צפוי נא להתקשר אלינו ל0586305515',
+        
 
         //Prices
         'prices.header':'גיהוץ',
@@ -55,6 +57,8 @@ export default {
         'reservation.date': 'Date',
         'reservation.hour': 'Hour',
         'reservation.info': 'Complementaries Informations (digicode, commentaries ...)',
+        'reservation.confirm': 'Your order has been placed, we will confirm you by message within the hour, In case of unforeseen events please contact us at 0586305515',
+
 
         //Prices
         'prices.header':'Ironing',
@@ -84,6 +88,7 @@ export default {
         'reservation.date': 'Date',
         'reservation.hour': 'Heure',
         'reservation.info': 'Informations complementaires (digicode, commentaires ...)',
+        'reservation.confirm': 'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, En cas dimprevus veuillez nous contacter au 0586305515.',
 
         //Prices
         'prices.header':'Repassage',

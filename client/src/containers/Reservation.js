@@ -22,17 +22,17 @@ class Reservation extends Component {
   handleChange = (e) => {
     this.setState ({[e.target.name]: e.target.value})
     console.log(this.state.date)
-    //onSubmit={this.props.postReservation(this.state.name)}
   }
 
   handleSubmit = (e) => {
-    const textAlert = 
+    const textAlert =
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
     const { name, surname, phone, email, address, city, date, hour, info } = this.state
     e.preventDefault()
     this.props.postReservation(name, surname, phone, email, address, city, date, hour, info)
     alert(textAlert);
+      this.props.history.push('/home');
   }
 
     render() {

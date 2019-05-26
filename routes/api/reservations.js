@@ -13,6 +13,31 @@ router.get('/',(req,res,next) => {
     .then(reservations =>  res.json(reservations) );
   })
 
+router.get("/:id", (req, res) => {
+    Reservation.findById(req.params.id)
+    .populate("reservation")
+    .exec()
+    .then(reservation => {
+      if (!reservation) {
+        return res.status(404).json({
+          message: "Reservation not found"
+        });
+      }
+      res.status(200).json({
+        reservation: reservation,
+        request: {
+          type: "GET",
+          url: API 
+        }
+      });
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    })
+})
+
 router.post('/', (req, res) => {
     Reservation.find({ _id: req.body.reservationId})
     const reservation = new Reservation({
@@ -59,13 +84,11 @@ router.post('/', (req, res) => {
         });     
 })
 
-// @route   DELETE api/items/:id
-// @desc    Delete A Item
-// @access  Public
 router.delete('/:id', (req, res) => {
-  Reservation.findById(req.params.id)
-    .then(reservation => reservation.remove().then(() => res.json({ success: true })))
-    .catch(err => res.status(404).json({ success: false }));
-});
-
+    Reservation.findById(req.params.id)
+      .then(Reservation => Reservation.remove()
+      .then(() => res.json({ success: true })))
+      .catch(err => res.status(404).json({ success: false + err }));
+  });
+  
 module.exports = router;

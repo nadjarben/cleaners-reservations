@@ -5,13 +5,23 @@ import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
 import Commande from '../components/Commande';
 import './Admin.css';
+import Spinner from '../components/Spinner';
 
 class Admin extends Component {
-
-    componentDidMount() {
-        this.props.fetchReservations()
+    state = {
+        loading: true
       }
 
+    componentDidMount() {
+        this.handleFetchReservations();
+    }
+
+    handleFetchReservations() {
+        this.props.fetchReservations();
+        this.setState({loading:false});
+
+}
+    
     render() {
         const { reservation } = this.props;
         const r = reservation.map(r => {
@@ -25,6 +35,9 @@ class Admin extends Component {
             return (
                 <div>
                     <NavBar />
+                    {this.state.loading &&
+                     <Spinner />
+                    }
                 <div className="admin">
                     <ul className="list-group">{r}</ul>
                 </div>

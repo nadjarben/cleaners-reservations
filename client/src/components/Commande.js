@@ -1,12 +1,16 @@
 import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './Commande.css';
+import { deleteReservation } from '../store/actions/reservationActions';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 
  class Commande extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          modal: false,
+          modal: false
         };
         this.toggle = this.toggle.bind(this);
     }
@@ -14,9 +18,15 @@ import './Commande.css';
         this.setState(prevState => ({
           modal: !prevState.modal
         }));
-      }      
+      }
+      handleDelete(e) {
+        const id = this.props.reservation._id
+        this.props.deleteReservation(id);
+        window.location.reload(); 
+      }
 
     render() {    
+
         const {reservation} = this.props;
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
      return(
@@ -37,12 +47,18 @@ import './Commande.css';
                     </ModalBody>
                     <ModalFooter>
                         <Button>Archiver</Button>
-                        <Button color="danger">Supprimer</Button>
+                        <Button color="danger" onClick={e => this.handleDelete(e)} >Supprimer</Button>
                     </ModalFooter>
             </Modal>
         </div>
      )
     }
  }
-
-export default Commande
+ const mapStateToProps = state => ({
+    
+});
+Commande.propTypes = {
+    deleteReservation: PropTypes.func.isRequired,
+    id: PropTypes.array.isRequired
+}
+export default connect(mapStateToProps, {deleteReservation})(Commande)

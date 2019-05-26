@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors')
 const reservation = require('./routes/api/reservations');
+const archviedReservation = require('./routes/api/archivedReservations');
 //const cartProduct = require('./routes/api/cartProducts')
 //const stripe = require("stripe")("sk_test_SB12cBiQkwOFe3EDadGXrwPN");
 const app = express();
@@ -22,10 +23,16 @@ mongoose
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
+  app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+    });
+
 // Use Routes
 app.use('/api/reservations', reservation);
-//app.use('/api/cartProducts', cartProduct);
-// app.use('/api/stars', star)
+app.use('/api/archivedReservations', archviedReservation);
 
 const router = require('express').Router();
 
