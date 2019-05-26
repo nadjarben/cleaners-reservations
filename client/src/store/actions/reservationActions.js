@@ -22,7 +22,7 @@ export const postReservation = (name, surname, phone, email, address, city, date
   }
 
  export const deleteReservation = (id) => dispatch => {
- axios.delete(`https://cleaners-reservation.herokuapp.com/api/reservations/${id}`)
+ axios.delete(reservationsAPI + id)
  .then(res => {
    return dispatch ({
      type: DELETE_RESERVATION,
@@ -31,7 +31,6 @@ export const postReservation = (name, surname, phone, email, address, city, date
  })
  }
  
-
   export const fetchReservations = () => dispatch => {
 
     axios.get(reservationsAPI, {
