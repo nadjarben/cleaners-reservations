@@ -120,7 +120,7 @@ class NavBar extends React.Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                {this.renderAdmin.bind(this)}
+                {this.renderAdmin()}
                 <NavItem className="navitem">
                     <Link to="/reservation" className="navMenu" onClick={this.toggle}>
                       <FormattedMessage id="nav.reservation" defaultMessage="Reservation"/>
