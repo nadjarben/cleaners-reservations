@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { POST_RESERVATION, FETCH_RESERVATIONS, DELETE_RESERVATION, ARCHIVE_RESERVATION } from './types';
+import { POST_RESERVATION, FETCH_RESERVATIONS, DELETE_RESERVATION } from './types';
 
 
 const reservationsAPI = //'http://localhost:8080/api/reservations/' 

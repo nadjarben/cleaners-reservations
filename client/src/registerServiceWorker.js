@@ -30,7 +30,7 @@ export default function register() {
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker-custom.js`;
 
       if (isLocalhost) {
         // This is running on localhost. Lets check if a service worker still exists or not.
@@ -79,7 +79,7 @@ function registerValidSW(swUrl) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
-    
+
     window['isUpdateAvailable']
 	.then(isAvailable => {
 		if (isAvailable) {

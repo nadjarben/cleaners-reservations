@@ -7,7 +7,7 @@ import flagfr from '../images/flag-fr.png';
 import './NavBar.css';
 import {
   Collapse, Navbar, NavbarToggler,
-  NavbarBrand, Nav, NavItem, NavLink,
+  Nav, NavItem,
   Dropdown, DropdownToggle, DropdownMenu, DropdownItem
  } from 'reactstrap';
  import { FormattedMessage } from 'react-intl'; 
@@ -60,7 +60,7 @@ class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <Navbar color="red" className="navbar-dark navbar-expand-sm">
-          <NavbarBrand><Link className="title" to="/home">THE CLEANERS</Link></NavbarBrand>
+          <Link className="title" to="/home">THE CLEANERS</Link>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDrop} className="dropdown">
         <DropdownToggle caret className="droptoggle">
         {this.changeFlag()}
@@ -88,28 +88,22 @@ class NavBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
             <NavItem className="navitem">
-                <NavLink onClick={this.toggle}><Link to="/admin" className="navMenu">Admin</Link></NavLink>
+                <Link to="/admin" className="navMenu" onClick={this.toggle}>Admin</Link>
               </NavItem>
               <NavItem className="navitem">
-                <NavLink onClick={this.toggle}>
-                  <Link to="/reservation" className="navMenu">
+                  <Link to="/reservation" className="navMenu" onClick={this.toggle}>
                     <FormattedMessage id="nav.reservation" defaultMessgae="Reservation"/>
                   </Link>
-                </NavLink>
               </NavItem>
               <NavItem className="navitem">
-                <NavLink onClick={this.toggle}>
-                    <Link to="/tarifs" className="navMenu">
+                    <Link to="/tarifs" className="navMenu" onClick={this.toggle}>
                       <FormattedMessage id="nav.prices" defaultMessgae="Prices"/>
                     </Link>
-                  </NavLink>
               </NavItem>
               <NavItem className="navitem">
-                <NavLink onClick={this.toggle}>
-                  <Link to="/contacts" className="navMenu">
+                  <Link to="/contacts" className="navMenu" onClick={this.toggle}>
                     <FormattedMessage id="nav.contacts" defaultMessgae="Contacts"/>
                   </Link>
-                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
