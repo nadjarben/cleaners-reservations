@@ -72,6 +72,9 @@
         width: 80px;
         height: 10px;
     }
+    .navitem {
+        padding: 1%;
+    }
     .title {
         font-size: 13px;
         margin-left: -12px;
@@ -87,6 +90,9 @@
         width: 110px;
         height: 10px;
     }
+    .navitem {
+        padding: 1%;
+    }
     .title {
         font-size: 13px;
     }
@@ -100,6 +106,9 @@
         width: 110px;
         height: 10px;
     }
+    .navitem {
+        padding: 1%;
+    }
     .title {
         font-size: 13px;
     }
@@ -112,6 +121,9 @@
     .logo1 {
         width: 110px;
         height: 10px;
+    }
+    .navitem {
+        padding: 1%;
     }
     .title {
         font-size: 13px;

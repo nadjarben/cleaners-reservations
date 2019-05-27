@@ -79,19 +79,9 @@ function registerValidSW(swUrl) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
-
-    window['isUpdateAvailable']
-	.then(isAvailable => {
-		if (isAvailable) {
-			const toast = this.toastCtrl.create({
-				message: 'New Update available! Reload the webapp to see the latest juicy changes.',
-				position: 'bottom',
-				showCloseButton: true,
-			});
-			toast.present();
-		}
-	});
 }
+
+
 
 function checkValidServiceWorker(swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
