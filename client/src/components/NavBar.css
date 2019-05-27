@@ -65,16 +65,7 @@
 .droptoggle:after {
     background-color: black;
 }
-@media screen and (min-width: 980px) {
-    .mr-auto {
-        margin-left: 30%;
-    }
-    .logo1 {
-        text-align: center;
-        margin-left: 30%;
-        width: 450px;
-    }
-}
+
 /* Iphone5 */
 @media screen and (min-width: 290px) and (max-width: 344px) {
     .logo1 {
@@ -128,6 +119,25 @@
     }
     .dropdown {
         margin-right: 0px;
+    }
+}
+/* tablette */
+@media screen and (min-width: 650px) and (max-width: 950px) {
+    .navMenu {
+        padding-left: 10px;
+    }
+    .logo1 {
+        width: 200px;
+    }
+}
+/* pc */
+@media screen and (min-width: 951px) {
+    .navMenu {
+        padding-left: 10px;
+    }
+    .logo1 {
+        width: 400px;
+        margin-left: 200px
     }
 }
 
