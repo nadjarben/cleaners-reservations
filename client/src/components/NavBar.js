@@ -12,6 +12,7 @@ import {
  } from 'reactstrap';
  import { FormattedMessage } from 'react-intl'; 
  import propTypes from 'prop-types';
+ import GoogleAuth from './GoogleAuth';
 import { connect } from 'react-redux';
 import { setLocale } from '../store/actions/localeActions';
 
@@ -55,59 +56,93 @@ class NavBar extends React.Component {
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
-
+  
+  renderAdmin() {
+    const {isAdmin} = this.props
+    if(isAdmin === true) {
+      return (
+        <NavItem className="navitem">
+          <Link 
+          to="/admin" 
+          className="navMenu" 
+          onClick={this.toggle}>
+            Admin
+          </Link>
+        </NavItem>
+      )
+    }
+  }
+  
+  
   render() {
     return (
-      <div className="NavBar">
-        <Navbar color="red" className="navbar-dark navbar-expand-sm">
-          <Link className="title" to="/home">THE CLEANERS</Link>
-          <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDrop} className="dropdown">
-        <DropdownToggle caret className="droptoggle">
-        {this.changeFlag()}
-        </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem>
-          <div className="flag" onClick={() => this.props.setLocale('en')} >
-              <img src={flagen} alt="flagen" width="30px" /> English
-            </div>
-          </DropdownItem>
-          <DropdownItem>
-          <div className="flag" onClick={() => this.props.setLocale('fr')} >
-              <img src={flagfr} alt="flagfr" width="30px" /> Francais
-            </div>
-          </DropdownItem>
-          <DropdownItem>
-          <div className="flag" onClick={() => this.props.setLocale('he')} >
-              <img src={flaghe} alt="flaghe" width="30px" /> עברית
-            </div>
-          </DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-          <Link to="/home"><img src={logo1} alt="logo1" className="logo1"/></Link>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-            <NavItem className="navitem">
-                <Link to="/admin" className="navMenu" onClick={this.toggle}>Admin</Link>
-              </NavItem>
-              <NavItem className="navitem">
-                  <Link to="/reservation" className="navMenu" onClick={this.toggle}>
-                    <FormattedMessage id="nav.reservation" defaultMessgae="Reservation"/>
-                  </Link>
-              </NavItem>
-              <NavItem className="navitem">
-                    <Link to="/tarifs" className="navMenu" onClick={this.toggle}>
-                      <FormattedMessage id="nav.prices" defaultMessgae="Prices"/>
+      <div>
+        <div className="NavBar">
+          <Navbar className="navbar-dark navbar-expand-sm"
+          color="red">
+            <Link className="title" 
+            to="/home">
+              THE CLEANERS
+            </Link>
+            <Dropdown className="dropdown" 
+            isOpen={this.state.dropdownOpen} 
+            toggle={this.toggleDrop}>
+            <DropdownToggle caret className="droptoggle">
+              {this.changeFlag()}
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>
+                <div className="flag" 
+                onClick={() => this.props.setLocale('en')} >
+                    <img src={flagen} alt="flagen" width="30px" />
+                    English
+                </div>
+              </DropdownItem>
+              <DropdownItem>
+                <div className="flag" 
+                onClick={() => this.props.setLocale('fr')} >
+                  <img src={flagfr} alt="flagfr" width="30px" /> 
+                  Francais
+                </div>
+              </DropdownItem>
+              <DropdownItem>
+                <div className="flag" 
+                onClick={() => this.props.setLocale('he')} >
+                  <img src={flaghe} alt="flaghe" width="30px" />
+                   עברית
+                </div>
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+          <Link to="/home">
+            <img src={logo1} 
+            alt="logo1" className="logo1"/></Link>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                {this.renderAdmin()}
+                <NavItem className="navitem">
+                    <Link to="/reservation" className="navMenu" onClick={this.toggle}>
+                      <FormattedMessage id="nav.reservation" defaultMessage="Reservation"/>
                     </Link>
-              </NavItem>
-              <NavItem className="navitem">
-                  <Link to="/contacts" className="navMenu" onClick={this.toggle}>
-                    <FormattedMessage id="nav.contacts" defaultMessgae="Contacts"/>
-                  </Link>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+                </NavItem>
+                <NavItem className="navitem">
+                      <Link to="/tarifs" className="navMenu" onClick={this.toggle}>
+                        <FormattedMessage id="nav.prices" defaultMessage="Prices"/>
+                      </Link>
+                </NavItem>
+                <NavItem className="navitem">
+                    <Link to="/contacts" className="navMenu" onClick={this.toggle}>
+                      <FormattedMessage id="nav.contacts" defaultMessage="Contacts"/>
+                    </Link>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
+        <div className="sign">
+          <GoogleAuth className="signin" />
+            </div>
       </div>
     );
   }
@@ -119,7 +154,10 @@ NavBar.propTypes = {
 
 const mapStateToProps = state => ({
   setLocale: state.locale,
-  lang: state.locale.lang
+  lang: state.locale.lang,
+  isSignedIn: state.auth.isSignedIn,
+  userId: state.auth.userId,
+  isAdmin: state.auth.isAdmin
 });
 
 export default connect(mapStateToProps, {setLocale})(NavBar)

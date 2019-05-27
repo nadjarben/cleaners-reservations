@@ -8,6 +8,15 @@
 .title {
     margin-right: 2%;
 }
+.sign {
+    font-size: 12px; 
+    background-color: black;
+    margin-top: -5px;
+    padding-left: 1%
+}
+.sign:hover {
+    color:red;
+}
 .navbar {
     font-size: 20px;
     background-color: black;

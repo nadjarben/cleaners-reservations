@@ -4,3 +4,9 @@ export const DELETE_RESERVATION = 'DELETE_RESERVATION';
 export const ARCHIVE_RESERVATION = 'ARCHIVE_RESERVATION';
 
 export const LOCALE_SET = 'LOCALE_SET';
+
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
+export const SIGN_IN_ADMIN = 'SIGN_IN_ADMIN';
+
+
