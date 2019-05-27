@@ -20,6 +20,33 @@
     <link rel="icon" type="image/png" href="logo512.png" sizes="512x512">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <script src="https://apis.google.com/js/api.js"></script>
+
+    <script>
+      function start() {
+        // 2. Initialize the JavaScript client library.
+        gapi.client.init({
+          'apiKey': 'YOUR_API_KEY',
+          // Your API key will be automatically added to the Discovery Document URLs.
+          'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+          // clientId and scope are optional if auth is not required.
+          'clientId': 'YOUR_WEB_CLIENT_ID.apps.googleusercontent.com',
+          'scope': 'profile',
+        }).then(function() {
+          // 3. Initialize and make the API request.
+          return gapi.client.people.people.get({
+            'resourceName': 'people/me',
+            'requestMask.includeField': 'person.names'
+          });
+        }).then(function(response) {
+          console.log(response.result);
+        }, function(reason) {
+          console.log('Error: ' + reason.result.error.message);
+        });
+      };
+      // 1. Load the JavaScript client library.
+      gapi.load('client', start);
+      </script>
+          
     
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
