@@ -58,8 +58,8 @@ class NavBar extends React.Component {
   }
   
   renderAdmin() {
-   // const {isAdmin} = this.props
-   // if(isAdmin === true) {
+    const {isAdmin} = this.props
+    if(isAdmin === true) {
       return (
         <NavItem className="navitem">
           <Link 
@@ -71,7 +71,7 @@ class NavBar extends React.Component {
         </NavItem>
       )
     }
- // }
+  }
   
   
   render() {
