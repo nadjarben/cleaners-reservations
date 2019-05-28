@@ -5,7 +5,6 @@ import {
 
 const admin = '108677919013990968799'
 //118315381336212654574 nadjar.benj
-//108677919013990968799 nadjarben
 
 export const signIn = (userId) => {
     if(userId === admin)

@@ -2,11 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 const reservation = require('./routes/api/reservations');
 const archviedReservation = require('./routes/api/archivedReservations');
-//const cartProduct = require('./routes/api/cartProducts')
-//const stripe = require("stripe")("sk_test_SB12cBiQkwOFe3EDadGXrwPN");
+const customer = require('./routes/api/customers');
 const app = express();
 
 // Bodyparser Middleware
@@ -33,9 +32,9 @@ mongoose
 // Use Routes
 app.use('/api/reservations', reservation);
 app.use('/api/archivedReservations', archviedReservation);
+app.use('/api/customers', customer);
 
-const router = require('express').Router();
-
+//const router = require('express').Router();
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

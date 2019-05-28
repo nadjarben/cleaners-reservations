@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Schema
-const ReservationSchema = new Schema({
+const CustomerSchema = new Schema({
   _id: mongoose.Schema.Types.ObjectId,
   name: { type: String },
   surname: { type: String },
@@ -10,9 +10,7 @@ const ReservationSchema = new Schema({
   email: { type: String },
   address: {type: String },
   city: { type: String },
-  date: { type: String },
-  hour: { type: String },
   info: { type: String }
 });
 
-module.exports = Reservation = mongoose.model('reservation', ReservationSchema);
+module.exports = Customer = mongoose.model('customer', CustomerSchema);

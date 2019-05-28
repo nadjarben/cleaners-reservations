@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './Commande.css';
 import { deleteReservation } from '../store/actions/reservationActions';
+import { postCustomer } from '../store/actions/customerActions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -19,10 +20,15 @@ import PropTypes from 'prop-types';
           modal: !prevState.modal
         }));
       }
-      handleDelete(e) {
+      handleDeleteReservation(e) {
         const id = this.props.reservation._id
         this.props.deleteReservation(id);
         window.location.reload(); 
+      }
+      handlePostCustomer(e) {
+        const { name, surname, phone, email, address, city, info } = this.props.reservation;
+        this.props.postCustomer(name, surname, phone, email, address, city, info)
+        alert(`${name} ${surname} enregistre.`)
       }
 
     render() {    
@@ -34,7 +40,7 @@ import PropTypes from 'prop-types';
             <li className="list-group-item" onClick={this.toggle}>{reservation.name} {reservation.surname} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
-                        <h2>{reservation.name} {reservation.surname}</h2>
+                        {reservation.name} {reservation.surname}
                     </ModalHeader>
                     <ModalBody>
                         <h5>Addresse: </h5><p>{reservation.address}</p>
@@ -43,11 +49,12 @@ import PropTypes from 'prop-types';
                         <h5>Email: </h5><p>{reservation.email}</p>
                         <h5>Date: </h5><p>{reservation.date}</p>
                         <h5>Heure: </h5><p>{reservation.hour}</p>
-                        <h7>informations: </h7><p>{reservation.info}</p>
+                        <h6>informations: </h6><p>{reservation.info}</p>
                     </ModalBody>
                     <ModalFooter>
                         <Button>Archiver</Button>
-                        <Button color="danger" onClick={e => this.handleDelete(e)} >Supprimer</Button>
+                        <Button color="success" onClick={e => this.handlePostCustomer(e)}>Enregistrer client</Button>
+                        <Button color="danger" onClick={e => this.handleDeleteReservation(e)} >Supprimer</Button>
                     </ModalFooter>
             </Modal>
         </div>
@@ -58,7 +65,6 @@ import PropTypes from 'prop-types';
     
 });
 Commande.propTypes = {
-    deleteReservation: PropTypes.func.isRequired,
-    id: PropTypes.array.isRequired
+    deleteReservation: PropTypes.func.isRequired
 }
-export default connect(mapStateToProps, {deleteReservation})(Commande)
+export default connect(mapStateToProps, {deleteReservation, postCustomer})(Commande)
