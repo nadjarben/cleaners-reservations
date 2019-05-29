@@ -22,12 +22,22 @@ class App extends Component {
     
   //  const history = configureHistory()
     const { lang } = this.props;
+    const { isAdmin }  = this.props;
+    
+    const adminRoute = () => {
+      if (isAdmin === true)
+        return <Route exact path="/" component={AdminReservation}/>
+      else
+        return <Route exact path="/" component={Intro}/>
+
+    }
+
     return( 
         <IntlProvider locale={lang} 
         messages={messages[lang]}>
       <div className="App">
         <Router >
-          <Route exact path="/" component={Intro}/>
+          {adminRoute()}
           <Route path="/home" component={Home}/>
           <Route path="/reservation" component={Reservation}/>
           <Route path="/tarifs" component={Tarifs}/>
@@ -46,7 +56,8 @@ App.propTypes = {
 }
 
 const mapStateToProps = state =>  ({
-  lang: state.locale.lang
+  lang: state.locale.lang,
+  isAdmin: state.auth.isAdmin
 });
 
 export default connect(mapStateToProps)(App)

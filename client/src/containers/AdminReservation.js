@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
 import CardReservation from '../components/CardReservation';
 import NavAdmin from '../components/NavAdmin';
+import SearchDb from '../components/SearchDb';
 import './AdminReservation.css';
 import Spinner from '../components/Spinner';
 
@@ -38,6 +39,7 @@ class AdminReservation extends Component {
                 <div>
                     <NavBar />
                     <NavAdmin />
+                    <SearchDb text='Nouveau' />
                     {this.state.loading &&
                      <Spinner />
                     }

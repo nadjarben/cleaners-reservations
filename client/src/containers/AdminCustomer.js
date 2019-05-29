@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { fetchCustomers } from '../store/actions/customerActions';
-import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
 import CardCustomer from '../components/CardCustomer';
 import './AdminCustomer.css';
-import NavAdmin from '../components/NavAdmin'
+import NavAdmin from '../components/NavAdmin';
+import SearchDb from '../components/SearchDb';
 import Spinner from '../components/Spinner';
 
 class AdminCustomer extends Component {
@@ -34,12 +34,12 @@ class AdminCustomer extends Component {
               />
             );
           });
+          
             return (
                 <div>
                     <NavBar />
                     <NavAdmin />
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" />
-                    <Button className="button">Nouveau Client</Button>
+                    <SearchDb text='Nouveau' />
                     {this.state.loading &&
                      <Spinner />
                     }
