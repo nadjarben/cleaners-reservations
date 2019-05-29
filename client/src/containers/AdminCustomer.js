@@ -7,6 +7,7 @@ import CardCustomer from '../components/CardCustomer';
 import './AdminCustomer.css';
 import NavAdmin from '../components/NavAdmin';
 import SearchDb from '../components/SearchDb';
+import ButtonNew from '../components/ButtonNew';
 import Spinner from '../components/Spinner';
 
 class AdminCustomer extends Component {
@@ -34,12 +35,13 @@ class AdminCustomer extends Component {
               />
             );
           });
-          
+
             return (
                 <div>
                     <NavBar />
                     <NavAdmin />
-                    <SearchDb text='Nouveau' />
+                    <SearchDb />
+                    <ButtonNew  text="Nouveau" />
                     {this.state.loading &&
                      <Spinner />
                     }

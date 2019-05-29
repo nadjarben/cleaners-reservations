@@ -6,6 +6,7 @@ import NavBar from '../components/NavBar';
 import CardReservation from '../components/CardReservation';
 import NavAdmin from '../components/NavAdmin';
 import SearchDb from '../components/SearchDb';
+import ButtonNew from '../components/ButtonNew';
 import './AdminReservation.css';
 import Spinner from '../components/Spinner';
 
@@ -39,7 +40,10 @@ class AdminReservation extends Component {
                 <div>
                     <NavBar />
                     <NavAdmin />
-                    <SearchDb text='Nouveau' />
+                    <div>
+                    <SearchDb />
+                    <ButtonNew text="Nouveau"/>
+                    </div>
                     {this.state.loading &&
                      <Spinner />
                     }
