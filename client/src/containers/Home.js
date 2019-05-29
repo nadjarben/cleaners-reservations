@@ -16,11 +16,12 @@ class Home extends Component {
                 </div>
 				<p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
 				<div className="text-center">
+                <Link to="/reservation">
                     <button className="bouton18">
-                        <Link to="/reservation">
+        
                             <p className="text-button"><FormattedMessage id="home.button" defaultMessage="BOOK A DELIVERY"/></p>
+                            </button>
                         </Link>
-                    </button>
                 </div>
             </div>
             </div>
