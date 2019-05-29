@@ -1,22 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import './NavAdmin.css';
 
 
     const NavAdmin = () => {
 
         return (
-            <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <Link class="nav-link" to="adminreservation">Reservations</Link>
+            <ul className="nav nav-tabs">
+            <li className="nav-item">
+              <Link className="nav-link" to="adminreservation">Reservations</Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="admincustomer">Clients</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="admincustomer">Clients</Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="admincontact">Questions</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="adminarchivate">Archives</Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="admingoogle" tabindex="-1" aria-disabled="true">Google</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="admincontact">Questions</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="admingoogle">Google</Link>
             </li>
           </ul>
         )

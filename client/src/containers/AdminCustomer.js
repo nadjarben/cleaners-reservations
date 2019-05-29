@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchCustomers } from '../store/actions/customerActions';
+import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
@@ -37,6 +38,8 @@ class AdminCustomer extends Component {
                 <div>
                     <NavBar />
                     <NavAdmin />
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" />
+                    <Button className="button">Nouveau Client</Button>
                     {this.state.loading &&
                      <Spinner />
                     }
@@ -54,6 +57,6 @@ const mapStateToProps = state => ({
 });
 
 AdminCustomer.propTypes = {
-    fetchReservations: PropTypes.func.isRequired,
+    fetchCustomers: PropTypes.func.isRequired,
 }
 export default connect(mapStateToProps, { fetchCustomers })(AdminCustomer)
