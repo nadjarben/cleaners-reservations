@@ -5,28 +5,41 @@ import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
 import CardReservation from '../components/CardReservation';
 import NavAdmin from '../components/NavAdmin';
-import SearchDb from '../components/SearchDb';
-import ButtonNew from '../components/ButtonNew';
-import './AdminReservation.css';
+import FormReservation from '../components/FormReservation';
+import { Modal, Button, ModalHeader, ModalBody} from 'reactstrap';
 import Spinner from '../components/Spinner';
+import './AdminReservation.css';
 
 class AdminReservation extends Component {
-    state = {
-        loading: true
-      }
-
-    componentDidMount() {
-        this.handleFetchReservations();
+    constructor(props) {
+        super(props);
+        this.state = {
+          modal: false,
+        };
+        this.toggle = this.toggle.bind(this);
     }
-
-    handleFetchReservations() {
-        this.props.fetchReservations();
-        this.setState({loading:false});
-
-}
+    toggle() {
+        this.setState(prevState => ({
+          modal: !prevState.modal
+        }));
+      }
+    componentDidMount() {
+        this.props.fetchReservations()
+    }
+    handleChange = (e) => {
+        this.setState ({[e.target.name]: e.target.value})
+        console.log(this.state.date)
+      }
+    
+      handleSubmit = (e) => {
+        const { name, surname, phone, email, address, city, date, hour, info } = this.state
+        e.preventDefault()
+        this.props.postReservation(name, surname, phone, email, address, city, date, hour, info)
+      }
     
     render() {
         const { reservation } = this.props;
+        const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
         const r = reservation.map(r => {
             return (
               <CardReservation
@@ -40,10 +53,18 @@ class AdminReservation extends Component {
                 <div>
                     <NavBar />
                     <NavAdmin />
-                    <div>
-                    <SearchDb />
-                    <ButtonNew text="Nouveau"/>
-                    </div>
+                    <input className="search-reservation form-search form-control mr-sm-2" type="search" placeholder="Search" />
+                    <Button className="button-create" onClick={this.toggle}>Nouveau</Button>
+                        
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
+                    <ModalHeader className="modal-header" close={closeBtn}>
+                        Nouvelle Reservation
+                    </ModalHeader>
+                    <ModalBody>
+                        <FormReservation />
+                    </ModalBody>
+                    </Modal>
+                
                     {this.state.loading &&
                      <Spinner />
                     }

@@ -1,3 +1,13 @@
 .admin {
     margin-top: 2%;
 }
+.button-create {
+    margin-left: 5%;
+    margin-top: 3%;
+}
+.search-reservation {
+    margin-left: 5%;
+    margin-top: 3%;
+    float: left;
+    width: 50%;
+}

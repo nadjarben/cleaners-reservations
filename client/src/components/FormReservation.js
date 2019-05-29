@@ -1,49 +1,34 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import './Reservation.css';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { postReservation } from '../store/actions/reservationActions';
-import NavBar from '../components/NavBar';
 import { FormattedMessage } from 'react-intl'; 
 
-class Reservation extends Component {
-  state = {
-    name: '',
-    surname: '', 
-    phone: '', 
-    email: '', 
-    address: '', 
-    city: '', 
-    date: '', 
-    hour: '', 
-    info: ''
-  };
-  handleChange = (e) => {
-    this.setState ({[e.target.name]: e.target.value})
-  }
-
+class FormReservation extends Component {
+    state = {
+        name: '',
+        surname: '', 
+        phone: '', 
+        email: '', 
+        address: '', 
+        city: '', 
+        date: '', 
+        hour: '', 
+        info: ''
+      };
+      handleChange = (e) => {
+        this.setState ({[e.target.name]: e.target.value})
+      }
+    
   handleSubmit = (e) => {
-    const textAlert =
-    'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
-    'En cas dimprevus veuillez nous contacter au 0586305515.'
     const { name, surname, phone, email, address, city, date, hour, info } = this.state
-    e.preventDefault()
     this.props.postReservation(name, surname, phone, email, address, city, date, hour, info)
-    alert(textAlert);
-      this.props.history.push('/home');
   }
 
     render() {
         return(
           <div>
-            <NavBar />
-        <div className="reservation">
-            <div className="service">
-                <p><FormattedMessage id="reservation.min" /></p>
-                <p><FormattedMessage id="reservation.min2" /></p>
-                <p><FormattedMessage id="reservation.min3" /></p>
-            </div>
             <Form onSubmit={e => this.handleSubmit(e)} className="form" >
   <Form.Row>
     <Form.Group controlId="formGridFirstName" >
@@ -92,16 +77,15 @@ class Reservation extends Component {
     <Form.Control as="textarea" rows="2" name="info" value={this.state.info } onChange={ this.handleChange } />
   </Form.Group>
 
-  <Button type="submit" variant="primary" className="button-submit" >
+  <Button type="submit" variant="primary" className="button-submit">
     Submit
   </Button>
 </Form>
         </div>
-        </div>
         );
     }
 }
-Reservation.propTypes = {
+FormReservation.propTypes = {
   postReservation: PropTypes.func.isRequired
 };
 
@@ -112,4 +96,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { postReservation }
-)(Reservation);
+)(FormReservation);

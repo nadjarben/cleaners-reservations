@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
 import CardCustomer from '../components/CardCustomer';
+import { Button } from 'reactstrap';
 import './AdminCustomer.css';
 import NavAdmin from '../components/NavAdmin';
-import SearchDb from '../components/SearchDb';
-import ButtonNew from '../components/ButtonNew';
 import Spinner from '../components/Spinner';
 
 class AdminCustomer extends Component {
@@ -40,8 +39,8 @@ class AdminCustomer extends Component {
                 <div>
                     <NavBar />
                     <NavAdmin />
-                    <SearchDb />
-                    <ButtonNew  text="Nouveau" />
+                    <input className="search-reservation form-search form-control mr-sm-2" type="search" placeholder="Search" />
+                    <Button className="button-create" onClick={this.toggle}>Nouveau</Button>
                     {this.state.loading &&
                      <Spinner />
                     }
