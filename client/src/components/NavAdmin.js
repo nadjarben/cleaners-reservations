@@ -6,7 +6,7 @@ import './NavAdmin.css';
     const NavAdmin = () => {
 
         return (
-            <ul className="nav nav-tabs">
+            <ul className="nav-admin nav nav-tabs">
             <li className="nav-item">
               <Link className="nav-link" to="/admin/reservation">Reservations</Link>
             </li>

@@ -48,17 +48,17 @@ class Reservation extends Component {
             <Form onSubmit={e => this.handleSubmit(e)} className="form" >
   <Form.Row>
     <Form.Group controlId="formGridFirstName" >
-      <Form.Control required="true" type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
+      <Form.Control required={true} type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
     </Form.Group>
 
     <Form.Group controlId="formGridSurname">
-      <Form.Control required="true" type="text" placeholder="Last Name" name="surname" value={this.state.surname} onChange={ this.handleChange } />
+      <Form.Control required={true} type="text" placeholder="Last Name" name="surname" value={this.state.surname} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
   
   <Form.Row>
   <Form.Group controlId="formGridPhone">
-      <Form.Control required="true" type="phone" placeholder="Phone number" name="phone" value={this.state.phone} onChange={ this.handleChange } />
+      <Form.Control required={true} type="phone" placeholder="Phone number" name="phone" value={this.state.phone} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
 
@@ -67,24 +67,24 @@ class Reservation extends Component {
   </Form.Group>
 
   <Form.Group controlId="formGridAddress1">
-    <Form.Control required="true" placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
+    <Form.Control required={true} placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
   </Form.Group>
 
   <Form.Row>
     <Form.Group controlId="formGridCity">
-      <Form.Control required="true" placeholder="City" name="city" value={this.state.city } onChange={ this.handleChange } />
+      <Form.Control required={true} placeholder="City" name="city" value={this.state.city } onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
 
   <Form.Row>
     <Form.Group className="date" controlId="formGridDate"  >
     <Form.Label><FormattedMessage id="reservation.date" /></Form.Label>
-      <Form.Control required="true" type= "date" name="date" value={this.state.date } onChange={ this.handleChange } />
+      <Form.Control required={true} type= "date" name="date" value={this.state.date } onChange={ this.handleChange } />
     </Form.Group>
 
     <Form.Group className="hour" controlId="formGridHour">
     <Form.Label><FormattedMessage id="reservation.hour" /></Form.Label>
-      <Form.Control required="true" type= "time" placeholder="10:30" name="hour" value={this.state.hour} onChange={ this.handleChange } />
+      <Form.Control required={true} type= "time" placeholder="10:30" name="hour" value={this.state.hour} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
 
