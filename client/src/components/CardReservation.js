@@ -37,7 +37,7 @@ import PropTypes from 'prop-types';
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
      return(
         <div>
-            <li className="list-group-item" onClick={this.toggle}>{reservation.name} {reservation.surname} </li>
+            <li className="list-group-item" onClick={this.toggle}>{reservation.name} {reservation.surname} || {reservation.date} | {reservation.hour} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
                         {reservation.name} {reservation.surname}
