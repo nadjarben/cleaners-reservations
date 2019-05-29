@@ -4,16 +4,25 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
 import CardCustomer from '../components/CardCustomer';
-import { Button } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import './AdminCustomer.css';
+import FormCustomer from '../components/FormCustomer';
 import NavAdmin from '../components/NavAdmin';
 import Spinner from '../components/Spinner';
 
 class AdminCustomer extends Component {
-    state = {
-        loading: true
+    constructor(props) {
+        super(props);
+        this.state = {
+          modal: false,
+        };
+        this.toggle = this.toggle.bind(this);
+    }
+    toggle() {
+        this.setState(prevState => ({
+          modal: !prevState.modal
+        }));
       }
-
     componentDidMount() {
         this.handleFetchCustomers();
     }
@@ -26,6 +35,7 @@ class AdminCustomer extends Component {
     
     render() {
         const { customer } = this.props;
+        const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
         const c = customer.map(c => {
             return (
               <CardCustomer
@@ -41,6 +51,14 @@ class AdminCustomer extends Component {
                     <NavAdmin />
                     <input className="search-reservation form-search form-control mr-sm-2" type="search" placeholder="Search" />
                     <Button className="button-create" onClick={this.toggle}>Nouveau</Button>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
+                    <ModalHeader className="modal-header" close={closeBtn}>
+                        Nouveau Client
+                    </ModalHeader>
+                    <ModalBody>
+                        <FormCustomer />
+                    </ModalBody>
+                    </Modal>
                     {this.state.loading &&
                      <Spinner />
                     }

@@ -54,8 +54,7 @@ class AdminReservation extends Component {
                     <NavBar />
                     <NavAdmin />
                     <input className="search-reservation form-search form-control mr-sm-2" type="search" placeholder="Search" />
-                    <Button className="button-create" onClick={this.toggle}>Nouveau</Button>
-                        
+                    <Button className="button-create" onClick={this.toggle}>Nouveau</Button>                  
                     <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
                         Nouvelle Reservation
