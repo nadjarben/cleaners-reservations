@@ -30,7 +30,6 @@ class AdminCustomer extends Component {
     handleFetchCustomers() {
         this.props.fetchCustomers();
         this.setState({loading:false});
-
 }
     
     render() {

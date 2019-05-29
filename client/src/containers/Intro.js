@@ -6,7 +6,7 @@ class Intro extends React.Component{
         componentWillMount(){
             setTimeout(() => { 
                 this.props.history.push('/home');
-        }, 3500)
+        }, 2500)
         }
   render(){
       return(

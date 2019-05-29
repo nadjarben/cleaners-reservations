@@ -1,4 +1,8 @@
 .nav-admin {
-    background-color: lightgray
+    background-color: lightgray;
+    font-size: 15px;
+}
+.nav-admin:active {
+    color: red;
 }
 
