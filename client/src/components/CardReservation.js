@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 
- class Commande extends React.Component {
+ class CardReservation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,7 +64,7 @@ import PropTypes from 'prop-types';
  const mapStateToProps = state => ({
     
 });
-Commande.propTypes = {
+CardReservation.propTypes = {
     deleteReservation: PropTypes.func.isRequired
 }
-export default connect(mapStateToProps, {deleteReservation, postCustomer})(Commande)
+export default connect(mapStateToProps, {deleteReservation, postCustomer})(CardReservation)

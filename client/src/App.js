@@ -5,7 +5,8 @@ import Reservation from './containers/Reservation.js';
 import Home from './containers/Home.js'; 
 import Tarifs from './containers/Tarifs';
 import Contacts from './containers/Contacts';
-import Admin from './containers/Admin';
+import AdminReservation from './containers/AdminReservation';
+import AdminCustomer from './containers/AdminCustomer';
 import './App.css';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -31,7 +32,8 @@ class App extends Component {
           <Route path="/reservation" component={Reservation}/>
           <Route path="/tarifs" component={Tarifs}/>
           <Route path="/contacts" component={Contacts}/>
-          <Route path="/admin" component={Admin}/>
+          <Route path="/adminreservation" component={AdminReservation}/>
+          <Route path="/admincustomer" component={AdminCustomer}/>
         </Router>
       </div>
       </IntlProvider>
