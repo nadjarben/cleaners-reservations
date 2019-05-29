@@ -63,7 +63,7 @@ class NavBar extends React.Component {
       return (
         <NavItem className="navitem">
           <Link 
-          to="/adminreservation" 
+          to="/admin/reservation" 
           className="navMenu" 
           onClick={this.toggle}>
             Admin
