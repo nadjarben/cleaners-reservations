@@ -3,11 +3,11 @@ import { fetchCustomers } from '../store/actions/customerActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NavBar from '../components/navbar/NavBar';
-import CardCustomer from '../components/CardCustomer';
+import CardCustomer from '../components/admin/CardCustomer';
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import './AdminCustomer.css';
-import FormCustomer from '../components/FormCustomer';
-import NavAdmin from '../components/NavAdmin';
+import FormCustomer from '../components/form/FormCustomer';
+import NavAdmin from '../components/admin/NavAdmin';
 import Spinner from '../components/Spinner';
 
 class AdminCustomer extends Component {

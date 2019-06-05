@@ -2,27 +2,28 @@ import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { postCustomer } from '../store/actions/customerActions';
+import { postReservation } from '../../store/actions/reservationActions';
 import { FormattedMessage } from 'react-intl'; 
 
-class FormCustomer extends Component {
+class FormReservation extends Component {
     state = {
         name: '',
         surname: '', 
         phone: '', 
         email: '', 
         address: '', 
-        city: '',  
+        city: '', 
+        date: '', 
+        hour: '', 
         info: ''
       };
-
-    handleChange = (e) => {
-    this.setState ({[e.target.name]: e.target.value})
-    }
+      handleChange = (e) => {
+        this.setState ({[e.target.name]: e.target.value})
+      }
     
   handleSubmit = (e) => {
-    const { name, surname, phone, email, address, city, info } = this.state
-    this.props.postCustomer(name, surname, phone, email, address, city, info)
+    const { name, surname, phone, email, address, city, date, hour, info } = this.state
+    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info)
   }
 
     render() {
@@ -59,6 +60,18 @@ class FormCustomer extends Component {
     </Form.Group>
   </Form.Row>
 
+  <Form.Row>
+    <Form.Group className="date" controlId="formGridDate"  >
+    <Form.Label><FormattedMessage id="reservation.date" /></Form.Label>
+      <Form.Control required={true} type= "date" name="date" value={this.state.date } onChange={ this.handleChange } />
+    </Form.Group>
+
+    <Form.Group className="hour" controlId="formGridHour">
+    <Form.Label><FormattedMessage id="reservation.hour" /></Form.Label>
+      <Form.Control required={true} type= "time" placeholder="10:30" name="hour" value={this.state.hour} onChange={ this.handleChange } />
+    </Form.Group>
+  </Form.Row>
+
   <Form.Group className="informations" controlId="exampleForm.ControlTextarea1">
     <Form.Label><FormattedMessage id="reservation.info" /></Form.Label>
     <Form.Control as="textarea" rows="2" name="info" value={this.state.info } onChange={ this.handleChange } />
@@ -72,15 +85,15 @@ class FormCustomer extends Component {
         );
     }
 }
-FormCustomer.propTypes = {
-  postCustomer: PropTypes.func.isRequired
+FormReservation.propTypes = {
+  postReservation: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  customers: state.customers
+  reservations: state.reservations
 })
 
 export default connect(
   mapStateToProps,
-  { postCustomer }
-)(FormCustomer);
+  { postReservation }
+)(FormReservation);

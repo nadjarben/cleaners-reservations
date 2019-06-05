@@ -1,3 +1,13 @@
+/*NavAdmin*/
+.nav-admin {
+    background-color: lightgray;
+    font-size: 15px;
+}
+.nav-admin:active {
+    color: red;
+}
+
+/*Card*/
 .list-group-item:hover { 
     background-color: skyblue;
     font-size: 200%;
@@ -7,3 +17,4 @@
   .modal-header {
       background-color: skyblue;
   }
+

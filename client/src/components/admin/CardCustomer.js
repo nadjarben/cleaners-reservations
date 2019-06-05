@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import './Commande.css';
-import { deleteCustomer } from '../store/actions/customerActions';
+import { deleteCustomer } from '../../store/actions/customerActions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
