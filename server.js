@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const reservation = require('./routes/api/reservations');
-const archviedReservation = require('./routes/api/archivedReservations');
-const customer = require('./routes/api/customers');
+const reservation = require('./server/routes/api/reservations');
+const archviedReservation = require('./server/routes/api/archivedReservations');
+const customer = require('./server/routes/api/customers');
 const app = express();
 
 // Bodyparser Middleware
@@ -14,7 +14,7 @@ app.use(require("body-parser").text());
 app.use(bodyParser.json());
 app.use(cors())
 // DB Config
-const db = require('./config/keys').mongoURI;
+const db = require('./server/config/keys').mongoURI;
 
 // Connect to Mongo
 mongoose
