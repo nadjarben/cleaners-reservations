@@ -3,8 +3,7 @@ import './Home.css';
 import logo from '../images/logo-min.png';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl'; 
-import NavBar from '../components/NavBar';
-
+import NavBar from '../components/navbar/NavBar';
 class Home extends Component {
     render() {
         return (

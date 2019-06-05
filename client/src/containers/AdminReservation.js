@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fetchReservations } from '../store/actions/reservationActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navbar/NavBar';
 import CardReservation from '../components/CardReservation';
 import NavAdmin from '../components/NavAdmin';
 import FormReservation from '../components/FormReservation';
@@ -15,9 +15,11 @@ class AdminReservation extends Component {
         super(props);
         this.state = {
           modal: false,
+          search: ''
         };
         this.toggle = this.toggle.bind(this);
     }
+
     toggle() {
         this.setState(prevState => ({
           modal: !prevState.modal
@@ -26,9 +28,8 @@ class AdminReservation extends Component {
     componentDidMount() {
         this.props.fetchReservations()
     }
-    handleChange = (e) => {
-        this.setState ({[e.target.name]: e.target.value})
-        console.log(this.state.date)
+    updateSearch = (e) => {
+        this.setState ({search: e.target.value})
       }
     
       handleSubmit = (e) => {
@@ -38,9 +39,18 @@ class AdminReservation extends Component {
       }
     
     render() {
-        const { reservation } = this.props;
+        const filteredReservations = this.props.reservation.filter(
+            (reservation) => {
+                return (
+                reservation.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                reservation.surname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                reservation.date.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                reservation.phone.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+                )
+            }
+        )
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
-        const r = reservation.map(r => {
+        const r = filteredReservations.map(r => {
             return (
               <CardReservation
               key={r._id}
@@ -53,7 +63,7 @@ class AdminReservation extends Component {
                 <div>
                     <NavBar />
                     <NavAdmin />
-                    <input className="search-reservation form-search form-control mr-sm-2" type="search" placeholder="Search" />
+                    <input className="search-reservation form-search form-control mr-sm-2" type="search" onChange={ this.updateSearch.bind(this) } placeholder="Search" name="search" value={this.state.search} />
                     <Button className="button-create" onClick={this.toggle}>Nouveau</Button>                  
                     <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
@@ -74,7 +84,6 @@ class AdminReservation extends Component {
             )
         }
     }
-
 
 const mapStateToProps = state => ({
     reservation: state.reservations.reservation

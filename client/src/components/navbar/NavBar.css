@@ -150,6 +150,9 @@
     .logo1 {
         width: 200px;
     }
+    .navitem {
+        float: right;
+    }
 }
 /* pc */
 @media screen and (min-width: 951px) {
@@ -159,6 +162,9 @@
     .logo1 {
         width: 400px;
         margin-left: 200px
+    }
+    .navitem {
+        float: right;
     }
 }
 

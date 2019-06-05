@@ -19,9 +19,6 @@ import './NavAdmin.css';
             <li className="nav-item">
               <Link className="nav-link" to="admin/contact">Questions</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="admin/google">Google</Link>
-            </li>
           </ul>
         )
     }

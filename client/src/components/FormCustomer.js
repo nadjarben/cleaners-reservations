@@ -15,9 +15,10 @@ class FormCustomer extends Component {
         city: '',  
         info: ''
       };
-      handleChange = (e) => {
-        this.setState ({[e.target.name]: e.target.value})
-      }
+
+    handleChange = (e) => {
+    this.setState ({[e.target.name]: e.target.value})
+    }
     
   handleSubmit = (e) => {
     const { name, surname, phone, email, address, city, info } = this.state

@@ -4,7 +4,7 @@ import './Reservation.css';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { postReservation } from '../store/actions/reservationActions';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navbar/NavBar';
 import { FormattedMessage } from 'react-intl'; 
 
 class Reservation extends Component {

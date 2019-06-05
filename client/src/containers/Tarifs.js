@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 import NavPrices from '../components/NavPrices';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navbar/NavBar';
 
 class Tarifs extends Component {
     render() {

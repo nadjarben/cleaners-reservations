@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fetchCustomers } from '../store/actions/customerActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navbar/NavBar';
 import CardCustomer from '../components/CardCustomer';
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import './AdminCustomer.css';
@@ -15,6 +15,7 @@ class AdminCustomer extends Component {
         super(props);
         this.state = {
           modal: false,
+          search: ''
         };
         this.toggle = this.toggle.bind(this);
     }
@@ -22,6 +23,9 @@ class AdminCustomer extends Component {
         this.setState(prevState => ({
           modal: !prevState.modal
         }));
+      }
+      updateSearch = (e) => {
+        this.setState ({search: e.target.value})
       }
     componentDidMount() {
         this.handleFetchCustomers();
@@ -33,9 +37,16 @@ class AdminCustomer extends Component {
 }
     
     render() {
-        const { customer } = this.props;
+            const filteredCustomer = this.props.customer.filter(
+                (customer) => {
+                    return (
+                    customer.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                    customer.surname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+                    )
+                }
+            )
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
-        const c = customer.map(c => {
+        const c = filteredCustomer.map(c => {
             return (
               <CardCustomer
               key={c._id}
@@ -48,7 +59,7 @@ class AdminCustomer extends Component {
                 <div>
                     <NavBar />
                     <NavAdmin />
-                    <input className="search-reservation form-search form-control mr-sm-2" type="search" placeholder="Search" />
+                    <input className="search-reservation form-search form-control mr-sm-2" type="search" onChange={ this.updateSearch.bind(this) } placeholder="Search" name="search" value={this.state.search} />
                     <Button className="button-create" onClick={this.toggle}>Nouveau</Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
