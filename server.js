@@ -6,6 +6,8 @@ const cors = require('cors');
 const reservation = require('./server/routes/api/reservations');
 const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
+const contact = require('./server/routes/api/contacts');
+
 const app = express();
 
 // Bodyparser Middleware
@@ -33,6 +35,8 @@ mongoose
 app.use('/api/reservations', reservation);
 app.use('/api/archivedReservations', archviedReservation);
 app.use('/api/customers', customer);
+app.use('/api/contacts', contact);
+
 
 //const router = require('express').Router();
 
