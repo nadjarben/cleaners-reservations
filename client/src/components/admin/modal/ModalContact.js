@@ -38,7 +38,7 @@ import PropTypes from 'prop-types';
                     <ModalBody>
                         <h5>Tel: </h5><p>{contact.phone}</p>
                         <h5>Email: </h5><p>{contact.email}</p>
-                        <h6>Message: </h6><p>{contact.messages}</p>
+                        <h6>Message: </h6><p>{contact.infos}</p>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={e => this.handleDeleteContact(e)} >Supprimer</Button>

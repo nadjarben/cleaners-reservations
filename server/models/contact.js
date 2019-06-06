@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const ContactSchema = new Schema({
   _id: mongoose.Schema.Types.ObjectId,
   name: { type: String },
-  phone: {type: String},
   email: { type: String },
-  message: { type: String }
+  phone: { type: String },
+  infos: { type: String }
 });
 
 module.exports = Contact = mongoose.model('contact', ContactSchema);

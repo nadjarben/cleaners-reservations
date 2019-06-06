@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
         name: req.body.name,
         phone: req.body.phone,
         email: req.body.email,
-        messages: req.body.messages
+        infos: req.body.infos,
     });
     contact
     .save()
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
                 name: result.name,
                 phone: result.phone,
                 email: result.email,
-                messages: result.messages,
+                infos: result.infos,
                 request: {
                     type: 'POST',
                     url: API + result._id
