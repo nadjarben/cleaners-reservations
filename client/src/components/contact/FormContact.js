@@ -10,7 +10,7 @@ class FormContact extends React.Component {
         name: '', 
         phone: '', 
         email: '',    
-        infos: ''
+        message: ''
       };
 
       handleChange = (e) => {
@@ -20,9 +20,9 @@ class FormContact extends React.Component {
       handleSubmit = (e) => {
         const textAlert =
         'Votre message a ete envoye nous vous recontacterons dans les plus brefs delais';
-        const { name, phone, email, infos } = this.state;
+        const { name, phone, email, message } = this.state;
         e.preventDefault()
-        this.props.postContact(name, phone, email, infos)
+        this.props.postContact(name, phone, email, message)
         alert(textAlert);
       }
 
@@ -48,7 +48,7 @@ class FormContact extends React.Component {
                 </Form.Group>
                 <Form.Group controlId="formBasicMessage">
                   <Form.Label>Message</Form.Label>
-                  <Form.Control as="textarea" rows="3" placeholder="Your message" name="infos" value={this.state.infos}  onChange={this.handleChange} />
+                  <Form.Control as="textarea" rows="3" placeholder="Your message" name="message" value={this.state.message}  onChange={this.handleChange} />
                 </Form.Group>
               <Button variant="primary" type="submit">
                 Submit

@@ -5,9 +5,9 @@ import { POST_CONTACT, FETCH_CONTACTS, DELETE_CONTACT } from './types';
 const contactsAPI = //'http://localhost:8080/api/contacts/' 
                         'https://cleaners-reservation.herokuapp.com/api/contacts/'
 
-export const postContact = (name, phone, email, infos) => dispatch => {
+export const postContact = (name, phone, email, message) => dispatch => {
     axios.post(contactsAPI, {
-          name, phone, email, infos
+          name, phone, email, message
       })
       .then(res => {
           return dispatch({

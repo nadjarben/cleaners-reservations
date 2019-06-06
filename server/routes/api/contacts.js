@@ -42,10 +42,10 @@ router.post('/', (req, res) => {
     Contact.find({ _id: req.body.contactId})
     const contact = new Contact({
         _id: new mongoose.Types.ObjectId(),
+        message: req.body.message,
         name: req.body.name,
         phone: req.body.phone,
         email: req.body.email,
-        infos: req.body.infos,
     });
     contact
     .save()
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
                 name: result.name,
                 phone: result.phone,
                 email: result.email,
-                infos: result.infos,
+                message: result.message,
                 request: {
                     type: 'POST',
                     url: API + result._id

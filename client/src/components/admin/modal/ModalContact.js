@@ -33,12 +33,12 @@ import PropTypes from 'prop-types';
             <li className="list-group-item" onClick={this.toggle}>{contact.name} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
-                        {contact.name} {contact.email}
+                        {contact.name} 
                     </ModalHeader>
                     <ModalBody>
                         <h5>Tel: </h5><p>{contact.phone}</p>
                         <h5>Email: </h5><p>{contact.email}</p>
-                        <h6>Message: </h6><p>{contact.infos}</p>
+                        <h6>Message: </h6><p>{contact.message}</p>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={e => this.handleDeleteContact(e)} >Supprimer</Button>
