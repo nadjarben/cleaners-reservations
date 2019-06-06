@@ -5,7 +5,7 @@ import './NavBar.css';
 import { Collapse, Navbar, NavbarToggler, Nav } from 'reactstrap';
  import GoogleAuth from './GoogleAuth';
 import Languages from './Languages';
-import Admin from './Admin';
+import AdminConnect from './AdminConnect';
 import NavItems from './NavItems';
 
 class NavBar extends React.Component {
@@ -29,17 +29,17 @@ class NavBar extends React.Component {
       <div>
         <div className="NavBar">
           <Navbar className="navbar-dark navbar-expand-sm" color="red">
-            <Link className="title" to="/home">
+            <Link className="title" to="/home/homepage">
               THE CLEANERS
             </Link>
             <Languages />
-          <Link to="/home">
+          <Link to="/home/homepage">
             <img src={logo1} alt="logo1" className="logo1"/>
           </Link>
             <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                  <Admin />
+                  <AdminConnect />
                   <NavItems onClick={this.toggle} /> 
                 </Nav>
               </Collapse>

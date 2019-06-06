@@ -9,17 +9,17 @@ const NavItems = () => {
     return (
       <div>
                 <NavItem className="navitem">
-                    <Link to="/reservation" className="navMenu">
+                    <Link to="/home/reservation" className="navMenu">
                       <FormattedMessage id="nav.reservation" defaultMessage="Reservation"/>
                     </Link>
                 </NavItem>
                 <NavItem className="navitem">
-                      <Link to="/tarifs" className="navMenu">
+                      <Link to="/home/prices" className="navMenu">
                         <FormattedMessage id="nav.prices" defaultMessage="Prices"/>
                       </Link>
                 </NavItem>
                 <NavItem className="navitem">
-                    <Link to="/contacts" className="navMenu">
+                    <Link to="/home/contacts" className="navMenu">
                       <FormattedMessage id="nav.contacts" defaultMessage="Contacts"/>
                     </Link>
                 </NavItem>

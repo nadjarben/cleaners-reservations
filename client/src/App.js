@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Intro from './containers/Intro.js'; 
-import Reservation from './containers/Reservation.js'; 
-import Home from './containers/Home.js'; 
-import Tarifs from './containers/Tarifs';
-import Contacts from './containers/Contacts';
-import AdminReservation from './containers/AdminReservation';
-import AdminCustomer from './containers/AdminCustomer';
-import './App.css';
+import Intro from './containers/pages/Intro.js'; 
+import Reservation from './containers/pages/Reservation.js'; 
+import HomePage from './containers/pages/HomePage.js'; 
+import Home from './containers/nav/Home';
+import Prices from './containers/pages/Prices';
+import Contacts from './containers/pages/Contacts';
+import AdminReservation from './containers/pages/AdminReservation';
+import AdminCustomer from './containers/pages/AdminCustomer';
+import Admin from './containers/nav/Admin';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
-import messages from './messages';
+import messages from './config/messages';
 //import configureHistory  from './configureHistory';
 
 
@@ -29,11 +30,13 @@ class App extends Component {
         <Router >
           <Route exact path="/" component={Intro}/>
           <Route path="/home" component={Home}/>
-          <Route path="/reservation" component={Reservation}/>
-          <Route path="/tarifs" component={Tarifs}/>
-          <Route path="/contacts" component={Contacts}/>
-          <Route path="/admin/reservation" component={AdminReservation}/>
-          <Route path="/admin/customer" component={AdminCustomer}/>
+          <Route path="/home/homepage" component={HomePage}/>
+          <Route path="/home/reservation" component={Reservation}/>
+          <Route path="/home/prices" component={Prices}/>
+          <Route path="/home/contacts" component={Contacts}/>
+          <Route path="/home/admin" component={Admin} />
+          <Route path="/home/admin/reservation" component={AdminReservation}/>
+          <Route path="/home/admin/customer" component={AdminCustomer}/>
         </Router>
       </div>
       </IntlProvider>

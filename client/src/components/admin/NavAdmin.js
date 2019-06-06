@@ -8,16 +8,16 @@ import './NavAdmin.css';
         return (
             <ul className="nav-admin nav nav-tabs">
             <li className="nav-item">
-              <Link className="nav-link" to="/admin/reservation">Reservations</Link>
+              <Link className="nav-link" to="/home/admin/reservation">Reservations</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/admin/customer">Clients</Link>
+              <Link className="nav-link" to="/home/admin/customer">Clients</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="admin/archivate">Archives</Link>
+              <Link className="nav-link" to="/home/admin/archivate">Archives</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="admin/contact">Questions</Link>
+              <Link className="nav-link" to="/home/admin/contact">Questions</Link>
             </li>
           </ul>
         )
