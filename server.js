@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const reservation = require('./server/routes/api/reservations');
+const lastReservation = require('./server/routes/api/lastReservations');
 const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
 const contact = require('./server/routes/api/contacts');
@@ -36,6 +37,7 @@ app.use('/api/reservations', reservation);
 app.use('/api/archivedReservations', archviedReservation);
 app.use('/api/customers', customer);
 app.use('/api/contacts', contact);
+app.use('/api/lastreservations', lastReservation);
 
 
 //const router = require('express').Router();

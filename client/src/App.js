@@ -9,6 +9,7 @@ import Contacts from './containers/pages/Contacts';
 import AdminReservation from './containers/pages/AdminReservation';
 import AdminCustomer from './containers/pages/AdminCustomer';
 import AdminContact from './containers/pages/AdminContact';
+import AdminHome from './containers/pages/AdminHome';
 import Admin from './containers/nav/Admin';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -36,6 +37,7 @@ class App extends Component {
           <Route path="/home/prices" component={Prices}/>
           <Route path="/home/contacts" component={Contacts}/>
           <Route path="/home/admin" component={Admin} />
+          <Route path="/home/admin/adminhome" component={AdminHome} />
           <Route path="/home/admin/reservation" component={AdminReservation}/>
           <Route path="/home/admin/customer" component={AdminCustomer}/>
           <Route path="/home/admin/contact" component={AdminContact}/>

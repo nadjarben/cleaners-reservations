@@ -8,6 +8,9 @@ import './NavAdmin.css';
         return (
             <ul className="nav-admin nav nav-tabs">
             <li className="nav-item">
+              <Link className="nav-link" to="/home/admin/adminhome">Home</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/home/admin/reservation">Reservations</Link>
             </li>
             <li className="nav-item">

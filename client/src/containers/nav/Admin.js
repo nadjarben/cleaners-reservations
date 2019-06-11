@@ -1,5 +1,5 @@
 import React from 'react';
-import NavAdmin from '../../components/admin/NavAdmin'
+import NavAdmin from '../../components/admin/nav//NavAdmin'
 ;
 const Admin = () => {
 

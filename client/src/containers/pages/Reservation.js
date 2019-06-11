@@ -75,15 +75,15 @@ class Reservation extends Component {
   
   <Form.Row>
   <Form.Group controlId="formGridPhone">
-      <Form.Control required={true} type="phone" placeholder="Phone number" name="phone" value={this.state.phone} onChange={ this.handleChange } />
+      <Form.Control className="phone" required={true} type="phone" placeholder="Phone number" name="phone" value={this.state.phone} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
 
-  <Form.Group controlId="formBasicEmail">
+  <Form.Group controlId="formBasicEmail" className="email">
     <Form.Control type="email" placeholder="Enter email" name="email" value={this.state.email} onChange={ this.handleChange } />
   </Form.Group>
 
-  <Form.Group controlId="formGridAddress1">
+  <Form.Group controlId="formGridAddress1" className="address">
     <Form.Control required={true} placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
   </Form.Group>
 

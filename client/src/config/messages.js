@@ -22,8 +22,8 @@ export default {
         'reservation.email': 'הדוא"ל',
         'reservation.address': 'כתובת',
         'reservation.city': 'העי',
-        'reservation.date': 'תאריך',
-        'reservation.hour': 'שעה',
+        'reservation.date': ': תאריך',
+        'reservation.hour': ' : שעה',
         'reservation.info': '... (מידע נוסף (קוד, הערות',
         'reservation.confirm': 'הפקודה שלך ( מזמין ) טוב נעבר, אנחנו בנושא נוודא אותך על ידי מסר בתוך השעה, במקרה של לא צפוי נא להתקשר אלינו ל0586305515',
         
@@ -54,8 +54,8 @@ export default {
         'reservation.email': 'Email',
         'reservation.address': 'Address',
         'reservation.city': 'City',
-        'reservation.date': 'Date',
-        'reservation.hour': 'Hour',
+        'reservation.date': 'Date :',
+        'reservation.hour': 'Hour :',
         'reservation.info': 'Complementaries Informations (digicode, commentaries ...)',
         'reservation.confirm': 'Your order has been placed, we will confirm you by message within the hour, In case of unforeseen events please contact us at 0586305515',
 
@@ -85,8 +85,8 @@ export default {
         'reservation.email': 'Email',
         'reservation.address': 'Addresse',
         'reservation.city': 'Ville',
-        'reservation.date': 'Date',
-        'reservation.hour': 'Heure',
+        'reservation.date': 'Date :',
+        'reservation.hour': 'Heure :',
         'reservation.info': 'Informations complementaires (digicode, commentaires ...)',
         'reservation.confirm': 'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, En cas dimprevus veuillez nous contacter au 0586305515.',
 

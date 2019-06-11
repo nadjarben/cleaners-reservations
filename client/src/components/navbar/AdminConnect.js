@@ -12,7 +12,7 @@ class AdminConnect extends React.Component {
       return (
         <NavItem className="navitem">
           <Link 
-          to="/home/admin/reservation" 
+          to="/home/admin/adminhome" 
           className="navMenu" 
           onClick={this.toggle}>
             Admin

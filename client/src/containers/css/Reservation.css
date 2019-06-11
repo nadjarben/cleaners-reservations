@@ -2,7 +2,6 @@
         margin: 5%;
         padding: 0;
         border: 0;
-        width: 90%;
         font-size: 11px;
 }
 .title {
@@ -15,18 +14,28 @@
     color: red;
 }
 .name {
-    width:45%; 
+    width:42%; 
 }
 .surname {
-    width: 45%;
+    width: 42%;
     margin-left: 10%
 }
+
 .date {
-    width: 45%;
+    width: 42%;
+}
+.email {
+    margin-left: -5px;
+}
+.address {
+    margin-left: -5px;
+}
+.informations {
+    margin-left: -5px;
 }
 .hour {
     margin-left: 10%;
-    width: 45%;
+    width: 42%;
 }
 @media screen and (min-height: 750px) {
     .reservation {
