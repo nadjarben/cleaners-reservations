@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
       handleDeleteCustomer(e) {
         const id = this.props.customer._id
         this.props.deleteCustomer(id);
-        window.location.reload(); 
+        //window.location.reload(); 
       }
 
     render() {    
