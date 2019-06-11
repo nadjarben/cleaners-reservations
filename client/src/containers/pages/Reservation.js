@@ -64,11 +64,11 @@ class Reservation extends Component {
             </div>
             <Form onSubmit={e => this.handleSubmit(e) && this.doesCustomerExist()} className="form" >
   <Form.Row>
-    <Form.Group controlId="formGridFirstName" >
+    <Form.Group controlId="formGridFirstName" className="name" >
       <Form.Control required={true} type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
     </Form.Group>
 
-    <Form.Group controlId="formGridSurname">
+    <Form.Group controlId="formGridSurname" className="surname">
       <Form.Control required={true} type="text" placeholder="Last Name" name="surname" value={this.state.surname} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>

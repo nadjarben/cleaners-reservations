@@ -13,9 +13,9 @@ export default {
         'home.button': 'הזמנת משלוח',
 
         //Reservation
-        'reservation.min': 'משלוח חינם למינימום של ₪ 100',
-        'reservation.min2': 'משלוח ₪ 25',
-        'reservation.min3': 'אנו ניצור איתך קשר תוך שעה אחת כדי לאשר את המסירה',
+        'reservation.min': 'משלוח חינם למינימום של ₪ 100 *',
+        'reservation.min2': 'משלוח ₪ 25 *',
+        'reservation.min3': 'אנו ניצור איתך קשר תוך שעה אחת כדי לאשר את המסירה *',
         'reservation.name': 'שם פרטי',
         'reservation.lastname': 'שם משפחה',
         'reservation.phone': 'טלפון',
@@ -45,9 +45,9 @@ export default {
         'home.intro': 'Located in Ashdod, Laundry The Cleaners offers its services in the management of your clothes and linen. We care about the satisfaction of our customers and offer them washing and ironing services adapted to their needs. You no longer have to worry about your laundry, we take care of it for you and at unbeatable prices.',
 
         //Reservation
-        'reservation.min': 'free service with a minimum of 100 ₪',
-        'reservation.min2': '25 ₪ for delivery',
-        'reservation.min3': 'We will call you in the hour to confirm order',
+        'reservation.min': '* Free service with a minimum of 100 ₪',
+        'reservation.min2': '* 25 ₪ for delivery',
+        'reservation.min3': '* We will call you in the hour to confirm order',
         'reservation.name': 'First Name',
         'reservation.lastname': 'Last Name',
         'reservation.phone': 'Phone',
@@ -76,9 +76,9 @@ export default {
         'home.button': 'RESERVEZ UNE LIVRAISON',
 
         //Reservation
-        'reservation.min': 'livraison gratuite pour un minimum de 100 ₪',
-        'reservation.min2': '25 ₪ la livraison',
-        'reservation.min3': 'Nous vous contacterons dans lheure pour confirmer la livraison',
+        'reservation.min': '* Livraison gratuite pour un minimum de 100 ₪',
+        'reservation.min2': '* 25 ₪ la livraison',
+        'reservation.min3': '* Nous vous contacterons dans lheure pour confirmer la livraison',
         'reservation.name': 'Prenom',
         'reservation.lastname': 'Nom',
         'reservation.phone': 'Telephone',

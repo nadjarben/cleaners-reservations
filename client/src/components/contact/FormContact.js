@@ -29,7 +29,7 @@ class FormContact extends React.Component {
     render() {
 
         return (
-          <div>
+          <div className="formcontact">
               <Form onSubmit={e => this.handleSubmit(e)}>
                 <Form.Group controlId="formBasicName">
                   <Form.Label>Name</Form.Label>
@@ -50,7 +50,7 @@ class FormContact extends React.Component {
                   <Form.Label>Message</Form.Label>
                   <Form.Control as="textarea" rows="3" placeholder="Your message" name="message" value={this.state.message}  onChange={this.handleChange} />
                 </Form.Group>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" className="submit">
                 Submit
               </Button>
             </Form>

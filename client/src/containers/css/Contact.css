@@ -1,5 +1,10 @@
 .contact {
-    margin-top: 2%;
-    margin-left: 1%;
+    margin: 5%;
     width: 90%;
+}
+.formcontact {
+    margin-top: 15%; 
+}
+.submit {
+    margin-top: 5%;
 }
