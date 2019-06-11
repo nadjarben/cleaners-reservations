@@ -19,6 +19,7 @@ import PropTypes from 'prop-types';
         }));
       }
       handleDeleteCustomer(e) {
+        e.preventDefault();
         const id = this.props.customer._id
         this.props.deleteCustomer(id);
         //window.location.reload(); 
