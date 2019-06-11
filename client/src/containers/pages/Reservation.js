@@ -4,6 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { postReservation } from '../../store/actions/reservationActions';
+import { fetchCustomers } from '../../store/actions/customerActions';
 import { FormattedMessage } from 'react-intl'; 
 
 class Reservation extends Component {
@@ -18,11 +19,26 @@ class Reservation extends Component {
     hour: '', 
     info: ''
   };
+
+  componentDidMount() {
+    this.props.fetchCustomers()
+  }
+
   handleChange = (e) => {
     this.setState ({[e.target.name]: e.target.value})
   }
 
+  doesCustomerExist = () => {
+    const { customers } = this.props;
+    let result = customers.map(c => c.phone)
+    if(result === this.state.phone)
+      return (console.log('existe deja'));
+    else
+      return(console.log('existe pas'));
+  }
+
   handleSubmit = (e) => {
+    this.doesCustomerExist();
     const textAlert =
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
@@ -35,8 +51,8 @@ class Reservation extends Component {
 
     render() {
         return(
-          <div>
-        <div className="reservation">
+          <div >
+        <div className="reservation" onClick={this.doesCustomerExist()}>
             <div className="service">
                 <p><FormattedMessage id="reservation.min" /></p>
                 <p><FormattedMessage id="reservation.min2" /></p>
@@ -104,10 +120,11 @@ Reservation.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  reservations: state.reservations
+  customers: state.customers.customer,
+  
 })
 
 export default connect(
   mapStateToProps,
-  { postReservation }
+  { postReservation, fetchCustomers }
 )(Reservation);

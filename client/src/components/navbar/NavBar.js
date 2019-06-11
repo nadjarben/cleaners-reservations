@@ -38,11 +38,9 @@ class NavBar extends React.Component {
           </Link>
             <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
+                <Nav className="ml-auto" navbar onClick={this.toggle}>
                   <AdminConnect />
-                  <div onClick={this.toggle}>
                   <NavItems /> 
-                  </div>
                 </Nav>
               </Collapse>
           </Navbar>
