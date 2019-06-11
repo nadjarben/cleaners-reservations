@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { postReservation } from '../../store/actions/reservationActions';
-import { fetchCustomers } from '../../store/actions/customerActions';
+import { fetchCustomers, postCustomer } from '../../store/actions/customerActions';
 import { FormattedMessage } from 'react-intl'; 
 
 class Reservation extends Component {
@@ -30,11 +30,15 @@ class Reservation extends Component {
 
   doesCustomerExist = () => {
     const { customers } = this.props;
+    const { name, surname, phone, email, address, city, info } = this.state
     let result = customers.map(c => c.phone)
-    if(result === this.state.phone)
-      return (console.log('existe deja'));
+    let isInArray = result.indexOf(this.state.phone) > -1;
+    if(isInArray === false)
+      return (
+        this.props.postCustomer(name, surname, phone, email, address, city, info)
+      )
     else
-      return(console.log('existe pas'));
+      return(console.log('existe deja'));
   }
 
   handleSubmit = (e) => {
@@ -52,13 +56,13 @@ class Reservation extends Component {
     render() {
         return(
           <div >
-        <div className="reservation" onClick={this.doesCustomerExist()}>
+        <div className="reservation">
             <div className="service">
                 <p><FormattedMessage id="reservation.min" /></p>
                 <p><FormattedMessage id="reservation.min2" /></p>
                 <p><FormattedMessage id="reservation.min3" /></p>
             </div>
-            <Form onSubmit={e => this.handleSubmit(e)} className="form" >
+            <Form onSubmit={e => this.handleSubmit(e) && this.doesCustomerExist()} className="form" >
   <Form.Row>
     <Form.Group controlId="formGridFirstName" >
       <Form.Control required={true} type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
@@ -126,5 +130,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { postReservation, fetchCustomers }
+  { postReservation, fetchCustomers, postCustomer }
 )(Reservation);
