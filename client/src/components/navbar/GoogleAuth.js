@@ -33,7 +33,6 @@ class GoogleAuth extends React.Component {
     };
     onSignOutClick = () => {
         this.auth.signOut();
-        window.location.reload(); 
     };
 
  
@@ -42,19 +41,19 @@ class GoogleAuth extends React.Component {
             return null;
         } else if (this.props.isSignedIn) {
             return (
-                <button 
+                <div 
                 className="signout"
                 onClick={this.onSignOutClick}>
                     Sign Out
-                </button>
+                </div>
             )
         } else {
             return (
-                <button
+                <div
                 className="signin"
                 onClick={this.onSignInClick}>
                     Sign In
-                </button>
+                </div>
             )
         }
     }
