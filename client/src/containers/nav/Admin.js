@@ -1,13 +1,11 @@
 import React from 'react';
-import NavAdmin from '../../components/admin/nav//NavAdmin';
-import ScrollableTabsButtonPrevent from '../../components/admin/nav/NavAdmin2';
+import NavAdmin from '../../components/admin/nav/NavAdmin';
 ;
 const Admin = () => {
 
     return (
         <div>
             <NavAdmin />
-            <ScrollableTabsButtonPrevent />
         </div>
     )
 }
