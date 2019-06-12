@@ -70,7 +70,7 @@ export default function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}><GoogleAuth /></MenuItem>z
+                <MenuItem onClick={handleClose}><GoogleAuth /></MenuItem>
               </Menu>
             </div>
         </Toolbar>

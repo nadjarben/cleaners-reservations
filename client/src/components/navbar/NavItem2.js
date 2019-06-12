@@ -2,18 +2,18 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl'; 
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import { Link } from 'react-router-dom';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/icons/Menu';
 import AdminConnect from './AdminConnect';
 
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   list: {
     width: 250,
   },
@@ -26,10 +26,9 @@ const useStyles = makeStyles({
       float: 'right',
   },
   menuButton: {
-    color: 'white',
-    marginLeft: '-20%'
+    marginRight: theme.spacing(4),
   },
-});
+}));
 
 export default function TemporaryDrawer() {
   const classes = useStyles();
@@ -55,8 +54,7 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>
-            
+      <List>            
         {[  <Link to="/home/homepage" className={classes.link}>
                 <FormattedMessage id="nav.homepage"  />
             </Link>,
@@ -87,9 +85,9 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-        <Button onClick={toggleDrawer('left', true)} className={classes.menuButton}>
-          <MenuIcon onClick={toggleDrawer('left', true)} className={classes.menuButton} />
-        </Button>
+        <IconButton edge="start" color="inherit" aria-label="Menu" onClick={toggleDrawer('left', true)} className={classes.menuButton}>
+          <MenuIcon />
+        </IconButton>
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
       </Drawer>
