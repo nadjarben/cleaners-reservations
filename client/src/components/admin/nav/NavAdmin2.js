@@ -12,6 +12,7 @@ import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import ThumbDown from '@material-ui/icons/ThumbDown';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 function TabContainer(props) {
   return (
@@ -45,7 +46,7 @@ export default function ScrollableTabsButtonPrevent() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons="off">
-          <Tab icon={<PhoneIcon />} aria-label="Phone" />
+          <Link className="nav-link" to="/home/admin/adminhome">Home</Link>
           <Tab icon={<FavoriteIcon />} aria-label="Favorite" />
           <Tab icon={<PersonPinIcon />} aria-label="Person" />
           <Tab icon={<HelpIcon />} aria-label="Help" />
