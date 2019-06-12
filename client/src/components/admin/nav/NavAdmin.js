@@ -50,7 +50,7 @@ export default function ScrollableTabsButtonAuto() {
           scrollButtons="auto"
         >
           <Tab label="Home" />
-          <Tab label="Reservation" />
+          <Tab label="Reservations" />
           <Tab label="Clients" />
           <Tab label="Questions" />
           <Tab label="Archives" />

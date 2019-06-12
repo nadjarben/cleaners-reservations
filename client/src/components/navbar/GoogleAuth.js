@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {signIn, signOut } from '../../store/actions/googleAuthActions';
 import './GoogleAuth.css';
+import { red } from '@material-ui/core/colors';
 
 class GoogleAuth extends React.Component {
 
@@ -38,23 +39,28 @@ class GoogleAuth extends React.Component {
 
  
     renderAuthButton() {
+        const style= {
+            signout: {
+                color: 'red',
+            },
+        }
         if(this.props.isSignedIn === null) {
             return null;
         } else if (this.props.isSignedIn) {
             return (
-                <button 
-                className="signout"
+                <div 
+                style={style.signout}
                 onClick={this.onSignOutClick}>
                     Sign Out
-                </button>
+                </div>
             )
         } else {
             return (
-                <button
-                className="signin"
+                <div
+                className={style.signin}
                 onClick={this.onSignInClick}>
                     Sign In
-                </button>
+                </div>
             )
         }
     }

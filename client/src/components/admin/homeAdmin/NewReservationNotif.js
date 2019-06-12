@@ -12,7 +12,6 @@ class NewReservationNotif extends React.Component {
     }
 
     render() {
-        const { reservations } = this.props
         return (
             <div className="newreservationnotif">
                 <p>? nouvelle Reservation:</p>

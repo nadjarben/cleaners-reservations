@@ -3,6 +3,7 @@ export default {
 
     he: {
         //Navbar
+        'nav.homepage': 'בברכה',
         'nav.reservation': 'להזמין',
         'nav.prices': 'מחירים',
         'nav.contacts': 'צור קשר',
@@ -36,6 +37,7 @@ export default {
 
     en: {
         //Navbar
+        'nav.homepage': 'Home',
         'nav.reservation': 'Book',
         'nav.prices': 'Prices',
         'nav.contacts': 'Contacts',
@@ -67,6 +69,7 @@ export default {
     },
     fr: {
         //Navbar
+        'nav.homepage': 'Accueil',
         'nav.reservation': 'Reserver',
         'nav.prices': 'Tarifs',
         'nav.contacts': 'Contacts',

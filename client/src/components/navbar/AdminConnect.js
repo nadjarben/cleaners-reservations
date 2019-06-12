@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NavItem } from 'reactstrap';
 import { connect } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
 
 class AdminConnect extends React.Component {
   
-  
   renderAdmin() {
-    const {isAdmin} = this.props
+    const style = {
+      color: 'red',
+      float: 'right'
+    }  
+  
+    const {isAdmin} = this.props;
     if(isAdmin === true) {
       return (
-        <NavItem className="navitem">
-          <Link 
-          to="/home/admin/adminhome" 
-          className="navMenu" 
+          <Link style={style} 
+          to="/home/admin/" 
           onClick={this.toggle}>
             Admin
           </Link>
-        </NavItem>
       )
     }
   }
