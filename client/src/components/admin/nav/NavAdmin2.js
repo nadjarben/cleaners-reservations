@@ -22,7 +22,6 @@ TabContainer.propTypes = {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    font: 'withe',
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -40,7 +39,7 @@ export default function SimpleTabs() {
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange}>
         <Link to="/home/admin/home"><Tab label="Item Two" /></Link>
-        <Link to="/home/admin/reservation"><Tab label="Item Two" /></Link>
+        <Link  to="/home/admin/reservation"><Tab label="Item Two" /></Link>
         <Link to="/home/admin/customer"><Tab label="Item Two" /></Link>
         </Tabs>
       </AppBar>
