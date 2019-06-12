@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
       handleDeleteReservation(e) {
         const id = this.props.reservation._id
         this.props.deleteReservation(id);
-        //window.location.reload(); 
+        window.location.reload(); 
       }
       handlePostCustomer(e) {
         const { name, surname, phone, email, address, city, info } = this.props.reservation;

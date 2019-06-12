@@ -1,6 +1,7 @@
 import React from 'react';
 import NavItem2 from './NavItem2';
 import GoogleAuth from '../navbar/GoogleAuth';
+import Languages2 from './Languages2';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -24,7 +25,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function MenuAppBar() {
   const classes = useStyles();
-  const [auth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -44,7 +44,7 @@ export default function MenuAppBar() {
           <Typography variant="h6" className={classes.title}>
             THE CLEANERS
           </Typography>
-          {auth && (
+          <Languages2 />
             <div>
               <IconButton
                 aria-label="Account of current user"
@@ -73,7 +73,6 @@ export default function MenuAppBar() {
                 <MenuItem onClick={handleClose}><GoogleAuth /></MenuItem>z
               </Menu>
             </div>
-          )}
         </Toolbar>
       </AppBar>
     </div>

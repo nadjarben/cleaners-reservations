@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {signIn, signOut } from '../../store/actions/googleAuthActions';
-import './GoogleAuth.css';
-import { red } from '@material-ui/core/colors';
 
 class GoogleAuth extends React.Component {
 
@@ -56,11 +54,10 @@ class GoogleAuth extends React.Component {
             )
         } else {
             return (
-                <div
-                className={style.signin}
+                <button
                 onClick={this.onSignInClick}>
                     Sign In
-                </div>
+                </button>
             )
         }
     }

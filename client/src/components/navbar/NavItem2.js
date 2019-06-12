@@ -27,6 +27,7 @@ const useStyles = makeStyles({
   },
   menuButton: {
     color: 'white',
+    marginLeft: '-20%'
   },
 });
 

@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
         e.preventDefault();
         const id = this.props.customer._id
         this.props.deleteCustomer(id);
-        //window.location.reload(); 
+        window.location.reload(); 
       }
 
     render() {    

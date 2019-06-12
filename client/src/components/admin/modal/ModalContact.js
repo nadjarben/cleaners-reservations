@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
       handleDeleteContact(e) {
         const id = this.props.contact._id
         this.props.deleteContact(id);
-        //window.location.reload(); 
+        window.location.reload(); 
       }
 
     render() {    
