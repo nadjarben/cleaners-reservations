@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { postReservation } from '../../store/actions/reservationActions';
 import { fetchCustomers, postCustomer } from '../../store/actions/customerActions';
 import { FormattedMessage } from 'react-intl'; 
+import GoogleAuth from '../../components/navbar/GoogleAuth'
 
 class Reservation extends Component {
   state = {
@@ -55,7 +56,8 @@ class Reservation extends Component {
 
     render() {
         return(
-          <div >
+          <div>
+            <GoogleAuth />
         <div className="reservation">
             <div className="service">
                 <p><FormattedMessage id="reservation.min" /></p>
