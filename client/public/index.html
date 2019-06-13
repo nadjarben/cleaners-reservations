@@ -13,9 +13,12 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="manifest.json" />
-    <link rel="apple-touch-startup-image" href="./img/logowithout.png">
-    <link rel="icon" sizes="192x192" href="./img/logowithout.png"><link rel="apple-touch-icon" href="./img/logowithout.png">
-    <link rel="apple-touch-icon-precomposed"href="./img/logowithout.png" sizes="180x180" />
+
+
+    <link rel="apple-touch-icon" href="./img/logowithout.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/logowithout.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/logowithout.png">
+<link rel="apple-touch-icon" sizes="167x167" href="./img/logowithout.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" />
@@ -93,28 +96,4 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-  <script type="text/javascript">
-      
-    function showIosInstall() {
-      let iosPrompt = document.querySelector(".ios-prompt");
-      iosPrompt.style.display = "block";
-      iosPrompt.addEventListener("click", () => {
-        iosPrompt.style.display = "none";
-      });
-    }
-  
-    // Detects if device is on iOS
-    const isIos = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      return /iphone|ipad|ipod/.test( userAgent );
-    }
-    // Detects if device is in standalone mode
-    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-    // Checks if should display install popup notification:
-    if (isIos() && !isInStandaloneMode()) {
-      // this.setState({ showInstallMessage: true });
-      showIosInstall();
-    }
-  </script>
-
 </html>
