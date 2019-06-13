@@ -20,6 +20,10 @@ const useStyles = makeStyles(theme => ({
   fullList: {
     width: 'auto',
   },
+  linkhome: {
+    color: 'red',
+    float: 'right'
+  },
   link: {
       color: 'black',
       float: 'right',
@@ -52,7 +56,7 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>            
-        {[  <Link to="/home/homepage" className={classes.link}>
+        {[  <Link to="/home/homepage" className={classes.linkhome}>
                 <FormattedMessage id="nav.homepage"  />
             </Link>,
             <Divider />,

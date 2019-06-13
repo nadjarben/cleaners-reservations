@@ -37,8 +37,6 @@ class Reservation extends Component {
       return (
         this.props.postCustomer(name, surname, phone, email, address, city, info)
       )
-    else
-      return(console.log('existe deja'));
   }
 
   handleSubmit = (e) => {

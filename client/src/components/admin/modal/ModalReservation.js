@@ -19,13 +19,12 @@ import PropTypes from 'prop-types';
           modal: !prevState.modal
         }));
       }
-      handleDeleteReservation = (e) => {;
+      handleDeleteReservation() {
         const id = this.props.reservation._id
         this.props.deleteReservation(id);
-        e.preventDefault();
-        //window.location.reload(); 
+        window.location.reload(); 
       }
-      handlePostCustomer(e) {
+      handlePostCustomer() {
         const { name, surname, phone, email, address, city, info } = this.props.reservation;
         this.props.postCustomer(name, surname, phone, email, address, city, info)
         alert(`${name} ${surname} enregistre.`)
@@ -53,8 +52,8 @@ import PropTypes from 'prop-types';
                     </ModalBody>
                     <ModalFooter>
                         <Button>Archiver</Button>
-                        <Button color="success" onClick={e => this.handlePostCustomer(e)}>Enregistrer client</Button>
-                        <Button color="danger" onClick={e => this.handleDeleteReservation(e)} >Supprimer</Button>
+                        <Button color="success" onClick={() => this.handlePostCustomer()}>Enregistrer client</Button>
+                        <Button color="danger" onClick={() => this.handleDeleteReservation()} >Supprimer</Button>
                     </ModalFooter>
             </Modal>
         </div>

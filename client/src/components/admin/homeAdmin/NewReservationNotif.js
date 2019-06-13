@@ -6,9 +6,7 @@ import './NewReservationNotif.css'
 class NewReservationNotif extends React.Component {
 
     componentDidMount() {
-        const { reservations } = this.props
         this.props.fetchReservations();
-        console.log(reservations)
     }
 
     render() {
