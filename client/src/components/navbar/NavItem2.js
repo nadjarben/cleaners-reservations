@@ -55,6 +55,7 @@ export default function TemporaryDrawer() {
         {[  <Link to="/home/homepage" className={classes.link}>
                 <FormattedMessage id="nav.homepage"  />
             </Link>,
+            <Divider />,
             <Link to="/home/reservation" className={classes.link}>
                 <FormattedMessage id="nav.reservation"  />
             </Link>,

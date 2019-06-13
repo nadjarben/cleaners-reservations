@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import NavItem2 from './NavItem2';
 import GoogleAuth from '../navbar/GoogleAuth';
 import Languages2 from './Languages2';
@@ -21,6 +22,9 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
+  link: {
+    color: 'white',
+  }
 }));
 
 export default function MenuAppBar() {
@@ -42,7 +46,7 @@ export default function MenuAppBar() {
         <Toolbar className={classes.toolbar}>
         <NavItem2 />
           <Typography variant="h6" className={classes.title}>
-            THE CLEANERS
+          <Link className={classes.link} to="/home/homepage">THE CLEANERS</Link>
           </Typography>
           <Languages2 />
             <div>

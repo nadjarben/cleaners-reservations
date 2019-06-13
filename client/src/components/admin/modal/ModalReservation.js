@@ -19,10 +19,11 @@ import PropTypes from 'prop-types';
           modal: !prevState.modal
         }));
       }
-      handleDeleteReservation(e) {
+      handleDeleteReservation = (e) => {;
         const id = this.props.reservation._id
         this.props.deleteReservation(id);
-        window.location.reload(); 
+        e.preventDefault();
+        //window.location.reload(); 
       }
       handlePostCustomer(e) {
         const { name, surname, phone, email, address, city, info } = this.props.reservation;
