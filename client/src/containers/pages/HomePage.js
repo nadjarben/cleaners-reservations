@@ -13,7 +13,7 @@ import { FormattedMessage } from 'react-intl';
                     <div>
                 <img className="logo" src={logo} alt="logoCleaners"></img>
                 </div>
-                <img src={pressing} alt="pressing" width='90%' margin="90%" />
+                <img src={pressing} className="pressing" alt="pressing"/>
                 </div>
 				<p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
 				<div className="text-center">

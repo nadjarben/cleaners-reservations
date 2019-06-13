@@ -7,6 +7,9 @@
     height: 50%;
     margin-top: 10px;
     }
+.pressing {
+    width: 90%;
+}
 .bouton18 {
     width:155px;
     height:125px;
@@ -43,10 +46,8 @@
         margin-top: 1%;
         width: 420px;
     }
-    .logo1 {
-        width: 300px;
-        height: 30px;
-        margin-left: 20%;
+    .pressing {
+        width: 60%
     }
     .title {
         font-size: 15px;
@@ -67,10 +68,8 @@
         margin-top: 5%;
         width: 520px;
     }
-    .logo1 {
-        width: 300px;
-        height: 30px;
-        margin-left: 80%;
+    .pressing {
+        
     }
     .title {
         font-size: 15px;
@@ -86,6 +85,13 @@
 
     }
 }
+/*pc*/
+@media screen and (min-width: 1450px) {
+    .pressing {
+        width: 50%;
+    }
+}
+
 /*iphone 8plus */
 @media screen and (min-width: 400px) and (max-width: 415px) and (min-height: 720px) and (max-height: 900px) {
     .logo {
