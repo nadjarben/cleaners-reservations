@@ -13,11 +13,9 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="manifest.json" />
-    <link rel="apple-touch-icon" href="./img/logowithout.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./img/logowithout.png">  
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/logowithout.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="./img/logowithout.png">
-  
+    <link rel="apple-touch-startup-image" href="./img/logowithout.png">
+    <link rel="icon" sizes="192x192" href="./img/logowithout.png"><link rel="apple-touch-icon" href="./img/logowithout.png">
+    <link rel="apple-touch-icon-precomposed"href="./img/logowithout.png" sizes="180x180" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" />
@@ -69,7 +67,19 @@
       </style>
   </head>
   <body>
-     
+      <button type="button" class="ad2hs-prompt">Click to install application
+          <img src="./img/logowithout.png" style="float: left; height: 80px; width: auto; margin-top: -8px; margin-right: 1rem;">
+      </button>
+      <div class="ios-prompt">
+        <span style="color: rgb(187, 187, 187); float: right; margin-top: -14px; margin-right: -11px;">&times;</span>
+        <img src="./img/logowithout.png" style="float: left; height: 80px; width: auto; margin-top: -8px; margin-right: 1rem;">
+        <p style="margin-top: -3px; line-height: 1.3rem;">To install this Web App in your iPhone/iPad press 
+         <img src="./img/share.png" style="display: inline-block; margin-top: 4x; margin-bottom: 4px; height: 20px; width: auto;">
+         and then Add to Home Screen
+         <img src="./img/addto.png" style="display: inline-block; margin-top: 4px; margin-bottom: -4px; height: 30px; width: 30px;"/>
+        </p>
+      </div>
+  
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id=".container"></div>
     <!--
@@ -83,18 +93,59 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-  <script>
-  const isIos = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test( userAgent );
-  }
-  // Detects if device is in standalone mode
-  const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+  <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+    function addToHomeScreen() {
+      let a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
+      a2hsBtn.style.display = 'none';  // Show the prompt
+      deferredPrompt.prompt();  // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice
+        .then(function(choiceResult){
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });}
+    function showAddToHomeScreen() {
+      let a2hsBtn = document.querySelector(".ad2hs-prompt");
+      a2hsBtn.style.display = "block";
+      a2hsBtn.addEventListener("click", addToHomeScreen);
+    }
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', function (e) {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      showAddToHomeScreen();
+    });
   
-  // Checks if should display install popup notification:
-  if (isIos() && !isInStandaloneMode()) {
-    this.setState({ showInstallMessage: true });
-  }
-</script>
+    function showIosInstall() {
+      let iosPrompt = document.querySelector(".ios-prompt");
+      iosPrompt.style.display = "block";
+      iosPrompt.addEventListener("click", () => {
+        iosPrompt.style.display = "none";
+      });
+    }
+  
+    // Detects if device is on iOS
+    const isIos = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test( userAgent );
+    }
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+    // Checks if should display install popup notification:
+    if (isIos() && !isInStandaloneMode()) {
+      // this.setState({ showInstallMessage: true });
+      showIosInstall();
+    }
+  </script>
 
 </html>
