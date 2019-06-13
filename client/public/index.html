@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/logoCleaners.png" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -13,16 +13,10 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="manifest.json" />
-    <link rel="apple-touch-startup-image" href="logo192.png">
-    <link rel="icon" sizes="192x192" href="logo192.png"><link rel="apple-touch-icon" href="logo512.png">
-    <link rel="apple-touch-icon-precomposed"href="logo512.png" sizes="180x180" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="162564132974-al7mv7822j2b88bqka4ps7q29vn4quk3.apps.googleusercontent.com">
-
+    <link rel="stylesheet" href="../src//css//NavBar.css">
     
     <!--
-    <meta name="google-signin-client_id" content="162564132974-al7mv7822j2b88bqka4ps7q29vn4quk3.apps.googleusercontent.com">
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -30,52 +24,9 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>The Cleaners</title>
-    <style>
-        .ad2hs-prompt {
-        background-color: grey;
-        border: 1px solid dark;
-        display: none;
-        padding: 0.8rem 1rem 0 0.5rem;
-        text-decoration: none;
-        font-size: 16px;
-        color: white;
-        position: absolute;
-        margin: 0 auto 1rem;
-        left: 1rem;
-        right: 1rem;
-        bottom: 0;
-        }
-        .ios-prompt {
-        background-color: grey;
-        border: 1px solid dark;
-        display: none;
-        padding: 0.8rem 1rem 0 0.5rem;
-        text-decoration: none;
-        font-size: 16px;
-        color: white;
-        position: absolute;
-        margin: 0 auto 1rem;
-        left: 1rem;
-        right: 1rem;
-        bottom: 0;
-      }
-      </style>
+    <title>The Cleaners App</title>
   </head>
   <body>
-      <button type="button" class="ad2hs-prompt">Click to install application
-          <img src="./img/logo192.png" style="float: left; height: 80px; width: auto; margin-top: -8px; margin-right: 1rem;">
-      </button>
-      <div class="ios-prompt">
-        <span style="color: rgb(187, 187, 187); float: right; margin-top: -14px; margin-right: -11px;">&times;</span>
-        <img src="./img/logo192.png" style="float: left; height: 80px; width: auto; margin-top: -8px; margin-right: 1rem;">
-        <p style="margin-top: -3px; line-height: 1.3rem;">To install this Web App in your iPhone/iPad press 
-         <img src="./img/share.png" style="display: inline-block; margin-top: 4x; margin-bottom: 4px; height: 20px; width: auto;">
-         and then Add to Home Screen
-         <img src="./img/addto.png" style="display: inline-block; margin-top: 4px; margin-bottom: -4px; height: 30px; width: 30px;"/>
-        </p>
-      </div>
-  
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id=".container"></div>
     <!--
@@ -87,59 +38,4 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.error('Error', err));
-    }
-    function addToHomeScreen() {
-      let a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
-      a2hsBtn.style.display = 'none';  // Show the prompt
-      deferredPrompt.prompt();  // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice
-        .then(function(choiceResult){
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-      deferredPrompt = null;
-    });}
-    function showAddToHomeScreen() {
-      let a2hsBtn = document.querySelector(".ad2hs-prompt");
-      a2hsBtn.style.display = "block";
-      a2hsBtn.addEventListener("click", addToHomeScreen);
-    }
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', function (e) {
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      deferredPrompt = e;
-      showAddToHomeScreen();
-    });
-  
-    function showIosInstall() {
-      let iosPrompt = document.querySelector(".ios-prompt");
-      iosPrompt.style.display = "block";
-      iosPrompt.addEventListener("click", () => {
-        iosPrompt.style.display = "none";
-      });
-    }
-  
-    // Detects if device is on iOS
-    const isIos = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      return /iphone|ipad|ipod/.test( userAgent );
-    }
-    // Detects if device is in standalone mode
-    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-    // Checks if should display install popup notification:
-    if (isIos() && !isInStandaloneMode()) {
-      // this.setState({ showInstallMessage: true });
-      showIosInstall();
-    }
-  </script>
-
 </html>
