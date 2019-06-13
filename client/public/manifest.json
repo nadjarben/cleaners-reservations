@@ -3,32 +3,32 @@
   "name": "The Cleaners",
   "icons": [
     {
-      "src": "./img/logo32.png",
+      "src": "./img/logowithout.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "./img/logo72.png",
+      "src": "./img/logowithout",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "./img/logo192.png",
+      "src": "./img/logowithout",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./img/logo192.png",
+      "src": "./img/logowithout",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "./img/logo512.png",
+      "src": "./img/logowithout",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "./img/logo1024.png",
+      "src": "./img/logowithout",
       "sizes": "1024x1024",
       "type": "image/png"
     }

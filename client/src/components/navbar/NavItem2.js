@@ -1,11 +1,11 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl'; 
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import { Link } from 'react-router-dom';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/icons/Menu';
@@ -19,7 +19,6 @@ const useStyles = makeStyles(theme => ({
   },
   fullList: {
     width: 'auto',
-    backgroundColor: 'white'
   },
   link: {
       color: 'black',
@@ -30,20 +29,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
 export default function TemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    top: false,
     left: false,
-    bottom: false,
-    right: false,
   });
+
 
   const toggleDrawer = (side, open) => event => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [side]: open });
   };
 
@@ -82,6 +79,8 @@ export default function TemporaryDrawer() {
       </List>
     </div>
   );
+
+
 
   return (
     <div>

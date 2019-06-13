@@ -4,7 +4,8 @@ const mongoose = require('mongoose')
 const Customer = require('../../models/customer');
 
 const API = //'http://localhost:8080/api/customers/'
-            'https://cleaners-reservation.herokuapp.com/api/customers/' 
+            //'https://cleaners-reservation.herokuapp.com/api/customers/'
+            'https://www.thecleanersisrael.com/api/customers/'
 
 
 router.get('/',(req,res,next) => {

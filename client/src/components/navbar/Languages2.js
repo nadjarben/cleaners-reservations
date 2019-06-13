@@ -1,10 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+//import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { setLocale } from '../../store/actions/localeActions';
-import { connect } from 'react-redux';
 import flaghe from '../../images/flag-he.png';
 import flagen from '../../images/flag-en.png';
 import flagfr from '../../images/flag-fr.png';
@@ -42,12 +42,10 @@ import flagfr from '../../images/flag-fr.png';
     }
   }
 
-  function test() {
-    console.log(props.lang);
-  }
+
 
   return (
-      <div onClick={test}>
+      <div>
                 <IconButton
                 aria-label="Account of current user"
                 aria-controls="menu-appbar"
@@ -93,7 +91,6 @@ import flagfr from '../../images/flag-fr.png';
                 </div>
                 </MenuItem>
               </Menu>
-            
     </div>
   );
 }

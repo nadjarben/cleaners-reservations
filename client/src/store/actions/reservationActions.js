@@ -3,9 +3,11 @@ import { POST_RESERVATION, FETCH_RESERVATIONS, DELETE_RESERVATION, POST_LAST_RES
 
 
 const reservationsAPI = //'http://localhost:8080/api/reservations/' 
-                        'https://cleaners-reservation.herokuapp.com/api/reservations/'
+                        //'https://cleaners-reservation.herokuapp.com/api/reservations/'
+                        'https://www.thecleanersisrael.com/api/reservations/'
 const lastReservationsAPI = //'http://localhost:8080/api/lastreservations/' 
-                        'https://cleaners-reservation.herokuapp.com/api/lastreservations/'
+                            //'https://cleaners-reservation.herokuapp.com/api/lastreservations/'
+                            'https://www.thecleanersisrael.com/api/lastreservations/'
 
 
 export const postReservation = (name, surname, phone, email, address, city, date, hour, info) => dispatch => {

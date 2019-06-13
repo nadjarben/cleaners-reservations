@@ -1,15 +1,19 @@
 import React from 'react';
 import '../css/HomePage.css';
 import logo from '../../images/logo-min.png';
+import pressing from '../../images/pressing.png';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl'; 
 
     export const HomePage = () => {
         return (
             <div>
-            <div className="Home">
+            <div className="homepage">
                 <div className="text-center">
+                    <div>
                 <img className="logo" src={logo} alt="logoCleaners"></img>
+                </div>
+                <img src={pressing} alt="pressing" width='90%' margin="90%" />
                 </div>
 				<p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
 				<div className="text-center">

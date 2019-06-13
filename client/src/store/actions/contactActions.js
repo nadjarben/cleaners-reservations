@@ -3,7 +3,8 @@ import { POST_CONTACT, FETCH_CONTACTS, DELETE_CONTACT } from './types';
 
 
 const contactsAPI = //'http://localhost:8080/api/contacts/' 
-                        'https://cleaners-reservation.herokuapp.com/api/contacts/'
+                    //'https://cleaners-reservation.herokuapp.com/api/contacts/'
+                    'https://www.thecleanersisrael.com/api/contacts/'
 
 export const postContact = (name, phone, email, message) => dispatch => {
     axios.post(contactsAPI, {
