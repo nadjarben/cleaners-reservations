@@ -100,10 +100,10 @@
   </body>
   
   <script type="text/javascript">
-  /*
+  
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('service worker registered'))
         .catch(err => console.error('Error', err));
     }
     function addToHomeScreen() {
@@ -132,7 +132,7 @@
       deferredPrompt = e;
       showAddToHomeScreen();
     });
-  */
+  
     function showIosInstall() {
       let iosPrompt = document.querySelector(".ios-prompt");
       iosPrompt.style.display = "block";
