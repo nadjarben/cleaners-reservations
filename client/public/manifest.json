@@ -1,9 +1,10 @@
 {
   "name": "The Cleaners",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "short_name": "The Cleaners",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone",
-  "Scope": "/",
+  "scope": "/",
   "start_url": "/",
   "icons": [
     {
