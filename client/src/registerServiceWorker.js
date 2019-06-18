@@ -81,8 +81,6 @@ function registerValidSW(swUrl) {
     });
 }
 
-
-
 function checkValidServiceWorker(swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl)
