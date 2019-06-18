@@ -1,15 +1,8 @@
 import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { deleteCustomer } from '../../../store/actions/customerActions';
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import StarIcon from '@material-ui/icons/Star';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
 
 
  class ModalCustomer extends React.Component {
@@ -32,23 +25,13 @@ import PropTypes from 'prop-types';
         window.location.reload(); 
       }
 
-
-    render() {  
-      const style = {
-        width: '100%',
-        maxWidth: 360,
-    }
+    render() {    
 
         const {customer} = this.props;
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
      return(
         <div>
-              <List style={style} component="nav"  aria-label="Contacts">
-      <ListItem button onClick={this.toggle}>
-        <ListItemText>{customer.name} {customer.surname}  ||  {customer.address} </ListItemText>
-      </ListItem>
-    </List>
-    
+            <li className="list-group-item" onClick={this.toggle}>{customer.name} {customer.surname} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
                         {customer.name} {customer.surname}
@@ -68,10 +51,7 @@ import PropTypes from 'prop-types';
      )
     }
  }
- const mapStateToProps = state => ({
-    
-});
 ModalCustomer.propTypes = {
     deleteCustomer: PropTypes.func.isRequired
 }
-export default connect(mapStateToProps, {deleteCustomer })(ModalCustomer)
+export default connect({deleteCustomer })(ModalCustomer)

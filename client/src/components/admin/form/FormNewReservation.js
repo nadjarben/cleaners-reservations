@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { postReservation, postLastReservation } from '../../../store/actions/reservationActions';
+import { postReservation } from '../../../store/actions/reservationActions';
 import { FormattedMessage } from 'react-intl'; 
 
 class FormNewReservation extends Component {
@@ -24,7 +24,6 @@ class FormNewReservation extends Component {
   handleSubmit = (e) => {
     const { name, surname, phone, email, address, city, date, hour, info } = this.state
     this.props.postReservation(name, surname, phone, email, address, city, date, hour, info);
-    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info);
   }
 
     render() {
@@ -96,5 +95,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { postReservation, postLastReservation }
+  { postReservation}
 )(FormNewReservation);

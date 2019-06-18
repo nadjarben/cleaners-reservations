@@ -3,7 +3,7 @@ import '../css/Reservation.css';
 import { Form, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { postReservation } from '../../store/actions/reservationActions';
+import { postReservation, postLastReservation } from '../../store/actions/reservationActions';
 import { fetchCustomers, postCustomer } from '../../store/actions/customerActions';
 import { FormattedMessage } from 'react-intl'; 
 
@@ -45,8 +45,9 @@ class Reservation extends Component {
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
     const { name, surname, phone, email, address, city, date, hour, info } = this.state
-    e.preventDefault()
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info)
+    e.preventDefault();
+    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info);
+    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info);
     alert(textAlert);
       this.props.history.push('/home/homepage');
   }
@@ -128,5 +129,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { postReservation, fetchCustomers, postCustomer }
+  { postReservation, postLastReservation, fetchCustomers, postCustomer }
 )(Reservation);
