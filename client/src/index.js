@@ -8,7 +8,7 @@ import he from 'react-intl/locale-data/he';
 import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
 import { localeSet } from './store/actions/localeActions';
-import registerServiceWorker from './config/registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker.js'
 
 addLocaleData(he);
 addLocaleData(en);
