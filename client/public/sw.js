@@ -5,3 +5,7 @@ self.addEventListener('install', evt => {
 self.addEventListener('activate', evt => {
     console.log('service worker activated');
 });
+
+self.addEventListener('fetch', evt => {
+    console.log('event fetched', evt);
+});
