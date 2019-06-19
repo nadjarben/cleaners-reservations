@@ -68,9 +68,9 @@ export default function TemporaryDrawer() {
             </Link>,
             <Link to="/home/contacts" className={classes.link}>
                 <FormattedMessage id="nav.contacts"/>
-            </Link>].map((text) => (
+            </Link>].map((textItem, text) => (
           <ListItem button key={text}>
-            <ListItemText primary={text} />
+            <ListItemText primary={textItem} />
           </ListItem>
         ))}
       </List>
