@@ -1,1 +1,12 @@
-console.log('My custom service worker');
+
+self.addEventListener('install', evt => {
+   // console.log('service worker installed');
+});
+
+self.addEventListener('activate', evt => {
+    //console.log('service worker activated');
+});
+
+self.addEventListener('fetch', evt => {
+    console.log('event fetched', evt);
+});
