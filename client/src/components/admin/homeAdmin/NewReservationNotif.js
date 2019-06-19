@@ -14,18 +14,11 @@ class NewReservationNotif extends React.Component {
     render() {
         const { lastReservation } = this.props;
         console.log(lastReservation)
-        const lr = lastReservation.map(lr => {
-            return (
-              <li
-              key={lr._id}
-              lastReservation={lr}
-              />
-            );
-          });
-
+        
+        
         return (
             <div>
-                <p>{lr}</p>
+                <p>alors</p>
             </div>
         )
     }
