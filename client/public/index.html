@@ -30,28 +30,29 @@
     
   </head>
   <body>
-    <div class="ios-prompt">
-        <span style="color: rgb(187, 187, 187); float: right; margin-top: -14px; margin-right: -11px;">&times;</span>
-        <img src="./img/logowithout.png" style="float: left; height: 80px; width: auto; margin-top: -8px; margin-right: 1rem;">
-        <p style="margin-top: -3px; line-height: 1.3rem;">To install this Web App in your iPhone/iPad press 
-         <img src="./img/share.png" style="display: inline-block; margin-top: 4x; margin-bottom: 4px; height: 20px; width: auto;">
-         and then Add to Home Screen
-         <img src="./img/addto.png" style="display: inline-block; margin-top: 4px; margin-bottom: -4px; height: 30px; width: 30px;"/>
-        </p>
-      </div>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script>
-        const isIos = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      return /iphone|ipad|ipod/.test( userAgent );
-    }
-    // Detects if device is in standalone mode
-    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
     
-    // Checks if should display install popup notification:
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <script>
+const isIos = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test(userAgent);
+    }
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
     if (isIos() && !isInStandaloneMode()) {
-      this.setState({ showInstallMessage: true });
-    }  
+        var deferredPrompt;
+        window.addEventListener('beforeinstallprompt', function (e) {
+          // Prevent Chrome 67 and earlier from automatically showing the prompt
+          e.preventDefault();
+          // Stash the event so it can be triggered later.
+          deferredPrompt = e;
+              var display = true;
+            setInterval(function () {
+            document.getElementById("ios-prompt").style.display = display ? "none" : "block";
+            display = !display;
+          }, 5000);      
+        });
+    }    
         </script>
     <div id=".container"></div>
     <!--
@@ -64,7 +65,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
   </body>
+  <div class="ios-prompt">
+      <span style="color: rgb(187, 187, 187); float: right; margin-top: -14px; margin-right: -11px;">&times;</span>
+      <img src="./img/logowithout.png" style="float: left; height: 80px; width: auto; margin-top: -8px; margin-right: 1rem;">
+      <p style="margin-top: -3px; line-height: 1.3rem;">To install this Web App in your iPhone/iPad press 
+       <img src="./img/share.png" style="display: inline-block; margin-top: 4x; margin-bottom: 4px; height: 20px; width: auto;">
+       and then Add to Home Screen
+       <img src="./img/addto.png" style="display: inline-block; margin-top: 4px; margin-bottom: -4px; height: 30px; width: 30px;"/>
+      </p>
+    </div>
+  
   <style>
     .ios-prompt {
         background-color: grey;
