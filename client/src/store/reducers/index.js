@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import reservationReducer from './reservationReducer';
 import customerReducer from './customerReducer';
 import contactReducer from './contactReducer';
+import notifReducer from './notifReducer';
 import googleAuthReducer from './googleAuthReducer';
 import localeReducer from './localeReducer';
 
@@ -10,5 +11,6 @@ export default combineReducers({
   locale: localeReducer,
   reservations: reservationReducer,
   customers: customerReducer,
-  contacts: contactReducer
+  contacts: contactReducer,
+  notif: notifReducer
 });

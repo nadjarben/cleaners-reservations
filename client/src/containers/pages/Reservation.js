@@ -3,7 +3,8 @@ import '../css/Reservation.css';
 import { Form, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { postReservation, postLastReservation } from '../../store/actions/reservationActions';
+import { postReservation } from '../../store/actions/reservationActions';
+import { postLastReservation } from '../../store/actions/notifActions';
 import { fetchCustomers, postCustomer } from '../../store/actions/customerActions';
 import { FormattedMessage } from 'react-intl'; 
 

@@ -1,7 +1,7 @@
 .newreservationnotif {
-    background-color: black;
-    color: white;
-    width: 70%;
-    height: 200px;;
-    
+    background-color: lightgray;
+}
+.swipeable {
+    margin: -100px;
+    padding: -100px;
 }

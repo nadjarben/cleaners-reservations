@@ -1,13 +1,10 @@
 import axios from 'axios';
-import { POST_RESERVATION, FETCH_RESERVATIONS, DELETE_RESERVATION, POST_LAST_RESERVATION, FETCH_LAST_RESERVATIONS, DELETE_LAST_RESERVATION } from './types';
+import { POST_RESERVATION, FETCH_RESERVATIONS, DELETE_RESERVATION } from './types';
 
 
 const reservationsAPI = //'http://localhost:8080/api/reservations/' 
                         //'https://cleaners-reservation.herokuapp.com/api/reservations/'
                         'https://www.thecleanersisrael.com/api/reservations/'
-const lastReservationsAPI = //'http://localhost:8080/api/lastreservations/' 
-                            //'https://cleaners-reservation.herokuapp.com/api/lastreservations/'
-                            'https://www.thecleanersisrael.com/api/lastreservations/'
 
 
 export const postReservation = (name, surname, phone, email, address, city, date, hour, info) => dispatch => {
@@ -63,43 +60,4 @@ export const postReservation = (name, surname, phone, email, address, city, date
 
   // Last reservation
 
-  export const postLastReservation = (name, surname, phone, email, address, city, date, hour, info) => dispatch => {
-    axios.post(lastReservationsAPI, {
-          name, surname, phone, email, address, city, date, hour, info
-      })
-      .then(res => {
-          return dispatch({
-            type: POST_LAST_RESERVATION,
-            payload: res.data,
-          });       
-        })
-        .catch(err => {
-          console.log(err);
-          throw new Error('Couldnt post last reservation.' + err);
-      });
-  }
-  export const fetchLastReservations = () => dispatch => {
-
-    axios.get(lastReservationsAPI, {
-    })
-      .then(res => { 
-        return dispatch({
-          type: FETCH_LAST_RESERVATIONS,
-          payload: res.data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-        throw new Error('Could not fetch last reservations.' + err);
-      });    
-  }
-
-  export const deleteLastReservation = (id) => dispatch => {
-    axios.delete(lastReservationsAPI + id)
-    .then(res => {
-      return dispatch ({
-        type: DELETE_LAST_RESERVATION,
-        payload: res.data
-      });
-    })
-  }
+  
