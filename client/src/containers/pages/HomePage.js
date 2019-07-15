@@ -17,13 +17,13 @@ import banner from '../../images/banner.png'
                                 <img src={logo} width='50%' alt="logoCleaners"></img>
                             </div>
                             <div className='text-center'>
-                                <img src={pressing} width='80%' alt="pressing"/>
+                                <img src={pressing} width='80%' alt="pressing" style={{marginTop:'-25%'}}/>
                             </div>
-                            <div className='text-center' style={{color:'white', marginTop:'-10%'}}>
+                            <div className='text-center' style={{color:'white'}}>
                                 <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                             <div className= 'col'>
-                                <div className='text-center' style={{marginTop: '-10%'}}>
+                                <div className='text-center'>
                                     <button className="bouton18">
                                         <Link><p className="text-button"><FormattedMessage id="home.button" defaultMessage="BOOK A DELIVERY"/></p></Link>
                                     </button>
