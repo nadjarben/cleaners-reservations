@@ -13,7 +13,7 @@ import TabModal from './TabModal';
 const useStyles = makeStyles(theme => ({
   appBar: {
     position: 'relative',
-    backgroundColor: '#00003f'
+    backgroundColor: '#0E1521'
   },
   title: {
     marginLeft: theme.spacing(2),

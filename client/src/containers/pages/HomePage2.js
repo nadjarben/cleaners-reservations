@@ -20,7 +20,7 @@ import ModalReserv from '../../components/modal/ModalReserv';
 
           displayContent() {
                 return (
-                    <div className='homepage' style={{ backgroundImage:`url(${banner}`, width:'100%', position:'absolute'}}>
+                    <div className='homepage' style={{ backgroundColor:'#0E1521', width:'100%', position:'absolute'}}>
                     <div className='container'>
                         <div className='row justify-content'>
                             <div className='text-center'>
