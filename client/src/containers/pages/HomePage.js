@@ -7,9 +7,9 @@ import Grid from '@material-ui/core/Grid';
 import { FormattedMessage } from 'react-intl'; 
 import banner from '../../images/banner.png'
 
-    export const HomePage = () => {
+     const HomePage = () => {
         return (
-            <div style={{backgroundImage:`url(${banner}`}}>
+            <div style={{backgroundImage:`url(${banner}`, height:'100%', width:'100%', position:'absolute'}}>
                 <div className='container'>
                     <div className='row justify-content'>
                         <div className='text-center'>
