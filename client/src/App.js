@@ -38,9 +38,9 @@ class App extends Component {
           <Route path="/contacts" component={Contacts}/>
           <Route path="/admin" component={Admin} />
           <Route path="/admin/adminhome" component={AdminHome} />
-          <Route path="/admin/reservation" component={AdminReservation}/>
-          <Route path="/admin/customer" component={AdminCustomer}/>
-          <Route path="/admin/contact" component={AdminContact}/>
+          <Route path="/admin/reservations" component={AdminReservation}/>
+          <Route path="/admin/customers" component={AdminCustomer}/>
+          <Route path="/admin/contacts" component={AdminContact}/>
 
         </Router>
       </div>

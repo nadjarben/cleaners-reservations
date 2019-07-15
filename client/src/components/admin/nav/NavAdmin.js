@@ -5,10 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import AdminHome from '../../../containers/pages/AdminHome';
-import AdminContact from '../../../containers/pages/AdminContact';
-import AdminCustomer from '../../../containers/pages/AdminCustomer';
-import AdminReservation from '../../../containers/pages/AdminReservation';
+import { Link } from 'react-router-dom';
 
 function TabContainer(props) {
   return (
@@ -49,18 +46,13 @@ export default function ScrollableTabsButtonAuto() {
           variant="scrollable"
           scrollButtons="auto"
         >
-          <Tab label="Home" />
-          <Tab label="Reservations" />
-          <Tab label="Clients" />
-          <Tab label="Questions" />
-          <Tab label="Archives" />
+          <Link to='/admin/adminhone'><Tab label="NOTIFICATIONS"></Tab></Link>
+          <Link to='/admin/reservations'><Tab label="Reservations" /></Link>
+          <Link to='/admin/customers'><Tab label="Clients" /></Link>
+          <Link to='/admin/contacts'><Tab label="Questions" /></Link>
+          <Link to='admin/archives'><Tab label="Archives" /></Link>
         </Tabs>
       </AppBar>
-      {value === 0 && <TabContainer><AdminHome /></TabContainer>}
-      {value === 1 && <TabContainer><AdminReservation /></TabContainer>}
-      {value === 2 && <TabContainer><AdminCustomer /></TabContainer>}
-      {value === 3 && <TabContainer><AdminContact /></TabContainer>}
-      {value === 4 && <TabContainer>Archive</TabContainer>}
     </div>
   );
 }

@@ -6,7 +6,6 @@ const AdminHome = () => {
     return (
         <div>
             <NewReservationNotif />
-            <NewMessageNotif />
         </div>
     )
 }
