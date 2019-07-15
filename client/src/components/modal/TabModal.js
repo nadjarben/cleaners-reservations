@@ -260,8 +260,7 @@ class TabModal extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  customers: state.customers.customer,
-  
+  customers: state.customers.customer
 })
 
 export default connect(

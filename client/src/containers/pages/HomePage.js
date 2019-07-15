@@ -4,7 +4,6 @@ import logo from '../../images/logo-min.png';
 import pressing from '../../images/logo1.png';
 import ModalReserv from '../../components/modal/ModalReserv';
 import { FormattedMessage } from 'react-intl'; 
-import banner from '../../images/banner.png';
 import Intro from './Intro';
 
      class HomePage extends React.Component{

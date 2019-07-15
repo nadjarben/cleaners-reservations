@@ -27,7 +27,8 @@ class FormNewCustomer extends Component {
 
     render() {
         return(
-          <div>
+          <div style={{marginTop:'5%'}} className='container'>
+            
             <Form onSubmit={e => this.handleSubmit(e)} className="form" >
   <Form.Row>
     <Form.Group controlId="formGridFirstName" >

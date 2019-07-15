@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
         }));
       }
       handleDeleteLastReservation() {
-        const id = this.props.reservation._id
+        const id = this.props.lastReservation._id
         this.props.deleteLastReservation(id);
         window.location.reload(); 
       }

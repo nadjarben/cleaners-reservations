@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import ModalReservation from '../../components/admin/modal/ModalReservation';
 import FormNewReservation from '../../components/admin/form/FormNewReservation';
 import { Modal, Button, ModalHeader, ModalBody} from 'reactstrap';
+import BottomBar from '../../components/admin/nav/BottomBar';
 
 class AdminReservation extends Component {
     constructor(props) {
@@ -71,6 +72,7 @@ class AdminReservation extends Component {
                 <div className="admin">
                     <ul className="list-group">{r}</ul>
                 </div>
+                <BottomBar />
                 </div>
             )
         }

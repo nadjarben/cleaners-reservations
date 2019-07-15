@@ -46,7 +46,7 @@ export default function ScrollableTabsButtonAuto() {
           variant="scrollable"
           scrollButtons="auto"
         >
-          <Link to='/admin/adminhone'><Tab label="NOTIFICATIONS"></Tab></Link>
+          <Link to='/admin/adminhome'><Tab label="home"></Tab></Link>
           <Link to='/admin/reservations'><Tab label="Reservations" /></Link>
           <Link to='/admin/customers'><Tab label="Clients" /></Link>
           <Link to='/admin/contacts'><Tab label="Questions" /></Link>
