@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/HomePage.css';
 import logo from '../../images/logo-min.png';
 import pressing from '../../images/logo1.png';
-import { Link } from 'react-router-dom';
 import ModalReserv from '../../components/modal/ModalReserv';
 import { FormattedMessage } from 'react-intl'; 
 import banner from '../../images/banner.png';

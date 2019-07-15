@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Label, TabContent, TabPane, Card, Button, CardTitle, CardText, Row, Col, ModalHeader, ModalFooter } from 'reactstrap';
+import { Input, Label, TabContent, TabPane, Button, ModalHeader, ModalFooter } from 'reactstrap';
 import { FormattedMessage } from 'react-intl'; 
 import { Form } from 'react-bootstrap';
 import { connect } from "react-redux";
@@ -32,6 +32,37 @@ class TabModal extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchCustomers()
+  }
+
+  handleChange = (e) => {
+    this.setState ({[e.target.name]: e.target.value})
+  }
+  
+  doesCustomerExist = () => {
+    const { customers } = this.props;
+    const { name, surname, phone, email, address, city, info } = this.state
+    let result = customers.map(c => c.phone)
+    let isInArray = result.indexOf(this.state.phone) > -1;
+    if(isInArray === false)
+      return (
+        this.props.postCustomer(name, surname, phone, email, address, city, info)
+      )
+  }
+  handleSubmit = (e) => {
+    this.doesCustomerExist();
+    const textAlert =
+    'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
+    'En cas dimprevus veuillez nous contacter au 0586305515.'
+    const { name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note } = this.state
+    e.preventDefault();
+    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
+    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
+    alert(textAlert);
+      //this.props.history.push('/home');
+  }
+
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
@@ -50,7 +81,6 @@ class TabModal extends React.Component {
     })
   }
   handleSwitch = () => {
-    console.log(this.state.switch)
     this.setState({
       switch: !this.state.switch
     })
@@ -90,7 +120,7 @@ class TabModal extends React.Component {
     )
   }
   displayPrev = () => {
-    if(this.state.activeTab != 1)
+    if(this.state.activeTab !== 1)
     return (
       <div className='col-6'>
         <Button style={{width:'120px'}} onClick={()=> this.handlePrev()}>Precedent</Button>
@@ -98,7 +128,7 @@ class TabModal extends React.Component {
     )
   }
   displayNext = () => {
-    if(this.state.activeTab != 3)
+    if(this.state.activeTab !== 3)
     return (
       <div className='col-6' >
         {this.handleButtonCompleteFirst()}
@@ -113,38 +143,6 @@ class TabModal extends React.Component {
         <Button style={{width:'120px', backgroundColor:'darkblue'}} type="submit">Confirmer</Button>
       </div>
     )
-  }
-
-  componentDidMount() {
-    this.props.fetchCustomers()
-  }
-
-  handleChange = (e) => {
-    this.setState ({[e.target.name]: e.target.value})
-  }
-
-  doesCustomerExist = () => {
-    const { customers } = this.props;
-    const { name, surname, phone, email, address, city, info } = this.state
-    let result = customers.map(c => c.phone)
-    let isInArray = result.indexOf(this.state.phone) > -1;
-    if(isInArray === false)
-      return (
-        this.props.postCustomer(name, surname, phone, email, address, city, info)
-      )
-  }
-
-  handleSubmit = (e) => {
-    this.doesCustomerExist();
-    const textAlert =
-    'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
-    'En cas dimprevus veuillez nous contacter au 0586305515.'
-    const { name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note } = this.state
-    e.preventDefault();
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
-    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
-    alert(textAlert);
-      //this.props.history.push('/home');
   }
 
   render() {
@@ -230,6 +228,7 @@ class TabModal extends React.Component {
 
           <TabPane tabId={3}>
           <ModalHeader style={{color: 'darkgrey'}}>Confirmation</ModalHeader>
+
           <div className='row' style={{marginTop:'2%'}}>
             <div className='col-12'>
             <Label for='city'>Professionel :</Label>

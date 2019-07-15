@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
         hour: req.body.hour,
         info: req.body.info,
         namefact: req.body.namefact,
-        addressfact: req.body.addressefact,
+        addressfact: req.body.addressfact,
         note: req.body.note,
     });
     reservation

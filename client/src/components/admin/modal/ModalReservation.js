@@ -50,7 +50,7 @@ import PropTypes from 'prop-types';
                         <h5>Heure: </h5><p>{reservation.hour}</p>
                         <h5>informations: </h5><p>{reservation.info}</p>
                         <h5>namefact: </h5><p>{reservation.namefact}</p>
-                        <h5>addressefact: </h5><p>{reservation.addressfact}</p>
+                        <h5>addressfact: </h5><p>{reservation.addressfact}</p>
                         <h5>note: </h5><p>{reservation.note}</p>
                     </ModalBody>
                     <ModalFooter>

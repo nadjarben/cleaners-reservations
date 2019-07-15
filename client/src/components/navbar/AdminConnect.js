@@ -1,14 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class AdminConnect extends React.Component {
   
   renderAdmin() {
-    const style = {
-      color: 'red',
-      float: 'right'
-    }  
   
     const {isAdmin} = this.props;
     if(isAdmin === true) {

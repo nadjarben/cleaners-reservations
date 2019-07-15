@@ -14,7 +14,7 @@ const ReservationSchema = new Schema({
   hour: { type: String },
   info: { type: String },
   namefact: { type: String },
-  addressefact: { type: String },
+  addressfact: { type: String },
   note: { type: String}
 });
 

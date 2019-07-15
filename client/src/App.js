@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Reservation from './containers/pages/Reservation.js'; 
 import HomePage from './containers/pages/HomePage.js';
 import HomePage2 from './containers/pages/HomePage2.js'; 
-import Home from './containers/nav/Home';
 import Prices from './containers/pages/Prices';
 import Contacts from './containers/pages/Contacts';
 import AdminReservation from './containers/pages/AdminReservation';
@@ -16,7 +15,6 @@ import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './config/messages';
 import NavBar from './components/navbar/NavBar2';
-import { Navbar } from 'react-bootstrap';
 //import configureHistory  from './configureHistory';
 
 
