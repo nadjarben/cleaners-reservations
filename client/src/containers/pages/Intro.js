@@ -4,11 +4,7 @@ import logo from '../../images/logo-min.png';
 
 class Intro extends React.Component{
     
-        componentWillMount(){
-            setTimeout(() => { 
-                this.props.history.push('/home/homepage');
-        }, 2500)
-        }
+
   render(){
       return(
         <div className="introd">

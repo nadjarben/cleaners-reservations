@@ -30,7 +30,7 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router >
-          <Route exact path="/" component={Intro}/>
+          <Route exact path="/" component={Home}/>
           <Route path="/home" component={Home}/>
           <Route path="/home/homepage" component={HomePage}/>
           <Route path="/home/reservation" component={Reservation}/>

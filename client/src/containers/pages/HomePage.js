@@ -5,12 +5,34 @@ import pressing from '../../images/logo1.png';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import { FormattedMessage } from 'react-intl'; 
-import banner from '../../images/banner.png'
+import banner from '../../images/banner.png';
+import Intro from './Intro';
 
      class HomePage extends React.Component{
-         render() {
-            return (
-                <div className='homepage' style={{backgroundImage:`url(${banner}`, width:'100%', position:'absolute'}}>
+
+        constructor(props) {
+            super(props);
+            this.state = { imageStatus: "loading" };
+          }
+
+        componentWillMount(){
+            setTimeout(() => { 
+                this.setState({
+                    imageStatus: 'loaded'
+                })
+        }, 2500)
+      }
+
+        handleImageLoaded() {
+            this.setState({ imageStatus: "loaded" });
+          }
+
+          displayContent() {
+              if(this.state.imageStatus === 'loading')
+                return <Intro />
+              if(this.state.imageStatus === 'loaded')
+                return (
+                    <div className='homepage' style={{ backgroundImage:`url(${banner}`, width:'100%', position:'absolute'}}>
                     <div className='container'>
                         <div className='row justify-content'>
                             <div className='text-center'>
@@ -32,8 +54,18 @@ import banner from '../../images/banner.png'
                         </div>
                     </div>
                 </div>
-                
-        );
+
+                )
+
+          }
+
+         render() {
+             console.log(this.state.imageStatus)
+            return (
+                <div>
+                    {this.displayContent()}
+                </div>
+            )
     }
 }
 
