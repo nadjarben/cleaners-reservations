@@ -2,11 +2,12 @@ import React from 'react';
 import { Input, Label, TabContent, TabPane, Card, Button, CardTitle, CardText, Row, Col, ModalHeader, ModalFooter } from 'reactstrap';
 import { FormattedMessage } from 'react-intl'; 
 import { Form } from 'react-bootstrap';
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { postReservation } from '../../store/actions/reservationActions';
 import { postLastReservation } from '../../store/actions/notifActions';
 import { fetchCustomers, postCustomer } from '../../store/actions/customerActions';
+import Divider from '@material-ui/core/Divider';
+import Switch from '@material-ui/core/Switch';
 
 class TabModal extends React.Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class TabModal extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       activeTab: 1,
+      switch: false,
+      color:'red',
       name: '',
       surname: '', 
       phone: '', 
@@ -23,7 +26,11 @@ class TabModal extends React.Component {
       city: '', 
       date: '', 
       hour: '', 
-      info: ''
+      info: '',
+      namefact: '',
+      numfact: '',
+      addressfact: '',
+      note: ''
     };
   }
 
@@ -44,12 +51,72 @@ class TabModal extends React.Component {
       activeTab: this.state.activeTab - 1
     })
   }
+  handleSwitch = () => {
+    console.log(this.state.switch)
+    this.setState({
+      switch: !this.state.switch
+    })
+  }
+  handleButtonCompleteSecond = () => {
+    if(this.state.date === '' || this.state.phone === '' || this.state.city === '' || this.state.address === ''  )
+      return  <Button style={{width:'120px', backgroundColor:'red'}} >Suivant</Button>
+    else
+      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}>Suivant</Button>
+  }
+  handleButtonCompleteFirst = () => {
+    if(this.state.name === '' || this.state.hour === '' )
+      return  <Button style={{width:'120px', backgroundColor:'red'}} >Suivant</Button>
+    else
+      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}>Suivant</Button>
+  }
+  
+  displayPro = () => {
+    if(this.state.switch === true)
+    return (
+      <div>
+        <div className='row'>
+          <div className='col-12'>
+            <Label for='namefact'>Nom de facturation :</Label>
+            <Input placeholder='' type='name' name="namefact" autocomplete="off" value={this.state.namefact} onChange={ this.handleChange } />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-12'>
+            <Label for='numfact'>Numero de Tva, heshbonit :</Label>
+            <Input placeholder='' type='text' name="numfact" autocomplete="off" value={this.state.numfact} onChange={ this.handleChange } />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-12'>
+            <Label for='pro'>Addresse de facturation :</Label>
+            <Input placeholder='' type='address' name="addressfact" autocomplete="off" value={this.state.addressfact} onChange={ this.handleChange } />
+          </div>
+        </div>
+      </div>
+    )
+  }
   displayPrev = () => {
     if(this.state.activeTab != 1)
     return (
-      <Col xs='6' style={{textAlign:'left'}}>
-    <Button onClick={()=> this.handlePrev()}>Precedent</Button>
-    </Col>
+      <div className='col-6'>
+        <Button style={{width:'120px'}} onClick={()=> this.handlePrev()}>Precedent</Button>
+      </div>
+    )
+  }
+  displayNext = () => {
+    if(this.state.activeTab != 3)
+    return (
+      <div className='col-6' >
+        {this.handleButtonCompleteFirst()}
+      </div>
+    )
+  }
+  displaySubmit = () => {
+    if(this.state.activeTab === 3)
+    return (
+      <div className='col-6' >
+        <Button style={{width:'120px'}} type="submit">Confirmer</Button>
+      </div>
     )
   }
 
@@ -82,16 +149,16 @@ class TabModal extends React.Component {
     this.props.postReservation(name, surname, phone, email, address, city, date, hour, info);
     this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info);
     alert(textAlert);
-      this.props.history.push('/');
+      //this.props.history.push('/home');
   }
 
   render() {
     return (
-      <div>
+      <Form onSubmit={e => this.handleSubmit(e) && this.doesCustomerExist()}>
         <TabContent activeTab={this.state.activeTab}>
 
           <TabPane tabId={1}>
-            <ModalHeader style={{color: 'red'}}>Renseignez le formulaire suivant</ModalHeader>
+            <ModalHeader style={{color: 'darkgrey'}}>Renseignez le formulaire suivant</ModalHeader>
             <div className='row justify-content'>
               <div className='col' style={{marginTop:'5%'}}>
                 <p><FormattedMessage id="reservation.min" /></p>
@@ -99,8 +166,9 @@ class TabModal extends React.Component {
                 <p><FormattedMessage id="reservation.min3" /></p>
               </div>
             </div>
-
-            <div className='row'>
+            <Divider />
+        
+            <div className='row' style={{marginTop:'5%'}}>
               <div className ='col-6'>
                 <Label for="date">* Date :</Label>
                 <Input required={true} type= "date" name="date" value={this.state.date } onChange={ this.handleChange } />
@@ -111,12 +179,13 @@ class TabModal extends React.Component {
                 <Input required={true} type= "time" placeholder="10:30" name="hour" value={this.state.hour} onChange={ this.handleChange } />
               </div>
             </div>
+            <br/><br/>
           </TabPane>
 
           <TabPane tabId={2}>
-          <ModalHeader style={{color: 'red'}}>Informations personnelles</ModalHeader>
+          <ModalHeader style={{color: 'darkgrey'}}>Informations personnelles</ModalHeader>
 
-            <div className='row'>
+            <div className='row' style={{marginTop:'2%'}}>
               <div className='col-6'>
                 <Label for="firstname">* First Name :</Label>
                 <Input required={true} type="text" placeholder="" name="name" value={this.state.name}  onChange={this.handleChange} />
@@ -143,52 +212,55 @@ class TabModal extends React.Component {
 
             <div className='row'>
               <div className='col-12'>
-                <Label for="email">* Address :</Label>
-                <Input required={true} placeholder="" name="address" value={this.state.address} onChange={ this.handleChange }  />
+                <Label for="address">* Address :</Label>
+                <Input required={true} type='address' placeholder="" name="address" value={this.state.address} onChange={ this.handleChange }  />
               </div>
             </div>
 
             <div className='row'>
               <div className='col-12'>
                   <Label for='city'>* City :</Label>
-                  <Input required={true} placeholder="" name="city" value={this.state.city } onChange={ this.handleChange } />
-
+                  <Input required={true} type='city' placeholder="" name="city" value={this.state.city } onChange={ this.handleChange } />
               </div>
             </div>
-            
+
+            <div className='row'>
+              <div className='col-12'>
+                <Label for='city'>Informations complementaires :</Label>
+                <Input placeholder='Numero dappartement, digicode, toute information utile.' type="textarea" rows='3' name="info" value={this.state.info } onChange={ this.handleChange } />
+              </div>
+            </div>
+            <br/>
           </TabPane>
 
           <TabPane tabId={3}>
-          <ModalHeader style={{color: 'red'}}>Confirmation</ModalHeader>
-            <Row>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                </Card>
-              </Col>
-            </Row>
+          <ModalHeader style={{color: 'darkgrey'}}>Confirmation</ModalHeader>
+          <div className='row' style={{marginTop:'2%'}}>
+            <div className='col-12'>
+            <Label for='city'>Professionel :</Label>
+              <Switch onClick={() => this.handleSwitch()}/>
+              {this.displayPro()}
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-12'>
+            <Label for='city'>Note :</Label>
+            <Input placeholder='' type="textarea" rows='3' name="note" value={this.state.note } onChange={ this.handleChange } />
+            </div>
+          </div>
+          <br/>
           </TabPane>
 
         </TabContent>
         <ModalFooter>
-        <Row>
-          
-            {this.displayPrev()}
-          
-          <Col xs='6'>
-            <Button onClick={()=> this.handleNext()}>Suivant</Button>
-          </Col>
-        </Row>
+        <div className='row'>
+            {this.displayPrev()}         
+            {this.displayNext()}
+            {this.displaySubmit()}
+        </div>
         </ModalFooter>
-      </div>
+      </Form>
     );
   }
 }
