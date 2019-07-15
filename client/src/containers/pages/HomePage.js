@@ -16,7 +16,7 @@ import banner from '../../images/banner.png'
                             <img src={logo} width='50%' alt="logoCleaners"></img>
                         </div>
                         <div className='text-center'>
-                            <img src={pressing} width='80%' style={{marginTop:'-25%'}} alt="pressing"/>
+                            <img src={pressing} width='80%' alt="pressing"/>
                         </div>
                         <div className='text-center' style={{color:'white'}}>
                             <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
