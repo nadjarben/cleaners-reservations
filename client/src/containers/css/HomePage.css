@@ -1,5 +1,5 @@
 .homepage {
-    
+    height: 100%;
 }
 .logo {
     float: center;
@@ -86,9 +86,12 @@
     }
 }
 /*pc*/
-@media screen and (min-width: 1450px) {
+@media screen and (min-width: 1250px) {
     .pressing {
         width: 50%;
+    }
+    .homepage {
+        height: auto
     }
 }
 
