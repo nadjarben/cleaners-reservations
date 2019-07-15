@@ -52,6 +52,10 @@ router.post('/', (req, res) => {
         date: req.body.date,
         hour: req.body.hour,
         info: req.body.info,
+        namefact: req.body.namefact,
+        numfact: req.body.numfact,
+        addressefact: req.body.addressefact,
+        note: req.body.note,
     });
     reservation
     .save()
@@ -60,16 +64,20 @@ router.post('/', (req, res) => {
         res.status(201).json({
             message: ' created reservation succesfully',
             createdReservation: {
-                _id: result._id,
-                name: result.name,
-                surname: result.surname,
-                phone: result.phone,
-                email: result.email,
-                address: result.address,
-                city: result.city,
-                date: result.date,
-                hour: result.hour,
-                info: result.info,
+              _id: result._id,
+              name: result.name,
+              surname: result.surname,
+              phone: result.phone,
+              email: result.email,
+              address: result.address,
+              city: result.city,
+              date: result.date,
+              hour: result.hour,
+              info: result.info,
+              namefact: result.info,
+              numfact: result.info,
+              addressefact: result.info,
+              note: result.info,
                 request: {
                     type: 'POST',
                     url: API + result._id

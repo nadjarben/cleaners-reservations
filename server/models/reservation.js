@@ -12,7 +12,12 @@ const ReservationSchema = new Schema({
   city: { type: String },
   date: { type: String },
   hour: { type: String },
-  info: { type: String }
+  info: { type: String },
+  namefact: { type: String },
+  numfact: { type: String },
+  addressefact: { type: String },
+  note: { type: String}
 });
+
 
 module.exports = Reservation = mongoose.model('reservation', ReservationSchema);

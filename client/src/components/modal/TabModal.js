@@ -17,7 +17,6 @@ class TabModal extends React.Component {
     this.state = {
       activeTab: 1,
       switch: false,
-      color:'red',
       name: '',
       surname: '', 
       phone: '', 
@@ -57,14 +56,16 @@ class TabModal extends React.Component {
       switch: !this.state.switch
     })
   }
-  handleButtonCompleteSecond = () => {
-    if(this.state.date === '' || this.state.phone === '' || this.state.city === '' || this.state.address === ''  )
+  handleButtonCompleteFirst = () => {
+    if(this.state.activeTab === 1)
+    if(this.state.date === '' || this.state.hour === '' )
       return  <Button style={{width:'120px', backgroundColor:'red'}} >Suivant</Button>
     else
       return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}>Suivant</Button>
   }
-  handleButtonCompleteFirst = () => {
-    if(this.state.name === '' || this.state.hour === '' )
+  handleButtonCompleteSecond = () => {
+    if(this.state.activeTab === 2)
+    if( this.state.date === '' || this.state.phone === '' || this.state.city === '' || this.state.address === ''  )
       return  <Button style={{width:'120px', backgroundColor:'red'}} >Suivant</Button>
     else
       return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}>Suivant</Button>
@@ -108,6 +109,7 @@ class TabModal extends React.Component {
     return (
       <div className='col-6' >
         {this.handleButtonCompleteFirst()}
+        {this.handleButtonCompleteSecond()}
       </div>
     )
   }
@@ -115,7 +117,7 @@ class TabModal extends React.Component {
     if(this.state.activeTab === 3)
     return (
       <div className='col-6' >
-        <Button style={{width:'120px'}} type="submit">Confirmer</Button>
+        <Button style={{width:'120px', backgroundColor:'darkblue'}} type="submit">Confirmer</Button>
       </div>
     )
   }
@@ -144,10 +146,10 @@ class TabModal extends React.Component {
     const textAlert =
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
-    const { name, surname, phone, email, address, city, date, hour, info } = this.state
+    const { name, surname, phone, email, address, city, date, hour, info, namefact, numfact, addressefact, note } = this.state
     e.preventDefault();
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info);
-    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info);
+    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, numfact, addressefact, note);
+    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, numfact, addressefact, note);
     alert(textAlert);
       //this.props.history.push('/home');
   }

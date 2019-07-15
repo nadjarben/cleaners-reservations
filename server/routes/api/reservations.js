@@ -52,6 +52,10 @@ router.post('/', (req, res) => {
         date: req.body.date,
         hour: req.body.hour,
         info: req.body.info,
+        namefact: req.body.namefact,
+        numfact: req.body.numfact,
+        addressefact: req.body.addressefact,
+        note: req.body.note,
     });
     reservation
     .save()
@@ -70,6 +74,10 @@ router.post('/', (req, res) => {
                 date: result.date,
                 hour: result.hour,
                 info: result.info,
+                namefact: result.info,
+                numfact: result.info,
+                addressefact: result.info,
+                note: result.info,
                 request: {
                     type: 'POST',
                     url: API + result._id
