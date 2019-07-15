@@ -3,7 +3,7 @@ import '../css/HomePage.css';
 import logo from '../../images/logo-min.png';
 import pressing from '../../images/logo1.png';
 import { Link } from 'react-router-dom';
-import Grid from '@material-ui/core/Grid';
+import ModalReserv from '../../components/modal/ModalReserv';
 import { FormattedMessage } from 'react-intl'; 
 import banner from '../../images/banner.png';
 import Intro from './Intro';
@@ -46,9 +46,7 @@ import Intro from './Intro';
                             </div>
                             <div className= 'col'>
                                 <div className='text-center'>
-                                    <button className="bouton18">
-                                        <Link to='/reservation'><p className="text-button"><FormattedMessage id="home.button" defaultMessage="BOOK A DELIVERY"/></p></Link>
-                                    </button>
+                                    <ModalReserv />
                                 </div>
                             </div>
                         </div>

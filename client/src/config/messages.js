@@ -79,9 +79,9 @@ export default {
         'home.button': 'RESERVEZ UNE LIVRAISON',
 
         //Reservation
-        'reservation.min': '* Livraison gratuite pour un minimum de 100 ₪',
-        'reservation.min2': '* 25 ₪ la livraison',
-        'reservation.min3': '* Nous vous contacterons dans lheure pour confirmer la livraison',
+        'reservation.min': 'La livraison est gratuite pour un minimum de 100 ₪.',
+        'reservation.min2': 'Dans le cas contraire le prix de la livraison est de 25 ₪.',
+        'reservation.min3': 'Nous vous contacterons dans lheure pour confirmer la livraison.',
         'reservation.name': 'Prenom',
         'reservation.lastname': 'Nom',
         'reservation.phone': 'Telephone',
