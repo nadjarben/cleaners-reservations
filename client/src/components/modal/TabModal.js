@@ -91,7 +91,7 @@ class TabModal extends React.Component {
         <TabContent activeTab={this.state.activeTab}>
 
           <TabPane tabId={1}>
-            <ModalHeader>Reserver une livraison</ModalHeader>
+            <ModalHeader style={{color: 'red'}}>Renseignez le formulaire suivant</ModalHeader>
             <div className='row justify-content'>
               <div className='col' style={{marginTop:'5%'}}>
                 <p><FormattedMessage id="reservation.min" /></p>
@@ -99,48 +99,67 @@ class TabModal extends React.Component {
                 <p><FormattedMessage id="reservation.min3" /></p>
               </div>
             </div>
+
+            <div className='row'>
+              <div className ='col-6'>
+                <Label for="date">* Date :</Label>
+                <Input required={true} type= "date" name="date" value={this.state.date } onChange={ this.handleChange } />
+              </div>
+            
+              <div className ='col-6'>
+                <Label for="hour">* Heure :</Label>
+                <Input required={true} type= "time" placeholder="10:30" name="hour" value={this.state.hour} onChange={ this.handleChange } />
+              </div>
+            </div>
           </TabPane>
 
           <TabPane tabId={2}>
-          <ModalHeader>Informations personnelles</ModalHeader>
+          <ModalHeader style={{color: 'red'}}>Informations personnelles</ModalHeader>
 
             <div className='row'>
               <div className='col-6'>
-                <Label for="firstname">First Name :</Label>
-                <Input required={true} type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
+                <Label for="firstname">* First Name :</Label>
+                <Input required={true} type="text" placeholder="" name="name" value={this.state.name}  onChange={this.handleChange} />
               </div>
               <div className='col-6'>
-                <Label for="surname">Surname :</Label>
-                <Form.Control required={true} type="text" placeholder="Last Name" name="surname" value={this.state.surname} onChange={ this.handleChange } />
+                <Label for="surname"> Surname :</Label>
+                <Form.Control required={true} type="text" placeholder="" name="surname" value={this.state.surname} onChange={ this.handleChange } />
               </div>
             </div>
 
             <div className='row'>
               <div className='col-12'>
-                <Label for="phone">Phone :</Label>
-                <Form.Control className="phone" required={true} type="phone" placeholder="Phone number" name="phone" value={this.state.phone} onChange={ this.handleChange } />
+                <Label for="phone">* Phone :</Label>
+                <Form.Control className="phone" required={true} type="phone" placeholder="" name="phone" value={this.state.phone} onChange={ this.handleChange } />
               </div>
             </div>
 
             <div className='row'>
               <div className='col-12'>
-                <Label for="email">E-mail :</Label>
-                <Form.Control type="email" placeholder="Enter email" name="email" value={this.state.email} onChange={ this.handleChange } />
+                <Label for="email"> E-mail :</Label>
+                <Form.Control type="email" placeholder="" name="email" value={this.state.email} onChange={ this.handleChange } />
               </div>
             </div>
+
+            <div className='row'>
+              <div className='col-12'>
+                <Label for="email">* Address :</Label>
+                <Input required={true} placeholder="" name="address" value={this.state.address} onChange={ this.handleChange }  />
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='col-12'>
+                  <Label for='city'>* City :</Label>
+                  <Input required={true} placeholder="" name="city" value={this.state.city } onChange={ this.handleChange } />
+
+              </div>
+            </div>
+            
           </TabPane>
 
           <TabPane tabId={3}>
-          <ModalHeader>Addresses</ModalHeader>
-            <Row>
-              <Col sm="12">
-                <h4>Tab 3 Contents</h4>
-              </Col>
-            </Row>
-          </TabPane>
-
-          <TabPane tabId={4}>
-          <ModalHeader>Confirmation</ModalHeader>
+          <ModalHeader style={{color: 'red'}}>Confirmation</ModalHeader>
             <Row>
               <Col sm="6">
                 <Card body>

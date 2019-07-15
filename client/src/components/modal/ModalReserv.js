@@ -1,38 +1,68 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import CloseIcon from '@material-ui/icons/Close';
+import Slide from '@material-ui/core/Slide';
 import { FormattedMessage } from 'react-intl'; 
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import TabModal from './TabModal';
-class ModalExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
 
-    this.toggle = this.toggle.bind(this);
+const useStyles = makeStyles(theme => ({
+  appBar: {
+    position: 'relative',
+    backgroundColor: '#00003f'
+  },
+  title: {
+    marginLeft: theme.spacing(2),
+    flex: 1,
+  },
+}));
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+export default function FullScreenDialog() {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  function handleClickOpen() {
+    setOpen(true);
   }
 
-  toggle() {
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
+  function handleClose() {
+    setOpen(false);
   }
 
-  render() {
-    return (
-      <div>
-        <button className="bouton18" onClick={this.toggle}>
-            <p className="text-button"><FormattedMessage id="home.button" defaultMessage="BOOK A DELIVERY"/></p>
-        </button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          
-          <ModalBody>
-            <TabModal />
-          </ModalBody>
-        </Modal>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <button className="bouton18" onClick={handleClickOpen}>
+        <p className="text-button"><FormattedMessage id="home.button" defaultMessage="BOOK A DELIVERY"/></p>
+      </button>
+      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="Close">
+              <CloseIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              Commander une livraison
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <div className='container'>
+        <TabModal />
+        </div>
+      </Dialog>
+    </div>
+  );
 }
 
-export default ModalExample;
