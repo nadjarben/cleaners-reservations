@@ -15,6 +15,8 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './config/messages';
+import NavBar from './components/navbar/NavBar2';
+import { Navbar } from 'react-bootstrap';
 //import configureHistory  from './configureHistory';
 
 
@@ -30,17 +32,16 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router >
-          <Route exact path="/" component={Home}/>
-          <Route path="/home" component={Home}/>
-          <Route path="/home/homepage" component={HomePage}/>
-          <Route path="/home/reservation" component={Reservation}/>
-          <Route path="/home/prices" component={Prices}/>
-          <Route path="/home/contacts" component={Contacts}/>
-          <Route path="/home/admin" component={Admin} />
-          <Route path="/home/admin/adminhome" component={AdminHome} />
-          <Route path="/home/admin/reservation" component={AdminReservation}/>
-          <Route path="/home/admin/customer" component={AdminCustomer}/>
-          <Route path="/home/admin/contact" component={AdminContact}/>
+          <NavBar />
+          <Route exact path="/" component={HomePage}/>
+          <Route path="/reservation" component={Reservation}/>
+          <Route path="/prices" component={Prices}/>
+          <Route path="/contacts" component={Contacts}/>
+          <Route path="/admin" component={Admin} />
+          <Route path="/admin/adminhome" component={AdminHome} />
+          <Route path="/admin/reservation" component={AdminReservation}/>
+          <Route path="/admin/customer" component={AdminCustomer}/>
+          <Route path="/admin/contact" component={AdminContact}/>
 
         </Router>
       </div>

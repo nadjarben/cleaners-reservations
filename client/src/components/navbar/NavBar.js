@@ -29,11 +29,11 @@ class NavBar extends React.Component {
       <div>
         <div className="NavBar">
           <Navbar className="navbar-dark navbar-expand-sm" color="red">
-            <Link className="title" to="/home/homepage">
+            <Link className="title" to="/">
               THE CLEANERS
             </Link>
             <Languages />
-          <Link to="/home/homepage">
+          <Link to="/">
             <img src={logo1} alt="logo1" className="logo1"/>
           </Link>
             <NavbarToggler onClick={this.toggle} />

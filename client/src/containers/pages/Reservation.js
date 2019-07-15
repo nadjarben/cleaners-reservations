@@ -50,7 +50,7 @@ class Reservation extends Component {
     this.props.postReservation(name, surname, phone, email, address, city, date, hour, info);
     this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info);
     alert(textAlert);
-      this.props.history.push('/home/homepage');
+      this.props.history.push('/');
   }
 
     render() {

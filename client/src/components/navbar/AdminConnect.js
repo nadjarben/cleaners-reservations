@@ -14,7 +14,7 @@ class AdminConnect extends React.Component {
     if(isAdmin === true) {
       return (
           <Link style={style} 
-          to="/home/admin/" 
+          to="/admin/" 
           onClick={this.toggle}>
             Admin
           </Link>

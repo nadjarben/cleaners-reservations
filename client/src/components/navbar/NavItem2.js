@@ -56,23 +56,23 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>            
-        {[  <Link to="/home/homepage" className={classes.linkhome}>
+        {[  <Link to="/" className={classes.linkhome}>
                 <div>
                 <FormattedMessage id="nav.homepage"  />
                 </div>
             </Link>,
             <Divider />,
-            <Link to="/home/reservation" className={classes.link}>
+            <Link to="/reservation" className={classes.link}>
                 <div>
                 <FormattedMessage id="nav.reservation"  />
                 </div>
             </Link>,
-            <Link to="/home/prices" className={classes.link}>
+            <Link to="/prices" className={classes.link}>
               <div>
                 <FormattedMessage id="nav.prices"/>
                 </div>
             </Link>,
-            <Link to="/home/contacts" className={classes.link}>
+            <Link to="/contacts" className={classes.link}>
               <div>
                 <FormattedMessage id="nav.contacts"/>
                 </div>
