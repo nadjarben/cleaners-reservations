@@ -57,17 +57,25 @@ export default function TemporaryDrawer() {
     >
       <List>            
         {[  <Link to="/home/homepage" className={classes.linkhome}>
+                <div>
                 <FormattedMessage id="nav.homepage"  />
+                </div>
             </Link>,
             <Divider />,
             <Link to="/home/reservation" className={classes.link}>
+                <div>
                 <FormattedMessage id="nav.reservation"  />
+                </div>
             </Link>,
             <Link to="/home/prices" className={classes.link}>
+              <div>
                 <FormattedMessage id="nav.prices"/>
+                </div>
             </Link>,
             <Link to="/home/contacts" className={classes.link}>
+              <div>
                 <FormattedMessage id="nav.contacts"/>
+                </div>
             </Link>].map((textItem, text) => (
           <ListItem button key={text}>
             <ListItemText primary={textItem} />

@@ -13,17 +13,17 @@
 .bouton18 {
     width:155px;
     height:125px;
-    background: skyblue;
+    background: black;
     box-shadow:2px 2px 8px red;
     font:bold 15px Arial;
     border-radius:50%;
-    color: red;
+    color: skyblue;
 }
 .text-center {
     margin: 5%;
 }
 .bouton18:hover {
-    background-color: black;
+    background-color: red;
 }
 .text-button {
     margin-top: 15%;
