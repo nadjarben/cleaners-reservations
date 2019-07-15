@@ -27,7 +27,6 @@ class TabModal extends React.Component {
       hour: '', 
       info: '',
       namefact: '',
-      numfact: '',
       addressfact: '',
       note: ''
     };
@@ -79,12 +78,6 @@ class TabModal extends React.Component {
           <div className='col-12'>
             <Label for='namefact'>Nom de facturation :</Label>
             <Input placeholder='' type='name' name="namefact" autocomplete="off" value={this.state.namefact} onChange={ this.handleChange } />
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col-12'>
-            <Label for='numfact'>Numero de Tva, heshbonit :</Label>
-            <Input placeholder='' type='text' name="numfact" autocomplete="off" value={this.state.numfact} onChange={ this.handleChange } />
           </div>
         </div>
         <div className='row'>
@@ -146,10 +139,10 @@ class TabModal extends React.Component {
     const textAlert =
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
-    const { name, surname, phone, email, address, city, date, hour, info, namefact, numfact, addressefact, note } = this.state
+    const { name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note } = this.state
     e.preventDefault();
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, numfact, addressefact, note);
-    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, numfact, addressefact, note);
+    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note);
+    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note);
     alert(textAlert);
       //this.props.history.push('/home');
   }

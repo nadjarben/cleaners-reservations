@@ -7,9 +7,9 @@ const reservationsAPI = //'http://localhost:8080/api/reservations/'
                         'https://www.thecleanersisrael.com/api/reservations/'
 
 
-export const postReservation = (name, surname, phone, email, address, city, date, hour, info) => dispatch => {
+export const postReservation = (name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note) => dispatch => {
     axios.post(reservationsAPI, {
-          name, surname, phone, email, address, city, date, hour, info
+          name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note
       })
       .then(res => {
           return dispatch({
