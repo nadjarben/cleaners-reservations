@@ -139,10 +139,10 @@ class TabModal extends React.Component {
     const textAlert =
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
-    const { name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note } = this.state
+    const { name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note } = this.state
     e.preventDefault();
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note);
-    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressefact, note);
+    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
+    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
     alert(textAlert);
       //this.props.history.push('/home');
   }
