@@ -33,7 +33,7 @@ class NavBar extends React.Component {
               THE CLEANERS
             </Link>
             <Languages />
-          <Link to="/">
+          <Link to="/home">
             <img src={logo1} alt="logo1" className="logo1"/>
           </Link>
             <NavbarToggler onClick={this.toggle} />

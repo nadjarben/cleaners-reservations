@@ -46,7 +46,7 @@ export default function MenuAppBar() {
         <Toolbar className={classes.toolbar}>
         <NavItem2 />
           <Typography variant="h6" className={classes.title}>
-          <Link className={classes.link} to="/">THE CLEANERS</Link>
+          <Link className={classes.link} to="/home">THE CLEANERS</Link>
           </Typography>
           <Languages2 />
             <div>

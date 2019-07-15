@@ -15,22 +15,12 @@ import Intro from './Intro';
             this.state = { imageStatus: "loading" };
           }
 
-        componentDidMount(){
-            setTimeout(() => { 
-                this.setState({
-                    imageStatus: 'loaded'
-                })
-        }, 2500)
-      }
 
         handleImageLoaded() {
             this.setState({ imageStatus: "loaded" });
           }
 
           displayContent() {
-              if(this.state.imageStatus === 'loading')
-                return <Intro />
-              if(this.state.imageStatus === 'loaded')
                 return (
                     <div className='homepage' style={{ backgroundImage:`url(${banner}`, width:'100%', position:'absolute'}}>
                     <div className='container'>

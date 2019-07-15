@@ -1,50 +1,41 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl'; 
-import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import IconButton from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/icons/Menu';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+import { FormattedMessage } from 'react-intl'; 
 import AdminConnect from './AdminConnect';
+import {Link} from 'react-router-dom';
 
-
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   list: {
     width: 250,
   },
   fullList: {
     width: 'auto',
   },
-  linkhome: {
-    color: 'red',
-    float: 'right'
-  },
-  link: {
-      color: 'black',
-      float: 'right',
-  },
-  menuButton: {
-    marginRight: theme.spacing(4),
-  },
-}));
+});
 
-
-export default function TemporaryDrawer() {
+export default function SwipeableTemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
+    top: false,
     left: false,
+    bottom: false,
+    right: false,
   });
 
-
   const toggleDrawer = (side, open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
+
     setState({ ...state, [side]: open });
   };
 
@@ -55,37 +46,19 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>            
-        {[  <Link to="/" className={classes.linkhome}>
-                <div>
-                <FormattedMessage id="nav.homepage"  />
-                </div>
-            </Link>,
-            <Divider />,
-            <Link to="/reservation" className={classes.link}>
-                <div>
-                <FormattedMessage id="nav.reservation"  />
-                </div>
-            </Link>,
-            <Link to="/prices" className={classes.link}>
-              <div>
-                <FormattedMessage id="nav.prices"/>
-                </div>
-            </Link>,
-            <Link to="/contacts" className={classes.link}>
-              <div>
-                <FormattedMessage id="nav.contacts"/>
-                </div>
-            </Link>].map((textItem, text) => (
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemText primary={textItem} />
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
-        {[<AdminConnect />].map((text) => (
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem button key={text}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -93,16 +66,60 @@ export default function TemporaryDrawer() {
     </div>
   );
 
-
+  const fullList = side => (
+    <div
+      className={classes.fullList}
+      role="presentation"
+      onClick={toggleDrawer(side, false)}
+      onKeyDown={toggleDrawer(side, false)}
+    >
+      <List>
+        {[<Link to='/home'><div style={{color:'black'}}><FormattedMessage id="nav.homepage"/></div></Link>, <Link to='/reservation'><div style={{color:'black'}}><FormattedMessage id="nav.reservation"  /></div></Link>, <Link to='/prices'><div style={{color:'black'}}><FormattedMessage id="nav.prices"/></div></Link>, <Link to='/contacts'><div style={{color:'black'}}><FormattedMessage id="nav.contacts"/></div></Link>, <Link to='/admin'><div style={{color:'red'}}><AdminConnect/></div></Link> ].map((text, index) => (
+          <ListItem button key={text}>
+           
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      
+    </div>
+  );
 
   return (
     <div>
-        <IconButton edge="start" color="inherit" aria-label="Menu" onClick={toggleDrawer('left', true)} className={classes.menuButton}>
-          <MenuIcon />
-        </IconButton>
-      <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
+      <IconButton onClick={toggleDrawer('top', true)}>Open Top</IconButton>
+      <SwipeableDrawer
+        open={state.left}
+        onClose={toggleDrawer('left', false)}
+        onOpen={toggleDrawer('left', true)}
+      >
         {sideList('left')}
-      </Drawer>
+      </SwipeableDrawer>
+      <SwipeableDrawer
+        anchor="top"
+        open={state.top}
+        onClose={toggleDrawer('top', false)}
+        onOpen={toggleDrawer('top', true)}
+      >
+        {fullList('top')}
+      </SwipeableDrawer>
+      <SwipeableDrawer
+        anchor="bottom"
+        open={state.bottom}
+        onClose={toggleDrawer('bottom', false)}
+        onOpen={toggleDrawer('bottom', true)}
+      >
+        {fullList('bottom')}
+      </SwipeableDrawer>
+      <SwipeableDrawer
+        anchor="right"
+        open={state.right}
+        onClose={toggleDrawer('right', false)}
+        onOpen={toggleDrawer('right', true)}
+      >
+        {sideList('right')}
+      </SwipeableDrawer>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Intro from './containers/pages/Intro.js'; 
 import Reservation from './containers/pages/Reservation.js'; 
-import HomePage from './containers/pages/HomePage.js'; 
+import HomePage from './containers/pages/HomePage.js';
+import HomePage2 from './containers/pages/HomePage2.js'; 
 import Home from './containers/nav/Home';
 import Prices from './containers/pages/Prices';
 import Contacts from './containers/pages/Contacts';
@@ -34,6 +34,7 @@ class App extends Component {
         <Router >
           <NavBar />
           <Route exact path="/" component={HomePage}/>
+          <Route exact path="/home" component={HomePage2}/>
           <Route path="/reservation" component={Reservation}/>
           <Route path="/prices" component={Prices}/>
           <Route path="/contacts" component={Contacts}/>
