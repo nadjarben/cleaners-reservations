@@ -59,6 +59,7 @@ class AdminReservation extends Component {
 
             return (
                 <div>
+                    <div className='container'>
                     <input className="search-reservation form-search form-control mr-sm-2" type="search" onChange={ this.updateSearch.bind(this) } placeholder="Search" name="search" value={this.state.search} />
                     <Button className="button-create" onClick={this.toggle}>Nouveau</Button>                  
                     <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
@@ -71,6 +72,7 @@ class AdminReservation extends Component {
                     </Modal>
                 <div className="admin">
                     <ul className="list-group">{r}</ul>
+                </div>
                 </div>
                 <BottomBar />
                 </div>

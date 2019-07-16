@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { deleteCustomer } from '../../../store/actions/customerActions';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 
  class ModalCustomer extends React.Component {
@@ -51,7 +50,8 @@ import PropTypes from 'prop-types';
      )
     }
  }
-ModalCustomer.propTypes = {
-    deleteCustomer: PropTypes.func.isRequired
-}
-export default connect({deleteCustomer })(ModalCustomer)
+ const mapStateToProps = state => ({
+    
+});
+
+ export default connect(mapStateToProps, {deleteCustomer})(ModalCustomer)
