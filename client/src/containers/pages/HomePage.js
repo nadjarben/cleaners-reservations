@@ -33,10 +33,10 @@ import Intro from './Intro';
                     <div className='homepage' style={{ backgroundColor:'#0E1521'}}>
                         <div className='container'>
                             <div className='text-center'>
-                                <img className='text-center' src={logo} width='60%' alt="logoCleaners"></img>
+                                <img className='logo-cleaners' src={logo} width='60%' alt="logoCleaners"></img>
                             </div>
                             <div className='text-center'>
-                                <img src={pressing} width='80%' alt="pressing" />
+                                <img className='logo-pressing' src={pressing} width='80%' alt="pressing" />
                             </div>
                             <br/>
                         <div className='row justify-content'>
@@ -44,6 +44,7 @@ import Intro from './Intro';
                                 <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                         </div>  
+                        <br/>
                         <br/>         
                         <div className='text-center'>
                             <ModalReserv />

@@ -74,10 +74,13 @@
 /*pc*/
 @media screen and (min-width: 1250px) {
     .logo-cleaners {
-        width: 30%;
+        width: 25%;
+    }
+    .logo-pressing {
+        width: 50%
     }
     .homepage {
-        height: auto
+        height: 91vh
     }
 }
 
@@ -93,7 +96,6 @@
     .bouton18 {
         width:165px;
         height:165px;
-
     }
 }
 /*iphone 5 */

@@ -25,7 +25,7 @@ import ModalReserv from '../../components/modal/ModalReserv';
                                 <img className='logo-cleaners' src={logo} width='70%' alt="logoCleaners"></img>
                             </div>
                             <div className='text-center'>
-                                <img src={pressing} width='80%' alt="pressing" />
+                                <img className='logo-pressing' src={pressing} width='80%' alt="pressing" />
                             </div>
                             <br/>
                         <div className='row justify-content'>
