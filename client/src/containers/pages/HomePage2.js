@@ -34,7 +34,7 @@ import ModalReserv from '../../components/modal/ModalReserv';
                             </div>
                         </div>  
                         <br/>
-                        <br/>         
+                        
                         <div className='text-center'>
                             <ModalReserv />
                         </div>

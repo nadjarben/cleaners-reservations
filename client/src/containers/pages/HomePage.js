@@ -45,7 +45,7 @@ import Intro from './Intro';
                             </div>
                         </div>  
                         <br/>
-                        <br/>         
+                                 
                         <div className='text-center'>
                             <ModalReserv />
                         </div>
