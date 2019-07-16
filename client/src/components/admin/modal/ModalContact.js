@@ -32,7 +32,7 @@ import PropTypes from 'prop-types';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{contact.name} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader className="modal-header" close={closeBtn}>
+                    <ModalHeader style={{backgroundColor:'#0E1521', color: 'white'}} className="modal-header" close={closeBtn}>
                         {contact.name} 
                     </ModalHeader>
                     <ModalBody>

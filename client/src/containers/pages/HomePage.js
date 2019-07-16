@@ -30,23 +30,23 @@ import Intro from './Intro';
                 return <Intro />
               if(this.state.imageStatus === 'loaded')
                 return (
-                    <div className='homepage' style={{ backgroundColor:'#0E1521', width:'100%', position:'absolute'}}>
-                    <div className='container'>
+                    <div className='homepage' style={{ backgroundColor:'#0E1521'}}>
+                        <div className='container'>
+                            <div className='text-center'>
+                                <img className='text-center' src={logo} width='50%' alt="logoCleaners"></img>
+                            </div>
+                            <div className='text-center'>
+                                <img src={pressing} width='80%' alt="pressing" />
+                            </div>
+                            <br/>
                         <div className='row justify-content'>
-                            <div className='text-center'>
-                                <img src={logo} width='50%' alt="logoCleaners"></img>
-                            </div>
-                            <div className='text-center'>
-                                <img src={pressing} width='80%' alt="pressing" style={{marginTop:'-25%'}}/>
-                            </div>
                             <div className='text-center' style={{color:'white'}}>
                                 <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
-                            <div className= 'col'>
-                                <div className='text-center'>
-                                    <ModalReserv />
-                                </div>
-                            </div>
+                        </div>  
+                        <br/>         
+                        <div className='text-center'>
+                            <ModalReserv />
                         </div>
                     </div>
                 </div>

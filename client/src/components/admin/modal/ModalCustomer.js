@@ -32,7 +32,7 @@ import { connect } from 'react-redux';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{customer.name} {customer.surname} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader className="modal-header" close={closeBtn}>
+                    <ModalHeader className="modal-header" style={{backgroundColor:'#0E1521', color: 'white'}} close={closeBtn}>
                         {customer.name} {customer.surname}
                     </ModalHeader>
                     <ModalBody>
@@ -40,7 +40,7 @@ import { connect } from 'react-redux';
                         <h5>Ville: </h5><p>{customer.city}</p>
                         <h5>Tel: </h5><p>{customer.phone}</p>
                         <h5>Email: </h5><p>{customer.email}</p>
-                        <h6>informations: </h6><p>{customer.info}</p>
+                        <h6>Informations: </h6><p>{customer.info}</p>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={e => this.handleDeleteCustomer(e)} >Supprimer</Button>
