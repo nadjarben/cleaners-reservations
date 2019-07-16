@@ -19,10 +19,10 @@ import ModalReserv from '../../components/modal/ModalReserv';
 
           displayContent() {
                 return (
-                    <div className='homepage' style={{ backgroundColor:'#0E1521'}}>
+<div className='homepage' style={{ backgroundColor:'#0E1521'}}>
                         <div className='container'>
                             <div className='text-center'>
-                                <img className='logo-cleaners' src={logo} width='70%' alt="logoCleaners"></img>
+                                <img className='logo-cleaners' src={logo} width='60%' alt="logoCleaners"></img>
                             </div>
                             <div className='text-center'>
                                 <img className='logo-pressing' src={pressing} width='80%' alt="pressing" />
@@ -33,6 +33,7 @@ import ModalReserv from '../../components/modal/ModalReserv';
                                 <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                         </div>  
+                        <br/>
                         <br/>         
                         <div className='text-center'>
                             <ModalReserv />
