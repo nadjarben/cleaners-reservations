@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/flag-en.5f65d732.png"
   },
   {
-    "revision": "592a98c3dfcc27308254",
-    "url": "/static/css/main.75ee65a3.chunk.css"
+    "revision": "492fad07b01044db91bf",
+    "url": "/static/css/main.82010f1f.chunk.css"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/static/media/flag-he.8948b4e5.png"
   },
   {
-    "revision": "592a98c3dfcc27308254",
-    "url": "/static/js/main.b78cec44.chunk.js"
+    "revision": "492fad07b01044db91bf",
+    "url": "/static/js/main.7fa08f24.chunk.js"
   },
   {
     "revision": "26614f91775dc0cacbadfc0fc99a4f02",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/static/media/truck.c63a61d6.svg"
   },
   {
-    "revision": "b2d412a84cbb89cfaa7738eb952d5fd2",
+    "revision": "9b0006775b4d166b048ae40f2ad0417f",
     "url": "/index.html"
   }
 ];
