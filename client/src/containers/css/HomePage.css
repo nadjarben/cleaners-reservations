@@ -1,6 +1,6 @@
 
 .homepage {
-    height: 91.2vh;
+    height: 92vh;
     color: white;
 }
 
@@ -49,11 +49,11 @@
 /*ipad */
 @media screen and (min-width: 750px) and (max-width: 1200px) and (min-height: 1000px) {
     .lead {
-        font-size: 25px;
+        font-size: 20px;
         margin-top: 35px;
     }
     .bouton18 {
-        font-size: 15px;
+        font-size: 25px;
     }
     .homepage {
         
@@ -62,7 +62,7 @@
 /*paysage */
 @media screen and (min-width: 500px) and (max-width: 820px) and (min-height: 300px) and (max-height: 450) {
     .lead {
-        font-size: 25px;
+        font-size: 5px;
         margin-top: 35px;
     }
     .bouton18 {
@@ -75,7 +75,7 @@
 /*ipad pro*/
 @media screen and (min-width: 1000px) and (max-width: 1400px) and (min-height: 1300px) {
     .lead {
-        font-size: 30px;
+        font-size: 28px;
         margin-top: 70px;
         margin-bottom: 70px;
     }
@@ -108,7 +108,20 @@
 }
 /*iphone 5 */
 @media screen and (min-width: 280px) and (max-width: 344px) and (min-height: 550px) and (max-height: 650px) {
-    
+    .logo-cleaners {
+        width: 25vh;
+        height: 25vh;
+    }
+    .bouton18 {
+        width: 15vh;
+        height: 15vh;
+    }
+    .homepage {
+        height: 85vh;
+    }
+    .lead {
+        font-size: 10px;
+    }
 }
 /*pixel2 */
 @media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 730px) and (max-height: 810px) {
@@ -116,17 +129,30 @@
 }
 /*iphone 6/7/8 */
 @media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 600px) and (max-height: 735px) {
-    
+    .logo-cleaners {
+        width: 25vh;
+        height: 25vh;
+    }
+    .bouton18 {
+        width: 16vh;
+        height: 16vh;
+    }
+    .homepage {
+        height: 90vh;
+    }
 }
 /*iphone X */
 @media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 811px) and (max-height: 911px) {
     .lead {
-        font-size: 18px;
+        font-size: 14px;
     }
 }
 /*iphone 8plus */
 @media screen and (min-width: 400px) and (max-width: 415px) and (min-height: 730px) and (max-height: 800px) {
-    
+    .lead {
+        font-size: 13px;
+    }
 }
+
 
 
