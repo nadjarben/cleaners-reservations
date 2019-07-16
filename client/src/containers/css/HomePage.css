@@ -150,8 +150,8 @@
     .title {
         font-size: 13px;
     }
-    .text-center {
-        font-size: 15px;
+    .lead {
+        font-size: 12px
     }
     .bouton18 {
         width:135px;
@@ -160,8 +160,8 @@
 }
 /*iphone X */
 @media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 811px) and (max-height: 911px) {
-    .text-center {
-        font-size: 18px;
+    .lead {
+        font-size: 20px;
     }
     .bouton18 {
         width:135px;
