@@ -18,7 +18,6 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     backgroundColor: 'black',
-    height: '5vh'
   },
   title: {
     flexGrow: 1,

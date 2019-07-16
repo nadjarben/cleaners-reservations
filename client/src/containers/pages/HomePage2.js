@@ -30,7 +30,7 @@ import ModalReserv from '../../components/modal/ModalReserv';
                             <br />
                         <div className='row justify-content'>
                             <div className='text-center'>
-                                <p className="lead text-center text-intro"><FormattedMessage id="home.intro" defaultMessage=""/></p>
+                                <p  className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                         </div>  
                         <br/>

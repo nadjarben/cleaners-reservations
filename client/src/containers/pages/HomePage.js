@@ -30,7 +30,7 @@ import Intro from './Intro';
                 return <Intro />
               if(this.state.imageStatus === 'loaded')
                 return (
-                    <div className='homepage' style={{ backgroundColor:'#0E1521'}}>
+<div className='homepage' style={{ backgroundColor:'#0E1521'}}>
                         <div className='container'>
                             <div className='text-center'>
                                 <img className='logo-cleaners' src={logo} width='60%' alt="logoCleaners"></img>
@@ -38,15 +38,13 @@ import Intro from './Intro';
                             <div className='text-center'>
                                 <img className='logo-pressing' src={pressing} width='80%' alt="pressing" />
                             </div>
-                            <br/>
-                            <br/>
+                            <br />
                         <div className='row justify-content'>
-                            <div className='text-center' style={{color:'white'}}>
-                                <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
+                            <div className='text-center'>
+                                <p className="lead text-center text-intro"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                         </div>  
                         <br/>
-                        <br/>         
                         <div className='text-center'>
                             <ModalReserv />
                         </div>

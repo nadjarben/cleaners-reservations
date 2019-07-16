@@ -1,22 +1,20 @@
 
 .homepage {
-    height: 95vh;
+    height: 100vh;
+    color: white;
 }
+
 .logo-cleaners {
     margin-top: 2vh;
     height: 30vh;
     width: 30vh;
 }
 .logo-pressing {
-    height: 4vh;
-    width: 70%;
+    height: 3vh;
+    width: 60%;
 }
-.space {
-    margin: 9vh
-}
-.text-intro {
-    color: white;
-    font-size: 14px;
+.lead {
+    font-size: 15px;
 }
 .title-link {
     color:white;
@@ -49,16 +47,42 @@
 }
 
 /*ipad */
-@media screen and (min-width: 1000px) and (max-width: 1200px) {
-    
+@media screen and (min-width: 750px) and (max-width: 1200px) {
+    .lead {
+        font-size: 25px;
+        margin-top: 35px;
+    }
+    .bouton18 {
+        font-size: 25px;
+    }
 }
 /*ipad pro*/
-@media screen and (min-width: 1201px) and (max-width: 1400px) {
-    
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+    .lead {
+        font-size: 30px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    .bouton18 {
+        font-size: 30px;
+    }
 }
 /*pc*/
 @media screen and (min-width: 1250px) {
-
+    .logo-cleaners {
+        width: 40vh;
+        height: 40vh;
+    }
+    .logo-pressing {
+        width: 700px;
+        height: 40px;
+    }
+    .lead {
+        font-size: 20px;
+    }
+    .bouton18 {
+        font-size: 20px;
+    }
 }
 
 /*iphone 8plus */
@@ -80,7 +104,9 @@
 }
 /*iphone X */
 @media screen and (min-width: 345px) and (max-width: 415px) and (min-height: 811px) and (max-height: 911px) {
-    
+    .lead {
+        font-size: 18px;
+    }
 }
 /*iphone 8plus */
 @media screen and (min-width: 400px) and (max-width: 415px) and (min-height: 730px) and (max-height: 800px) {
