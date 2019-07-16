@@ -29,7 +29,7 @@ export default function LabelBottomNavigation() {
       <BottomNavigationAction label="Whats App" value="historique" icon={<a href='https://api.whatsapp.com/send?phone=33667974254' ><img src={whatsapp} alt='whatsapp' /></a>} />
       <BottomNavigationAction label="Phone" value="historique" icon={<a href='tel:+33667974254'><img src={phone} alt='phone' /></a>} />
       <BottomNavigationAction label="Facebook" value="historique" icon={<a href='https://www.facebook.com/pages/The-Cleaners/1356200531133580'><img src={facebook} alt='facebook' /></a>} />
-      <BottomNavigationAction label="Google Map" value="historique" icon={<a href='https://www.google.com/maps/place/HaAtsmaut+93,+Ashdod/@31.7892578,34.6396247,17z/data=!4m13!1m7!3m6!1s0x1502a2f8baeab13d:0xc8142a22d1ba932d!2sHaAtsmaut+93,+Ashdod!3b1!8m2!3d31.7892578!4d34.6418134!3m4!1s0x1502a2f8baeab13d:0xc8142a22d1ba932d!8m2!3d31.7892578!4d34.6418134'><img src={googlemap} alt='gmap' /></a>} />
+      <BottomNavigationAction label="Google Map" value="historique" icon={<a href='https://www.google.com/maps/place/Pressing+The+Cleaners/@31.7885499,34.6422172,19.18z/data=!4m12!1m6!3m5!1s0x1502a3122478a447:0xa8bfdbf2a15e8b43!2sPressing+The+Cleaners!8m2!3d31.7889614!4d34.6426781!3m4!1s0x1502a3122478a447:0xa8bfdbf2a15e8b43!8m2!3d31.7889614!4d34.6426781'><img src={googlemap} alt='gmap' /></a>} />
     </BottomNavigation>
   );
 }
