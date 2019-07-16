@@ -73,8 +73,8 @@
 }
 /*pc*/
 @media screen and (min-width: 1250px) {
-    .pressing {
-        width: 50%;
+    .logo-cleaners {
+        width: 30%;
     }
     .homepage {
         height: auto
