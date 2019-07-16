@@ -1,6 +1,6 @@
 
 .homepage {
-    height: 100vh;
+    height: 95vh;
 }
 .logo-cleaners {
     margin-top: 2vh;
@@ -26,7 +26,6 @@
     color:skyblue;
 }
 .bouton18 {  
-    bottom: 9vh;
     width: 20vh;
     height:20vh;
     background: black;

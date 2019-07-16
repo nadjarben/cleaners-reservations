@@ -17,7 +17,8 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   toolbar: {
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    height: '5vh'
   },
   title: {
     flexGrow: 1,
