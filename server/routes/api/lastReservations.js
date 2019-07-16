@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose')
-const Reservation = require('../../models/reservation');
+const LastReservation = require('../../models/lastReservation');
 
 const API = //'http://localhost:8080/api/lastreservations/'
             //'https://cleaners-reservation.herokuapp.com/api/lastreservations/'
@@ -9,23 +9,23 @@ const API = //'http://localhost:8080/api/lastreservations/'
 
 
 router.get('/',(req,res,next) => {
-    Reservation.find()
+    LastReservation.find()
     
-    .then(reservations =>  res.json(reservations) );
+    .then(lastReservations =>  res.json(lastReservations) );
   })
 
 router.get("/:id", (req, res) => {
-    Reservationion.findById(req.params.id)
-    .populate("reservation")
+    LastReservation.findById(req.params.id)
+    .populate("lastReservation")
     .exec()
-    .then(reservation => {
-      if (!reservation) {
+    .then(lastReservation => {
+      if (!lastReservation) {
         return res.status(404).json({
-          message: "Reservationion not found"
+          message: "LastReservation not found"
         });
       }
       res.status(200).json({
-        reservation: reservation,
+        lastReservation: lastReservation,
         request: {
           type: "GET",
           url: API 
@@ -40,8 +40,8 @@ router.get("/:id", (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    Reservation.find({ _id: req.body.reservationId})
-    const reservation = new Reservation({
+    LastReservation.find({ _id: req.body.lastReservationId})
+    const lastReservation = new LastReservation({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         surname: req.body.surname,
@@ -56,13 +56,13 @@ router.post('/', (req, res) => {
         addressfact: req.body.addressfact,
         note: req.body.note,
     });
-    reservation
+    lastReservation
     .save()
     .then(result => {
         console.log(result);
         res.status(201).json({
-            message: ' created reservation succesfully',
-            createdReservation: {
+            message: ' created lastReservation succesfully',
+            createdLastReservation: {
               _id: result._id,
               name: result.name,
               surname: result.surname,
@@ -92,8 +92,8 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    Reservation.findById(req.params.id)
-      .then(Reservation => Reservation.remove()
+    LastReservation.findById(req.params.id)
+      .then(LastReservation => LastReservation.remove()
       .then(() => res.json({ success: true })))
       .catch(err => res.status(404).json({ success: false + err }));
   });
