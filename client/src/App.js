@@ -15,6 +15,7 @@ import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './config/messages';
 import NavBar from './components/navbar/NavBar2';
+import FooterBar from './components/footer/FooterBar';
 //import configureHistory  from './configureHistory';
 
 
@@ -31,6 +32,7 @@ class App extends Component {
       <div className="App">
         <Router >
           <NavBar />
+          <FooterBar />
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/home" component={HomePage2}/>
           <Route path="/reservation" component={Reservation}/>

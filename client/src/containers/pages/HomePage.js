@@ -50,9 +50,7 @@ import Intro from './Intro';
                         </div>
                     </div>
                 </div>
-
                 )
-
           }
 
          render() {
