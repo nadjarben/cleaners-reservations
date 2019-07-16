@@ -1,19 +1,22 @@
 
 .homepage {
-    height: 94vh;
+    height: 100vh;
 }
 .logo-cleaners {
     margin-top: 2vh;
-    height: 35vh;
-    width: 35vh;
+    height: 30vh;
+    width: 30vh;
 }
 .logo-pressing {
-    height: 8vh;
-    width: 80vh;
+    height: 4vh;
+    width: 70%;
+}
+.space {
+    margin: 9vh
 }
 .text-intro {
     color: white;
-    height: 22vh;
+    font-size: 14px;
 }
 .title-link {
     color:white;
@@ -22,8 +25,7 @@
 .title-link:hover {
     color:skyblue;
 }
-.bouton18 {
-    
+.bouton18 {  
     bottom: 9vh;
     width: 20vh;
     height:20vh;

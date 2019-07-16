@@ -39,13 +39,14 @@ import Intro from './Intro';
                                 <img className='logo-pressing' src={pressing} width='80%' alt="pressing" />
                             </div>
                             <br/>
+                            <br/>
                         <div className='row justify-content'>
                             <div className='text-center' style={{color:'white'}}>
                                 <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                         </div>  
                         <br/>
-                                 
+                        <br/>         
                         <div className='text-center'>
                             <ModalReserv />
                         </div>

@@ -27,14 +27,13 @@ import ModalReserv from '../../components/modal/ModalReserv';
                             <div className='text-center'>
                                 <img className='logo-pressing' src={pressing} width='80%' alt="pressing" />
                             </div>
-                            <br/>
+                            <br />
                         <div className='row justify-content'>
-                            <div className='text-center text-intro'>
-                                <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
+                            <div className='text-center'>
+                                <p className="lead text-center text-intro"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                         </div>  
                         <br/>
-                        
                         <div className='text-center'>
                             <ModalReserv />
                         </div>
