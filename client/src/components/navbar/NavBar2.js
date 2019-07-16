@@ -51,9 +51,6 @@ export default function MenuAppBar() {
           </Typography>
           <Languages2 />
             <div>
-              <a style={{marginRight:'6px'}} href="https://api.whatsapp.com/send?phone=33667974254">
-                <img width="25px" style={{marginLeft:'10px'}} className="img-icon ccw-analytics" id="style-3" data-ccw="style-3" src="https://www.siteinternet-vtc.fr/wp-content/plugins/click-to-chat-for-whatsapp/./assets/img/whatsapp-logo.png" alt="WhatsApp chat" />
-              </a>
               <IconButton
                 aria-label="Account of current user"
                 aria-controls="menu-appbar"

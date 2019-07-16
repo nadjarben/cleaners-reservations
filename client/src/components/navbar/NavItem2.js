@@ -74,7 +74,7 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {[<Link to='/home'><div style={{color:'black'}}><FormattedMessage id="nav.homepage"/></div></Link>, <Link to='/reservation'><div style={{color:'black'}}><FormattedMessage id="nav.reservation"  /></div></Link>, <Link to='/prices'><div style={{color:'black'}}><FormattedMessage id="nav.prices"/></div></Link>, <Link to='/contacts'><div style={{color:'black'}}><FormattedMessage id="nav.contacts"/></div></Link>, <Link to='/admin'><div style={{color:'red'}}><AdminConnect/></div></Link> ].map((text, index) => (
+        {[<Link to='/home'><div style={{color:'black'}}><FormattedMessage id="nav.homepage"/></div></Link>, <Link to='/reservation'><div style={{color:'black'}}><FormattedMessage id="nav.reservation"  /></div></Link>, <Link to='/prices'><div style={{color:'black'}}><FormattedMessage id="nav.prices"/></div></Link>, <Link to='/contacts'><div style={{color:'black'}}><FormattedMessage id="nav.contacts"/></div></Link>, <Link to='/admin/adminhome'><div style={{color:'red'}}><AdminConnect/></div></Link> ].map((text, index) => (
           <ListItem button key={text}>
            
             <ListItemText primary={text} />
