@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     color: 'white',
-    marginLeft: '3%'
+    marginLeft: '2%'
   }
 }));
 
