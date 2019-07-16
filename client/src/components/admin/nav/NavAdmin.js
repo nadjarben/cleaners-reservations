@@ -41,7 +41,7 @@ export default function ScrollableTabsButtonAuto() {
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
+          indicatorColor="white"
           textColor="primary"
           variant="scrollable"
           scrollButtons="auto"

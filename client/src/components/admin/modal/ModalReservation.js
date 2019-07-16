@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { deleteReservation } from '../../../store/actions/reservationActions';
-import { postCustomer } from '../../../store/actions/customerActions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -24,11 +23,6 @@ import PropTypes from 'prop-types';
         this.props.deleteReservation(id);
         window.location.reload(); 
       }
-      handlePostCustomer() {
-        const { name, surname, phone, email, address, city, info } = this.props.reservation;
-        this.props.postCustomer(name, surname, phone, email, address, city, info)
-        alert(`${name} ${surname} enregistre.`)
-      }
 
     render() {    
 
@@ -44,18 +38,24 @@ import PropTypes from 'prop-types';
                     <ModalBody>
                         <h5>Addresse: </h5><p>{reservation.address}</p>
                         <h5>Ville: </h5><p>{reservation.city}</p>
+                        <h5>Informations: </h5><p>{reservation.info}</p>
                         <h5>Tel: </h5><p>{reservation.phone}</p>
                         <h5>Email: </h5><p>{reservation.email}</p>
                         <h5>Date: </h5><p>{reservation.date}</p>
                         <h5>Heure: </h5><p>{reservation.hour}</p>
-                        <h5>informations: </h5><p>{reservation.info}</p>
-                        <h5>namefact: </h5><p>{reservation.namefact}</p>
-                        <h5>addressfact: </h5><p>{reservation.addressfact}</p>
-                        <h5>note: </h5><p>{reservation.note}</p>
+                        <div className='row'>
+                          <div className='col-6'>
+                            <h5>Facture:</h5>
+                          </div>
+                        </div>
+                        <div className='col-6'>
+                          <p>{reservation.namefact}</p>
+                          <p>{reservation.addressfact}</p>
+                          <p>{reservation.note}</p>
+                        </div>
                     </ModalBody>
                     <ModalFooter>
                         <Button>Archiver</Button>
-                        <Button color="success" onClick={() => this.handlePostCustomer()}>Enregistrer client</Button>
                         <Button color="danger" onClick={() => this.handleDeleteReservation()} >Supprimer</Button>
                     </ModalFooter>
             </Modal>
@@ -69,4 +69,4 @@ import PropTypes from 'prop-types';
 ModalReservation.propTypes = {
     deleteReservation: PropTypes.func.isRequired
 }
-export default connect(mapStateToProps, {deleteReservation, postCustomer})(ModalReservation)
+export default connect(mapStateToProps, {deleteReservation})(ModalReservation)
