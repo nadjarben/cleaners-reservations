@@ -29,7 +29,7 @@ import ModalReserv from '../../components/modal/ModalReserv';
                             </div>
                             <br/>
                         <div className='row justify-content'>
-                            <div className='text-center' style={{color:'white'}}>
+                            <div className='text-center text-intro'>
                                 <p className="lead text-center"><FormattedMessage id="home.intro" defaultMessage=""/></p>
                             </div>
                         </div>  

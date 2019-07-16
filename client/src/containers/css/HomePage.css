@@ -1,6 +1,15 @@
 
 .homepage {
-        height: 95vh;
+    height: 95vh;
+}
+.logo-cleaners {
+    margin-top: 2vh;
+    height: 32vh;
+    width: 32vh;
+}
+.text-intro {
+    color: white;
+    height: 22vh;
 }
 .title-link {
     color:white;
@@ -10,8 +19,10 @@
     color:skyblue;
 }
 .bouton18 {
-    width:155px;
-    height:155px;
+    
+    bottom: 9vh;
+    width: 18vh;
+    height:18vh;
     background: black;
     box-shadow:2px 2px 8px red;
     font:bold 15px Arial;
