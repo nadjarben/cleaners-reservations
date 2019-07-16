@@ -1,7 +1,14 @@
 
-    .homepage {
+.homepage {
         height: 95vh;
-    }
+}
+.title-link {
+    color:white;
+    margin-left: 2%;
+}
+.title-link:hover {
+    color:skyblue;
+}
 .bouton18 {
     width:155px;
     height:155px;

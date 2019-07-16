@@ -33,7 +33,7 @@ import Intro from './Intro';
                     <div className='homepage' style={{ backgroundColor:'#0E1521'}}>
                         <div className='container'>
                             <div className='text-center'>
-                                <img className='text-center' src={logo} width='50%' alt="logoCleaners"></img>
+                                <img className='text-center' src={logo} width='60%' alt="logoCleaners"></img>
                             </div>
                             <div className='text-center'>
                                 <img src={pressing} width='80%' alt="pressing" />
