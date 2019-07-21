@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { FormattedMessage } from 'react-intl'; 
 import PricesIroning from './PricesIroning';
+import PricesWashing from './PricesWashing';
+import PricesDry from './PricesDry';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -74,10 +76,10 @@ export default function SimpleTabs() {
         <PricesIroning />
       </TabPanel>
       <TabPanel className={classes.panel} value={value} index={1}>
-        Item Two
+      <PricesWashing />
       </TabPanel>
       <TabPanel className={classes.panel} value={value} index={2}>
-        Item Three
+      <PricesDry />
       </TabPanel>
     </div>
   );

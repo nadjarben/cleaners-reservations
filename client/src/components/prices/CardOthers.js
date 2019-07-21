@@ -16,14 +16,14 @@ const useStyles = makeStyles({
     color: 'white',
     textAlign: 'center',
     borderStyle: 'solid',
-    marginBottom: '10vh',
-    position: 'relative'
+    position: 'relative',
   },
   media: {
-    height: 140,
+    height: 200,
   },
   text: {
-      color: 'white'
+      color: 'white',
+      maxHeight: 50
   }
 });
 

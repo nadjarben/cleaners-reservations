@@ -16,13 +16,13 @@ const useStyles = makeStyles({
     color: 'white',
     textAlign: 'center',
     borderStyle: 'solid',
-    marginBottom: '30px'
   },
   media: {
-    height: 140,
+    height: 200,
   },
   text: {
-      color: 'white'
+      color: 'white',
+      maxHeight: 50
   }
 });
 
@@ -32,11 +32,12 @@ export default function MediaCard(props) {
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={ironing}
-          title="Contemplative Reptile"
-        />
+      <CardMedia
+          className={classes.media}  
+          title="ironing"
+        >
+          <img src={ironing} width='100%' height='100%' alt='ironing' />
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
               <FormattedMessage id='ironing.title1' />

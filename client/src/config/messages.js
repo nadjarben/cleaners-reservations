@@ -94,19 +94,61 @@ export default {
         'reservation.confirm': 'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, En cas dimprevus veuillez nous contacter au 0586305515.',
 
         //Prices
+
         'prices.title1':'Repassage',
         'prices.title2': 'Nettoyage',
         'prices.title3': 'Nettoyage a sec',
 
-        'ironing.title1': 'Piece',
-        'ironing.title2': 'Autres',
+          //Ironing
+            'ironing.title1': 'Piece',
+            'ironing.title2': 'Autres',
 
-        'ironing.text.piece.48': '48h : ..... 6 ₪',
-        'ironing.text.piece.24': '24h : ..... 7 ₪',
-        'ironing.text.piece.1': '1h : ..... 10 ₪',
+            'ironing.text.piece.48': '48h : ..... 6 ₪',
+            'ironing.text.piece.24': '24h : ..... 7 ₪',
+            'ironing.text.piece.1': '1h : ..... 10 ₪',
 
-        'ironing.text.piece.robe': 'robe : ..... 15 ₪',
-        'ironing.text.piece.veste': 'veste : ..... 15 ₪',
-        'ironing.text.piece.manteau': 'manteau : ..... 20 ₪',
+            'ironing.text.piece.robe': 'Robe : ..... 15 ₪',
+            'ironing.text.piece.veste': 'Veste : ..... 15 ₪',
+            'ironing.text.piece.manteau': 'Manteau : ..... 20 ₪',
+
+            //Washing
+            'washing.express': '*** Les prix en express sont majores de 50%',
+            
+            'washing.title1': 'Lave, seche, plie (minimum 6 kilos)',
+            'washing.title2': 'Couettes',
+            'washing.title3': 'Rideaux',
+            'washing.title4': 'Tapis',
+
+            'washing.text.laundry': '10 ₪ / kilo',
+
+            'washing.text.duvet.1': 'Simple : ..... 60 ₪',
+            'washing.text.duvet.2': 'Double : ..... 70 ₪',
+
+            'washing.text.curtain': '25 ₪ / metre',
+
+            'washing.text.carpet.1': 'Sur devis',
+
+            //Dry
+            'dry.express': '*** Les prix en express sont majores de 50%',
+            
+            'dry.title1': 'Chemises',
+            'dry.title2': 'Costumes',
+            'dry.title3': 'Robes',
+            'dry.title4': 'Manteaux',
+
+            'dry.text.shirt': '15 ₪ ',
+
+            'dry.text.suit.1': 'Costume : ..... 50 ₪',
+            'dry.text.suit.2': 'Veste : ..... 35 ₪',
+            'dry.text.suit.3': 'Pantalon : ..... 25 ₪',
+
+            'dry.text.dress.1': 'Robe simple : ..... 30 ~ 60 ₪',
+            'dry.text.dress.2': 'Robe de soiree : ..... 60 ~ 120 ₪',
+            'dry.text.dress.3': 'Robe de mairiage : ..... 150 ~ 250 ₪',
+
+            'dry.text.coat.1': 'Blouson leger : ..... 30 ~ 60 ₪',
+            'dry.text.coat.2': 'Manteau : ..... 60 ~ 120 ₪',
+            'dry.text.coat.3': 'Blouson cuir : ..... 150 ~ 200 ₪',
+
     }
 }

@@ -12,7 +12,8 @@ const useStyles = makeStyles({
     width: '100%',
     position:'fixed',
     bottom:'0',
-    backgroundColor:'black'
+    backgroundColor:'black',
+    zIndex: '1'
   },
 });
 
