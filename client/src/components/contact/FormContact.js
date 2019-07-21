@@ -1,8 +1,10 @@
 import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { postContact } from '../../store/actions/contactActions';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 
 class FormContact extends React.Component {
@@ -29,31 +31,55 @@ class FormContact extends React.Component {
     render() {
 
         return (
-          <div className="formcontact">
-              <Form onSubmit={e => this.handleSubmit(e)}>
-                <Form.Group controlId="formBasicName">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" placeholder="Name" name="name" value={this.state.name}  onChange={this.handleChange} />
-                </Form.Group>
-                <Form.Group controlId="formBasicPhone">
-                  <Form.Label>Phone</Form.Label>
-                  <Form.Control type="phone" placeholder="Phone number" name="phone" value={this.state.phone}  onChange={this.handleChange} />
-                </Form.Group>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" name="email" value={this.state.email}  onChange={this.handleChange} />
-                  <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                  </Form.Text>
-                </Form.Group>
-                <Form.Group controlId="formBasicMessage">
-                  <Form.Label>Message</Form.Label>
-                  <Form.Control as="textarea" rows="3" placeholder="Your message" name="message" value={this.state.message}  onChange={this.handleChange} />
-                </Form.Group>
-              <Button variant="primary" type="submit" className="submit">
+          <div style={{backgroundColor:'#DCDCDC', height:'91vh'}}>
+          <div className="container">
+              <Form onSubmit={e => this.handleSubmit(e)}>            
+                  <TextField
+                    id="standard-name"
+                    label="Name"
+                    name='name'
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                    margin="normal"
+                  />
+                <div className='row'>
+                  <div className='col-md-6'>
+                    <TextField
+                      name="phone"
+                      label="Number"
+                      value={this.state.phone}
+                      onChange={this.handleChange}
+                      margin="normal"
+                    />
+                  </div>
+                  <div className='col-md-6'>
+                    <TextField
+                      name="email"
+                      label="Email"
+                      value={this.state.email}
+                      onChange={this.handleChange}
+                      type="email"
+                      autoComplete="email"
+                      margin="normal"
+                    />
+                  </div>
+                </div>                    
+                <TextField
+                  name="message"
+                  label="Message"
+                  value={this.state.message}
+                  onChange={this.handleChange}        
+                  placeholder="Message"
+                  fullWidth
+                  multiline
+                  rows="3"
+                  margin="normal"
+                />
+              <Button variant="outlined" color="primary" type='submit'>
                 Submit
               </Button>
             </Form>
+            </div>
             </div>
         );
     }
