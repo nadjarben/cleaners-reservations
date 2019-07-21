@@ -1,93 +1,90 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { postContact } from '../../store/actions/contactActions';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { FormattedMessage } from 'react-intl'; 
+import TextField from '@material-ui/core/TextField';
 
 
 
-class FormContact extends React.Component {
-    state = {
-        name: '', 
-        phone: '', 
-        email: '',    
-        message: ''
-      };
 
-      handleChange = (e) => {
-        this.setState ({[e.target.name]: e.target.value})
+function FormContact(props) {
+  const [ contact, setContact ] = useState({name: '', phone: '', email: '', message: ''})
+  
+      const handleChange = (e) => {
+        setContact ({...contact, [e.target.name]: e.target.value})
         }
         
-      handleSubmit = (e) => {
+      const handleSubmit = (e) => {
         const textAlert =
         'Votre message a ete envoye nous vous recontacterons dans les plus brefs delais';
-        const { name, phone, email, message } = this.state;
         e.preventDefault()
-        this.props.postContact(name, phone, email, message)
+        const { name, phone, email, message } = contact;
+        props.postContact(name, phone, email, message)
         alert(textAlert);
       }
 
-    render() {
-      const name = <FormattedMessage id='contact.name' />;
-      const number = <FormattedMessage id='contact.number' />;
-      const email = <FormattedMessage id='contact.email' />;
-      const message = <FormattedMessage id='contact.message' />;
+  
+      const labelName = <FormattedMessage id='contact.name' />;
+      const labelNumber = <FormattedMessage id='contact.number' />;
+      const labelEmail = <FormattedMessage id='contact.email' />;
+      const labelMessage = <FormattedMessage id='contact.message' />;
       
 
         return (
           <div className="container">
-              <form onSubmit={e => this.handleSubmit(e)}>            
+              <form onSubmit={handleSubmit}  >          
                   <TextField
-                    id="standard-name"
-                    label={name}
+                    label={labelName}
                     name='name'
-                    value={this.state.name}
-                    onChange={this.handleChange}
+                    value={contact.name}
+                    onChange={handleChange}
                     margin="normal"
+                    required
                   />
                 <div className='row'>
                   <div className='col-md-6'>
                     <TextField
                       name="phone"
-                      label={number}
-                      value={this.state.phone}
-                      onChange={this.handleChange}
+                      label={labelNumber}
+                      value={contact.phone}
+                      onChange={handleChange}
                       margin="normal"
                     />
                   </div>
                   <div className='col-md-6'>
                     <TextField
                       name="email"
-                      label={email}
-                      value={this.state.email}
-                      onChange={this.handleChange}
+                      label={labelEmail}
+                      value={contact.email}
+                      onChange={handleChange}
                       type="email"
                       autoComplete="email"
                       margin="normal"
+                      required
                     />
                   </div>
                 </div>                    
                 <TextField
                   name="message"
-                  label={message}
-                  value={this.state.message}
-                  onChange={this.handleChange}        
+                  label={labelMessage}
+                  value={contact.message}
+                  onChange={handleChange}        
                   placeholder="Message"
                   fullWidth
                   multiline
                   rows="3"
                   margin="normal"
+                  required
                 />
-              <Button variant="outlined" color="primary" type='submit'>
+              <Button style={{marginTop:'5%'}} variant="outlined" color="primary" type='submit'>
                 Submit
               </Button>
             </form>
             </div>
         );
     }
-}
 const mapStateToProps = state => ({
     contacts: state.contacts
   })
