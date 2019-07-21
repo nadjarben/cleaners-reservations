@@ -25,6 +25,7 @@ export default function LabelBottomNavigation() {
   }
 
   return (
+    
     <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
       <BottomNavigationAction label="Whats App" value="historique" icon={<a href='https://api.whatsapp.com/send?phone=33667974254' ><img src={whatsapp} alt='whatsapp' /></a>} />
       <BottomNavigationAction label="Phone" value="historique" icon={<a href='tel:+33667974254'><img src={phone} alt='phone' /></a>} />

@@ -1,13 +1,11 @@
 import React from 'react';
-import '../css/HomePage.css';
-import NavPrices from '../../components/prices/NavPrices';
+import TabPrices from '../../components/prices/TabPrices';
+
 
     const Prices = () => {
         return (
             <div>
-            <div className="container">
-            <NavPrices />
-            </div>
+                <TabPrices />
             </div>
     );
 }

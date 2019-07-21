@@ -94,8 +94,19 @@ export default {
         'reservation.confirm': 'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, En cas dimprevus veuillez nous contacter au 0586305515.',
 
         //Prices
-        'prices.header':'Repassage',
-        'prices.header2': 'Nettoyage',
-        'prices.header3': 'Nettoyage a sec'
+        'prices.title1':'Repassage',
+        'prices.title2': 'Nettoyage',
+        'prices.title3': 'Nettoyage a sec',
+
+        'ironing.title1': 'Piece',
+        'ironing.title2': 'Autres',
+
+        'ironing.text.piece.48': '48h : ..... 6 ₪',
+        'ironing.text.piece.24': '24h : ..... 7 ₪',
+        'ironing.text.piece.1': '1h : ..... 10 ₪',
+
+        'ironing.text.piece.robe': 'robe : ..... 15 ₪',
+        'ironing.text.piece.veste': 'veste : ..... 15 ₪',
+        'ironing.text.piece.manteau': 'manteau : ..... 20 ₪',
     }
 }

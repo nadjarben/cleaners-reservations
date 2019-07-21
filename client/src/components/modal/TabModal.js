@@ -181,7 +181,7 @@ class TabModal extends React.Component {
             <div className='row' style={{marginTop:'2%'}}>
               <div className='col-6'>
                 <Label for="firstname">* First Name :</Label>
-                <Input required={true} type="text" placeholder="" name="name" value={this.state.name}  onChange={this.handleChange} />
+                <Input required={true} autocomplete='nope' type="text" placeholder="" name="name" value={this.state.name}  onChange={this.handleChange} />
               </div>
               <div className='col-6'>
                 <Label for="surname"> Surname :</Label>
