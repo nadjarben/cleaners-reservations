@@ -6,7 +6,7 @@ export default function PricesIroning() {
 
 
     return (
-      <div style={{backgroundColor:'#0E1521', color:'white', height:'90vh', zIndex:'2', marginBottom:'9vh'}} >
+      <div style={{backgroundColor:'#0E1521', color:'white', height:'90vh', zIndex:'2', marginBottom:'19vh'}} >
         <div >
           <div className="row ">
             <div className='col-md-6'>
