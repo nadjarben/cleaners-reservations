@@ -14,8 +14,8 @@ export default {
         'home.button': 'הזמנת משלוח',
 
         //Reservation
-        'reservation.min': 'משלוח חינם למינימום של ₪ 100 *',
-        'reservation.min2': 'משלוח ₪ 25 *',
+        'reservation.min': 'משלוח חינם למינימום של ₪100 *',
+        'reservation.min2': 'משלוח ₪25 *',
         'reservation.min3': 'אנו ניצור איתך קשר תוך שעה אחת כדי לאשר את המסירה *',
         'reservation.name': 'שם פרטי',
         'reservation.lastname': 'שם משפחה',
@@ -28,11 +28,78 @@ export default {
         'reservation.info': '... (מידע נוסף (קוד, הערות',
         'reservation.confirm': 'הפקודה שלך ( מזמין ) טוב נעבר, אנחנו בנושא נוודא אותך על ידי מסר בתוך השעה, במקרה של לא צפוי נא להתקשר אלינו ל0586305515',
         
-
         //Prices
-        'prices.header':'גיהוץ',
-        'prices.header2': 'ניקוי',
-        'prices.header3': 'ניקוי יבש'
+        'prices.title1':'גיהוץ',
+        'prices.title2': 'ניקוי',
+        'prices.title3': 'ניקוי יבש',
+
+        //Contact
+        'contact.name': 'שם',
+        'contact.number': 'מספר',
+        'contact.email': 'הדוא"ל',
+        'contact.message': 'הודעה',
+
+          //Ironing
+            'ironing.title1': 'Pièce',
+            'ironing.title2': 'אחר',
+
+            'ironing.text.piece.48': '₪ 6 ..... : 48h',
+            'ironing.text.piece.24': '₪ 7 ..... : 24h',
+            'ironing.text.piece.1': '₪ 10 ..... : 1h',
+            
+            // eslint-disable-next-line
+            'ironing.text.piece.robe': "₪ "+'שמלה : .....15',
+            // eslint-disable-next-line
+            'ironing.text.piece.veste': "₪ "+"ז'קט : ..... 15",
+            // eslint-disable-next-line
+            'ironing.text.piece.manteau': '₪ '+'מעיל : ..... 20',
+
+            //Washing
+            'washing.express': 'מחירי אקספרס מוגדלים ב -50% ***',
+            
+            'washing.title1': '(ניקוי, ייבוש, קיפול (מינימום 6 ק"ג',
+            'washing.title2': 'שמיכות',
+            'washing.title3': 'וילונות',
+            'washing.title4': 'שטיחים',
+            
+            // eslint-disable-next-line
+            'washing.text.laundry': '₪ ק"ג / 10 ',
+
+            // eslint-disable-next-line
+            'washing.text.duvet.1': '₪ '+'יחיד : ..... 60',
+            // eslint-disable-next-line
+            'washing.text.duvet.2': '₪ '+'זוגי : ..... 60',
+
+            // eslint-disable-next-line
+            'washing.text.curtain': '₪ '+'20 / למ"ר',
+
+            'washing.text.carpet.1': 'על פי אומדן',
+
+            //Dry
+            'dry.express': '*** Les prix en express sont majorés de 50%',
+            
+            'dry.title1': 'חולצות',
+            'dry.title2': 'חליפות',
+            'dry.title3': 'שמלות',
+            'dry.title4': 'מעילים',
+
+            'dry.text.shirt': '₪ 15',
+
+            // eslint-disable-next-line
+            'dry.text.suit.1': '₪ '+'חליפה : ..... 50',
+            // eslint-disable-next-line
+            'dry.text.suit.2': '₪ '+"ז'קט : ..... 35",
+            // eslint-disable-next-line
+            'dry.text.suit.3': '₪ '+'מכנס : ..... 25',
+
+            // eslint-disable-next-line
+            'dry.text.dress.1': '₪ '+'שמלה : ..... 50 ~ 80',
+            // eslint-disable-next-line
+            'dry.text.dress.2': '₪ '+'שמלת ערב : ..... 100 ~ 150',
+            // eslint-disable-next-line
+            'dry.text.dress.3': '₪ '+'שמלת כלה : ..... 150 ~ 250',
+
+            'dry.text.coat.1': '₪ 150 ~ 50',
     },
 
     en: {
@@ -61,11 +128,65 @@ export default {
         'reservation.info': 'Complementaries Informations (digicode, commentaries ...)',
         'reservation.confirm': 'Your order has been placed, we will confirm you by message within the hour, In case of unforeseen events please contact us at 0586305515',
 
-
         //Prices
-        'prices.header':'Ironing',
-        'prices.header2': 'Cleaning',
-        'prices.header3': 'Dry cleaning'
+        'prices.title1': 'Ironing',
+        'prices.title2': 'Cleaning',
+        'prices.title3': 'Dry cleaning',
+        
+        //Contact
+        'contact.name': 'Name',
+        'contact.number': 'Number',
+        'contact.email': 'Email',
+        'contact.message': 'Message',
+
+          //Ironing
+            'ironing.title1': 'Piece',
+            'ironing.title2': 'Others',
+
+            'ironing.text.piece.48': '48h : ..... 6 ₪',
+            'ironing.text.piece.24': '24h : ..... 7 ₪',
+            'ironing.text.piece.1': '1h : ..... 10 ₪',
+
+            'ironing.text.piece.robe': 'Dress : ..... 15 ₪',
+            'ironing.text.piece.veste': 'Jacket : ..... 15 ₪',
+            'ironing.text.piece.manteau': 'Coat : ..... 20 ₪',
+
+            //Washing
+            'washing.express': '*** Express prices are majored by 50%',
+            
+            'washing.title1': 'Cleaned, dried, folded (minimum 6 kilos)',
+            'washing.title2': 'Duvets',
+            'washing.title3': 'Curtains',
+            'washing.title4': 'Carpets',
+
+            'washing.text.laundry': '10 ₪ / kilo',
+
+            'washing.text.duvet.1': 'Simple : ..... 60 ₪',
+            'washing.text.duvet.2': 'Double : ..... 70 ₪',
+
+            'washing.text.curtain': '20 ₪ / meter',
+
+            'washing.text.carpet.1': 'On quote',
+
+            //Dry
+            'dry.express': '*** Express prices are majored by 50%',
+            
+            'dry.title1': 'Shirts',
+            'dry.title2': 'Suits',
+            'dry.title3': 'Dresses',
+            'dry.title4': 'Coats',
+
+            'dry.text.shirt': '15 ₪ ',
+
+            'dry.text.suit.1': 'Suit : ..... 50 ₪',
+            'dry.text.suit.2': 'Jacket : ..... 35 ₪',
+            'dry.text.suit.3': 'Trouser : ..... 25 ₪',
+
+            'dry.text.dress.1': 'Dress : ..... 50 ~ 80 ₪',
+            'dry.text.dress.2': 'Evening dress : ..... 100 ~ 150 ₪',
+            'dry.text.dress.3': 'Wedding dress : ..... 150 ~ 250 ₪',
+
+            'dry.text.coat.1': '50 ~ 150 ₪',
     },
     fr: {
         //Navbar
@@ -81,26 +202,31 @@ export default {
         //Reservation
         'reservation.min': 'La livraison est gratuite pour un minimum de 100 ₪.',
         'reservation.min2': 'Dans le cas contraire le prix de la livraison est de 25 ₪.',
-        'reservation.min3': 'Nous vous contacterons dans lheure pour confirmer la livraison.',
-        'reservation.name': 'Prenom',
+        'reservation.min3': "Nous vous contacterons dans l'heure pour confirmer la livraison.",
+        'reservation.name': 'Prénom',
         'reservation.lastname': 'Nom',
-        'reservation.phone': 'Telephone',
+        'reservation.phone': 'Téléphone',
         'reservation.email': 'Email',
         'reservation.address': 'Addresse',
         'reservation.city': 'Ville',
         'reservation.date': 'Date :',
         'reservation.hour': 'Heure :',
-        'reservation.info': 'Informations complementaires (digicode, commentaires ...)',
-        'reservation.confirm': 'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, En cas dimprevus veuillez nous contacter au 0586305515.',
+        'reservation.info': 'Informations complémentaires (digicode, commentaires ...)',
+        'reservation.confirm': "Votre commande a bien eté passée, nous vous reconfirmerons par message dans l'heure, En cas d'imprévus veuillez nous contacter au 0586305515.",
+        
+        //Contact
+        'contact.name': 'Nom',
+        'contact.number': 'Numero',
+        'contact.email': 'Email',
+        'contact.message': 'Message',
 
         //Prices
-
         'prices.title1':'Repassage',
         'prices.title2': 'Nettoyage',
         'prices.title3': 'Nettoyage a sec',
 
           //Ironing
-            'ironing.title1': 'Piece',
+            'ironing.title1': 'Pièce',
             'ironing.title2': 'Autres',
 
             'ironing.text.piece.48': '48h : ..... 6 ₪',
@@ -114,7 +240,7 @@ export default {
             //Washing
             'washing.express': '*** Les prix en express sont majores de 50%',
             
-            'washing.title1': 'Lave, seche, plie (minimum 6 kilos)',
+            'washing.title1': 'Lavé, seché, plié (minimum 6 kilos)',
             'washing.title2': 'Couettes',
             'washing.title3': 'Rideaux',
             'washing.title4': 'Tapis',
@@ -124,12 +250,12 @@ export default {
             'washing.text.duvet.1': 'Simple : ..... 60 ₪',
             'washing.text.duvet.2': 'Double : ..... 70 ₪',
 
-            'washing.text.curtain': '25 ₪ / metre',
+            'washing.text.curtain': '20 ₪ / mètre',
 
             'washing.text.carpet.1': 'Sur devis',
 
             //Dry
-            'dry.express': '*** Les prix en express sont majores de 50%',
+            'dry.express': '*** Les prix en express sont majorés de 50%',
             
             'dry.title1': 'Chemises',
             'dry.title2': 'Costumes',
@@ -142,13 +268,10 @@ export default {
             'dry.text.suit.2': 'Veste : ..... 35 ₪',
             'dry.text.suit.3': 'Pantalon : ..... 25 ₪',
 
-            'dry.text.dress.1': 'Robe simple : ..... 30 ~ 60 ₪',
-            'dry.text.dress.2': 'Robe de soiree : ..... 60 ~ 120 ₪',
-            'dry.text.dress.3': 'Robe de mairiage : ..... 150 ~ 250 ₪',
+            'dry.text.dress.1': 'Robe : ..... 50 ~ 80 ₪',
+            'dry.text.dress.2': 'Robe de soirée : ..... 100 ~ 150 ₪',
+            'dry.text.dress.3': 'Robe de mairiée : ..... 150 ~ 250 ₪',
 
-            'dry.text.coat.1': 'Blouson leger : ..... 30 ~ 60 ₪',
-            'dry.text.coat.2': 'Manteau : ..... 60 ~ 120 ₪',
-            'dry.text.coat.3': 'Blouson cuir : ..... 150 ~ 200 ₪',
-
+            'dry.text.coat.1': '50 ~ 150 ₪',
     }
 }

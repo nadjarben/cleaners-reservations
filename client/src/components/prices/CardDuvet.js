@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
   text: {
       color: 'white',
-      maxHeight: 50
+      height: 40
   }
 });
 

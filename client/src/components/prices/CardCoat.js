@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
   text: {
       color: 'white',
-      maxHeight: 50
+      height: 40
   }
 });
 
@@ -44,12 +44,6 @@ export default function MediaCard(props) {
           </Typography>
           <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
             <FormattedMessage id='dry.text.coat.1' />
-          </Typography>
-          <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-            <FormattedMessage id='dry.text.coat.2' />
-          </Typography>
-          <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-            <FormattedMessage id='dry.text.coat.3' />
           </Typography>
         </CardContent>
       </CardActionArea>

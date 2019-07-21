@@ -19,7 +19,7 @@ export default function PricesWashing() {
                 <CardShirt />
             </div>
             <div className='col-md-6'>
-                <CardSuit />
+                <CardCoat />
             </div>
           </div>
           <div className="row">
@@ -27,7 +27,7 @@ export default function PricesWashing() {
                 <CardDress />
             </div>
             <div className='col-md-6'>
-                <CardCoat />
+                <CardSuit />
             </div>
           </div>
         </div>

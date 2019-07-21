@@ -1,10 +1,11 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { postContact } from '../../store/actions/contactActions';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { FormattedMessage } from 'react-intl'; 
+
 
 
 class FormContact extends React.Component {
@@ -29,14 +30,18 @@ class FormContact extends React.Component {
       }
 
     render() {
+      const name = <FormattedMessage id='contact.name' />;
+      const number = <FormattedMessage id='contact.number' />;
+      const email = <FormattedMessage id='contact.email' />;
+      const message = <FormattedMessage id='contact.message' />;
+      
 
         return (
-          <div style={{backgroundColor:'#DCDCDC', height:'91vh'}}>
           <div className="container">
-              <Form onSubmit={e => this.handleSubmit(e)}>            
+              <form onSubmit={e => this.handleSubmit(e)}>            
                   <TextField
                     id="standard-name"
-                    label="Name"
+                    label={name}
                     name='name'
                     value={this.state.name}
                     onChange={this.handleChange}
@@ -46,7 +51,7 @@ class FormContact extends React.Component {
                   <div className='col-md-6'>
                     <TextField
                       name="phone"
-                      label="Number"
+                      label={number}
                       value={this.state.phone}
                       onChange={this.handleChange}
                       margin="normal"
@@ -55,7 +60,7 @@ class FormContact extends React.Component {
                   <div className='col-md-6'>
                     <TextField
                       name="email"
-                      label="Email"
+                      label={email}
                       value={this.state.email}
                       onChange={this.handleChange}
                       type="email"
@@ -66,7 +71,7 @@ class FormContact extends React.Component {
                 </div>                    
                 <TextField
                   name="message"
-                  label="Message"
+                  label={message}
                   value={this.state.message}
                   onChange={this.handleChange}        
                   placeholder="Message"
@@ -78,8 +83,7 @@ class FormContact extends React.Component {
               <Button variant="outlined" color="primary" type='submit'>
                 Submit
               </Button>
-            </Form>
-            </div>
+            </form>
             </div>
         );
     }

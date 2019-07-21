@@ -152,7 +152,7 @@ class TabModal extends React.Component {
 
           <TabPane tabId={1}>
             <ModalHeader style={{color: 'darkgrey'}}>Renseignez le formulaire suivant</ModalHeader>
-            <div className='row justify-content'>
+            <div className='text-center' style={{color:'red', fontStyle:'bold'}}>
               <div className='col' style={{marginTop:'5%'}}>
                 <p><FormattedMessage id="reservation.min" /></p>
                 <p><FormattedMessage id="reservation.min2" /></p>

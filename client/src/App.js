@@ -16,12 +16,20 @@ import { IntlProvider } from 'react-intl';
 import messages from './config/messages';
 import NavBar from './components/navbar/NavBar2';
 import FooterBar from './components/footer/FooterBar';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { grey, blue } from '@material-ui/core/colors';
+
 //import configureHistory  from './configureHistory';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: blue,
+    secondary: grey['A50']
+  }
+});
 
 class App extends Component {
   
-
   render() {
     
   //  const history = configureHistory()
@@ -31,6 +39,7 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router >
+        <MuiThemeProvider theme={theme}>
           <NavBar />
           <FooterBar />
           <Route exact path="/" component={HomePage}/>
@@ -43,7 +52,7 @@ class App extends Component {
           <Route path="/admin/reservations" component={AdminReservation}/>
           <Route path="/admin/customers" component={AdminCustomer}/>
           <Route path="/admin/contacts" component={AdminContact}/>
-
+          </MuiThemeProvider>
         </Router>
       </div>
       </IntlProvider>

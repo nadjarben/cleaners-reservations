@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
   text: {
       color: 'white',
-      height: 50
+      height: 40
   }
 });
 

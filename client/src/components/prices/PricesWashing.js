@@ -19,12 +19,12 @@ export default function PricesWashing() {
                 <CardWashing />
             </div>
             <div className='col-md-6'>
-                <CardDuvet />
+                <CardCurtain />
             </div>
           </div>
           <div className="row">
             <div className='col-md-6'>
-                <CardCurtain />
+                <CardDuvet />
             </div>
             <div className='col-md-6'>
                 <CardCarpet />
