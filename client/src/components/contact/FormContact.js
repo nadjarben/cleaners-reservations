@@ -7,8 +7,6 @@ import { FormattedMessage } from 'react-intl';
 import TextField from '@material-ui/core/TextField';
 
 
-
-
 function FormContact(props) {
   const [ contact, setContact ] = useState({name: '', phone: '', email: '', message: ''})
   
@@ -24,7 +22,6 @@ function FormContact(props) {
         props.postContact(name, phone, email, message)
         alert(textAlert);
       }
-
   
       const labelName = <FormattedMessage id='contact.name' />;
       const labelNumber = <FormattedMessage id='contact.number' />;

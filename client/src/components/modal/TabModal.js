@@ -1,7 +1,6 @@
 import React from 'react';
 import { Label, TabContent, TabPane, Button, ModalHeader, ModalFooter } from 'reactstrap';
 import { FormattedMessage } from 'react-intl'; 
-import { Form } from 'react-bootstrap';
 import { connect } from "react-redux";
 import { postReservation } from '../../store/actions/reservationActions';
 import { postLastReservation } from '../../store/actions/notifActions';
@@ -9,6 +8,9 @@ import { fetchCustomers, postCustomer } from '../../store/actions/customerAction
 import Divider from '@material-ui/core/Divider';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+import './googleInput.css';
+
 
 
 class TabModal extends React.Component {
@@ -38,6 +40,7 @@ class TabModal extends React.Component {
   }
 
   handleChange = (e) => {
+    console.log(this.state)
     this.setState ({[e.target.name]: e.target.value})
   }
   
@@ -167,11 +170,10 @@ class TabModal extends React.Component {
     const labelLastname = <FormattedMessage id='reservation.lastname' />;
     const labelPhone = <FormattedMessage id='reservation.phone' />;
     const labelEmail = <FormattedMessage id='reservation.email' />;
-    const labelAddress = <FormattedMessage id='reservation.address' />;
     const labelInfo = <FormattedMessage id='reservation.info' />;
     const labelNote = <FormattedMessage id='reservation.note' />;
     return (
-      <Form onSubmit={e => this.handleSubmit(e) && this.doesCustomerExist()}>
+      <form onSubmit={e => this.handleSubmit(e) && this.doesCustomerExist()}>
         <TabContent activeTab={this.state.activeTab}>
 
           <TabPane tabId={1}>
@@ -226,6 +228,7 @@ class TabModal extends React.Component {
               <div className='col-6'>
               <TextField
                     label={labelName}
+                    autoComplete='given-name'
                     name='name'
                     value={this.state.name}
                     onChange={this.handleChange}
@@ -236,6 +239,7 @@ class TabModal extends React.Component {
               <div className='col-6'>
               <TextField
                     label={labelLastname}
+                    autoComplete='family-name'
                     name='surname'
                     value={this.state.surname}
                     onChange={this.handleChange}
@@ -272,14 +276,23 @@ class TabModal extends React.Component {
 
             <div className='row'>
               <div className='col-12'>
-              <TextField
-                    label={labelAddress}
-                    name='address'
-                    value={this.state.address}
-                    onChange={this.handleChange}
-                    margin="normal"
-                    required
+                <div className='group' style={{marginTop:'5%'}}>
+                <label style={{fontFamily:'roboto', color:'#808080', marginBottom:'-15%', fontSize:'17px'}}><FormattedMessage id='reservation.address' /></label>
+                  <GooglePlacesAutocomplete
+                  style={{marginTop:'10px'}}
+                  autocompletionRequest={{
+                  componentRestrictions: {
+                    country: ['il'],
+                    }
+                  }}
+                  placeholder=''
+                  onSelect={({ description }) => (
+                  this.setState({ address: description })
+                  )}
                   />
+                  <span className="highlight" />
+                  <span className="bar" />
+                </div>
               </div>
             </div>
 
@@ -291,6 +304,7 @@ class TabModal extends React.Component {
                     value={this.state.info}
                     onChange={this.handleChange}
                     margin="normal"
+                    placeholder='digicode, door ...'
                     fullWidth
                     multiline
                     rows="3"
@@ -336,7 +350,7 @@ class TabModal extends React.Component {
             {this.displaySubmit()}
         </div>
         </ModalFooter>
-      </Form>
+      </form>
     );
   }
 }
