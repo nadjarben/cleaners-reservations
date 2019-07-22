@@ -12,7 +12,6 @@ class FormNewReservation extends Component {
         phone: '', 
         email: '', 
         address: '', 
-        city: '', 
         date: '', 
         hour: '', 
         info: ''
@@ -22,8 +21,8 @@ class FormNewReservation extends Component {
       }
     
   handleSubmit = (e) => {
-    const { name, surname, phone, email, address, city, date, hour, info } = this.state
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info);
+    const { name, surname, phone, email, address, date, hour, info } = this.state
+    this.props.postReservation(name, surname, phone, email, address, date, hour, info);
   }
 
     render() {
@@ -53,12 +52,6 @@ class FormNewReservation extends Component {
   <Form.Group controlId="formGridAddress1">
     <Form.Control required={true} placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
   </Form.Group>
-
-  <Form.Row>
-    <Form.Group controlId="formGridCity">
-      <Form.Control required={true} placeholder="City" name="city" value={this.state.city } onChange={ this.handleChange } />
-    </Form.Group>
-  </Form.Row>
 
   <Form.Row>
     <Form.Group className="date" controlId="formGridDate"  >

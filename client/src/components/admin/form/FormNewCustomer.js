@@ -11,8 +11,7 @@ class FormNewCustomer extends Component {
         surname: '', 
         phone: '', 
         email: '', 
-        address: '', 
-        city: '',  
+        address: '',  
         info: ''
       };
 
@@ -21,8 +20,8 @@ class FormNewCustomer extends Component {
     }
     
   handleSubmit = (e) => {
-    const { name, surname, phone, email, address, city, info } = this.state
-    this.props.postCustomer(name, surname, phone, email, address, city, info)
+    const { name, surname, phone, email, address, info } = this.state
+    this.props.postCustomer(name, surname, phone, email, address, info)
   }
 
     render() {

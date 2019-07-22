@@ -15,7 +15,6 @@ class Reservation extends Component {
     phone: '', 
     email: '', 
     address: '', 
-    city: '', 
     date: '', 
     hour: '', 
     info: ''
@@ -31,12 +30,12 @@ class Reservation extends Component {
 
   doesCustomerExist = () => {
     const { customers } = this.props;
-    const { name, surname, phone, email, address, city, info } = this.state
+    const { name, surname, phone, email, address, info } = this.state
     let result = customers.map(c => c.phone)
     let isInArray = result.indexOf(this.state.phone) > -1;
     if(isInArray === false)
       return (
-        this.props.postCustomer(name, surname, phone, email, address, city, info)
+        this.props.postCustomer(name, surname, phone, email, address, info)
       )
   }
 
@@ -45,10 +44,10 @@ class Reservation extends Component {
     const textAlert =
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
-    const { name, surname, phone, email, address, city, date, hour, info } = this.state
+    const { name, surname, phone, email, address, date, hour, info } = this.state
     e.preventDefault();
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info);
-    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info);
+    this.props.postReservation(name, surname, phone, email, address, date, hour, info);
+    this.props.postLastReservation(name, surname, phone, email, address, date, hour, info);
     alert(textAlert);
       this.props.history.push('/');
   }
@@ -86,12 +85,6 @@ class Reservation extends Component {
   <Form.Group controlId="formGridAddress1" className="address">
     <Form.Control required={true} placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
   </Form.Group>
-
-  <Form.Row>
-    <Form.Group controlId="formGridCity">
-      <Form.Control required={true} placeholder="City" name="city" value={this.state.city } onChange={ this.handleChange } />
-    </Form.Group>
-  </Form.Row>
 
   <Form.Row>
     <Form.Group className="date" controlId="formGridDate"  >

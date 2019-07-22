@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Label, TabContent, TabPane, Button, ModalHeader, ModalFooter } from 'reactstrap';
+import { Label, TabContent, TabPane, Button, ModalHeader, ModalFooter } from 'reactstrap';
 import { FormattedMessage } from 'react-intl'; 
 import { Form } from 'react-bootstrap';
 import { connect } from "react-redux";
@@ -8,6 +8,8 @@ import { postLastReservation } from '../../store/actions/notifActions';
 import { fetchCustomers, postCustomer } from '../../store/actions/customerActions';
 import Divider from '@material-ui/core/Divider';
 import Switch from '@material-ui/core/Switch';
+import TextField from '@material-ui/core/TextField';
+
 
 class TabModal extends React.Component {
   constructor(props) {
@@ -22,7 +24,6 @@ class TabModal extends React.Component {
       phone: '', 
       email: '', 
       address: '', 
-      city: '', 
       date: '', 
       hour: '', 
       info: '',
@@ -42,12 +43,12 @@ class TabModal extends React.Component {
   
   doesCustomerExist = () => {
     const { customers } = this.props;
-    const { name, surname, phone, email, address, city, info } = this.state
+    const { name, surname, phone, email, address, info } = this.state
     let result = customers.map(c => c.phone)
     let isInArray = result.indexOf(this.state.phone) > -1;
     if(isInArray === false)
       return (
-        this.props.postCustomer(name, surname, phone, email, address, city, info)
+        this.props.postCustomer(name, surname, phone, email, address, info)
       )
   }
   handleSubmit = (e) => {
@@ -55,10 +56,10 @@ class TabModal extends React.Component {
     const textAlert =
     'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
     'En cas dimprevus veuillez nous contacter au 0586305515.'
-    const { name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note } = this.state
+    const { name, surname, phone, email, address, date, hour, info, namefact, addressfact, note } = this.state
     e.preventDefault();
-    this.props.postReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
-    this.props.postLastReservation(name, surname, phone, email, address, city, date, hour, info, namefact, addressfact, note);
+    this.props.postReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
+    this.props.postLastReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     alert(textAlert);
       //this.props.history.push('/home');
   }
@@ -88,32 +89,46 @@ class TabModal extends React.Component {
   handleButtonCompleteFirst = () => {
     if(this.state.activeTab === 1)
     if(this.state.date === '' || this.state.hour === '' )
-      return  <Button style={{width:'120px', backgroundColor:'red'}} >Suivant</Button>
+      return  <Button style={{width:'120px', backgroundColor:'red'}} ><FormattedMessage id='reservation.next' /></Button>
     else
-      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}>Suivant</Button>
+      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
   }
   handleButtonCompleteSecond = () => {
     if(this.state.activeTab === 2)
-    if( this.state.date === '' || this.state.phone === '' || this.state.city === '' || this.state.address === ''  )
-      return  <Button style={{width:'120px', backgroundColor:'red'}} >Suivant</Button>
+    if( this.state.date === '' || this.state.phone === '' || this.state.address === ''  )
+      return  <Button style={{width:'120px', backgroundColor:'red'}} ><FormattedMessage id='reservation.next' /></Button>
     else
-      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}>Suivant</Button>
+      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
   }
   
   displayPro = () => {
+    const labelNamefact = <FormattedMessage id='reservation.namefact' />;
+    const labelAddressfact = <FormattedMessage id='reservation.addressfact' />;
     if(this.state.switch === true)
     return (
       <div>
         <div className='row'>
           <div className='col-12'>
-            <Label for='namefact'>Nom de facturation :</Label>
-            <Input placeholder='' type='name' name="namefact" autocomplete="off" value={this.state.namefact} onChange={ this.handleChange } />
+            <TextField
+              label={labelNamefact}
+              name='namefact'
+              value={this.state.namefact}
+              onChange={this.handleChange}
+              margin="normal"
+              autoComplete=""
+            />
           </div>
         </div>
         <div className='row'>
           <div className='col-12'>
-            <Label for='pro'>Addresse de facturation :</Label>
-            <Input placeholder='' type='address' name="addressfact" autocomplete="off" value={this.state.addressfact} onChange={ this.handleChange } />
+          <TextField
+              label={labelAddressfact}
+              name='addressfact'
+              value={this.state.addressfact}
+              onChange={this.handleChange}
+              margin="normal"
+              autoComplete=""
+            />
           </div>
         </div>
       </div>
@@ -123,7 +138,7 @@ class TabModal extends React.Component {
     if(this.state.activeTab !== 1)
     return (
       <div className='col-6'>
-        <Button style={{width:'120px'}} onClick={()=> this.handlePrev()}>Precedent</Button>
+        <Button style={{width:'120px'}} onClick={()=> this.handlePrev()}><FormattedMessage id='reservation.prev' /></Button>
       </div>
     )
   }
@@ -140,12 +155,21 @@ class TabModal extends React.Component {
     if(this.state.activeTab === 3)
     return (
       <div className='col-6' >
-        <Button style={{width:'120px', backgroundColor:'#0E1521'}} type="submit">Confirmer</Button>
+        <Button style={{width:'120px', backgroundColor:'#0E1521'}} type="submit"><FormattedMessage id='reservation.confirmate' /></Button>
       </div>
     )
   }
 
   render() {
+    const labelDate = <FormattedMessage id='reservation.date' />;
+    const labelHour = <FormattedMessage id='reservation.hour' />;
+    const labelName = <FormattedMessage id='reservation.name' />;
+    const labelLastname = <FormattedMessage id='reservation.lastname' />;
+    const labelPhone = <FormattedMessage id='reservation.phone' />;
+    const labelEmail = <FormattedMessage id='reservation.email' />;
+    const labelAddress = <FormattedMessage id='reservation.address' />;
+    const labelInfo = <FormattedMessage id='reservation.info' />;
+    const labelNote = <FormattedMessage id='reservation.note' />;
     return (
       <Form onSubmit={e => this.handleSubmit(e) && this.doesCustomerExist()}>
         <TabContent activeTab={this.state.activeTab}>
@@ -163,13 +187,33 @@ class TabModal extends React.Component {
         
             <div className='row' style={{marginTop:'5%'}}>
               <div className ='col-6'>
-                <Label for="date">* Date :</Label>
-                <Input required={true} type= "date" name="date" value={this.state.date } onChange={ this.handleChange } />
+              <TextField
+                    label={labelDate}
+                    name='date'
+                    type='date'
+                    value={this.state.date}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    required
+                  />
               </div>
             
               <div className ='col-6'>
-                <Label for="hour">* Heure :</Label>
-                <Input required={true} type= "time" placeholder="10:30" name="hour" value={this.state.hour} onChange={ this.handleChange } />
+              <TextField
+                    label={labelHour}
+                    name='hour'
+                    type='time'
+                    value={this.state.hour}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    required
+                  />
               </div>
             </div>
             <br/><br/>
@@ -180,47 +224,77 @@ class TabModal extends React.Component {
 
             <div className='row' style={{marginTop:'2%'}}>
               <div className='col-6'>
-                <Label for="firstname">* First Name :</Label>
-                <Input required={true} autocomplete='nope' type="text" placeholder="" name="name" value={this.state.name}  onChange={this.handleChange} />
+              <TextField
+                    label={labelName}
+                    name='name'
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    required
+                  />
               </div>
               <div className='col-6'>
-                <Label for="surname"> Surname :</Label>
-                <Form.Control required={true} type="text" placeholder="" name="surname" value={this.state.surname} onChange={ this.handleChange } />
+              <TextField
+                    label={labelLastname}
+                    name='surname'
+                    value={this.state.surname}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    required
+                  />
               </div>
             </div>
 
             <div className='row'>
               <div className='col-12'>
-                <Label for="phone">* Phone :</Label>
-                <Form.Control className="phone" required={true} type="phone" placeholder="" name="phone" value={this.state.phone} onChange={ this.handleChange } />
+              <TextField
+                    label={labelPhone}
+                    name='phone'
+                    value={this.state.phone}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    required
+                  />
               </div>
             </div>
 
             <div className='row'>
               <div className='col-12'>
-                <Label for="email"> E-mail :</Label>
-                <Form.Control type="email" placeholder="" name="email" value={this.state.email} onChange={ this.handleChange } />
+              <TextField
+                    label={labelEmail}
+                    name='email'
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    margin="normal"
+                  />
               </div>
             </div>
 
             <div className='row'>
               <div className='col-12'>
-                <Label for="address">* Address :</Label>
-                <Input required={true} type='address' placeholder="" name="address" value={this.state.address} onChange={ this.handleChange }  />
+              <TextField
+                    label={labelAddress}
+                    name='address'
+                    value={this.state.address}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    required
+                  />
               </div>
             </div>
 
             <div className='row'>
               <div className='col-12'>
-                  <Label for='city'>* City :</Label>
-                  <Input required={true} type='city' placeholder="" name="city" value={this.state.city } onChange={ this.handleChange } />
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='col-12'>
-                <Label for='city'>Informations complementaires :</Label>
-                <Input placeholder='Numero dappartement, digicode, toute information utile.' type="textarea" rows='3' name="info" value={this.state.info } onChange={ this.handleChange } />
+              <TextField
+                    label={labelInfo}
+                    name='info'
+                    value={this.state.info}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    fullWidth
+                    multiline
+                    rows="3"
+                  />
               </div>
             </div>
             <br/>
@@ -231,7 +305,7 @@ class TabModal extends React.Component {
 
           <div className='row' style={{marginTop:'2%'}}>
             <div className='col-12'>
-            <Label for='city'>Professionel :</Label>
+            <Label><FormattedMessage id='reservation.pro' /></Label>
               <Switch onClick={() => this.handleSwitch()}/>
               {this.displayPro()}
             </div>
@@ -239,8 +313,16 @@ class TabModal extends React.Component {
 
           <div className='row'>
             <div className='col-12'>
-            <Label for='city'>Note :</Label>
-            <Input placeholder='' type="textarea" rows='3' name="note" value={this.state.note } onChange={ this.handleChange } />
+            <TextField
+                    label={labelNote}
+                    name='note'
+                    value={this.state.note}
+                    onChange={this.handleChange}
+                    margin="normal"
+                    fullWidth
+                    multiline
+                    rows="3"
+                  />
             </div>
           </div>
           <br/>

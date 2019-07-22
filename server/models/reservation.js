@@ -9,7 +9,6 @@ const ReservationSchema = new Schema({
   phone: {type: String},
   email: { type: String },
   address: {type: String },
-  city: { type: String },
   date: { type: String },
   hour: { type: String },
   info: { type: String },

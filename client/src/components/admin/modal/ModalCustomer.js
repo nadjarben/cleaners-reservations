@@ -37,7 +37,6 @@ import { connect } from 'react-redux';
                     </ModalHeader>
                     <ModalBody>
                         <h5>Addresse: </h5><p>{customer.address}</p>
-                        <h5>Ville: </h5><p>{customer.city}</p>
                         <h5>Tel: </h5><p>{customer.phone}</p>
                         <h5>Email: </h5><p>{customer.email}</p>
                         <h6>Informations: </h6><p>{customer.info}</p>

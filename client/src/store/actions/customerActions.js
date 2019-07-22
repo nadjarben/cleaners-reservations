@@ -6,9 +6,9 @@ const customersAPI = //'http://localhost:8080/api/customers/'
                      //'https://cleaners-reservation.herokuapp.com/api/customers/'
                      'https://www.thecleanersisrael.com/api/customers/'
 
-export const postCustomer = (name, surname, phone, email, address, city, info) => dispatch => {
+export const postCustomer = (name, surname, phone, email, address, info) => dispatch => {
     axios.post(customersAPI, {
-          name, surname, phone, email, address, city, info
+          name, surname, phone, email, address, info
       })
       .then(res => {
           return dispatch({

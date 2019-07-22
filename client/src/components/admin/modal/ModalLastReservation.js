@@ -37,7 +37,6 @@ import PropTypes from 'prop-types';
                     </ModalHeader>
                     <ModalBody>
                         <h5>Addresse: </h5><p>{lastReservation.address}</p>
-                        <h5>Ville: </h5><p>{lastReservation.city}</p>
                         <h5>Informations: </h5><p>{lastReservation.info}</p>
                         <h5>Tel: </h5><p>{lastReservation.phone}</p>
                         <h5>Email: </h5><p>{lastReservation.email}</p>

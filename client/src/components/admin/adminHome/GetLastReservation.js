@@ -28,9 +28,9 @@ class GetLastReservation extends Component {
       }
     
       handleSubmit = (e) => {
-        const { name, surname, phone, email, address, city, date, hour, info } = this.state
+        const { name, surname, phone, email, address, date, hour, info } = this.state
         e.preventDefault()
-        this.props.postReservation(name, surname, phone, email, address, city, date, hour, info)
+        this.props.postReservation(name, surname, phone, email, address, date, hour, info)
       }
     
     render() {

@@ -48,7 +48,6 @@ router.post('/', (req, res) => {
         phone: req.body.phone,
         email: req.body.email,
         address: req.body.address,
-        city: req.body.city,
         info: req.body.info,
     });
     customer
@@ -64,7 +63,6 @@ router.post('/', (req, res) => {
                 phone: result.phone,
                 email: result.email,
                 address: result.address,
-                city: result.city,
                 info: result.info,
                 request: {
                     type: 'POST',

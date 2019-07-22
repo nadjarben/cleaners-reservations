@@ -36,8 +36,6 @@ const BootstrapInput = withStyles(theme => ({
   },
   input: {
     borderRadius: 4,
-    color: 'white',
-    borderColor:'white',
     position: 'relative',
     backgroundColor: 'white',
     border: '1px solid #ced4da',

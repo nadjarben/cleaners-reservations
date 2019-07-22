@@ -9,7 +9,6 @@ const CustomerSchema = new Schema({
   phone: {type: String},
   email: { type: String },
   address: {type: String },
-  city: { type: String },
   info: { type: String }
 });
 
