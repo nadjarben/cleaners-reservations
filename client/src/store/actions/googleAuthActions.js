@@ -3,8 +3,7 @@ import {
     SIGN_OUT,
 } from './types';
 
-const admin = '108677919013990968799'
-//118315381336212654574 nadjar.benj
+const admin = '104068328308971597103'
 
 export const signIn = (userId) => {
     if(userId === admin)

@@ -277,7 +277,7 @@ class TabModal extends React.Component {
             <div className='row'>
               <div className='col-12'>
                 <div className='group' style={{marginTop:'5%'}}>
-                <label style={{fontFamily:'roboto', color:'#808080', marginBottom:'-15%', fontSize:'17px'}}><FormattedMessage id='reservation.address' /></label>
+                <label style={{fontFamily:'roboto', color:'#808080', marginBottom:'-25%', fontSize:'17px'}}><FormattedMessage id='reservation.address' /></label>
                   <GooglePlacesAutocomplete
                   style={{marginTop:'10px'}}
                   autocompletionRequest={{
