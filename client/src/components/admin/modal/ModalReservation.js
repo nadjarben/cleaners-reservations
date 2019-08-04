@@ -32,8 +32,8 @@ import PropTypes from 'prop-types';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{reservation.name} {reservation.surname} || {reservation.date} | {reservation.hour} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader className="modal-header" close={closeBtn}>
-                        {reservation.name} {reservation.surname}
+                    <ModalHeader className="modal-header" close={closeBtn} style={{backgroundColor:'#0E1521', color:'white'}}>
+                        {reservation.name} {reservation.surname} 
                     </ModalHeader>
                     <ModalBody>
                         <h5>Addresse: </h5><p>{reservation.address}</p>

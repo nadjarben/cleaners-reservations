@@ -98,8 +98,8 @@ class TabModal extends React.Component {
   }
   handleButtonCompleteSecond = () => {
     if(this.state.activeTab === 2)
-    if( this.state.date === '' || this.state.phone === '' || this.state.address === ''  )
-      return  <Button style={{width:'120px', backgroundColor:'red'}} ><FormattedMessage id='reservation.next' /></Button>
+    if( this.state.name === '' || this.state.surname === '' || this.state.address === ''  )
+      return  <Button style={{width:'120px', backgroundColor:'red'}} onClick={()=> alert('Please fill all informations')} ><FormattedMessage id='reservation.next' /></Button>
     else
       return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
   }
@@ -187,7 +187,7 @@ class TabModal extends React.Component {
             </div>
             <Divider />
         
-            <div className='row' style={{marginTop:'5%'}}>
+            <div className='row' style={{marginTop:'5%', marginLeft:'22%'}}>
               <div className ='col-6'>
               <TextField
                     label={labelDate}
@@ -234,6 +234,7 @@ class TabModal extends React.Component {
                     onChange={this.handleChange}
                     margin="normal"
                     required
+                    maxLenght='2'
                   />
               </div>
               <div className='col-6'>

@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/laundry.9b7974f1.jpg"
   },
   {
-    "revision": "5268763ecee2a2886e57",
+    "revision": "01c0d68fcc40eef1bc50",
     "url": "/static/css/main.f07aeee8.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/static/media/ironingdresses.e75210b5.jpg"
   },
   {
-    "revision": "5268763ecee2a2886e57",
-    "url": "/static/js/main.4965c510.chunk.js"
+    "revision": "01c0d68fcc40eef1bc50",
+    "url": "/static/js/main.19d1a597.chunk.js"
   },
   {
     "revision": "1616e0538c750bc4ef361c8351d4c6d4",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/static/media/suit.a78706ab.jpg"
   },
   {
-    "revision": "3133abe28190050eb80eba2816c0b25a",
-    "url": "/static/media/dress.3133abe2.jpg"
+    "revision": "2e3b3e7d4c0e4c0cc6133c35e4af2c3c",
+    "url": "/static/media/dress.2e3b3e7d.jpg"
   },
   {
     "revision": "7f9a6c1e3d46a6aa0f73b6c53337eda0",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/static/css/2.be9cd952.chunk.css"
   },
   {
-    "revision": "67e734cee779b44237e737753716fbca",
+    "revision": "8c82f2226e7f6001db358a26003f22d9",
     "url": "/index.html"
   }
 ];
