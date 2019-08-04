@@ -36,12 +36,10 @@ router.post('/', (req, res) => {
     var date = req.body.date
     var hour = req.body.hour
     var address = req.body.address
-    var telephone = req.body.telephone
 
     var content= `Nouvelle reservation de :${name} ${surname}<br/>
     le: ${date} a ${hour} <br/>
-    addresse: ${address} <br/>
-    telephone: ${telephone} <br/>`
+    addresse: ${address} <br/>`
     let mailOptions = {
         from: creds.USER, // sender address
         to: 'nadjarbenj@gmail.com', // list of receivers

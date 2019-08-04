@@ -287,6 +287,7 @@ class TabModal extends React.Component {
                     country: ['il'],
                     }
                   }}
+                  autoComplete=''
                   placeholder=''
                   onSelect={({ description }) => (
                   this.setState({ address: description })
