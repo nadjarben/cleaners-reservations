@@ -18,6 +18,7 @@ import NavBar from './components/navbar/NavBar2';
 import FooterBar from './components/footer/FooterBar';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { grey, blue } from '@material-ui/core/colors';
+import { Helmet } from 'react-helmet';
 
 //import configureHistory  from './configureHistory';
 
@@ -39,6 +40,11 @@ class App extends Component {
         messages={messages[lang]}>
       <div className="App">
         <Router >
+        <Helmet>
+        <title>The Cleaners</title>
+        <meta name="description" content="מכבסה אשדוד ,ניקוי יבש , גיהוץ, כביסה" />
+        <meta name="keywords" content=",מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, pressing, ashdod, laundry, laundries, dry cleaning, ironing, cleaning" />
+        </Helmet>
         <MuiThemeProvider theme={theme}>
           <NavBar />
           <FooterBar />
