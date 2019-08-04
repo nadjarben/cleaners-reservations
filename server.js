@@ -8,6 +8,7 @@ const lastReservation = require('./server/routes/api/lastReservations');
 const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
 const contact = require('./server/routes/api/contacts');
+const gmail = require('./server/routes/api/send');
 
 const bluesnap = require('bluesnap');
 
@@ -48,6 +49,7 @@ app.use('/api/archivedReservations', archviedReservation);
 app.use('/api/customers', customer);
 app.use('/api/contacts', contact);
 app.use('/api/lastreservations', lastReservation);
+app.use('/api/send', gmail);
 
 
 //const router = require('express').Router();

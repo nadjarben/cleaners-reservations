@@ -2,7 +2,7 @@ import React from 'react';
 import { Label, TabContent, TabPane, Button, ModalHeader, ModalFooter } from 'reactstrap';
 import { FormattedMessage } from 'react-intl'; 
 import { connect } from "react-redux";
-import { postReservation } from '../../store/actions/reservationActions';
+import { postReservation, mailReservation } from '../../store/actions/reservationActions';
 import { postLastReservation } from '../../store/actions/notifActions';
 import { fetchCustomers, postCustomer } from '../../store/actions/customerActions';
 import Divider from '@material-ui/core/Divider';
@@ -63,6 +63,7 @@ class TabModal extends React.Component {
     e.preventDefault();
     this.props.postReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.postLastReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
+    this.props.mailReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     alert(textAlert);
       //this.props.history.push('/home');
   }
@@ -362,5 +363,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { postReservation, postLastReservation, fetchCustomers, postCustomer }
+  { postReservation, postLastReservation, fetchCustomers, postCustomer, mailReservation }
 )(TabModal);
