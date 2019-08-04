@@ -9,6 +9,16 @@ const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
 const contact = require('./server/routes/api/contacts');
 
+const bluesnap = require('bluesnap');
+
+const gateway = new bluesnap.BlueSnapGateway({
+  environment: 'Sandbox', // 'Production' or 'Sandbox'
+  username: 'nadjarben ', // BlueSnap username
+  password: '15128955Bn', // BlueSnap password
+  apiVersion: '3.0', // Optional
+});
+
+
 const app = express();
 
 // Bodyparser Middleware
