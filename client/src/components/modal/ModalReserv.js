@@ -49,7 +49,7 @@ export default function FullScreenDialog() {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Commander une livraison
+              <FormattedMessage id='reservation.title4' />
             </Typography>
           </Toolbar>
         </AppBar>

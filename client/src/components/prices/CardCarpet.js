@@ -44,7 +44,6 @@ export default function MediaCard(props) {
           </Typography>
           <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
             <FormattedMessage id='washing.text.carpet.1' /><br/>
-            <FormattedMessage id='washing.text.carpet.2' />
           </Typography>
         </CardContent>
       </CardActionArea>

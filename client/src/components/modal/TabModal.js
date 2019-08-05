@@ -178,7 +178,7 @@ class TabModal extends React.Component {
         <TabContent activeTab={this.state.activeTab}>
 
           <TabPane tabId={1}>
-            <ModalHeader style={{color: 'darkgrey'}}>Renseignez le formulaire suivant</ModalHeader>
+            <ModalHeader style={{color: 'darkgrey'}}><FormattedMessage id='reservation.title1' /></ModalHeader>
             <div className='text-center' style={{color:'red', fontStyle:'bold'}}>
               <div className='col' style={{marginTop:'5%'}}>
                 <p><FormattedMessage id="reservation.min" /></p>
@@ -223,7 +223,7 @@ class TabModal extends React.Component {
           </TabPane>
 
           <TabPane tabId={2}>
-          <ModalHeader style={{color: 'darkgrey'}}>Informations personnelles</ModalHeader>
+          <ModalHeader style={{color: 'darkgrey'}}><FormattedMessage id='reservation.title2' /></ModalHeader>
 
             <div className='row' style={{marginTop:'2%'}}>
               <div className='col-6'>
@@ -318,7 +318,7 @@ class TabModal extends React.Component {
           </TabPane>
 
           <TabPane tabId={3}>
-          <ModalHeader style={{color: 'darkgrey'}}>Confirmation</ModalHeader>
+          <ModalHeader style={{color: 'darkgrey'}}><FormattedMessage id='reservation.title3' /></ModalHeader>
 
           <div className='row' style={{marginTop:'2%'}}>
             <div className='col-12'>

@@ -10,7 +10,7 @@ export default {
         'nav.lang': 'flaghe',
 
         //Home
-        'home.intro': 'ממוקם באשדוד, מכבסה את השירותים מציעה את שירותיה של הבגדים שלך ואת פשתן. אכפת לנו מהסיפוק של הלקוחות שלנו ומציעים להם שירותי כביסה וגיהוץ המותאמים לצרכיהם. אתה כבר לא צריך לדאוג כביסה שלך, אנחנו מטפלים בזה בשבילך במחירים ללא תחרות.',
+        'home.intro': 'ממוקם באשדוד , המכבסה זה קלינרס שמה את השירותים שלה לשירותכם, דואגים כמו שצריך לכביסה שלכם .  אנחנו דואגים לשבעת רצון של הלקוחות שלנו לפני הכל ומציעים להם שירות של ניקוי וגיהוץ מותאם לצורך שלהם . אין לכם יותר מה לדאוג על הכביסה  שלכם , אנחנו דואגים לזה במקומכם במחירים מטורפים .',
         'home.button': 'הזמנת משלוח',
 
         //Reservation
@@ -21,6 +21,10 @@ export default {
         'reservation.prev': 'הקודם',
         'reservation.next':  'הבא',
         'reservation.confirmate': 'לאשר',
+        'reservation.title1': 'מלא את הטופס הבא',
+        'reservation.title2': 'פּרטים אישיים',
+        'reservation.title3': 'אישור',
+        'reservation.title4': 'להזמין משלוח',
 
         'reservation.name': 'שם פרטי',
         'reservation.lastname': 'שם משפחה',
@@ -30,7 +34,7 @@ export default {
         'reservation.city': 'העי',
         'reservation.date': 'תאריך',
         'reservation.hour': 'שעה',
-        'reservation.info': 'מידע נוסףת',
+        'reservation.info': 'מידע נוספת',
         'reservation.info.placeholder': '... קוד, דלת',
         'reservation.pro': 'חברה',
         'reservation.namefact': 'שם חשבונית',
@@ -45,12 +49,12 @@ export default {
 
         //Contact
         'contact.name': 'שם',
-        'contact.number': 'מספר',
+        'contact.number': 'מספר טלפון',
         'contact.email': 'הדוא"ל',
         'contact.message': 'הודעה',
 
           //Ironing
-            'ironing.title1': 'Pièce',
+            'ironing.title1': 'פריט',
             'ironing.title2': 'אחר',
 
             'ironing.text.piece.48': '₪ 6 ..... : 48h',
@@ -72,7 +76,7 @@ export default {
             'washing.title3': 'וילונות',
             'washing.title4': 'שטיחים',
             
-            // eslint-disable-next-line
+            
             'washing.text.laundry': '₪ ק"ג / 10 ',
 
             // eslint-disable-next-line
@@ -130,6 +134,10 @@ export default {
         'reservation.prev': 'Last',
         'reservation.next':  'Next',
         'reservation.confirmate': 'Confirm',
+        'reservation.title1': 'Fill the following form',
+        'reservation.title2': 'Personal informations',
+        'reservation.title3': 'Confirmation',
+        'reservation.title4': 'Book a delivery',
 
         'reservation.name': 'First Name',
         'reservation.lastname': 'Last Name',
@@ -225,6 +233,10 @@ export default {
         'reservation.prev': 'Précédent',
         'reservation.next':  'Suivant',
         'reservation.confirmate': 'Confirmer',
+        'reservation.title1': 'Renseignez le formulaire suivant',
+        'reservation.title2': 'Informations personnelles',
+        'reservation.title3': 'Confirmation',
+        'reservation.title4': 'Commandez une livraison',
 
         'reservation.name': 'Prénom',
         'reservation.lastname': 'Nom',
