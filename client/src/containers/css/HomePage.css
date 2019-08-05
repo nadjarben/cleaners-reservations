@@ -45,6 +45,9 @@
     text-decoration: none;
     color: skyblue;
 }
+h1 {
+    font-size: 15px
+}
 
 /*ipad */
 @media screen and (min-width: 750px) and (max-width: 1200px) and (min-height: 1000px) {
@@ -80,8 +83,7 @@
         height: 15vh;
         width: 15vh;
         padding-top: 1.5%;
-        font-size: 10px;
-        
+        font-size: 10px;   
     }
 }
 /*ipad pro*/

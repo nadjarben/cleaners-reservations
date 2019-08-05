@@ -42,8 +42,8 @@ class App extends Component {
         <Router >
         <Helmet>
         <title>מכבסה אשדוד, שירות מישלוך || The Cleaners || Laundry Pressing Ashdod</title>
-        <meta name="description" content=", Dry cleaning, laundry, ashdod, pressing, deliveries, מכבסה אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך" />
-        <meta name="keywords" content=" ,מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך, pressing, ashdod, laundry, laundries, dry cleaning, blanchisserie ironing, cleaning, nettoyage a sec, repassage, lavage" />
+        <meta name="description" content="Dry cleaning, laundry, ashdod, pressing, deliveries, מכבסה אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך" />
+        <meta name="keywords" content="מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך, pressing, ashdod, laundry, laundries, dry cleaning, blanchisserie ironing, cleaning, nettoyage a sec, repassage, lavage" />
         </Helmet>
         <MuiThemeProvider theme={theme}>
           <NavBar />

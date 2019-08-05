@@ -54,9 +54,9 @@ const useStyles = makeStyles(theme => ({
 export default function SimpleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const label1 = <FormattedMessage id="prices.title1" />
-  const label2 = <FormattedMessage id="prices.title2" />
-  const label3 = <FormattedMessage id="prices.title3" />
+  const label1 = <h1><FormattedMessage id="prices.title1" /></h1>
+  const label2 = <h1><FormattedMessage id="prices.title2" /></h1>
+  const label3 = <h1><FormattedMessage id="prices.title3" /></h1>
 
   function handleChange(event, newValue) {
     setValue(newValue);
