@@ -57,8 +57,8 @@ class TabModal extends React.Component {
   handleSubmit = (e) => {
     this.doesCustomerExist();
     const textAlert =
-    'Votre commande a bien ete passee, nous vous reconfirmerons par message dans lheure, ' +
-    'En cas dimprevus veuillez nous contacter au 0586305515.'
+    '.הזמנתך התקבלה בהצלחה' +
+    'אם ישׁלכם בּעיה תתקשׁרו אלינו 0774850937'
     const { name, surname, phone, email, address, date, hour, info, namefact, addressfact, note } = this.state
     e.preventDefault();
     this.props.postReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);

@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/laundry.9b7974f1.jpg"
   },
   {
-    "revision": "09926f71729db8782f23",
+    "revision": "2b81e25ba8f09d0289f7",
     "url": "/static/css/main.4b20484c.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/static/media/ironingdresses.e75210b5.jpg"
   },
   {
-    "revision": "09926f71729db8782f23",
-    "url": "/static/js/main.f9236e05.chunk.js"
+    "revision": "2b81e25ba8f09d0289f7",
+    "url": "/static/js/main.7a3661b6.chunk.js"
   },
   {
     "revision": "1616e0538c750bc4ef361c8351d4c6d4",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/static/css/2.be9cd952.chunk.css"
   },
   {
-    "revision": "b7fb64212edc78412cef7d6c932e0bc9",
+    "revision": "29afe84bb955a04c708dff619bc336ba",
     "url": "/index.html"
   }
 ];
