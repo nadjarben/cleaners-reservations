@@ -28,8 +28,8 @@ export default function LabelBottomNavigation() {
   return (
     
     <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-      <BottomNavigationAction label="Whats App" value="historique" icon={<a href='https://api.whatsapp.com/send?phone=972774850937' ><img src={whatsapp} alt='whatsapp' /></a>} />
-      <BottomNavigationAction label="Phone" value="historique" icon={<a href='tel:+972586305531'><img src={phone} alt='phone' /></a>} />
+      <BottomNavigationAction label="Whats App" value="historique" icon={<a href='https://api.whatsapp.com/send?phone=972586305531' ><img src={whatsapp} alt='whatsapp' /></a>} />
+      <BottomNavigationAction label="Phone" value="historique" icon={<a href='tel:+972774850937'><img src={phone} alt='phone' /></a>} />
       <BottomNavigationAction label="Facebook" value="historique" icon={<a href='https://www.facebook.com/pages/The-Cleaners/1356200531133580'><img src={facebook} alt='facebook' /></a>} />
       <BottomNavigationAction label="Google Map" value="historique" icon={<a href='https://www.google.com/maps/place/Pressing+The+Cleaners/@31.7885499,34.6422172,19.18z/data=!4m12!1m6!3m5!1s0x1502a3122478a447:0xa8bfdbf2a15e8b43!2sPressing+The+Cleaners!8m2!3d31.7889614!4d34.6426781!3m4!1s0x1502a3122478a447:0xa8bfdbf2a15e8b43!8m2!3d31.7889614!4d34.6426781'><img src={googlemap} alt='gmap' /></a>} />
     </BottomNavigation>
