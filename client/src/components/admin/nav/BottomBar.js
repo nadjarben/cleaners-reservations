@@ -22,7 +22,7 @@ export default function LabelBottomNavigation() {
   }
 
   return (
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
+    <BottomNavigation style={{zIndex:'1'}} value={value} onChange={handleChange} className={classes.root}>
       <BottomNavigationAction label="Client" value="favorites" icon={<ButtonPlusClient/>} />
       <BottomNavigationAction label="Reservation" value="nearby" icon={<ButtonPlusReserv/>} />
     </BottomNavigation>
