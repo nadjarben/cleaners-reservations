@@ -9,18 +9,9 @@ const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
 const contact = require('./server/routes/api/contacts');
 const gmail = require('./server/routes/api/send');
-
-const bluesnap = require('bluesnap');
-
-const gateway = new bluesnap.BlueSnapGateway({
-  environment: 'Sandbox', // 'Production' or 'Sandbox'
-  username: 'nadjarben ', // BlueSnap username
-  password: '15128955Bn', // BlueSnap password
-  apiVersion: '3.0', // Optional
-});
-
-
+const signin = require('./server/routes/api/signin')
 const app = express();
+
 
 // Bodyparser Middleware
 //app.use('/uploads', express.static('uploads'));
@@ -32,7 +23,7 @@ const db = require('./server/config/keys').mongoURI;
 
 // Connect to Mongo
 mongoose
-  .connect(db, {useNewUrlParser: true}) // Adding new mongo url parser
+  .connect(db, {useNewUrlParser: true, useFindAndModify: false}) // Adding new mongo url parser
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
@@ -50,6 +41,8 @@ app.use('/api/customers', customer);
 app.use('/api/contacts', contact);
 app.use('/api/lastreservations', lastReservation);
 app.use('/api/send', gmail);
+app.use('/api/signin', signin);
+
 
 
 //const router = require('express').Router();

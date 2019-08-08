@@ -30,7 +30,21 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
+
   
+  privateRoutes() {
+    const {isAdmin} = this.props;
+      if(isAdmin === true)
+      return (
+        <div>
+        <Route path="/admin" component={Admin} />
+        <Route path="/admin/adminhome" component={AdminHome} />
+        <Route path="/admin/reservations" component={AdminReservation}/>
+        <Route path="/admin/customers" component={AdminCustomer}/>
+        <Route path="/admin/contacts" component={AdminContact}/>
+        </div>
+      )
+    }
   render() {
     
   //  const history = configureHistory()
@@ -53,11 +67,7 @@ class App extends Component {
           <Route path="/reservation" component={Reservation}/>
           <Route path="/prices" component={Prices}/>
           <Route path="/contacts" component={Contacts}/>
-          <Route path="/admin" component={Admin} />
-          <Route path="/admin/adminhome" component={AdminHome} />
-          <Route path="/admin/reservations" component={AdminReservation}/>
-          <Route path="/admin/customers" component={AdminCustomer}/>
-          <Route path="/admin/contacts" component={AdminContact}/>
+          {this.privateRoutes()}
           </MuiThemeProvider>
         </Router>
       </div>
@@ -71,7 +81,8 @@ App.propTypes = {
 }
 
 const mapStateToProps = state =>  ({
-  lang: state.locale.lang
+  lang: state.locale.lang,
+  isAdmin: state.auth.isAdmin
 });
 
 export default connect(mapStateToProps)(App)

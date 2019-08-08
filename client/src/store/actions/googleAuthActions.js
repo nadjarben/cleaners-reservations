@@ -5,12 +5,18 @@ import {
 
 const admin = '104068328308971597103'
 
-export const signIn = (userId) => {
+export const signIn = (userId, name, surname, address, phone, mail) => {
     if(userId === admin)
         return {
             type: SIGN_IN,
             payload: userId,
-            isAdmin: true
+            isAdmin: true,
+            name: name,
+            surname: surname,
+            phone: phone,
+            address: address,
+            phone: phone,
+            email: mail
         }
     else
         return {

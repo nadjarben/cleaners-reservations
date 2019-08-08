@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {signIn, signOut } from '../../store/actions/googleAuthActions';
+import ModalRegister from '../modal/ModalRegister';
 
 class GoogleAuth extends React.Component {
+    /*
 
     componentDidMount() {
         window.gapi.load('client:auth2', () => {
@@ -62,11 +64,13 @@ class GoogleAuth extends React.Component {
             )
         }
     }
+    {this.renderAuthButton()}
+    */
 
     render () {
         return (
             <div>
-                {this.renderAuthButton()}
+                <ModalRegister />
             </div>
         )
     }
