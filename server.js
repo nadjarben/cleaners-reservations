@@ -9,7 +9,7 @@ const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
 const contact = require('./server/routes/api/contacts');
 const gmail = require('./server/routes/api/send');
-const signin = require('./server/routes/api/signin')
+const account = require('./server/routes/api/account')
 const app = express();
 
 
@@ -41,7 +41,7 @@ app.use('/api/customers', customer);
 app.use('/api/contacts', contact);
 app.use('/api/lastreservations', lastReservation);
 app.use('/api/send', gmail);
-app.use('/api/signin', signin);
+app.use('/api/account', account);
 
 
 
@@ -53,7 +53,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build'));
   });
 }
 

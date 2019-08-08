@@ -38,7 +38,7 @@ export default class login extends Component {
         if (obj && obj.token) {
           const { token } = obj;
           // Verify token
-          fetch('http://localhost:8080/api/signin/account/verify?token=' + token)
+          fetch('https://www.thecleanersisrael.com/api/account/verify?token=' + token)
             .then(res => res.json())
             .then(json => {
               if (json.success) {
@@ -106,7 +106,7 @@ export default class login extends Component {
           isLoading: true,
         });
         // Post request to backend
-        fetch('http://localhost:8080/api/signin/account/signin', {
+        fetch('https://www.thecleanersisrael.com/api/account/signin', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -148,7 +148,7 @@ export default class login extends Component {
           isLoading: true,
         });
         // Post request to backend
-        fetch('http://localhost:8080/api/signin/account/signup', {
+        fetch('https://www.thecleanersisrael.com/api/account/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -188,7 +188,7 @@ export default class login extends Component {
         if (obj && obj.token) {
           const { token } = obj;
           // Verify token
-          fetch('http://localhost:8080/api/signin/account/logout?token=' + token)
+          fetch('https://www.thecleanersisrael.com/api/account/logout?token=' + token)
             .then(res => res.json())
             .then(json => {
               if (json.success) {
