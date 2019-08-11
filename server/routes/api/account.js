@@ -83,7 +83,8 @@ router.post('/signup', (req, res, next) => {
 router.post('/signin', (req, res, next) => {
     const { body } = req;
     const {
-      password
+      password,
+      firstName
     } = body;
     let {
       email
@@ -103,7 +104,7 @@ router.post('/signin', (req, res, next) => {
     email = email.toLowerCase();
     email = email.trim();
     User.find({
-      email: email
+      email: email,
     }, (err, users) => {
       if (err) {
         console.log('err 2:', err);
@@ -115,7 +116,7 @@ router.post('/signin', (req, res, next) => {
       if (users.length != 1) {
         return res.send({
           success: false,
-          message: 'Error: Invalid Mail'
+          message: "Error: Mail doesn't registered"
         });
       }
       const user = users[0];
@@ -123,7 +124,10 @@ router.post('/signin', (req, res, next) => {
         return res.send({
           success: false,
           message: 'Error: Invalid Password'
-        });
+        })
+        .then(
+          console.log('alors')
+        )
       }
       // Otherwise correct user
       const userSession = new UserSession();
@@ -144,6 +148,7 @@ router.post('/signin', (req, res, next) => {
       });
     });
   });
+  
 
   router.get('/verify', (req, res, next) => {
     // Get the token

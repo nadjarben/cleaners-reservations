@@ -5,6 +5,8 @@ import contactReducer from './contactReducer';
 import notifReducer from './notifReducer';
 import googleAuthReducer from './googleAuthReducer';
 import localeReducer from './localeReducer';
+import authReducer from "./authReducer";
+import errorReducer from "./errorReducer";
 
 export default combineReducers({
   auth: googleAuthReducer,
@@ -12,5 +14,7 @@ export default combineReducers({
   reservations: reservationReducer,
   customers: customerReducer,
   contacts: contactReducer,
-  notif: notifReducer
+  notif: notifReducer,
+  auth: authReducer,
+  errors: errorReducer
 });

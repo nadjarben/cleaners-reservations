@@ -5,5 +5,6 @@
 
 module.exports = {
    mongoURI: 'mongodb+srv://nadjarben:15128955Bn@cluster0-u5hvq.mongodb.net/test?retryWrites=true',
-   useNewUrlParser: true
+   useNewUrlParser: true,
+   secretOrKey: "secret"
  }

@@ -3,13 +3,15 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+const passport = require("passport");
 const reservation = require('./server/routes/api/reservations');
 const lastReservation = require('./server/routes/api/lastReservations');
 const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
 const contact = require('./server/routes/api/contacts');
-const gmail = require('./server/routes/api/send');
-const account = require('./server/routes/api/account')
+//const gmail = require('./server/routes/api/send');
+//const account = require('./server/routes/api/account')
+const users = require('./server/routes/api/users');
 const app = express();
 
 
@@ -34,14 +36,20 @@ mongoose
     next();
     });
 
+  // Passport middleware
+  app.use(passport.initialize());
+  // Passport config
+  require('./server/config/passport')(passport);
+
 // Use Routes
 app.use('/api/reservations', reservation);
 app.use('/api/archivedReservations', archviedReservation);
 app.use('/api/customers', customer);
 app.use('/api/contacts', contact);
 app.use('/api/lastreservations', lastReservation);
-app.use('/api/send', gmail);
-app.use('/api/account', account);
+app.use('/api/users', users);
+//app.use('/api/send', gmail);
+//app.use('/api/account', account);
 
 
 

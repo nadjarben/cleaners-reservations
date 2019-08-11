@@ -9,7 +9,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import ModalRegister from '../modal/ModalRegister';
+import IconButton from '@material-ui/core/IconButton';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -50,7 +51,16 @@ export default function MenuAppBar() {
           </Typography>
           <Languages2 />
             <div>
-            <ModalRegister />
+            <Link to='/landing'>
+              <IconButton
+            aria-label="Account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            color="primary"
+        >
+            <AccountCircle />
+        </IconButton>
+        </Link>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
