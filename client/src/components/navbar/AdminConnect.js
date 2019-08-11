@@ -29,7 +29,7 @@ class AdminConnect extends React.Component {
 const mapStateToProps = state => ({
   isSignedIn: state.auth.isSignedIn,
   userId: state.auth.userId,
-  isAdmin: state.auth.isAdmin
+  isAdmin: state.auth.user.isAdmin
 });
 
 export default connect(mapStateToProps)(AdminConnect)

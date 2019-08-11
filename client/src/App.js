@@ -28,6 +28,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./config/setAuthToken";
 import { setCurrentUser, logoutUser } from "./store/actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import AdminRoute from './components/private-route/AdminRoute';
 import Dashboard from "./components/dashboard/Dashboard";
 
 // Check for token to keep user logged in
@@ -57,21 +58,7 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
-
   
-  privateRoutes() {
-    const {isAdmin} = this.props;
-      if(isAdmin === true)
-      return (
-        <div>
-        <Route path="/admin" component={Admin} />
-        <Route path="/admin/adminhome" component={AdminHome} />
-        <Route path="/admin/reservations" component={AdminReservation}/>
-        <Route path="/admin/customers" component={AdminCustomer}/>
-        <Route path="/admin/contacts" component={AdminContact}/>
-        </div>
-      )
-    }
   render() {
     
   //  const history = configureHistory()
@@ -95,16 +82,16 @@ class App extends Component {
           <Route path="/reservation" component={Reservation}/>
           <Route path="/prices" component={Prices}/>
           <Route path="/contacts" component={Contacts}/>
-          <Route path="/admin" component={Admin} />
-        <Route path="/admin/adminhome" component={AdminHome} />
-        <Route path="/admin/reservations" component={AdminReservation}/>
-        <Route path="/admin/customers" component={AdminCustomer}/>
         <Route path="/landing" component={Landing}/>
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
-
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <AdminRoute path='/admin' component={Admin} />
+            <AdminRoute exact path='/admin/adminhome' component={AdminHome} />
+            <AdminRoute exact path='/admin/adminreservations' component={AdminReservation} />
+            <AdminRoute exact path='/admin/admincustomers' component={AdminCustomer} />
+            <AdminRoute exact path='/admin/admincontacts' component={AdminContact} />
             </Switch>
           </MuiThemeProvider>
         </Router>
@@ -121,7 +108,6 @@ App.propTypes = {
 
 const mapStateToProps = state =>  ({
   lang: state.locale.lang,
-  isAdmin: state.auth.isAdmin
 });
 
 export default connect(mapStateToProps)(App)
