@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 import NavItem2 from './NavItem2';
 import GoogleAuth from '../navbar/GoogleAuth';
 import Languages2 from './Languages2';
@@ -11,6 +12,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function MenuAppBar() {
+function NavBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -40,6 +42,36 @@ export default function MenuAppBar() {
   function handleClose() {
     setAnchorEl(null);
   }
+  function isAuthenticated() {
+    const isAuthenticated =  props.auth.isAuthenticated
+    console.log(isAuthenticated)
+    if(isAuthenticated === true)
+    return (
+      <Link to='/dashboard'>
+              <IconButton
+            aria-label="Account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            color="primary"
+        >
+            <AccountCircle style={{color:'white'}} />
+        </IconButton>
+        </Link>
+    )
+  else
+   return (
+    <Link to='/landing'>
+              <IconButton
+            aria-label="Account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            color="primary"
+        >
+            <AccountCircle style={{color:'white'}} />
+        </IconButton>
+        </Link>
+  )
+   }
 
   return (
     <div className={classes.root}>
@@ -51,16 +83,7 @@ export default function MenuAppBar() {
           </Typography>
           <Languages2 />
             <div>
-            <Link to='/landing'>
-              <IconButton
-            aria-label="Account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            color="primary"
-        >
-            <AccountCircle style={{color:'white'}} />
-        </IconButton>
-        </Link>
+              {isAuthenticated()}
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
@@ -84,3 +107,11 @@ export default function MenuAppBar() {
     </div>
   );
 }
+NavBar.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(NavBar)

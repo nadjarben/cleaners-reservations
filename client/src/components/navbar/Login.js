@@ -49,23 +49,24 @@ this.props.loginUser(userData);
 render() {
     const { errors } = this.state;
 return (
-      <div className="container" style={{marginTop:'5%'}}>
-        <div className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/landing" className="btn-flat waves-effect">
+  <div>
+    <Link to="/landing" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
-            </Link>
+    </Link>
+      <div className="container" style={{marginTop:'2%'}}>
+        <div className="row">
+          <div className="col s8 offset-s2">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b style={{color: 'red', marginTop:'5%'}}>Login</b>
               </h4>
-              <p className="grey-text text-darken-1" style={{marginTop:'3%'}}>
+              <p className="grey-text text-darken-1" style={{marginTop:'4%'}}>
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12" style={{marginTop:'5%'}}>
+              <div className="input-field col s12" style={{marginTop:'2%'}}>
                 <TextField
                   onChange={this.onChange}
                   value={this.state.email}
@@ -82,7 +83,7 @@ return (
                   {errors.emailnotfound}
                 </span>
               </div>
-              <div className="input-field col s12" style={{marginTop:'5%'}}>
+              <div className="input-field col s12" style={{marginTop:'3%'}}>
                 <TextField
                   onChange={this.onChange}
                   value={this.state.password}
@@ -117,6 +118,7 @@ return (
             </form>
           </div>
         </div>
+      </div>
       </div>
     );
   }
