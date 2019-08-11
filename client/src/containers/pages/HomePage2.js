@@ -19,7 +19,7 @@ import ModalReserv from '../../components/modal/ModalReserv';
 
           displayContent() {
                 return (
-                    <div className='homepage' style={{ backgroundColor:'#0E1521'}}>
+                    <div className='homepage' style={{ backgroundColor:'#0E1521', marginTop:'-4vh'}}>
                         <div className='container'>
                             <div className='text-center'>
                                 <img className='logo-cleaners' src={logo} width='60%' alt="logoCleaners"></img>
