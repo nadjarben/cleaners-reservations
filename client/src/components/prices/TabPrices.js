@@ -66,7 +66,7 @@ export default function SimpleTabs() {
   return (
       
     <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor:'#0E1521', marginTop: "4.3vh"}}>
+      <AppBar position="static" style={{backgroundColor:'#0E1521'}}>
         <Tabs className='appbar-price' value={value} onChange={handleChange} >         
           <Tab label={label1} {...a11yProps(0)} />
           <Tab label={label2} {...a11yProps(1)} />

@@ -49,10 +49,9 @@ this.props.loginUser(userData);
 render() {
     const { errors } = this.state;
 return (
-  <div>
+  <div style={{marginTop:'9vh'}}>
     <Link to="/landing" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
+              <i className="material-icons left">keyboard_backspace</i> Back
     </Link>
       <div className="container" style={{marginTop:'2%'}}>
         <div className="row">
@@ -110,7 +109,7 @@ return (
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                  style={{marginTop:'3%'}}
+                  style={{marginTop:'4vh'}}
                 >
                   Login
                 </button>

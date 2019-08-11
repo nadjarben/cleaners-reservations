@@ -56,10 +56,9 @@ const newUser = {
 render() {
     const { errors } = this.state;
 return (
-  <div>
+  <div style={{marginTop:'9vh'}}>
             <Link to="/landing" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
+              <i className="material-icons left">keyboard_backspace</i> Back
             </Link>
       <div className="container" style={{marginTop:'2%'}}>
         <div className="row">
@@ -177,7 +176,7 @@ return (
                 />
                 <span className="red-text">{errors.password2}</span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px", marginTop: '3%',marginBottom:'15%' }}>
+              <div className="col s12" style={{ paddingLeft: "11.250px", marginTop: '3%',marginBottom:'20%' }}>
               <button
                   style={{
                     width: "150px",

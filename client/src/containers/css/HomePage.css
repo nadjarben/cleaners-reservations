@@ -49,7 +49,7 @@ h1 {
     font-size: 15px
 }
 .appbar-price {
-    margin-top: 5vh
+    margin-top: 3vh
 }
 
 /*ipad */
@@ -89,7 +89,7 @@ h1 {
         font-size: 10px;   
     }
     .appbar-price {
-        margin-top: 13vh
+        margin-top: 11vh
     }
 }
 /*ipad pro*/
@@ -101,6 +101,9 @@ h1 {
     }
     .bouton18 {
         font-size: 30px;
+    }
+    .appbar-price {
+        margin-top: 4vh
     }
 }
 /*pc*/
@@ -135,7 +138,7 @@ h1 {
         height: 25vh;
     }
     .appbar-price {
-        margin-top: 6vh
+        margin-top: 4vh
     }
     .bouton18 {
         width: 15vh;
@@ -166,7 +169,7 @@ h1 {
         font-size: 13px;
     }
     .appbar-price {
-        margin-top: 5vh
+        margin-top: 3vh
     }
 }
 
@@ -179,7 +182,7 @@ h1 {
         font-size: 20px;
     }
     .appbar-price {
-        margin-top: 3vh
+        margin-top: 1vh
     }
 }
 /*iphone 8plus */
@@ -191,7 +194,7 @@ h1 {
         font-size: 20px;
     }
     .appbar-price {
-        margin-top: 4vh
+        margin-top: 2vh
     }
 }
 

@@ -17,6 +17,7 @@ import PropTypes from "prop-types";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    marginBottom: '6.5vh'
   },
   toolbar: {
     backgroundColor: 'black',
