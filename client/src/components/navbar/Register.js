@@ -56,7 +56,7 @@ const newUser = {
 render() {
     const { errors } = this.state;
 return (
-      <div className="container">
+      <div className="container" style={{marginTop:'5%'}}>
         <div className="row">
           <div className="col s8 offset-s2">
             <Link to="/landing" className="btn-flat waves-effect">

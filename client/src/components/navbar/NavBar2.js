@@ -58,7 +58,7 @@ export default function MenuAppBar() {
             aria-haspopup="true"
             color="primary"
         >
-            <AccountCircle />
+            <AccountCircle style={{color:'white'}} />
         </IconButton>
         </Link>
               <Menu
