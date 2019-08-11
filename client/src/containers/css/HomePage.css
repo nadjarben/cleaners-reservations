@@ -1,11 +1,11 @@
 
 .homepage {
-    height: 92vh;
+    height: 93vh;
     color: white;
 }
 
 .logo-cleaners {
-    margin-top: 2vh;
+    margin-top: 8vh;
     height: 30vh;
     width: 30vh;
 }
@@ -48,6 +48,9 @@
 h1 {
     font-size: 15px
 }
+.appbar-price {
+    margin-top: 5vh
+}
 
 /*ipad */
 @media screen and (min-width: 750px) and (max-width: 1200px) and (min-height: 1000px) {
@@ -70,9 +73,9 @@ h1 {
     .logo-cleaners {
         width: 20vh;
         height: 20vh;
+        margin-top: 20vh
     }
     .homepage {
-        height: 80vh;;
     }
     .lead {
         margin-top: -1%;
@@ -84,6 +87,9 @@ h1 {
         width: 15vh;
         padding-top: 1.5%;
         font-size: 10px;   
+    }
+    .appbar-price {
+        margin-top: 13vh
     }
 }
 /*ipad pro*/
@@ -100,7 +106,6 @@ h1 {
 /*pc*/
 @media screen and (min-width: 1250px) {
     .homepage {
-        height: 90vh;
     }
     .logo-cleaners {
         width: 30vh;
@@ -129,12 +134,12 @@ h1 {
         width: 25vh;
         height: 25vh;
     }
+    .appbar-price {
+        margin-top: 6vh
+    }
     .bouton18 {
         width: 15vh;
         height: 15vh;
-    }
-    .homepage {
-        height: 85vh;
     }
     .lead {
         font-size: 10px;
@@ -160,6 +165,9 @@ h1 {
     .lead {
         font-size: 13px;
     }
+    .appbar-price {
+        margin-top: 5vh
+    }
 }
 
 /*iphone X */
@@ -167,11 +175,11 @@ h1 {
     .lead {
         font-size: 14px;
     }
-    .homepage {
-        height: 88vh;
-    }
     .bouton18 {
         font-size: 20px;
+    }
+    .appbar-price {
+        margin-top: 3vh
     }
 }
 /*iphone 8plus */
@@ -181,6 +189,9 @@ h1 {
     }
     .bouton18 {
         font-size: 20px;
+    }
+    .appbar-price {
+        margin-top: 4vh
     }
 }
 

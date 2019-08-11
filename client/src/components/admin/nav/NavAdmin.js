@@ -23,6 +23,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     width: '100%',
+    marginTop:'4vh',
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -39,6 +40,7 @@ export default function ScrollableTabsButtonAuto() {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Tabs
+        className='appbar-price'
           value={value}
           onChange={handleChange}
           indicatorColor="white"

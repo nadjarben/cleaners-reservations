@@ -29,7 +29,7 @@ import setAuthToken from "./config/setAuthToken";
 import { setCurrentUser, logoutUser } from "./store/actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminRoute from './components/private-route/AdminRoute';
-import Dashboard from "./components/dashboard/Dashboard";
+import DashboardAppBar from "./components/dashboard/DasboardAppBar";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -86,7 +86,7 @@ class App extends Component {
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
           <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/dashboard" component={DashboardAppBar} />
             </Switch>
             <AdminRoute path='/admin' component={Admin} />
             <AdminRoute exact path='/admin/adminhome' component={AdminHome} />

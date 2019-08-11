@@ -4,7 +4,7 @@ import FormContact from '../../components/contact/FormContact';
 const Contacts = () => {
     
         return (
-          <div>
+          <div style={{marginTop:'15vh'}}>
             <FormContact />    
           </div>
         );

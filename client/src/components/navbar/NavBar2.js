@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     backgroundColor: 'black',
+    zIndex: 3
   },
   title: {
     flexGrow: 1,
@@ -75,7 +76,7 @@ function NavBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
         <NavItem2 />
           <Typography variant="h6" className={classes.title}>
