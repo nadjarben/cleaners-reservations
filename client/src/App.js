@@ -50,6 +50,7 @@ if (localStorage.jwtToken) {
   }
 }
 
+
 const theme = createMuiTheme({
   palette: {
     primary: blue,
@@ -58,8 +59,22 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
+  privateRoutes() {
+    const {isAdmin} = this.props;
+      if(isAdmin === true)
+      return (
+        <div>
+        <Route path="/admin" component={Admin} />
+        <Route path="/admin/adminhome" component={AdminHome} />
+        <Route path="/admin/reservations" component={AdminReservation}/>
+        <Route path="/admin/customers" component={AdminCustomer}/>
+        <Route path="/admin/contacts" component={AdminContact}/>
+        </div>
+      )
+    }
   
   render() {
+    
     
   //  const history = configureHistory()
     const { lang } = this.props;
@@ -87,12 +102,8 @@ class App extends Component {
         <Route path="/login" component={Login}/>
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <AdminRoute path='/admin' component={Admin} />
-            <AdminRoute exact path='/admin/adminhome' component={AdminHome} />
-            <AdminRoute exact path='/admin/adminreservations' component={AdminReservation} />
-            <AdminRoute exact path='/admin/admincustomers' component={AdminCustomer} />
-            <AdminRoute exact path='/admin/admincontacts' component={AdminContact} />
             </Switch>
+            {this.privateRoutes()}
           </MuiThemeProvider>
         </Router>
         </Provider>
@@ -108,6 +119,7 @@ App.propTypes = {
 
 const mapStateToProps = state =>  ({
   lang: state.locale.lang,
+  isAdmin: state.auth.user.isAdmin
 });
 
 export default connect(mapStateToProps)(App)
