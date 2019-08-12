@@ -13,7 +13,6 @@ const contact = require('./server/routes/api/contacts');
 //const account = require('./server/routes/api/account')
 const users = require('./server/routes/api/users');
 const app = express();
-const sslRedirect = require('heroku-ssl-redirect');
 
 
 
@@ -56,8 +55,8 @@ app.use('/api/users', users);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(sslRedirect(), express.static('client/build'));
+  // Set static folder and redirect to https
+  app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
