@@ -63,8 +63,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build'));
   });
-}
-//redirect to HTTPS
+  //redirect to HTTPS
 app.use (function (req, res, next) {
   if (req.secure) {
           // request was via https, so do no special handling
@@ -74,6 +73,8 @@ app.use (function (req, res, next) {
           res.redirect('https://' + req.headers.host + req.url);
   }
 });
+}
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Server started on port ${port}`));
