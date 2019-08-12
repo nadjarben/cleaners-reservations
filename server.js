@@ -13,6 +13,8 @@ const contact = require('./server/routes/api/contacts');
 //const account = require('./server/routes/api/account')
 const users = require('./server/routes/api/users');
 const app = express();
+const sslRedirect = require('heroku-ssl-redirect');
+
 
 
 // Bodyparser Middleware
@@ -52,16 +54,11 @@ app.use('/api/users', users);
 //app.use('/api/account', account);
 
 
-
-//const router = require('express').Router();
-
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
-  app.use(express.static('client/build'));
-
+  app.use(sslRedirect(), express.static('client/build'));
   app.get('*', (req, res) => {
-    res.redirect('https://' + req.headers.host + req.url );
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
