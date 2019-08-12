@@ -10,7 +10,6 @@ const archviedReservation = require('./server/routes/api/archivedReservations');
 const customer = require('./server/routes/api/customers');
 const contact = require('./server/routes/api/contacts');
 //const gmail = require('./server/routes/api/send');
-//const account = require('./server/routes/api/account')
 const users = require('./server/routes/api/users');
 const app = express();
 
@@ -50,7 +49,6 @@ app.use('/api/contacts', contact);
 app.use('/api/lastreservations', lastReservation);
 app.use('/api/users', users);
 //app.use('/api/send', gmail);
-//app.use('/api/account', account);
 
 
 // Serve static assets if in production

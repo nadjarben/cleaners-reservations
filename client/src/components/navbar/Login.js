@@ -53,7 +53,7 @@ return (
     <Link to="/landing" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back
     </Link>
-      <div className="container" style={{marginTop:'2%'}}>
+      <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -105,11 +105,10 @@ return (
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
-                    marginTop: "1rem"
+                    marginTop: "5vh",
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                  style={{marginTop:'4vh'}}
                 >
                   Login
                 </button>

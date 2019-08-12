@@ -32,12 +32,11 @@ import PropTypes from 'prop-types';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{reservation.name} {reservation.surname} || {reservation.date} | {reservation.hour} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader className="modal-header" close={closeBtn} style={{backgroundColor:'#0E1521', color:'white'}}>
+                    <ModalHeader className="modal-header" close={closeBtn} style={{backgroundColor:'#0E1521', color:'white', marginTop:'5vh'}}>
                         {reservation.name} {reservation.surname} 
                     </ModalHeader>
                     <ModalBody>
                         <h5>Addresse: </h5><p>{reservation.address}</p>
-                        <h5>Ville: </h5><p>{reservation.city}</p>
                         <h5>Informations: </h5><p>{reservation.info}</p>
                         <h5>Tel: </h5><p>{reservation.phone}</p>
                         <h5>Email: </h5><p>{reservation.email}</p>
@@ -51,8 +50,9 @@ import PropTypes from 'prop-types';
                         <div className='col-6'>
                           <p>{reservation.namefact}</p>
                           <p>{reservation.addressfact}</p>
-                          <p>{reservation.note}</p>
                         </div>
+                        <h5>Note: </h5><p>{reservation.note}</p>
+
                     </ModalBody>
                     <ModalFooter>
                         <Button>Archiver</Button>

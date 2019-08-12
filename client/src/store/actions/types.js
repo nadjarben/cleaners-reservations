@@ -19,10 +19,6 @@ export const ARCHIVE_CONTACT = 'ARCHIVE_CONTACT';
 
 export const LOCALE_SET = 'LOCALE_SET';
 
-export const SIGN_IN = 'SIGN_IN';
-export const SIGN_OUT = 'SIGN_OUT';
-export const SIGN_IN_ADMIN = 'SIGN_IN_ADMIN';
-
 export const GET_ERRORS = "GET_ERRORS";
 export const USER_LOADING = "USER_LOADING";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";

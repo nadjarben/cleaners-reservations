@@ -32,7 +32,7 @@ import PropTypes from 'prop-types';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{lastReservation.name} {lastReservation.surname} || {lastReservation.date} | {lastReservation.hour} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader className="modal-header" close={closeBtn} style={{backgroundColor:'#0E1521', color: 'white'}}>
+                    <ModalHeader className="modal-header" close={closeBtn} style={{backgroundColor:'#0E1521', color: 'white', marginTop:'5vh'}}>
                         {lastReservation.name} {lastReservation.surname}
                     </ModalHeader>
                     <ModalBody>
@@ -50,8 +50,8 @@ import PropTypes from 'prop-types';
                         <div className='col-6'>
                           <p>{lastReservation.namefact}</p>
                           <p>{lastReservation.addressfact}</p>
-                          <p>{lastReservation.note}</p>
                         </div>
+                        <h5>Note: </h5><p>{lastReservation.note}</p>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={() => this.handleDeleteLastReservation()} >Archiver</Button>
