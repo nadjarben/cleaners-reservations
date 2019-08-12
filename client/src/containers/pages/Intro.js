@@ -7,7 +7,7 @@ class Intro extends React.Component{
 
   render(){
       return(
-        <div className="introd">
+        <div className="introd" style={{marginTop:'10%'}}>
         <div className="Intro">
         <div className="fickr">
              <img className="imgHome" width="56%" height="75%" align="center" src={logo} alt="logo"/>
