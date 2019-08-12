@@ -79,6 +79,7 @@ class App extends Component {
           <FooterBar />
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/home" component={HomePage2}/>
+          <Route exact path="/index.html" component={HomePage}/>
           <Route path="/reservation" component={Reservation}/>
           <Route path="/prices" component={Prices}/>
           <Route path="/contacts" component={Contacts}/>
