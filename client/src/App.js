@@ -10,6 +10,7 @@ import Contacts from './containers/pages/Contacts';
 import AdminReservation from './containers/pages/AdminReservation';
 import AdminCustomer from './containers/pages/AdminCustomer';
 import AdminContact from './containers/pages/AdminContact';
+import AdminUsers from './components/admin/adminUsers/adminUsers';
 import AdminHome from './containers/pages/AdminHome';
 import Admin from './containers/nav/Admin';
 import Login from './components/navbar/Login';
@@ -95,6 +96,7 @@ class App extends Component {
             <AdminRoute exact path='/admin/reservations' component={AdminReservation} />
             <AdminRoute exact path='/admin/customers' component={AdminCustomer} />
             <AdminRoute exact path='/admin/contacts' component={AdminContact} />
+            <AdminRoute exact path='/admin/users' component={AdminUsers} />
           </MuiThemeProvider>
         </Router>
         </Provider>

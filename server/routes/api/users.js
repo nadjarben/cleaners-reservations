@@ -105,4 +105,30 @@ router.post("/login", (req, res) => {
     });
   });
 
+  router.get('/',(req,res,next) => {
+    User.find()
+
+    .then(users =>  res.json(users) );
+  })
+
+  router.get("/", (req, res) => {
+    //console.log(req.body.name)
+    User.findOne({ name: req.body.name })    
+    .populate("users")
+    .exec()
+    .then(user => {
+      if (!user) {
+        return res.status(404).json({
+          message: "User not found"
+        });
+      }
+      users =>  res.json(users);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    })
+})
+
   module.exports = router;

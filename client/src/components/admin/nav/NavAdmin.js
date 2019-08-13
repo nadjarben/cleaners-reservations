@@ -51,7 +51,7 @@ export default function ScrollableTabsButtonAuto() {
           <Link to='/admin/reservations'><Tab label="Reservations" /></Link>
           <Link to='/admin/customers'><Tab label="Clients" /></Link>
           <Link to='/admin/contacts'><Tab label="Questions" /></Link>
-          <Link to='admin/archives'><Tab label="Archives" /></Link>
+          <Link to='/admin/users'><Tab label="Users" /></Link>
         </Tabs>
       </AppBar>
     </div>

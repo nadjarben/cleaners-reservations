@@ -10,7 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DashboardMenu from './DashboardMenu';
 import DashboardCredit from './DashboardCredit';
 import account from '../../images/account-circle.png';
-import money from '../../images/currency-usd.png';
+import money from '../../images/money.png';
 import tools from '../../images/tools.png';
 import { Link } from 'react-router-dom';
 import PrivateRoute from '../private-route/PrivateRoute';
@@ -93,9 +93,9 @@ export default function MiniDrawer() {
           {['Compte', 'Messages', 'Credit'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-              {index === 0 && <Link to='/dashboard/menu'><img src={account} width='50%' alt='account laundry'/></Link>}
-              {index === 1 && <Link to='/dashboard/credit'><img src={money} width='50%' alt='credit laundry'/></Link>}
-              {index === 2 && <Link to='/dashboard/tools'><img src={tools} width='50%' alt='account config'/></Link>}
+              {index === 0 && <Link to='/dashboard/menu'><img src={account} width='62%' alt='account laundry' style={{textAlign:'center'}}/></Link>}
+              {index === 1 && <Link to='/dashboard/credit'><img src={money} width='5.5%' alt='credit laundry'style={{textAlign:'center'}}/></Link>}
+              {index === 2 && <Link to='/dashboard/tools'><img src={tools} width='5.5%' alt='account config' style={{textAlign:'center'}}/></Link>}
              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
