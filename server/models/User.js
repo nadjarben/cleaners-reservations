@@ -28,7 +28,7 @@ const UserSchema = new Schema({
   },
   credit: {
       type: Number,
-      default: 0
+      default: 500
   },
   isAdmin: {
       type: Boolean,

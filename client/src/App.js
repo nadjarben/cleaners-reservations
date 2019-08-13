@@ -31,6 +31,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminRoute from './components/private-route/AdminRoute';
 import DashboardAppBar from "./components/dashboard/DasboardAppBar";
 
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -72,7 +73,7 @@ class App extends Component {
         <Helmet>
         <title>מכבסה אשדוד || The Cleaners || Laundry Ashdod || Pressing Ashdod</title>
         <meta name="description" content="Dry cleaning, laundry, ashdod, pressing, blanchisserie, ironing, delivery, מכבסה אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך" />
-        <meta name="keywords" content="מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך, pressing, ashdod, laundry, laundries, dry cleaning, blanchisserie, ironing, cleaning, nettoyage a sec, repassage, lavage, laundry ashdod, delivery" />
+        <meta name="keywords" cpntent="מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך, pressing, ashdod, laundry, laundries, dry cleaning, blanchisserie, ironing, cleaning, nettoyage a sec, repassage, lavage, laundry ashdod, delivery" />
         </Helmet>
         <MuiThemeProvider theme={theme}>
           <NavBar />
@@ -87,8 +88,8 @@ class App extends Component {
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
           <Switch>
-              <PrivateRoute exact path="/dashboard" component={DashboardAppBar} />
-            </Switch>
+              <PrivateRoute path="/dashboard" component={DashboardAppBar} />
+          </Switch>
             <AdminRoute path='/admin' component={Admin} />
             <AdminRoute exact path='/admin/adminhome' component={AdminHome} />
             <AdminRoute exact path='/admin/reservations' component={AdminReservation} />

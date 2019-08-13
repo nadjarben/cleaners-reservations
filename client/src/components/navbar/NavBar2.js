@@ -43,7 +43,7 @@ function NavBar(props) {
     console.log(isAuthenticated)
     if(isAuthenticated === true)
     return (
-      <Link to='/dashboard'>
+      <Link to='/dashboard/menu'>
               <IconButton
             aria-label="Account of current user"
             aria-controls="menu-appbar"

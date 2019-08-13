@@ -1,23 +1,19 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import Dashboard from './Dashboard';
+import DashboardMenu from './DashboardMenu';
+import DashboardCredit from './DashboardCredit';
 import account from '../../images/account-circle.png';
 import money from '../../images/currency-usd.png';
+import { Link } from 'react-router-dom';
+import PrivateRoute from '../private-route/PrivateRoute';
+
 
 const drawerWidth = 240;
 
@@ -71,16 +67,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function MiniDrawer() {
   const classes = useStyles();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  function handleDrawerOpen() {
-    setOpen(true);
-  }
-
-  function handleDrawerClose() {
-    setOpen(false);
-  }
+  const [open] = React.useState(false);
 
   return (
     <div className={classes.root}>
@@ -104,7 +91,7 @@ export default function MiniDrawer() {
         <List>
           {['Compte', 'Messages', 'Credit'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index  === 0 ? <img src={account} width='50%'/> : <img src={money} width='50%'/>}</ListItemIcon>
+              <ListItemIcon>{index  === 0 ? <Link to='/dashboard/menu'><img src={account} width='50%' alt='account laundry'/></Link> : <Link to='/dashboard/credit'><img src={money} width='50%' alt='credit laundry'/></Link>}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -113,7 +100,8 @@ export default function MiniDrawer() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Dashboard />
+        <PrivateRoute exact path="/dashboard/menu" component={DashboardMenu} />
+        <PrivateRoute exact path="/dashboard/credit" component={DashboardCredit} />
       </main>
     </div>
   );
