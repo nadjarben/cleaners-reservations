@@ -12,7 +12,6 @@ import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import './googleInput.css';
 
 
-
 class TabModal extends React.Component {
   constructor(props) {
     super(props);
@@ -34,9 +33,9 @@ class TabModal extends React.Component {
       note: ''
     };
   }
-
+ 
   componentDidMount() {
-    this.props.fetchCustomers()
+    this.props.fetchCustomers();
   }
 
   handleChange = (e) => {
@@ -162,7 +161,7 @@ class TabModal extends React.Component {
       </div>
     )
   }
-
+  
   render() {
     const labelDate = <FormattedMessage id='reservation.date' />;
     const labelHour = <FormattedMessage id='reservation.hour' />;
@@ -186,7 +185,7 @@ class TabModal extends React.Component {
               </div>
             </div>
             <Divider />
-        
+
             <div className='row' style={{marginTop:'5%', marginLeft:'22%'}}>
               <div className ='col-6'>
               <TextField
