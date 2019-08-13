@@ -65,7 +65,6 @@ class TabModal extends React.Component {
     this.props.postLastReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.mailReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     alert(textAlert);
-      //this.props.history.push('/home');
   }
 
   toggle(tab) {
@@ -100,7 +99,7 @@ class TabModal extends React.Component {
   handleButtonCompleteSecond = () => {
     if(this.state.activeTab === 2)
     if( this.state.name === '' || this.state.surname === '' || this.state.address === ''  )
-      return  <Button style={{width:'120px', backgroundColor:'red'}} onClick={()=> alert('Please fill all informations')} ><FormattedMessage id='reservation.next' /></Button>
+      return  <Button style={{width:'120px', backgroundColor:'red'}} onClick={()=> alert('Please fill all informations, address must be google address')} ><FormattedMessage id='reservation.next' /></Button>
     else
       return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
   }
@@ -287,8 +286,8 @@ class TabModal extends React.Component {
                     country: ['il'],
                     }
                   }}
-                  autoComplete=''
                   placeholder=''
+                  autoComplete='off'
                   onSelect={({ description }) => (
                   this.setState({ address: description })
                   )}
