@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 class DashboardCredit extends React.Component {
 
     render() {
-        const credit  = this.props.auth.user.credit;
-        console.log(credit)
+        const user  = this.props.auth.user;
         return(
             <div style={{marginTop:'-12vh'}}>
-                Credit Remaning : 
+                <p>{user.name} {user.surname}</p>
+                <p>Credit remaining : {user.credit} ₪</p>
             </div>
         )
     }
