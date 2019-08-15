@@ -39,7 +39,6 @@ export default function ScrollableTabsButtonAuto() {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Tabs
-        className='appbar-price'
           value={value}
           onChange={handleChange}
           indicatorColor="white"

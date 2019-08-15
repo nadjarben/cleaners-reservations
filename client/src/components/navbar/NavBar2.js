@@ -15,7 +15,6 @@ import PropTypes from "prop-types";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    marginBottom: '6vh'
   },
   toolbar: {
     backgroundColor: 'black',
@@ -71,7 +70,7 @@ function NavBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
         <NavItem2 />
           <Typography variant="h6" className={classes.title}>

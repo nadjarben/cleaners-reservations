@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { fetchUsers } from '../../../store/actions/userActions';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ModalUsers from './ModalUsers';
-import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Button, ModalHeader, ModalBody } from 'reactstrap';
+import Dialog from '@material-ui/core/Dialog';
 
 class AdminUsers extends Component {
     constructor(props) {
@@ -49,13 +49,13 @@ class AdminUsers extends Component {
                 <div className='container'>
                     <input className="search-reservation form-search form-control mr-sm-2" type="search" onChange={ this.updateSearch.bind(this) } placeholder="Search" name="search" value={this.state.search} />
                     <Button className="button-create" onClick={this.toggle}>Nouveau</Button>
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
+                    <Dialog fullScreen open={this.state.modal} toggle={this.toggle} centered>
                     <ModalHeader className="modal-header" close={closeBtn}>
                         Nouveau Client
                     </ModalHeader>
                     <ModalBody>
                     </ModalBody>
-                    </Modal>
+                    </Dialog>
                 <div className="admin">
                     <ul className="list-group">{c}</ul>
                 </div>

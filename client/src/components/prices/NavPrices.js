@@ -23,7 +23,7 @@ export default class NavPrices extends React.Component {
   }
   render() {
     return (
-      <div class="NavPrices">
+      <div>
         <Nav tabs>
           <NavItem>
             <NavLink
