@@ -32,7 +32,7 @@ import PropTypes from 'prop-types';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{lastReservation.name} {lastReservation.surname} || {lastReservation.date} | {lastReservation.hour} </li>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader className="modal-header" close={closeBtn} style={{backgroundColor:'#0E1521', color: 'white', marginTop:'5vh'}}>
+                    <ModalHeader className="modal-header" close={closeBtn} style={{backgroundColor:'#42a5f5', color: 'white'}}>
                         {lastReservation.name} {lastReservation.surname}
                     </ModalHeader>
                     <ModalBody>

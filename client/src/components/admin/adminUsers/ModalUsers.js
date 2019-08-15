@@ -169,7 +169,7 @@ import Button from '@material-ui/core/Button';
                       </IconButton>
                       <div className='row'>
                         <div className='col-9'>
-                          {user.name} {user.surname}
+                          <h5>{user.name} {user.surname}</h5>
                         </div>
                         <div className='col-2'>
                           <img src={pencil} alt='pencil' onClick={this.toggleUser} style={{cursor:'pointer'}} />
@@ -207,7 +207,7 @@ import Button from '@material-ui/core/Button';
         <div>
             <li className="list-group-item" onClick={this.toggle}>{user.name} {user.surname} </li>
                 <Dialog fullScreen open={this.state.modal} toggle={this.toggle}>
-                  <div style={{marginTop:'18%'}}>
+                  <div style={{marginTop:'12vh'}}>
                   {this.renderInput()}
                   </div>
                     <ModalFooter>

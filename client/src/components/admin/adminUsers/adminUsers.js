@@ -47,18 +47,12 @@ class AdminUsers extends Component {
 
             return (
                 <div className='container'>
+                <div className='row'>
                     <input className="search-reservation form-search form-control mr-sm-2" type="search" onChange={ this.updateSearch.bind(this) } placeholder="Search" name="search" value={this.state.search} />
-                    <Button className="button-create" onClick={this.toggle}>Nouveau</Button>
-                    <Dialog fullScreen open={this.state.modal} toggle={this.toggle} centered>
-                    <ModalHeader className="modal-header" close={closeBtn}>
-                        Nouveau Client
-                    </ModalHeader>
-                    <ModalBody>
-                    </ModalBody>
-                    </Dialog>
-                <div className="admin">
-                    <ul className="list-group">{c}</ul>
                 </div>
+                <div className='row-align-center' style={{marginTop:'5vh'}}>
+                    <ul className="list-group">{c}</ul>
+                    </div>
                 </div>
             )
         }

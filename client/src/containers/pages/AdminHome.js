@@ -9,7 +9,7 @@ const AdminHome = () => {
         <div>           
             <div className='container'>
                 <div className='row'>
-                    <div style={{backgroundColor:'#0E1521',color:'white', marginTop:'3%'}} className='col-12'>
+                    <div style={{backgroundColor:'#42a5f5',color:'white', marginTop:'3%'}} className='col-12'>
                         <h5 className='text-center'>Nouvelles Reservations</h5>
                     </div>
                 </div> 
@@ -21,7 +21,7 @@ const AdminHome = () => {
                 </div>
 
                 <div className='row'>
-                    <div style={{backgroundColor:'#0E1521',color:'white', marginTop:'13%'}} className='col-12'>
+                    <div style={{backgroundColor:'#42a5f5',color:'white', marginTop:'13%'}} className='col-12'>
                         <h5 className='text-center'>Nouvelles Questions</h5>
                     </div>
                 </div>

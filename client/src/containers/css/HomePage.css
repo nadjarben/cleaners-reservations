@@ -21,7 +21,8 @@
     margin-left: 2%;
 }
 .title-link:hover {
-    color:skyblue;
+    color: #42a5f5;
+    text-decoration: none;
 }
 .bouton18 {  
     width: 20vh;
