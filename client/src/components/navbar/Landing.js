@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 class Landing extends Component {
   render() {
     return (
-      <div style={{marginTop:'9vh'}}>
+      <div>
       <Link to="/home" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back
             </Link>
-      <div style={{ height: "75vh", marginTop:'5vh' }} className="container valign-wrapper">
+      <div style={{ height: "75vh"}} className="container valign-wrapper">
         <div className="row" style={{marginTop:'2vh'}}>
           <div className="col s12 center-align">
             <h4>

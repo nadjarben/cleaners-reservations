@@ -1,6 +1,7 @@
 import React from 'react';
-import { Label, TabContent, TabPane, Button, ModalHeader, ModalFooter } from 'reactstrap';
+import { Label, TabContent, TabPane, ModalHeader, ModalFooter } from 'reactstrap';
 import { FormattedMessage } from 'react-intl'; 
+import Button from '@material-ui/core/Button';
 import { connect } from "react-redux";
 import { postReservation, mailReservation } from '../../store/actions/reservationActions';
 import { postLastReservation } from '../../store/actions/notifActions';
@@ -90,16 +91,16 @@ class TabModal extends React.Component {
   handleButtonCompleteFirst = () => {
     if(this.state.activeTab === 1)
     if(this.state.date === '' || this.state.hour === '' )
-      return  <Button style={{width:'120px', backgroundColor:'red'}} ><FormattedMessage id='reservation.next' /></Button>
+      return  <Button variant='outlined' color='secondary' style={{width:'120px'}} ><FormattedMessage id='reservation.next' /></Button>
     else
-      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
+      return  <Button variant='outlined' color='primary' style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
   }
   handleButtonCompleteSecond = () => {
     if(this.state.activeTab === 2)
     if( this.state.name === '' || this.state.surname === '' || this.state.address === ''  )
-      return  <Button style={{width:'120px', backgroundColor:'red'}} onClick={()=> alert('Please fill all informations, address must be google address')} ><FormattedMessage id='reservation.next' /></Button>
+      return  <Button variant='outlined' color='secondary' style={{width:'120px'}} onClick={()=> alert('Please fill all informations, address must be google address')} ><FormattedMessage id='reservation.next' /></Button>
     else
-      return  <Button style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
+      return  <Button variant='outlined' color='primary' style={{width:'120px'}} onClick={()=> this.handleNext()}><FormattedMessage id='reservation.next' /></Button>
   }
   
   displayPro = () => {
@@ -139,7 +140,7 @@ class TabModal extends React.Component {
     if(this.state.activeTab !== 1)
     return (
       <div className='col-6'>
-        <Button style={{width:'120px'}} onClick={()=> this.handlePrev()}><FormattedMessage id='reservation.prev' /></Button>
+        <Button variant='outlined' style={{width:'120px'}} onClick={()=> this.handlePrev()}><FormattedMessage id='reservation.prev' /></Button>
       </div>
     )
   }
@@ -156,7 +157,7 @@ class TabModal extends React.Component {
     if(this.state.activeTab === 3)
     return (
       <div className='col-6' >
-        <Button style={{width:'120px', backgroundColor:'#0E1521'}} type="submit"><FormattedMessage id='reservation.confirmate' /></Button>
+        <Button variant='outlined' color='primary' style={{width:'120px'}} type="submit"><FormattedMessage id='reservation.confirmate' /></Button>
       </div>
     )
   }

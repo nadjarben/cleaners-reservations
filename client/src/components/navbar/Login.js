@@ -49,7 +49,7 @@ this.props.loginUser(userData);
 render() {
     const { errors } = this.state;
 return (
-  <div style={{marginTop:'9vh'}}>
+  <div>
     <Link to="/landing" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back
     </Link>

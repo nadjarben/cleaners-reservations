@@ -53,7 +53,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
   toolbar: {
-    marginTop: '9vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',

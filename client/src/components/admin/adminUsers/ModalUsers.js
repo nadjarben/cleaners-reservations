@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { ModalFooter } from 'reactstrap';
 import { deleteUser, addCreditToUser, changeUserName } from '../../../store/actions/userActions';
 import { connect } from 'react-redux';
 import pencil from '../../../images/pencil.png';
@@ -11,6 +11,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 
  class ModalUsers extends React.Component {
@@ -90,7 +91,7 @@ import TextField from '@material-ui/core/TextField';
         return (
           <div>
             <TextField name='credit' value={this.state.credit} onChange={this.handleChange} type='number' placeholder='Ajouter credit'/>
-            <button type='submit' onClick={this.handleSubmitAddCredit}>Ajouter</button>
+            <Button variant="outlined" color="primary" type='submit' onClick={this.handleSubmitAddCredit}>Ajouter</Button>
           </div>
         )
       }
@@ -99,7 +100,7 @@ import TextField from '@material-ui/core/TextField';
         return (
           <div>
             <TextField name='credit' value={this.state.credit} onChange={this.handleChange} type='number' placeholder='Retirer credit'/>
-            <button type='submit' onClick={this.handleSubmitRetireCredit}>Enlever</button>
+            <Button variant="outlined" color="secondary" type='submit' onClick={this.handleSubmitRetireCredit}>Enlever</Button>
           </div>
         )
       }
@@ -108,7 +109,7 @@ import TextField from '@material-ui/core/TextField';
         if(this.state.input === true)
         return(
           <div>
-            <Button color="primary" onClick={this.changeUser} >Valider</Button>
+            <Button variant="outlined" color="primary" onClick={this.changeUser} >Valider</Button>
           </div>
         )
       }
@@ -202,7 +203,6 @@ import TextField from '@material-ui/core/TextField';
     render() {
       
         const {user} = this.props;
-        const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
      return(
         <div>
             <li className="list-group-item" onClick={this.toggle}>{user.name} {user.surname} </li>
@@ -212,7 +212,7 @@ import TextField from '@material-ui/core/TextField';
                   </div>
                     <ModalFooter>
                       {this.renderValidate()}
-                      <Button color="danger" onClick={e => this.handleDeleteUser(e)} >Supprimer</Button>
+                      <Button variant="outlined" color="secondary" onClick={e => this.handleDeleteUser(e)} >Supprimer</Button>
                     </ModalFooter>
                 </Dialog>
         </div>
