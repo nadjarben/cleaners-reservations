@@ -23,5 +23,11 @@ export const GET_ERRORS = "GET_ERRORS";
 export const USER_LOADING = "USER_LOADING";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 
+export const POST_USER = 'POST_USER';
+export const FETCH_USERS = 'FETCH_USERS';
+export const DELETE_USER = 'DELETE_USER';
+export const ADD_CREDIT_TO_USER = 'ADD_CREDIT_TO_USER';
+export const CHANGE_USER_NAME = 'CHANGE_USER_NAME';
+
 
 

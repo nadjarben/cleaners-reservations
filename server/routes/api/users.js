@@ -105,30 +105,52 @@ router.post("/login", (req, res) => {
     });
   });
 
-  router.get('/',(req,res,next) => {
-    User.find()
-
-    .then(users =>  res.json(users) );
-  })
-
   router.get("/", (req, res) => {
-    //console.log(req.body.name)
-    User.findOne({ name: req.body.name })    
-    .populate("users")
-    .exec()
-    .then(user => {
-      if (!user) {
-        return res.status(404).json({
-          message: "User not found"
-        });
-      }
-      users =>  res.json(users);
-    })
-    .catch(err => {
-      res.status(500).json({
-        error: err
-      });
-    })
+    User.find()
+    .then(user =>  res.json(user) )
+    .catch(err => res.status(404).json({ success: false + err }));
 })
+
+router.get('/:id',(req,res) => {
+  User.find({_id : req.params.id})
+  .then(users =>  res.json(users) )
+  .catch(err => res.status(404).json({ success: false + err }));
+})
+// handle credit
+router.post('/:id',(req,res) => {
+  User.findOneAndUpdate(
+   {_id: req.params.id },
+    {
+      $set: {
+      credit: req.body.credit
+      }
+    })
+  .then(user =>  res.json(user) )
+  .catch(err => res.status(404).json({ success: false + err }));
+})
+//change name
+router.post('/modify/:id',(req,res) => {
+  User.findOneAndUpdate(
+   {_id: req.params.id },
+    {
+      $set: {
+      name: req.body.name,
+      surname: req.body.surname,
+      email: req.body.email,
+      phone: req.body.phone,
+      address: req.body.address,
+      }
+    })
+  .then(user =>  res.json(user) )
+  .catch(err => res.status(404).json({ success: false + err }));
+})
+
+router.delete('/:id', (req, res) => {
+  User.findById({_id: req.params.id})
+    .then(user => user.remove()
+    .then(() => res.json({ success: true })))
+    .catch(err => res.status(404).json({ success: false + err }));
+});
+
 
   module.exports = router;

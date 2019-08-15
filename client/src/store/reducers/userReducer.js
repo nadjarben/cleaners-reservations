@@ -1,4 +1,4 @@
-import { POST_USER, FETCH_USERS, DELETE_USER } from '../actions/types';
+import { POST_USER, FETCH_USERS, DELETE_USER, ADD_CREDIT_TO_USER } from '../actions/types';
 
 
 const initialState = {
@@ -18,6 +18,11 @@ export default function(state = initialState, action) {
           user: action.payload
         };
       case FETCH_USERS:
+        return {
+          ...state,
+          user: action.payload
+        }
+        case ADD_CREDIT_TO_USER:
         return {
           ...state,
           user: action.payload

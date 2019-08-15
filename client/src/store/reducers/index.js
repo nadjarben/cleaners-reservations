@@ -6,6 +6,7 @@ import notifReducer from './notifReducer';
 import localeReducer from './localeReducer';
 import authReducer from "./authReducer";
 import errorReducer from "./errorReducer";
+import userReducer from './userReducer';
 
 export default combineReducers({
   locale: localeReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   contacts: contactReducer,
   notif: notifReducer,
   auth: authReducer,
+  user: userReducer,
   errors: errorReducer
 });

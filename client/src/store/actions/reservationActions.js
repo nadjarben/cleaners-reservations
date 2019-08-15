@@ -10,8 +10,8 @@ const nodeMailerAPI = //'http://localhost:8080/api/send/'
 
 
 
-export const postReservation = (name, surname, phone, email, address, date, hour, info, namefact, addressfact, note) => dispatch => {
-    axios.post(reservationsAPI, {
+export const postReservation = (name, surname, phone, email, address, date, hour, info, namefact, addressfact, note) => async dispatch => {
+    await axios.post(reservationsAPI, {
           name, surname, phone, email, address, date, hour, info, namefact, addressfact, note
       })
       .then(res => {
@@ -26,8 +26,8 @@ export const postReservation = (name, surname, phone, email, address, date, hour
         });
   }
 
-  export const mailReservation = (name, surname, phone, email, address, date, hour, info, namefact, addressfact, note) => dispatch => {
-    axios.post(nodeMailerAPI, {
+  export const mailReservation = (name, surname, phone, email, address, date, hour, info, namefact, addressfact, note) => async dispatch => {
+    await axios.post(nodeMailerAPI, {
           name, surname, phone, email, address, date, hour, info, namefact, addressfact, note
       })
       .then(res => {
@@ -42,8 +42,8 @@ export const postReservation = (name, surname, phone, email, address, date, hour
         });
   }
 
- export const deleteReservation = (id) => dispatch => {
- axios.delete(reservationsAPI + id)
+ export const deleteReservation = (id) => async dispatch => {
+ await axios.delete(reservationsAPI + id)
  .then(res => {
    return dispatch ({
      type: DELETE_RESERVATION,
@@ -52,9 +52,9 @@ export const postReservation = (name, surname, phone, email, address, date, hour
  })
  }
  
-  export const fetchReservations = () => dispatch => {
+  export const fetchReservations = () => async dispatch => {
 
-    axios.get(reservationsAPI, {
+    await axios.get(reservationsAPI, {
     })
       .then(res => { 
         return dispatch({

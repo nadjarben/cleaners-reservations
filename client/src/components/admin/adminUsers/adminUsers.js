@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchContacts } from '../../../store/actions/contactActions';
+import { fetchUsers } from '../../../store/actions/userActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ModalUsers from './ModalUsers';
@@ -23,24 +23,24 @@ class AdminUsers extends Component {
         this.setState ({search: e.target.value})
       }
     componentDidMount() {
-        this.props.fetchContacts();
+        this.props.fetchUsers();
     }
     
     render() {
-            const filteredContact = this.props.contact.filter(
-                (contact) => {
+            const filteredUser = this.props.user.filter(
+                (user) => {
                     return (
-                    contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
-                    contact.phone.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+                    user.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                    user.phone.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
                     )
                 }
             )
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
-        const c = filteredContact.map(c => {
+        const c = filteredUser.map(c => {
             return (
               <ModalUsers
               key={c._id}
-              contact={c}
+              user={c}
               />
             );
           });
@@ -66,10 +66,8 @@ class AdminUsers extends Component {
 
 
 const mapStateToProps = state => ({
-    contact: state.contacts.contact
+    user: state.user.user
 });
 
-AdminUsers.propTypes = {
-    fetchContacts: PropTypes.func.isRequired,
-}
-export default connect(mapStateToProps, { fetchContacts })(AdminUsers)
+
+export default connect(mapStateToProps, { fetchUsers })(AdminUsers)

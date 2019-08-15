@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { deleteReservation } from '../../../store/actions/reservationActions';
+import { deleteReservation, fetchReservations } from '../../../store/actions/reservationActions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
           modal: !prevState.modal
         }));
       }
-      handleDeleteReservation() {
+      async handleDeleteReservation() {
         const id = this.props.reservation._id
         this.props.deleteReservation(id);
         window.location.reload(); 
@@ -69,4 +69,4 @@ import PropTypes from 'prop-types';
 ModalReservation.propTypes = {
     deleteReservation: PropTypes.func.isRequired
 }
-export default connect(mapStateToProps, {deleteReservation})(ModalReservation)
+export default connect(mapStateToProps, {deleteReservation, fetchReservations})(ModalReservation)

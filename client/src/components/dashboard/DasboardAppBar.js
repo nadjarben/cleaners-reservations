@@ -93,9 +93,9 @@ export default function MiniDrawer() {
           {['Compte', 'Messages', 'Credit'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-              {index === 0 && <Link to='/dashboard/menu'><img src={account} width='62%' alt='account laundry' style={{textAlign:'center'}}/></Link>}
-              {index === 1 && <Link to='/dashboard/credit'><img src={money} width='5.5%' alt='credit laundry'style={{textAlign:'center'}}/></Link>}
-              {index === 2 && <Link to='/dashboard/tools'><img src={tools} width='5.5%' alt='account config' style={{textAlign:'center'}}/></Link>}
+              {index === 0 && <Link to='/dashboard/menu'><img src={account} width='62%' alt='account laundry' style={{marginLeft:'1px'}}/></Link>}
+              {index === 1 && <Link to='/dashboard/credit'><img src={money} width='5.5%' alt='credit laundry'style={{ marginLeft:'1px'}}/></Link>}
+              {index === 2 && <Link to='/dashboard/tools'><img src={tools} width='5%' alt='account config' style={{ marginLeft:'2px'}}/></Link>}
              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
