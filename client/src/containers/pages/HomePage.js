@@ -30,7 +30,7 @@ import Intro from './Intro';
                 return <Intro />
               if(this.state.imageStatus === 'loaded')
                 return (
-<div className='homepage' style={{ backgroundColor:'#0E1521'}}>
+<div className='homepage' style={{ backgroundColor:'#0E1521', marginTop:'-2vh'}}>
                         <div className='container'>
                             <div className='text-center'>
                                 <img className='logo-cleaners' src={logo}  alt="logoCleaners"></img>
