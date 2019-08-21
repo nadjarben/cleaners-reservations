@@ -58,7 +58,7 @@ if (process.env.NODE_ENV === 'production') {
     // OK, continue
     return next();
   };
-  res.redirect('https://'+req.hostname+req.url);
+  res.redirect('https://www.thecleanersisrael.com');
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
