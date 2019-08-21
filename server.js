@@ -57,6 +57,9 @@ function ensureSecure(req, res, next){
     return next();
   };
   res.redirect('https://'+req.hostname+req.url);
+  if(req === 'https://www.thecleanersisrael.com/index-fr.html'){
+    return req === 'https://www.thecleanersisrael.com/'
+  }
 };
 
 
