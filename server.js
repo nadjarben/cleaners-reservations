@@ -60,6 +60,17 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+//robot.txt
+const options = {
+  root: path.join(__dirname, '/static'),
+  headers: {
+    'Content-Type': 'text/plain;charset=UTF-8',
+  }
+};
+app.get('/robots.txt', (req, res) => (
+  res.status(200).sendFile('robots.txt', options)
+));
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Server started on port ${port}`));
