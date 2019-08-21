@@ -50,23 +50,16 @@ app.use('/api/lastreservations', lastReservation);
 app.use('/api/users', users);
 //app.use('/api/send', gmail);
 
-// Redirect all HTTP traffic to HTTPS
-function ensureSecure(req, res, next){
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder and redirect to https
   if(req.headers["x-forwarded-proto"] === "https"){
     // OK, continue
     return next();
   };
   res.redirect('https://'+req.hostname+req.url);
-  if(req === 'https://www.thecleanersisrael.com/index-fr.html'){
-    return req === 'https://www.thecleanersisrael.com/'
-  }
-};
-
-
-// Serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder and redirect to https
-  app.use(express.static('client/build'), ensureSecure);
+  app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
