@@ -59,6 +59,9 @@ if (process.env.NODE_ENV === 'production') {
     if(req.url = 'index-fr.html') {
       res.redirect('https://www.thecleanersisrael.com')
     }
+    if(req.header != 'https') {
+      req.header = 'https'
+    }
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
