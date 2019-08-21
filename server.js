@@ -60,7 +60,7 @@ if (process.env.NODE_ENV === 'production') {
       res.redirect('https://www.thecleanersisrael.com')
     }
     if (req.protocol !== 'https') {
-      res.redirect('https://' + req.headers.host + req.url);
+      res.redirect('https://www.thecleanersisrael.com' + req.url);
     }
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
