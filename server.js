@@ -55,14 +55,11 @@ app.use('/api/users', users);
 if (process.env.NODE_ENV === 'production') {
   // Set static folder and redirect to https
   app.use(express.static('client/build'));
-  app.get('*', (req, res, next) => {
-    if(req.headers['x-forwarded-proto']!='https') {
-      res.redirect('https://www.thecleanersisrael.com'+req.url)
-    }
+  app.get('*', (req, res) => {
     if(req.url = 'index-fr.html') {
       res.redirect('https://www.thecleanersisrael.com')
     }
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
