@@ -54,14 +54,14 @@ app.use('/api/users', users);
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder and redirect to https
-  if(req.headers["x-forwarded-proto"] === "https"){
-    // OK, continue
-    return next();
-  };
-  res.redirect('https://www.thecleanersisrael.com');
   app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  app.get('*', (req, res, next) => {
+    if(req.headers['x-forwarded-proto']!='https') {
+      res.redirect('https://www.thecleanersisrael.com'+req.url)
+    }
+    else
+    next()
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
