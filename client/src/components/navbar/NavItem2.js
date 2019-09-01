@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { FormattedMessage } from 'react-intl'; 
 import AdminConnect from './AdminConnect';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles({
   list: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SwipeableTemporaryDrawer() {
+function NavBar(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -36,6 +37,16 @@ export default function SwipeableTemporaryDrawer() {
     setState({ ...state, [side]: open });
   };
 
+  const renderLanguage = () => {
+    const lang = props.lang
+    if(lang === 'fr')
+      return <Link to='discoverfr'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
+    if(lang === 'en')
+      return <Link to='discoveren'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
+    if(lang === 'he')
+      return <Link to='discoverhe'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
+  }
+
   const fullList = side => (
     <div
       className={classes.fullList}
@@ -44,7 +55,11 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {[<Link to='/home'><div style={{color:'black'}}><FormattedMessage id="nav.homepage"/></div></Link>, <Link to='/reservation'><div style={{color:'black'}}><FormattedMessage id="nav.reservation"  /></div></Link>, <Link to='/prices'><div style={{color:'black'}}><FormattedMessage id="nav.prices"/></div></Link>, <Link to='/contacts'><div style={{color:'black'}}><FormattedMessage id="nav.contacts"/></div></Link>, <Link to='/admin/adminhome'><div style={{color:'red'}}><AdminConnect/></div></Link> ].map((text, index) => (
+        {[<Link to='/home'><div style={{color:'black'}}><FormattedMessage id="nav.homepage"/></div></Link>, <Link to='/reservation'><div style={{color:'black'}}><FormattedMessage id="nav.reservation"  /></div></Link>, 
+        <Link to='/prices'><div style={{color:'black'}}><FormattedMessage id="nav.prices"/></div></Link>, 
+        <Link to='/contacts'><div style={{color:'black'}}><FormattedMessage id="nav.contacts"/></div></Link>,
+        renderLanguage(),
+        <Link to='/admin/adminhome'><div style={{color:'red'}}><AdminConnect/></div></Link> ].map((text, index) => (
           <ListItem button key={text}>
            
             <ListItemText primary={text} />
@@ -71,3 +86,9 @@ export default function SwipeableTemporaryDrawer() {
     </div>
   );
 }
+
+const mapStateToProps = state =>  ({
+  lang: state.locale.lang,
+});
+
+export default connect(mapStateToProps)(NavBar)

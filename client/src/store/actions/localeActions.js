@@ -5,7 +5,10 @@ export const localeSet = lang => ({
     lang
 })
 
-export const setLocale = lang => dispatch => {
+export const setLocale = (lang, props) => dispatch => {
     localStorage.alhubLang = lang;
-    dispatch(localeSet(lang));
+    dispatch(localeSet(lang));    
+    //if(window.location.href === 'http://localhost:3000/discoverfr' && lang === 'fr')
+        //return history.push('')
+        //else return alert(false)
 }

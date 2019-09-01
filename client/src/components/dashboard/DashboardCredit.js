@@ -6,7 +6,7 @@ class DashboardCredit extends React.Component {
     render() {
         const user  = this.props.auth.user;
         return(
-            <div style={{marginTop:'-12vh'}}>
+            <div>
                 <p>{user.name} {user.surname}</p>
                 <p>Credit remaining : {user.credit} ₪</p>
             </div>

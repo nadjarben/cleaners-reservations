@@ -60,8 +60,6 @@ router.post("/login", (req, res) => {
     }
   const email = req.body.email;
     const password = req.body.password;
-    const isAdmin = req.body.isAdmin;
-    const credit = req.body.credit;
   // Find user by email
     User.findOne({ email }).then(user => {
       // Check if user exists
@@ -80,7 +78,8 @@ router.post("/login", (req, res) => {
             phone: user.phone,
             address: user.address,
             isAdmin: user.isAdmin,
-            credit: user.credit
+            credit: user.credit,
+            email: user.email
           };
   // Sign token
           jwt.sign(

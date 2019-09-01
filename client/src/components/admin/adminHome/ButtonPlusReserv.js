@@ -53,9 +53,7 @@ export default function FullScreenDialog() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <div className='container'>
         <TabModal />
-        </div>
       </Dialog>
     </div>
   );

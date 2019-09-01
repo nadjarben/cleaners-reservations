@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import store from './store';
-import { Provider } from "react-redux";
+import { Provider, connect } from "react-redux";
 import Reservation from './containers/pages/Reservation.js'; 
 import HomePage from './containers/pages/HomePage.js';
 import HomePage2 from './containers/pages/HomePage2.js'; 
@@ -17,7 +17,6 @@ import Login from './components/navbar/Login';
 import Register from './components/navbar/Register';
 import Landing from './components/navbar/Landing';
 import propTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import messages from './config/messages';
 import NavBar from './components/navbar/NavBar2';
@@ -31,7 +30,9 @@ import { setCurrentUser, logoutUser } from "./store/actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminRoute from './components/private-route/AdminRoute';
 import DashboardAppBar from "./components/dashboard/DasboardAppBar";
-
+import DiscoverFR from './containers/pages/DiscoverFR';
+import DiscoverEN from './containers/pages/DiscoverEN';
+import DiscoverHE from './containers/pages/DiscoverHE';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -62,9 +63,11 @@ const theme = createMuiTheme({
 class App extends Component {
   
   render() {
+
     
   //  const history = configureHistory()
     const { lang } = this.props;
+
     return( 
         <IntlProvider locale={lang} 
         messages={messages[lang]}>
@@ -79,6 +82,7 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <NavBar />
           <FooterBar />
+          
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/home" component={HomePage2}/>
           <Route exact path="/index.html" component={HomePage}/>
@@ -98,6 +102,9 @@ class App extends Component {
             <AdminRoute exact path='/admin/contacts' component={AdminContact} />
             <AdminRoute exact path='/admin/users' component={AdminUsers} />
           </MuiThemeProvider>
+          <Route exact path="/discoverfr" component={DiscoverFR}/>
+          <Route exact path="/discoveren" component={DiscoverEN}/>
+          <Route exact path="/discoverhe" component={DiscoverHE}/>
         </Router>
         </Provider>
       </div>

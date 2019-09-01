@@ -9,6 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardMenu from './DashboardMenu';
 import DashboardCredit from './DashboardCredit';
+import DashboardConfig from './DashboardConfig';
 import account from '../../images/account-circle.png';
 import money from '../../images/money.png';
 import tools from '../../images/tools.png';
@@ -56,12 +57,10 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(1),
   },
 }));
 
@@ -94,7 +93,7 @@ export default function MiniDrawer() {
               <ListItemIcon>
               {index === 0 && <Link to='/dashboard/menu'><img src={account} width='62%' alt='account laundry' style={{marginLeft:'1px'}}/></Link>}
               {index === 1 && <Link to='/dashboard/credit'><img src={money} width='5.5%' alt='credit laundry'style={{ marginLeft:'1px'}}/></Link>}
-              {index === 2 && <Link to='/dashboard/tools'><img src={tools} width='5%' alt='account config' style={{ marginLeft:'2px'}}/></Link>}
+              {index === 2 && <Link to='/dashboard/config'><img src={tools} width='5%' alt='account config' style={{ marginLeft:'2px'}}/></Link>}
              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -106,6 +105,7 @@ export default function MiniDrawer() {
         <div className={classes.toolbar} />
         <PrivateRoute exact path="/dashboard/menu" component={DashboardMenu} />
         <PrivateRoute exact path="/dashboard/credit" component={DashboardCredit} />
+        <PrivateRoute exact path="/dashboard/config" component={DashboardConfig} />
       </main>
     </div>
   );

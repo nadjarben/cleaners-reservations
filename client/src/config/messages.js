@@ -7,6 +7,7 @@ export default {
         'nav.reservation': 'להזמין',
         'nav.prices': 'מחירים',
         'nav.contacts': 'צור קשר',
+        'nav.discover': 'גלה אותנו',
         'nav.lang': 'flaghe',
 
         //Home
@@ -122,6 +123,7 @@ export default {
         'nav.reservation': 'Book',
         'nav.prices': 'Prices',
         'nav.contacts': 'Contacts',
+        'nav.discover': 'Discover us',
 
         //Home
         'home.button': 'BOOK A DELIVERY',
@@ -221,6 +223,7 @@ export default {
         'nav.reservation': 'Reserver',
         'nav.prices': 'Tarifs',
         'nav.contacts': 'Contacts',
+        'nav.discover': 'Nous décourvir',
 
         //Home
         'home.intro': 'Situé à Ashdod, le pressing The Cleaners met ses services à votre disposition dans la gestion de vos vêtements et votre linge. Nous avons à cœur la satisfaction de nos clients et leur proposons des services de lavage et de repassage adaptés à leur besoin. Vous n’avez plus à vous soucier de votre linge, nous nous en chargeons à votre place et à des prix imbattables.',
