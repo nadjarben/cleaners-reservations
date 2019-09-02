@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { changeUserName } from '../../store/actions/userActions';
 
 function DashboardConfig(props) {
 
@@ -7,17 +8,16 @@ function DashboardConfig(props) {
         setOpen(true);
       }
     const handleSubmit = () => {
-        alert(`Are you sure to modify the user informations ${name}, ${surname}, ${address}`)
+        changeUserName(user.id, name, surname, phone, address);
     }
 
-  const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
-
   const user  = props.auth.user;
-  console.log(user)
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState(user.name);
+  const [surname, setSurname] = useState(user.surname);
+  const [address, setAddress] = useState(user.address);
+  const [phone, setPhone] = useState(user.phone);
+
 
     const renderInput = () => {  
     if(open === true)
@@ -25,29 +25,28 @@ function DashboardConfig(props) {
         <form>
         <input
             value={name}
-            onChange={e => setName(e.target.value)}
-            placeholder={user.name}
+            onChange={e => setName(e.target.value)}    
             type="text"
             name="name"
         />
         <input
-            value={surname}
+            value={user.surname}
             onChange={e => setSurname(e.target.value)}
-            placeholder={user.surname}
+            placeholder={surname}
             type="text"
             name="surname"
         />
         <input
-            value={address}
+            value={user.address}
             onChange={e => setAddress(e.target.value)}
-            placeholder={user.address}
+            placeholder={address}
             type="test"
             name="address"
         />
         <input
-            value={phone}
+            value={user.phone}
             onChange={e => setPhone(e.target.value)}
-            placeholder={user.phone}
+            placeholder={phone}
             type="phone"
             name="phone"
         />
@@ -58,7 +57,7 @@ function DashboardConfig(props) {
 
     return (
         <div>
-            <p style={{color:'red'}} onClick={handleClickOpen}>Modify user informations</p>
+            <p style={{color:'red', cursor:'pointer'}} onClick={handleClickOpen}>Modify user informations</p>
             {renderInput()}
         </div>
     )
@@ -67,4 +66,4 @@ const mapStateToProps = state => ({
     auth: state.auth
   });
 
-export default connect(mapStateToProps)(DashboardConfig);
+export default connect(mapStateToProps, { changeUserName })(DashboardConfig);
