@@ -61,9 +61,9 @@ class TabModal extends React.Component {
     'אם ישׁלכם בּעיה תתקשׁרו אלינו 0774850937'
     const { name, surname, phone, email, address, date, hour, info, namefact, addressfact, note } = this.state
     e.preventDefault();
+    this.props.mailReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.postReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.postLastReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
-    this.props.mailReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     alert(textAlert);
   }
 
