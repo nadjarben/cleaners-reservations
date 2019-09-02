@@ -15,9 +15,15 @@ a:active {
     color: red;
 }
 .title {
-    background-color: #42a5f5;
+    background-color: lightgrey;
     text-align: center;
     padding: 1rem;
     color: white;
     font-size: 1px;
+}
+
+.nature {
+    max-height: 30vh;
+    width: 100%;
+    background-color: red
 }

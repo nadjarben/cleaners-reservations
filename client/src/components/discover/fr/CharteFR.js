@@ -5,6 +5,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import nature from '../../../images/nature.jpg';
 
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles(theme => ({
       fontWeight: theme.typography.fontWeightRegular,
     },
     panel: {
-        backgroundColor: '#34C924'
+        backgroundColor: '#cce0fc'
     }
   }));
 
@@ -21,13 +22,14 @@ export default function EngagementsFR(props) {
     const classes = useStyles();
     return (
         <div>
+            <br/>
+            <img src={nature} alt="nature" className='nature'/>
             <div>
+            <br/>
             Offrir un service et des prestations de qualité à nos clients tout en ayant une croissance durable est possible.
-            En tant que leader mondial et professionnel de l’entretien des textiles, 5àsec détient une responsabilité et une position privilégiée pour adopter et promouvoir des pratiques durables.
+            Nous avons une responsabilité d'adopter et promouvoir des pratiques durables.
             <br/>
-            En 2011, nous avons lancé le programme « We Share » afin de définir des pistes d’amélioration quantifiables sur l’ensemble de notre réseau.
-            <br/>
-            Avec le programme We Share , nous nous engageons pour:
+            Nous nous engageons pour:
             </div>
             <div style={{marginTop:'5vh'}}>
                 <ExpansionPanel>
@@ -71,7 +73,7 @@ export default function EngagementsFR(props) {
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                     <Typography>
-                    Afin de réduire notre impact environnemental, nous avons mis en place plusieurs initiatives au sein de notre réseau de magasins. Parmi elles, la récupération des cintres ou encore le système de cintre consigné qui permet de réduire notre consommation de cintres et de les recycler, ou encore l'adoption de housses réutilisables en remplacement des protections plastiques.
+                    Afin de réduire notre impact environnemental, nous avons mis en place plusieurs initiatives au sein de notre réseau de magasins. Parmi elles, la récupération des cintres ou encore le système de cintre consigné qui permet de réduire notre consommation de cintres et de les recycler.
                     </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>

@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   }));
 
 
-export default function EngagementsFR(props) {
+export default function EngagementsFR() {
     const classes = useStyles();
     return (
         <div>

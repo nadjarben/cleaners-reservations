@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 export default function Reservation() {
   return (
-      <div className='container'>
+      <div className='container' style={{marginBottom:'2vh'}}>
         <Helmet>
           <title>מכבסה משלוח || laundry price || pressing prix</title>
           <meta name='decription' content="שירות משלוחים באשדוד || delivery service || service livraison" />

@@ -26,8 +26,8 @@ export const postReservation = (name, surname, phone, email, address, date, hour
         });
   }
 
-  export const mailReservation = (name, surname, phone, email, address, date, hour, info, namefact, addressfact, note) => async dispatch => {
-    await axios.post(nodeMailerAPI, {
+  export const mailReservation = (name, surname, phone, email, address, date, hour, info, namefact, addressfact, note) => dispatch => {
+    axios.post(nodeMailerAPI, {
           name, surname, phone, email, address, date, hour, info, namefact, addressfact, note
       })
       .then(res => {
