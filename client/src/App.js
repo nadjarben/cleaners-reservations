@@ -92,6 +92,9 @@ class App extends Component {
         <Route path="/landing" component={Landing}/>
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
+        <Route path="/discoverfr" component={DiscoverFR}/>
+          <Route path="/discoveren" component={DiscoverEN}/>
+          <Route path="/discoverhe" component={DiscoverHE}/>
           <Switch>
               <PrivateRoute path="/dashboard" component={DashboardAppBar} />
           </Switch>
@@ -102,9 +105,6 @@ class App extends Component {
             <AdminRoute exact path='/admin/contacts' component={AdminContact} />
             <AdminRoute exact path='/admin/users' component={AdminUsers} />
           </MuiThemeProvider>
-          <Route exact path="/discoverfr" component={DiscoverFR}/>
-          <Route exact path="/discoveren" component={DiscoverEN}/>
-          <Route exact path="/discoverhe" component={DiscoverHE}/>
         </Router>
         </Provider>
       </div>
