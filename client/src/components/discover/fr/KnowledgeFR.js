@@ -17,10 +17,11 @@ const useStyles = makeStyles(theme => ({
   }));
 
 
-export default function EngagementsFR(props) {
+export default function EngagementsFR() {
     const classes = useStyles();
     return (
         <div>
+            <br/>
             <div>
             Fondé sur une expérience forte, notre savoir-faire fait notre réussite mais il vous atteste également d’un gage de qualité et vous garantit un soin optimal pour vos vêtements et vos textiles de la maison.
             Notre démarche se base sur une expertise en plusieurs étapes :

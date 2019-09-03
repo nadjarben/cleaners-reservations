@@ -40,7 +40,7 @@ function NavBar(props) {
   const renderLanguage = () => {
     const lang = props.lang
     if(lang === 'fr')
-      return <Link to='/discoverfr'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
+      return <Link to='/discoverfr/who'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
     if(lang === 'en')
       return <Link to='/discoveren'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
     if(lang === 'he')

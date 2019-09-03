@@ -4,14 +4,15 @@
     padding: 1.5rem
 }
 
-a {
-    
+.title-h1 {
+   color: white; 
+   text-decoration: none;
 }
-a:hover {
+.title-h1:hover {
     color: red;
     text-decoration: none;
 }
-a:active {
+.title-h1:active {
     color: red;
 }
 .title {
@@ -22,8 +23,29 @@ a:active {
     font-size: 1px;
 }
 
-.nature {
-    max-height: 30vh;
-    width: 100%;
-    background-color: red
+.pic {
+    border-radius: 30%;
+    border-color: #42a5f5;
+    border-style: solid;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    text-align: center;
+    color: #42a5f5;
+    font-size: 12px;
+    font-weight: bold;
+}
+.pic:hover {
+    background-color: red;
+}
+.title2 {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 744px) {
+    .pic {
+        width: 50%
+    }
 }

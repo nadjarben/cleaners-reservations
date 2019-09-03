@@ -5,7 +5,6 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import nature from '../../../images/nature.jpg';
 
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -23,9 +22,7 @@ export default function EngagementsFR(props) {
     return (
         <div>
             <br/>
-            <img src={nature} alt="nature" className='nature'/>
             <div>
-            <br/>
             Offrir un service et des prestations de qualité à nos clients tout en ayant une croissance durable est possible.
             Nous avons une responsabilité d'adopter et promouvoir des pratiques durables.
             <br/>
