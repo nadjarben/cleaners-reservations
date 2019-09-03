@@ -64,6 +64,7 @@ class TabModal extends React.Component {
     this.props.postReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.postLastReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.mailReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
+    window.location.href = "./home"
     alert(textAlert);
   }
 

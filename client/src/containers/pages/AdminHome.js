@@ -6,7 +6,7 @@ import '../css/Admin.css';
 
 const AdminHome = () => {
     return (
-        <div>           
+        <div style={{marginBottom:'12vh'}}>           
             <div className='container'>
                 <div className='row'>
                     <div style={{backgroundColor:'#42a5f5',color:'white', marginTop:'3%'}} className='col-12'>

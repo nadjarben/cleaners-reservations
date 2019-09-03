@@ -23,16 +23,6 @@ class GetLastReservation extends Component {
     componentDidMount() {
         this.props.fetchLastReservations()
     }
-    updateSearch = (e) => {
-        this.setState ({search: e.target.value})
-      }
-    
-      handleSubmit = (e) => {
-        const { name, surname, phone, email, address, date, hour, info } = this.state
-        e.preventDefault()
-        this.props.postReservation(name, surname, phone, email, address, date, hour, info)
-      }
-    
     render() {
         const { lastReservation } = this.props; 
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
