@@ -61,9 +61,9 @@ class TabModal extends React.Component {
     'אם ישׁלכם בּעיה תתקשׁרו אלינו 0774850937'
     const { name, surname, phone, email, address, date, hour, info, namefact, addressfact, note } = this.state
     e.preventDefault();
-    this.props.mailReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.postReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     this.props.postLastReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
+    this.props.mailReservation(name, surname, phone, email, address, date, hour, info, namefact, addressfact, note);
     alert(textAlert);
   }
 
@@ -180,8 +180,8 @@ class TabModal extends React.Component {
             <ModalHeader style={{color: 'darkgrey'}}><FormattedMessage id='reservation.title1' /></ModalHeader>
             <div className='text-center' style={{color:'red', fontStyle:'bold'}}>
               <div className='col' style={{marginTop:'5%'}}>
-                <p><FormattedMessage id="reservation.min" /></p>
                 <p><FormattedMessage id="reservation.min2" /></p>
+                <p><FormattedMessage id="reservation.min" /></p>
                 <p><FormattedMessage id="reservation.min3" /></p>
               </div>
             </div>

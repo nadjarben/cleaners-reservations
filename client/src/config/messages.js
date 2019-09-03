@@ -231,7 +231,7 @@ export default {
 
         //Reservation
         'reservation.min': 'La livraison est gratuite pour un minimum de 100 ₪.',
-        'reservation.min2': 'Dans le cas contraire le prix de la livraison est de 25 ₪.',
+        'reservation.min2': 'La livraison est de 25 ₪.',
         'reservation.min3': "Nous vous contacterons dans l'heure pour confirmer la livraison.",
         'reservation.prev': 'Précédent',
         'reservation.next':  'Suivant',

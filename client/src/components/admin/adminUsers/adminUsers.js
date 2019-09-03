@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { fetchUsers } from '../../../store/actions/userActions';
 import { connect } from 'react-redux';
 import ModalUsers from './ModalUsers';
-import { Button, ModalHeader, ModalBody } from 'reactstrap';
-import Dialog from '@material-ui/core/Dialog';
+
 
 class AdminUsers extends Component {
     constructor(props) {
@@ -35,7 +34,7 @@ class AdminUsers extends Component {
                     )
                 }
             )
-        const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
+        //const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
         const c = filteredUser.map(c => {
             return (
               <ModalUsers

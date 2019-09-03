@@ -38,7 +38,7 @@ export const postReservation = (name, surname, phone, email, address, date, hour
         })
         .catch(err => {
           console.log(err);
-          throw new Error('Couldnt post reservation.' + err);
+          throw new Error('Couldnt mail reservation.' + err);
         });
   }
 
