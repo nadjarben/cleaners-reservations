@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
     Info: ${info}`
     let mailOptions = {
         from: creds.USER, // sender address
-        to: 'nadjarbenj@gmail.com, philnadj@gmail.com', // list of receivers
+        to: 'nadjarbenj@gmail.com', // list of receivers
         subject: 'Nouvelle reservation!', // Subject line
         text: 'Bonjour, vous avez recu une nouvelle resa', // plain text body
         html: content // html body
