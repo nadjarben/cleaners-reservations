@@ -3,10 +3,20 @@ import '../css/HomePage.css';
 import logo from '../../images/logo-min.png';
 import pressing from '../../images/logo1.png';
 import ModalReserv from '../../components/modal/ModalReserv';
-import { FormattedMessage } from 'react-intl'; 
+import { FormattedMessage } from 'react-intl';
+import { zoomInRight } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 import Intro from './Intro';
 
+const styles = {
+    bounce: {
+      animation: 'x 4s',
+      animationName: Radium.keyframes(zoomInRight, 'bounce')
+    }
+  }
+
      class HomePage extends React.Component{
+         
 
         constructor(props) {
             super(props);
@@ -45,9 +55,13 @@ import Intro from './Intro';
                             </div>
                         </div>  
                         <br/>
+                        <StyleRoot>
+                        <div style={styles.bounce}> 
                         <div className='text-center'>
                             <ModalReserv />
                         </div>
+                        </div>
+                        </StyleRoot>
                     </div>
                 </div>
                 )

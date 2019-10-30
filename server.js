@@ -12,7 +12,7 @@ const contact = require('./server/routes/api/contacts');
 const gmail = require('./server/routes/api/send');
 const users = require('./server/routes/api/users');
 const app = express();
-
+const sslRedirect = require('heroku-ssl-redirect');
 
 
 // Bodyparser Middleware
@@ -50,6 +50,9 @@ app.use('/api/lastreservations', lastReservation);
 app.use('/api/users', users);
 app.use('/api/send', gmail);
 
+// Use ssl
+app.use(sslRedirect());
+
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
@@ -58,12 +61,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res, next) => {
     if(req.url = 'index-fr.html') {
       res.redirect('https://www.thecleanersisrael.com')
-    }
-    if(req.headers["x-forwarded-proto"] == "http") {
-      res.redirect("https://thecleanersisrael.com" + req.url);
-  } else {
-      return next();
-  } 
+    } 
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
@@ -75,7 +73,7 @@ const options = {
     'Content-Type': 'text/plain;charset=UTF-8',
   }
 };
-app.get('/robots.txt', (req, res) => (
+app.get('./robots.txt', (req, res) => (
   res.status(200).sendFile('robots.txt', options)
 ));
 
