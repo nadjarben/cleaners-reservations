@@ -37,16 +37,6 @@ function NavBar(props) {
     setState({ ...state, [side]: open });
   };
 
-  const renderLanguage = () => {
-    const lang = props.lang
-    if(lang === 'fr')
-      return <Link to='/discoverfr/who'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
-    if(lang === 'en')
-      return <Link to='/discoveren'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
-    if(lang === 'he')
-      return <Link to='/discoverhe'><div style={{color:'black'}}><FormattedMessage id='nav.discover'/></div></Link>
-  }
-
   const fullList = side => (
     <div
       className={classes.fullList}
@@ -58,8 +48,9 @@ function NavBar(props) {
         {[<Link to='/home'><div style={{color:'black'}}><FormattedMessage id="nav.homepage"/></div></Link>, <Link to='/reservation'><div style={{color:'black'}}><FormattedMessage id="nav.reservation"  /></div></Link>, 
         <Link to='/prices'><div style={{color:'black'}}><FormattedMessage id="nav.prices"/></div></Link>, 
         <Link to='/contacts'><div style={{color:'black'}}><FormattedMessage id="nav.contacts"/></div></Link>,
-        renderLanguage(),
-        <Link to='/admin/adminhome'><div style={{color:'red'}}><AdminConnect/></div></Link> ].map((text, index) => (
+        <Link to='/discover/who'><div style={{color:'black'}}><FormattedMessage id="nav.discover"/></div></Link>,
+        <Link to='/admin/adminhome'><div style={{color:'red'}}><AdminConnect/></div></Link> 
+      ].map((text, index) => (
           <ListItem button key={text}>
            
             <ListItemText primary={text} />

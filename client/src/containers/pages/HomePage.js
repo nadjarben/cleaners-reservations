@@ -4,14 +4,14 @@ import logo from '../../images/logo-min.png';
 import pressing from '../../images/logo1.png';
 import ModalReserv from '../../components/modal/ModalReserv';
 import { FormattedMessage } from 'react-intl';
-import { zoomInRight } from 'react-animations';
+import { bounce } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 import Intro from './Intro';
 
 const styles = {
     bounce: {
       animation: 'x 4s',
-      animationName: Radium.keyframes(zoomInRight, 'bounce')
+      animationName: Radium.keyframes(bounce, 'bounce')
     }
   }
 

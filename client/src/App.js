@@ -30,9 +30,7 @@ import { setCurrentUser, logoutUser } from "./store/actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminRoute from './components/private-route/AdminRoute';
 import DashboardAppBar from "./components/dashboard/DasboardAppBar";
-import DiscoverFR from './containers/pages/DiscoverFR';
-import DiscoverEN from './containers/pages/DiscoverEN';
-import DiscoverHE from './containers/pages/DiscoverHE';
+import Discover from './containers/pages/Discover';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -92,9 +90,7 @@ class App extends Component {
         <Route path="/landing" component={Landing}/>
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
-        <Route path="/discoverfr" component={DiscoverFR}/>
-          <Route path="/discoveren" component={DiscoverEN}/>
-          <Route path="/discoverhe" component={DiscoverHE}/>
+        <Route path="/discover" component={Discover}/>
           <Switch>
               <PrivateRoute path="/dashboard" component={DashboardAppBar} />
           </Switch>
