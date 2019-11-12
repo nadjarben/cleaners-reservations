@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { makeStyles } from '@material-ui/core/styles';
 import { FormattedMessage } from 'react-intl'; 
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -22,6 +23,10 @@ export default function EngagementsFR() {
     const classes = useStyles();
     return (
         <div>
+            <Helmet>
+                <title>ידע המכבסה || the laundry knowledge || savoir faire du pressing</title>
+                <meta name='decription' content="המומחיות של המכבסה שלך מבטיחה לך טיפול מיטבי במצעים: ניקוי ושטיפה, תחזוקת המצעים, הבגדים, ..." />
+            </Helmet>
             <br/>
             <div>
                 <FormattedMessage id="discover.know"/>

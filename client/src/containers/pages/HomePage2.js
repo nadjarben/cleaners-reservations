@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import '../css/HomePage.css';
 import logo from '../../images/logo-min.png';
 import pressing from '../../images/logo1.png';
@@ -20,6 +21,11 @@ import ModalReserv from '../../components/modal/ModalReserv';
           displayContent() {
                 return (
                     <div className='homepage' style={{ backgroundColor:'#0E1521', marginTop:'-2vh'}}>
+                        <Helmet>
+                            <title>מכבסת זה קלירס - מכבסה באשדוד</title>
+                            <meta name='decription' content="השירותים במכבסת זה קלירס - שרותי ניקוי וילונות, ניקוי יבש, שירותי כביסה וגיהוץ מקצועי במקום. מתמחים בניקוי וילונות, משלוח חינם בבית" />
+                            <meta name="keywords" cpntent="ניקוי יבש, ניקוי, מחיר, שמיכה, חליפות, חולצות, ניקוי, גיהוץ, שמלה, כביסה, netttoyage a sec, nettoyage, costume, couette, repassage, robe, dress, laundry, cleaning, ironing, dry cleaning, dry, suit, duvet, carpet, shirt " />
+                        </Helmet>
                         <div className='container'>
                             <div className='text-center'>
                                 <img className='logo-cleaners' src={logo} width='60%' alt="logoCleaners"></img>
@@ -40,7 +46,6 @@ import ModalReserv from '../../components/modal/ModalReserv';
                     </div>
                 </div>
                 )
-
           }
 
          render() {
