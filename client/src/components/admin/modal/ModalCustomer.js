@@ -36,7 +36,7 @@ import whatsapp from '../../../images/whatsapp-sw.png';
      return(
         <div>
             <li className="list-group-item" onClick={this.toggle}>{customer.name} {customer.surname} </li>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} centered>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} centered size='lg'  zIndex='10000'>
                     <ModalHeader className="modal-header" style={{backgroundColor:'#42a5f5', color: 'white'}} close={closeBtn}>
                         {customer.name} {customer.surname}
                     </ModalHeader>

@@ -50,12 +50,12 @@ class FormNewCustomer extends Component {
   </Form.Group>
 
   <Form.Group controlId="formGridAddress1">
-    <Form.Control required={true} placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
+    <Form.Control  placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
   </Form.Group>
 
   <Form.Row>
     <Form.Group controlId="formGridCity">
-      <Form.Control required={true} placeholder="City" name="city" value={this.state.city } onChange={ this.handleChange } />
+      <Form.Control placeholder="City" name="city" value={this.state.city } onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
 
