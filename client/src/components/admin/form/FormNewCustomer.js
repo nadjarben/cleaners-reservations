@@ -9,10 +9,11 @@ class FormNewCustomer extends Component {
     state = {
         name: '',
         surname: '', 
-        phone: '', 
+        phone: '972', 
         email: '', 
         address: '',  
-        info: ''
+        info: '',
+        city: ''
       };
 
     handleChange = (e) => {
@@ -28,29 +29,29 @@ class FormNewCustomer extends Component {
         return(
           <div style={{marginTop:'5%'}} className='container'>
             
-            <Form onSubmit={e => this.handleSubmit(e)} className="form" >
+            <Form autoComplete='nope' onSubmit={e => this.handleSubmit(e)} className="form" >
   <Form.Row>
     <Form.Group controlId="formGridFirstName" >
-      <Form.Control required={true} type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
+      <Form.Control autoComplete='nope' required={true} type="text" placeholder="First Name" name="name" value={this.state.name}  onChange={this.handleChange} />
     </Form.Group>
 
     <Form.Group controlId="formGridSurname">
-      <Form.Control required={true} type="text" placeholder="Last Name" name="surname" value={this.state.surname} onChange={ this.handleChange } />
+      <Form.Control autoComplete='nope' required={true} type="text" placeholder="Last Name" name="surname" value={this.state.surname} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
   
   <Form.Row>
   <Form.Group controlId="formGridPhone">
-      <Form.Control required={true} type="phone" placeholder="Phone number" name="phone" value={this.state.phone} onChange={ this.handleChange } />
+      <Form.Control  autoComplete='nope' required={true} type="phone" placeholder="Phone number" name="phone" value={this.state.phone} onChange={ this.handleChange } />
     </Form.Group>
   </Form.Row>
 
   <Form.Group controlId="formBasicEmail">
-    <Form.Control type="email" placeholder="Enter email" name="email" value={this.state.email} onChange={ this.handleChange } />
+    <Form.Control  autoComplete='nope' type="email" placeholder="Enter email" name="email" value={this.state.email} onChange={ this.handleChange } />
   </Form.Group>
 
   <Form.Group controlId="formGridAddress1">
-    <Form.Control  placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
+    <Form.Control autoComplete='nope' placeholder="Address" name="address" value={this.state.address} onChange={ this.handleChange }  />
   </Form.Group>
 
   <Form.Row>
