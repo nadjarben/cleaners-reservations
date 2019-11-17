@@ -2,13 +2,15 @@ import React from 'react';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { deleteCustomer } from '../../../store/actions/customerActions';
 import { connect } from 'react-redux';
+import whatsapp from '../../../images/whatsapp-sw.png';
 
 
  class ModalCustomer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          modal: false
+          modal: false,
+          input: ''
         };
         this.toggle = this.toggle.bind(this);
     }
@@ -22,6 +24,9 @@ import { connect } from 'react-redux';
         const id = this.props.customer._id
         this.props.deleteCustomer(id);
         window.location.reload(); 
+      }
+      formUpdate = (event) => {
+        this.setState({input: event.target.value});
       }
 
     render() {    
@@ -40,11 +45,19 @@ import { connect } from 'react-redux';
                         <h5>Tel: </h5><p>{customer.phone}</p>
                         <h5>Email: </h5><p>{customer.email}</p>
                         <h6>Informations: </h6><p>{customer.info}</p>
-                        <a href="https://api.whatsapp.com/send?phone=972586305531&text=Hi There" >
-                          <button>whatsapp</button>
-                        </a>
+                        <br />
+                        <h5>Hazmana :</h5>
+                        <input type="text" 
+                          className="form-control" 
+                          aria-describedby="emailHelp" 
+                          placeholder="Update input here"
+                          onChange={this.formUpdate} 
+                          value={this.state.input}/>
                     </ModalBody>
                     <ModalFooter>
+                        <a href={`https://api.whatsapp.com/send?phone=${customer.phone}&text=La commande ${this.state.input} est prete`} >
+                          <img src={whatsapp} alt='wa' />
+                        </a>
                         <Button color="danger" onClick={e => this.handleDeleteCustomer(e)} >Supprimer</Button>
                     </ModalFooter>
             </Modal>
