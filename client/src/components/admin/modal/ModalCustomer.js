@@ -40,6 +40,9 @@ import { connect } from 'react-redux';
                         <h5>Tel: </h5><p>{customer.phone}</p>
                         <h5>Email: </h5><p>{customer.email}</p>
                         <h6>Informations: </h6><p>{customer.info}</p>
+                        <a href="https://api.whatsapp.com/send?phone=972586305531&text=Hi There" >
+                          <button>whatsapp</button>
+                        </a>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={e => this.handleDeleteCustomer(e)} >Supprimer</Button>
