@@ -69,7 +69,7 @@ function FormContact(props) {
                   value={contact.message}
                   onChange={handleChange}        
                   placeholder="Message"
-                  fullWidth
+                  fullwidth
                   multiline
                   rows="3"
                   margin="normal"

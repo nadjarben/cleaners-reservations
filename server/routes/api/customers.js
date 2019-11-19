@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose')
 const Customer = require('../../models/customer');
 
+
 const API = //'http://localhost:8080/api/customers/'
             //'https://cleaners-reservation.herokuapp.com/api/customers/'
             'https://www.thecleanersisrael.com/api/customers/'
@@ -16,8 +17,6 @@ router.get('/',(req,res,next) => {
 
 router.get("/:id", (req, res) => {
     Customer.findById(req.params.id)
-    .populate("customer")
-    .exec()
     .then(customer => {
       if (!customer) {
         return res.status(404).json({
@@ -25,11 +24,7 @@ router.get("/:id", (req, res) => {
         });
       }
       res.status(200).json({
-        customer: customer,
-        request: {
-          type: "GET",
-          url: API 
-        }
+        customer: customer
       });
     })
     .catch(err => {
@@ -49,21 +44,16 @@ router.post('/', (req, res) => {
         email: req.body.email,
         address: req.body.address,
         info: req.body.info,
+        orders: req.body.orders
     });
     customer
     .save()
     .then(result => {
         console.log(result);
         res.status(201).json({
-            message: ' created customer succesfully',
+            message: ' created order succesfully',
             createdCustomer: {
-                _id: result._id,
-                name: result.name,
-                surname: result.surname,
-                phone: result.phone,
-                email: result.email,
-                address: result.address,
-                info: result.info,
+                result,
                 request: {
                     type: 'POST',
                     url: API + result._id
@@ -86,5 +76,48 @@ router.delete('/:id', (req, res) => {
       .catch(err => res.status(404).json({ success: false + err }));
   });
 
+  //get customers orders
+
+  router.get("/:id/orders", (req, res) => {
+    Customer.findById(req.params.id)
+    .then(customer => {
+      if (!customer) {
+        return res.status(404).json({
+          message: "Customer not found"
+        });
+      }
+      res.status(200).json({
+        orders: customer.orders,
+        request: {
+          type: "GET",
+          url: API 
+        }
+      });
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    })
+})
+
+//post customers orders
+router.post('/:id',(req,res) => {
+  Customer.update(
+   {_id: req.params.id },
+    {
+      $push: {
+        orders: {
+          _id: new mongoose.Types.ObjectId(),
+          hazmana: req.body.hazmana,
+          amount: req.body.amount,
+          date: Date.now()
+        }
+      }
+    })
+  .then(order =>  res.json(order) )
+  .catch(err => res.status(404).json({ success: false + err }));
+})
+  
   
 module.exports = router;

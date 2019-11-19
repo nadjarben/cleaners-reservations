@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { POST_CUSTOMER, FETCH_CUSTOMERS, DELETE_CUSTOMER } from './types';
+import { POST_CUSTOMER, FETCH_CUSTOMERS, DELETE_CUSTOMER, POST_ORDER } from './types';
 
 
 const customersAPI = //'http://localhost:8080/api/customers/' 
@@ -46,4 +46,20 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
         console.log(err);
         throw new Error('Could not fetch customers.' + err);
       });    
+  }
+
+  export const postOrder = (hazmana, amount, id) => dispatch => {
+    axios.post('https://www.thecleanersisrael.com/api/customers/' +id, {
+          hazmana, amount
+      })
+      .then(res => {
+          return dispatch({
+            type: POST_ORDER,
+            payload: res.data,
+          });       
+        })
+        .catch(err => {
+          console.log(err);
+          throw new Error('Couldnt post customer.' + err);
+        });
   }

@@ -3,7 +3,7 @@ import '../css/AdminCustomer.css';
 import { fetchCustomers } from '../../store/actions/customerActions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import ModalCustomer from '../../components/admin/modal/ModalCustomer';
+import ModalCustomer from '../../components/admin/modal/modalCustomer/ModalCustomer';
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import FormNewCustomer from '../../components/admin/form/FormNewCustomer';
 

@@ -308,7 +308,7 @@ class TabModal extends React.Component {
                     onChange={this.handleChange}
                     margin="normal"
                     placeholder='digicode, door ...'
-                    fullWidth
+                    fullwidth
                     multiline
                     rows="3"
                   />
@@ -336,7 +336,7 @@ class TabModal extends React.Component {
                     value={this.state.note}
                     onChange={this.handleChange}
                     margin="normal"
-                    fullWidth
+                    fullwidth
                     multiline
                     rows="3"
                   />

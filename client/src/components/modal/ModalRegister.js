@@ -36,7 +36,7 @@ export default function FormDialog() {
         >
             <AccountCircle />
         </IconButton>
-      <Dialog fullWidth='true' open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+      <Dialog fullwidth='true' open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle style={{backgroundColor:'#0E1521', color:'white'}} className='text-center' id="form-dialog-title">Account</DialogTitle>
         <DialogContent>
           <DialogContentText>

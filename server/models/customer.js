@@ -9,7 +9,20 @@ const CustomerSchema = new Schema({
   phone: {type: String},
   email: { type: String },
   address: {type: String },
-  info: { type: String }
+  info: { type: String },
+  orders:{
+    _id: mongoose.Schema.Types.ObjectId,
+    hazmana: { type: Number },
+    amount: { type: Number },
+    date: { type: Date },
+    payed: { type: Boolean },
+    info: { type: String },
+    term: { type: String },
+    recover: { type: String }
+  }
+
 });
 
 module.exports = Customer = mongoose.model('customer', CustomerSchema);
+
+
