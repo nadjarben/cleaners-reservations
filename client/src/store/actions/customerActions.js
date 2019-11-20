@@ -48,9 +48,9 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
       });    
   }
 
-  export const postOrder = (id, hazmana, amount, term, info, recovered, payed) => dispatch => {
+  export const postOrder = (id, hazmana, amount, term, info, payed) => dispatch => {
     axios.post(customersAPI + id, {
-          hazmana, amount, term, info, recovered, payed 
+          hazmana, amount, term, info, payed 
       })
       .then(res => {
           return dispatch({

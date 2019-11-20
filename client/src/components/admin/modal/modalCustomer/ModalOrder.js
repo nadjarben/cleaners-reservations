@@ -28,7 +28,6 @@ function ModalOrder(props) {
     const classes = useStyles();
     const [state, setState] = React.useState({
         payed: false,
-        recovered: false,
       });
     const [values, setValues] = React.useState({
         hazmana: 0,
@@ -49,8 +48,9 @@ function ModalOrder(props) {
       const id = props.customer._id
       const { hazmana, amount, term, info} = values;
       const { payed, recovered } = state;
-      props.postOrder(id, hazmana, amount, term, info, payed, recovered);
-      //window.location.reload();
+      props.postOrder(id, hazmana, amount, term, info, payed);
+      alert('Commande enregistree')
+      window.location.reload();
       }
 
     return (
@@ -103,12 +103,6 @@ function ModalOrder(props) {
           value="start"
           control={<Checkbox color="primary" checked={state.paye} onChange={handleChangeCheck('payed')} value="payed" />}
           label="Paye"
-          labelPlacement="start"
-        />
-        <FormControlLabel
-          value="start"
-          control={<Checkbox color="primary" checked={state.recup} onChange={handleChangeCheck('recovered')} value="recovered" />}
-          label="Recupere"
           labelPlacement="start"
         />
         <br/>
