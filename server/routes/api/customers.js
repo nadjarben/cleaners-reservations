@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose')
 const Customer = require('../../models/customer');
+const dateFormat = require('dateformat')
 
 
 const API = //'http://localhost:8080/api/customers/'
@@ -115,7 +116,8 @@ router.post('/:id',(req,res) => {
           info: req.body.info,
           payed: req.body.payed,
           recovered: req.body.recovered,
-          date: Date.now().toString()        }
+          date: dateFormat(new Date(), "ddd dd mmm yyyy" )
+        }
       }
     })
   .then(order =>  res.json(order) )

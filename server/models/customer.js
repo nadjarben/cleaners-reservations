@@ -14,9 +14,9 @@ const CustomerSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     hazmana: { type: Number },
     amount: { type: Number },
-    date: { type: Date },
+    date: { type: String },
     payed: { type: Boolean },
-    recovered: { type: Boolean, default: false },
+    recovered: { type: Boolean },
     info: { type: String },
     term: { type: String },
   }
