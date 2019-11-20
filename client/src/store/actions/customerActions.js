@@ -48,9 +48,9 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
       });    
   }
 
-  export const postOrder = (hazmana, amount, id) => dispatch => {
-    axios.post('https://www.thecleanersisrael.com/api/customers/' +id, {
-          hazmana, amount
+  export const postOrder = (id, hazmana, amount, term, info, recovered, payed) => dispatch => {
+    axios.post(customersAPI + id, {
+          hazmana, amount, term, info, recovered, payed 
       })
       .then(res => {
           return dispatch({
@@ -60,6 +60,6 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
         })
         .catch(err => {
           console.log(err);
-          throw new Error('Couldnt post customer.' + err);
+          throw new Error('Couldnt post order.' + err);
         });
   }

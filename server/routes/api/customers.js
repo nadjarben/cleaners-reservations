@@ -111,6 +111,10 @@ router.post('/:id',(req,res) => {
           _id: new mongoose.Types.ObjectId(),
           hazmana: req.body.hazmana,
           amount: req.body.amount,
+          term: req.body.term,
+          info: req.body.info,
+          payed: req.body.payed,
+          recovered: req.body.recovered,
           date: Date.now()
         }
       }

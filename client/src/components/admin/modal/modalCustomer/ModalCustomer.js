@@ -1,12 +1,8 @@
 import React from 'react';
-import { Modal, ModalHeader, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader } from 'reactstrap';
 import TabModalCustomer from './TabModalCustomer';
 import { deleteCustomer } from '../../../../store/actions/customerActions';
 import { connect } from 'react-redux';
-import whatsapp from '../../../../images/whatsapp-sw.png';
-import plus from '../../../../images/plus-box.png'
-
-
 
  class ModalCustomer extends React.Component {
     constructor(props) {
@@ -21,13 +17,9 @@ import plus from '../../../../images/plus-box.png'
           modal: !prevState.modal
         }));
       }
-      handleDeleteCustomer(e) {
-        e.preventDefault();
-        const id = this.props.customer._id
-        this.props.deleteCustomer(id);
-        window.location.reload(); 
-      }
+
     render() {    
+
         const {customer} = this.props;
         const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
      return(
@@ -38,12 +30,6 @@ import plus from '../../../../images/plus-box.png'
                         {customer.name} {customer.surname}
                     </ModalHeader>
                     <TabModalCustomer customer={customer} />
-                    <ModalFooter>
-                        <a href={`https://api.whatsapp.com/send?phone=${customer.phone}&text=La commande ${this.state.input} est prete`} >
-                          <img src={whatsapp} alt='wa' />
-                        </a>
-                        <img src={plus} alt='plus' />
-                    </ModalFooter>
             </Modal>
         </div>
      )

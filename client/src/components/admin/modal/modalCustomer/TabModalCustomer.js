@@ -10,7 +10,9 @@ import ModalInfos from './Modalnfos';
 import ModalOrders from './ModalOrders';
 import ModalOptions from './ModalOptions';
 import ModalOrder from './ModalOrder';
-
+import whatsapp from '../../../../images/whatsapp-sw.png';
+import plus from '../../../../images/plus-box.png';
+import { ModalFooter } from 'reactstrap';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -77,8 +79,14 @@ export default function SimpleTabs(props) {
         <ModalOptions customer={customer} />
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <ModalOrder customer={customer} />
+        <ModalOrder customer={customer} />
       </TabPanel>
+      <ModalFooter>
+        <a href={`https://api.whatsapp.com/send?phone=${customer.phone}&text=La commande 1111 est prete`} >
+          <img src={whatsapp} alt='wa' />
+        </a>
+          <img onClick={() => setValue(3)} src={plus} alt='plus' />
+      </ModalFooter>
     </div>
   );
 }

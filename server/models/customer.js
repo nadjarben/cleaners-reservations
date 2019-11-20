@@ -16,9 +16,9 @@ const CustomerSchema = new Schema({
     amount: { type: Number },
     date: { type: Date },
     payed: { type: Boolean },
+    recovered: { type: Boolean },
     info: { type: String },
     term: { type: String },
-    recover: { type: String }
   }
 
 });
