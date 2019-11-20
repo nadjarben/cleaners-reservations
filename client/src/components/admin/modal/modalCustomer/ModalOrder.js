@@ -47,7 +47,7 @@ function ModalOrder(props) {
       const handleSubmit = () => {
       const id = props.customer._id
       const { hazmana, amount, term, info} = values;
-      const { payed, recovered } = state;
+      const { payed } = state;
       props.postOrder(id, hazmana, amount, term, info, payed);
       alert('Commande enregistree')
       window.location.reload();

@@ -115,8 +115,7 @@ router.post('/:id',(req,res) => {
           info: req.body.info,
           payed: req.body.payed,
           recovered: req.body.recovered,
-          date: Date.now()
-        }
+          date: Date.now().toString()        }
       }
     })
   .then(order =>  res.json(order) )
