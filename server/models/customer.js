@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const CustomerSchema = new Schema({
-  customerId: mongoose.Schema.Types.ObjectId,
+  _id: mongoose.Schema.Types.ObjectId,
   name: { type: String },
   surname: { type: String },
   phone: {type: String},
@@ -11,14 +11,14 @@ const CustomerSchema = new Schema({
   address: {type: String },
   info: { type: String },
   orders:{
-    orderId: mongoose.Schema.Types.ObjectId,
+    _id: mongoose.Schema.Types.ObjectId,
     hazmana: { type: Number },
     amount: { type: Number },
-    date: { type: String },
+    date: { type: Date },
     payed: { type: Boolean },
-    recovered: { type: Boolean },
     info: { type: String },
     term: { type: String },
+    recover: { type: String }
   }
 
 });

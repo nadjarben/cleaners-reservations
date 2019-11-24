@@ -22,8 +22,8 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
         });
   }
 
- export const deleteCustomer = (customerId) => dispatch => {
- axios.delete(customersAPI + customerId)
+ export const deleteCustomer = (id) => dispatch => {
+ axios.delete(customersAPI + id)
  .then(res => {
    return dispatch ({
      type: DELETE_CUSTOMER,
@@ -48,9 +48,9 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
       });    
   }
 
-  export const postOrder = (customerId, hazmana, amount, term, info, payed) => dispatch => {
-    axios.post(customersAPI + customerId, {
-          hazmana, amount, term, info, payed 
+  export const postOrder = (hazmana, amount, id) => dispatch => {
+    axios.post('https://www.thecleanersisrael.com/api/customers/' +id, {
+          hazmana, amount
       })
       .then(res => {
           return dispatch({
@@ -60,6 +60,6 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
         })
         .catch(err => {
           console.log(err);
-          throw new Error('Couldnt post order.' + err);
+          throw new Error('Couldnt post customer.' + err);
         });
   }

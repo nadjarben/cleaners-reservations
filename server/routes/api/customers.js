@@ -16,8 +16,8 @@ router.get('/',(req,res,next) => {
     .then(customers =>  res.json(customers) );
   })
 
-router.get("/:customerId", (req, res) => {
-    Customer.findById(req.params.customerId)
+router.get("/:id", (req, res) => {
+    Customer.findById(req.params.id)
     .then(customer => {
       if (!customer) {
         return res.status(404).json({
@@ -36,9 +36,9 @@ router.get("/:customerId", (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    Customer.find({ customerId: req.body.customerId})
+    Customer.find({ _id: req.body.customerId})
     const customer = new Customer({
-        customerId: new mongoose.Types.ObjectId(),
+        _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         surname: req.body.surname,
         phone: req.body.phone,
@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
                 result,
                 request: {
                     type: 'POST',
-                    url: API + result.customerId
+                    url: API + result._id
                 }
             }
         });
@@ -70,8 +70,8 @@ router.post('/', (req, res) => {
         });     
 })
 
-router.delete('/:customerId', (req, res) => {
-    Customer.findById(req.params.customerId)
+router.delete('/:id', (req, res) => {
+    Customer.findById(req.params.id)
       .then(Customer => Customer.remove()
       .then(() => res.json({ success: true })))
       .catch(err => res.status(404).json({ success: false + err }));
@@ -79,8 +79,8 @@ router.delete('/:customerId', (req, res) => {
 
   //get customers orders
 
-  router.get("/:customerId/orders", (req, res) => {
-    Customer.findById(req.params.customerId)
+  router.get("/:id/orders", (req, res) => {
+    Customer.findById(req.params.id)
     .then(customer => {
       if (!customer) {
         return res.status(404).json({
@@ -103,13 +103,13 @@ router.delete('/:customerId', (req, res) => {
 })
 
 //post customers orders
-router.post('/:customerId',(req,res) => {
+router.post('/:id',(req,res) => {
   Customer.update(
-   {customerId: req.params.customerId },
+   {_id: req.params.id },
     {
       $push: {
         orders: {
-          orderId: new mongoose.Types.ObjectId(),
+          _id: new mongoose.Types.ObjectId(),
           hazmana: req.body.hazmana,
           amount: req.body.amount,
           term: req.body.term,
@@ -124,9 +124,8 @@ router.post('/:customerId',(req,res) => {
   .catch(err => res.status(404).json({ success: false + err }));
 })
 
-router.delete('/:customerId/:orderId', (req, res) => {
-  
-  Customer.findById(req.params.customerId)
+router.delete('/:id/:id', (req, res) => {
+  Customer.findById(req.params.id)
     .then(Customer => Customer.remove()
     .then(() => res.json({ success: true })))
     .catch(err => res.status(404).json({ success: false + err }));
