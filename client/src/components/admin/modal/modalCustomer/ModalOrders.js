@@ -12,13 +12,11 @@ export default function ModalOrders(props) {
     const toggle = () => setModal(!modal);
 
     const orders = props.customer.orders;  
-    
-    const displayPayed = () => {
-        const o = orders
-        if(o[0].payed === true)
-            return <p>Paye</p>
-        else return <p>Non paye</p>
-    } 
+
+    const handleDelete = () => {
+
+    }
+
 
     function ordersExist() {
         if(orders) {
@@ -36,12 +34,12 @@ export default function ModalOrders(props) {
                         <h4>Date prevu :</h4>
                         <p>{o.term}</p>
                         <h4>Paye :</h4>
-                        <p>{displayPayed()}</p>
+                        <p>{o.payed.toString()}</p>
                         <h4>Recupere :</h4>
                         <p>{o.recovered}</p>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="danger">Supprimer</Button>
+                        <Button color="danger" onClick={handleDelete}>Supprimer</Button>
                     </ModalFooter>
                     </Modal>
                 </div>

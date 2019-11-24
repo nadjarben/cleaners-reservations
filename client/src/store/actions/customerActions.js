@@ -22,8 +22,8 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
         });
   }
 
- export const deleteCustomer = (id) => dispatch => {
- axios.delete(customersAPI + id)
+ export const deleteCustomer = (customerId) => dispatch => {
+ axios.delete(customersAPI + customerId)
  .then(res => {
    return dispatch ({
      type: DELETE_CUSTOMER,
@@ -48,8 +48,8 @@ export const postCustomer = (name, surname, phone, email, address, info) => disp
       });    
   }
 
-  export const postOrder = (id, hazmana, amount, term, info, payed) => dispatch => {
-    axios.post(customersAPI + id, {
+  export const postOrder = (customerId, hazmana, amount, term, info, payed) => dispatch => {
+    axios.post(customersAPI + customerId, {
           hazmana, amount, term, info, payed 
       })
       .then(res => {

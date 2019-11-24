@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const CustomerSchema = new Schema({
-  _id: mongoose.Schema.Types.ObjectId,
+  customerId: mongoose.Schema.Types.ObjectId,
   name: { type: String },
   surname: { type: String },
   phone: {type: String},

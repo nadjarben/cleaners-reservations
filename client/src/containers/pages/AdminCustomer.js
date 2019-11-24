@@ -41,7 +41,7 @@ class AdminCustomer extends Component {
         const c = filteredCustomer.map(c => {
             return (
               <ModalCustomer
-              key={c._id}
+              key={c.customerId}
               customer={c}
               />
             );

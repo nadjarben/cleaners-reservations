@@ -8,8 +8,8 @@ function ModalOptions(props) {
 
     const handleDeleteCustomer = (e) => {
         e.preventDefault();
-        const id = props.customer._id
-        props.deleteCustomer(id);
+        const customerId = props.customer.customerId
+        props.deleteCustomer(customerId);
         window.location.reload(); 
       }
 
