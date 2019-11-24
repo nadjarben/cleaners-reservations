@@ -11,7 +11,7 @@ const CustomerSchema = new Schema({
   address: {type: String },
   info: { type: String },
   orders:{
-    _id: mongoose.Schema.Types.ObjectId,
+    orderId: mongoose.Schema.Types.ObjectId,
     hazmana: { type: Number },
     amount: { type: Number },
     date: { type: String },
