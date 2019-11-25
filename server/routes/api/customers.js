@@ -78,7 +78,7 @@ router.delete('/:id', (req, res) => {
 
   //get customers orders
 
-  router.get("/:id/orders", (req, res) => {
+  router.get("/:id/:id", (req, res) => {
     Customer.findById(req.params.id)
     .then(customer => {
       if (!customer) {
