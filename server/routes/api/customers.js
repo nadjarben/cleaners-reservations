@@ -36,7 +36,7 @@ router.get("/:id", (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    Customer.find({ _id: req.body.customerId})
+    Customer.find({ _id: req.body.id})
     const customer = new Customer({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -47,8 +47,7 @@ router.post('/', (req, res) => {
         info: req.body.info,
         orders: req.body.orders
     });
-    customer
-    .save()
+    customer.save()
     .then(result => {
         console.log(result);
         res.status(201).json({
@@ -124,9 +123,11 @@ router.post('/:id',(req,res) => {
   .catch(err => res.status(404).json({ success: false + err }));
 })
 
+const Order = Customer.orders
 router.delete('/:id/:id', (req, res) => {
   Customer.findById(req.params.id)
-    .then(Customer => Customer.remove()
+    .then(Order.findById(req.params.orderId))
+    .then(Order => Order.remove()
     .then(() => res.json({ success: true })))
     .catch(err => res.status(404).json({ success: false + err }));
 });
