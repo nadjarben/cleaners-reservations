@@ -31,9 +31,20 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && gzipper --verbose ./build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gzipper": "gzipper",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "cacheAjaxRequests": true,
+    "inlineCss": true,
+    "http2PushManifest": true,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "browserslist": [
     ">0.2%",
