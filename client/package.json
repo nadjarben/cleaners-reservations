@@ -37,7 +37,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate-sw": "sw-precache --root=build --config scripts/sw-precache-config.js && uglifyjs build/service-worker.js -o build/service-worker.js",
-    "build-snap": "react-scripts build && react-snap && yarn run generate-sw"
+    "build-snap": "react-scripts build && react-snap && npm run generate-sw"
   },
   "reactSnap": {
     "cacheAjaxRequests": true,
