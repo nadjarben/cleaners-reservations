@@ -32,11 +32,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate-sw": "sw-precache --root=build --config scripts/sw-precache-config.js && uglifyjs build/service-worker.js -o build/service-worker.js",
-    "build-snap": "react-scripts build && react-snap && yarn run generate-sw"
+    "build": "react-scripts build && react-snap && yarn run generate-sw"
   },
   "reactSnap": {
     "cacheAjaxRequests": true,
