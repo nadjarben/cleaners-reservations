@@ -52,39 +52,39 @@ return (
   <div>
 <Link to="/prices" >
     </Link>
-    <Link to="/reservation">
+    <Link to="/reservation/">
     </Link>
-    <Link to="/contacts">
+    <Link to="/contacts/">
     </Link>
-    <Link to="/discover">
+    <Link to="/discover/">
     </Link>
-    <Link to="/discover/who">
+    <Link to="/discover/who/">
     </Link>
-    <Link to="/discover/engagements">
+    <Link to="/discover/engagements/">
     </Link>
-    <Link to="discover/knowledge">
+    <Link to="discover/knowledge/">
     </Link>
-    <Link to="/discover/charte">
+    <Link to="/discover/charte/">
     </Link>
-    <Link to="/admin">
+    <Link to="/admin/">
     </Link>
-    <Link to="/admin/adminhome">
+    <Link to="/admin/adminhome/">
     </Link>
-    <Link to="/admin/reservations">
+    <Link to="/admin/reservations/">
     </Link>
-    <Link to="/admin/customers">
+    <Link to="/admin/customers/">
     </Link>
-    <Link to="/admin/contacts">
+    <Link to="/admin/contacts/">
     </Link>
-    <Link to="/admin/users">
+    <Link to="/admin/users/">
     </Link>
-    <Link to="/dashboard">
+    <Link to="/dashboard/">
     </Link>
-    <Link to="/dashboard/menu">
+    <Link to="/dashboard/menu/">
     </Link>
-    <Link to="/dashboard/credit">
+    <Link to="/dashboard/credit/">
     </Link>
-    <Link to="/dashboard/config">
+    <Link to="/dashboard/config/">
     </Link>
 
     <Link to="/landing" className="btn-flat waves-effect">
