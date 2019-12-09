@@ -72,6 +72,12 @@ class App extends Component {
       <div className="App">
       <Provider store={store}>
         <Router >
+        <Helmet>
+        <title>מכבסה אשדוד || The Cleaners || Laundry Ashdod || Pressing Ashdod</title>
+        <meta name="description" content="Dry cleaning, laundry, ashdod, pressing, blanchisserie, ironing, delivery,מכבסה, מכבסה אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך" />
+        <meta name="keywords" cpntent="מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך, pressing, ashdod, laundry, laundries, dry cleaning, blanchisserie, ironing, cleaning, nettoyage a sec, repassage, lavage, laundry ashdod, delivery" />
+        </Helmet>
+        <MuiThemeProvider theme={theme}>
           <NavBar />
           <FooterBar />
           <Switch>
@@ -85,14 +91,16 @@ class App extends Component {
         <Route path="/register" component={Register}/>
         <Route path="/login" component={Login}/>
         <Route path="/discover" component={Discover}/>
+        
               <PrivateRoute path="/dashboard" component={DashboardAppBar} />
+          </Switch>
             <AdminRoute path='/admin' component={Admin} />
-            <AdminRoute path='/admin/adminhome' component={AdminHome} />
-            <AdminRoute path='/admin/reservations' component={AdminReservation} />
-            <AdminRoute path='/admin/customers' component={AdminCustomer} />
-            <AdminRoute path='/admin/contacts' component={AdminContact} />
-            <AdminRoute path='/admin/users' component={AdminUsers} />
-            </Switch>
+            <AdminRoute exact path='/admin/adminhome' component={AdminHome} />
+            <AdminRoute exact path='/admin/reservations' component={AdminReservation} />
+            <AdminRoute exact path='/admin/customers' component={AdminCustomer} />
+            <AdminRoute exact path='/admin/contacts' component={AdminContact} />
+            <AdminRoute exact path='/admin/users' component={AdminUsers} />
+          </MuiThemeProvider>
         </Router>
         </Provider>
       </div>

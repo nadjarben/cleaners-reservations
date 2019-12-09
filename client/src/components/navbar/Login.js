@@ -66,18 +66,6 @@ return (
     </Link>
     <Link to="/discover/charte">
     </Link>
-    <Link to="/admin">
-    </Link>
-    <Link to="/admin/adminhome">
-    </Link>
-    <Link to="/admin/reservations">
-    </Link>
-    <Link to="/admin/customers">
-    </Link>
-    <Link to="/admin/contacts">
-    </Link>
-    <Link to="/admin/users">
-    </Link>
     <Link to="/dashboard">
     </Link>
     <Link to="/dashboard/menu">
