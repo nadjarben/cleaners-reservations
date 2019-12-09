@@ -27,7 +27,6 @@
     "express": "^4.16.4",
     "heroku-ssl-redirect": "0.0.4",
     "is-empty": "^1.2.0",
-    
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mime": "^2.4.4",
