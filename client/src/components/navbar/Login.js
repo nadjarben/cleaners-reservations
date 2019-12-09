@@ -66,6 +66,9 @@ return (
     </Link>
     <Link to="/discover/charte">
     </Link>
+    <Link to="/admin">
+    </Link>
+    
     <Link to="/dashboard">
     </Link>
     <Link to="/dashboard/menu">
