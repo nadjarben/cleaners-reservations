@@ -87,11 +87,11 @@ class App extends Component {
         <Route path="/discover" component={Discover}/>
               <PrivateRoute path="/dashboard" component={DashboardAppBar} />
             <AdminRoute path='/admin' component={Admin} />
-            <AdminRoute exact path='/admin/adminhome' component={AdminHome} />
-            <AdminRoute exact path='/admin/reservations' component={AdminReservation} />
-            <AdminRoute exact path='/admin/customers' component={AdminCustomer} />
-            <AdminRoute exact path='/admin/contacts' component={AdminContact} />
-            <AdminRoute exact path='/admin/users' component={AdminUsers} />
+            <AdminRoute path='/admin/adminhome' component={AdminHome} />
+            <AdminRoute path='/admin/reservations' component={AdminReservation} />
+            <AdminRoute path='/admin/customers' component={AdminCustomer} />
+            <AdminRoute path='/admin/contacts' component={AdminContact} />
+            <AdminRoute path='/admin/users' component={AdminUsers} />
             </Switch>
         </Router>
         </Provider>
