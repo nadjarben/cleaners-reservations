@@ -41,6 +41,7 @@
     "build-snap": "react-scripts build && react-snap && npm run generate-sw"
   },
   "reactSnap": {
+    "http2PushManifest": true,
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
