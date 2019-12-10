@@ -40,16 +40,6 @@
     "generate-sw": "sw-precache --root=build --config scripts/sw-precache-config.js && uglifyjs build/service-worker.js -o build/service-worker.js",
     "build-snap": "react-scripts build && react-snap && npm run generate-sw"
   },
-  "reactSnap": {
-    "fixWebpackChunksIssue": false,
-    "cacheAjaxRequests": true,
-    "inlineCss": true,
-    "http2PushManifest": true,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
