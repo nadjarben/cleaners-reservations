@@ -56,8 +56,6 @@ return (
     </Link>
     <Link to="/contacts">
     </Link>
-    <Link to="/discover">
-    </Link>
     <Link to="/discover/who">
     </Link>
     <Link to="/discover/engagements">
@@ -77,7 +75,7 @@ return (
     </Link>
 
     <Link to="/landing" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back
+        <i className="material-icons left">keyboard_backspace</i> Back
     </Link>
       <div className="container">
         <div className="row">
