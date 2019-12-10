@@ -69,8 +69,6 @@ return (
     <Link to="/admin">
     </Link>
     
-    <Link to="/dashboard">
-    </Link>
     <Link to="/dashboard/menu">
     </Link>
     <Link to="/dashboard/credit">

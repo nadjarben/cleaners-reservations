@@ -41,6 +41,7 @@
     "build-snap": "react-scripts build && react-snap && npm run generate-sw"
   },
   "reactSnap": {
+    "cacheAjaxRequests": true,
     "http2PushManifest": true,
     "puppeteerArgs": [
       "--no-sandbox",
