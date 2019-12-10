@@ -41,6 +41,7 @@
     "build-snap": "react-scripts build && react-snap && npm run generate-sw"
   },
   "reactSnap": {
+    "fixWebpackChunksIssue": false,
     "cacheAjaxRequests": true,
     "inlineCss": true,
     "http2PushManifest": true,
