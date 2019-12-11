@@ -8,7 +8,7 @@ export default function NavDiscover() {
     const [title, setTitle] = React.useState('NOUS DECOUVRIR')
     return (
         <div>
-            <div style={{backgroundColor:'orange'}}>
+            <div className='title'>
                 <h1 style={{fontSize:'25px'}}>{title}</h1>
             </div>
             <div>
