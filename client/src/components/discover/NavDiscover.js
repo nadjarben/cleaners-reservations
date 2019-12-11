@@ -16,10 +16,10 @@ export default function NavDiscover() {
             </div>
             <div>
         <div className='nav-discover'>
-            <Link to='/discover/who'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.1"/>)}><FormattedMessage id="discover.nav.1"/></h1></Link>
-            <Link to='/discover/engagements'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.2"/>)}><FormattedMessage id="discover.nav.2"/></h1></Link>
-            <Link to='/discover/knowledge'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.3"/>)}><FormattedMessage id="discover.nav.3"/></h1></Link>
-            <Link to='/discover/charte'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.4"/>)}><FormattedMessage id="discover.nav.4"/></h1></Link>
+            <Link to='/discover-who'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.1"/>)}><FormattedMessage id="discover.nav.1"/></h1></Link>
+            <Link to='/discover-engagements'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.2"/>)}><FormattedMessage id="discover.nav.2"/></h1></Link>
+            <Link to='/discover-knowledge'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.3"/>)}><FormattedMessage id="discover.nav.3"/></h1></Link>
+            <Link to='/discover-charte'><h1 className='title-h1' onClick={() => setTitle(<FormattedMessage id="discover.nav.4"/>)}><FormattedMessage id="discover.nav.4"/></h1></Link>
             </div>
         </div>
         </div>

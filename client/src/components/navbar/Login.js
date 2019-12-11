@@ -56,13 +56,13 @@ return (
     </Link>
     <Link to="/contacts">
     </Link>
-    <Link to="/discover/who">
+    <Link to="/discover-who">
     </Link>
-    <Link to="/discover/engagements">
+    <Link to="/discover-engagements">
     </Link>
-    <Link to="discover/knowledge">
+    <Link to="discover-knowledge">
     </Link>
-    <Link to="/discover/charte">
+    <Link to="/discover-charte">
     </Link>
     <Link to="/admin">
     </Link>

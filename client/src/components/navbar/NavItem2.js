@@ -48,7 +48,7 @@ function NavBar(props) {
         {[<Link to='/home'><div style={{color:'black'}}><FormattedMessage id="nav.homepage"/></div></Link>, <Link to='/reservation'><div style={{color:'black'}}><FormattedMessage id="nav.reservation"  /></div></Link>, 
         <Link to='/prices'><div style={{color:'black'}}><FormattedMessage id="nav.prices"/></div></Link>, 
         <Link to='/contacts'><div style={{color:'black'}}><FormattedMessage id="nav.contacts"/></div></Link>,
-        <Link to='/discover/who'><div style={{color:'black'}}><FormattedMessage id="nav.discover"/></div></Link>,
+        <Link to='/discover-who'><div style={{color:'black'}}><FormattedMessage id="nav.discover"/></div></Link>,
         <Link to='/admin/adminhome'><div style={{color:'red'}}><AdminConnect/></div></Link> 
       ].map((text, index) => (
           <ListItem button key={text}>

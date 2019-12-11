@@ -104,10 +104,10 @@ class App extends Component {
             <AdminRoute exact path='/admin/users' component={AdminUsers} />
 
           <Switch>
-            <Route path="/discover/who" component={Who}/>
-            <Route path="/discover/engagements" component={Engagements}/>
-            <Route path="/discover/knowledge" component={Knowledge}/>
-            <Route path="/discover/charte" component={Charte}/>
+            <Route path="/discover-who" component={Who}/>
+            <Route path="/discover-engagements" component={Engagements}/>
+            <Route path="/discover-knowledge" component={Knowledge}/>
+            <Route path="/discover-charte" component={Charte}/>
           </Switch>
 
           </MuiThemeProvider>
