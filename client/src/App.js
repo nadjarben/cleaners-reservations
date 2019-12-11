@@ -30,7 +30,11 @@ import { setCurrentUser, logoutUser } from "./store/actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminRoute from './components/private-route/AdminRoute';
 import DashboardAppBar from "./components/dashboard/DasboardAppBar";
-import Discover from './containers/pages/Discover';
+import Who from './components/discover/Who';
+import Knowledge from './components/discover/Knowledge'
+import Engagements from './components/discover/Engagements'
+import Charte from './components/discover/Charte'
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -68,38 +72,44 @@ class App extends Component {
 
     return( 
         <IntlProvider locale={lang} 
-        messages={messages[lang]}>
+          messages={messages[lang]}>
       <div className="App">
       <Provider store={store}>
         <Router >
         <Helmet>
-        <title>מכבסה אשדוד || The Cleaners || Laundry Ashdod || Pressing Ashdod</title>
-        <meta name="description" content="Dry cleaning, laundry, ashdod, pressing, blanchisserie, ironing, delivery,מכבסה, מכבסה אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך" />
-        <meta name="keywords" cpntent="מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך, pressing, ashdod, laundry, laundries, dry cleaning, blanchisserie, ironing, cleaning, nettoyage a sec, repassage, lavage, laundry ashdod, delivery" />
+          <title>מכבסה אשדוד || The Cleaners || Laundry Ashdod || Pressing Ashdod</title>
+          <meta name="description" content="Dry cleaning, laundry, ashdod, pressing, blanchisserie, ironing, delivery,מכבסה, מכבסה אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך" />
+          <meta name="keywords" cpntent="מכבסה, אשדוד ,ניקוי יבש , גיהוץ, כביסה, שירות מישלוך, pressing, ashdod, laundry, laundries, dry cleaning, blanchisserie, ironing, cleaning, nettoyage a sec, repassage, lavage, laundry ashdod, delivery" />
         </Helmet>
         <MuiThemeProvider theme={theme}>
           <NavBar />
           <FooterBar />
+          <PrivateRoute path="/dashboard" component={DashboardAppBar} />
           <Switch>
-          <Route exact path="/" component={HomePage}/>
-          <Route exact path="/home" component={HomePage2}/>
-          <Route exact path="/index.html" component={HomePage}/>
-          <Route path="/reservation" component={Reservation}/>
-          <Route path="/prices" component={Prices}/>
-          <Route path="/contacts" component={Contacts}/>
-        <Route path="/landing" component={Landing}/>
-        <Route path="/register" component={Register}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/discover" component={Discover}/>
-        
-              <PrivateRoute path="/dashboard" component={DashboardAppBar} />
+            <Route exact path="/" component={HomePage}/>
+            <Route exact path="/home" component={HomePage2}/>
+            <Route path="/reservation" component={Reservation}/>
+            <Route path="/prices" component={Prices}/>
+            <Route path="/contacts" component={Contacts}/>
+            <Route path="/landing" component={Landing}/>
+            <Route path="/register" component={Register}/>
+            <Route path="/login" component={Login}/>
           </Switch>
+
             <AdminRoute path='/admin' component={Admin} />
             <AdminRoute exact path='/admin/adminhome' component={AdminHome} />
             <AdminRoute exact path='/admin/reservations' component={AdminReservation} />
             <AdminRoute exact path='/admin/customers' component={AdminCustomer} />
             <AdminRoute exact path='/admin/contacts' component={AdminContact} />
             <AdminRoute exact path='/admin/users' component={AdminUsers} />
+
+          <Switch>
+            <Route path="/discover/who" component={Who}/>
+            <Route path="/discover/engagements" component={Engagements}/>
+            <Route path="/discover/knowledge" component={Knowledge}/>
+            <Route path="/discover/charte" component={Charte}/>
+          </Switch>
+
           </MuiThemeProvider>
         </Router>
         </Provider>

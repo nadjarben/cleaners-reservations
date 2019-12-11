@@ -16,7 +16,6 @@
   },
   "author": "Benjamin Nadjar",
   "dependencies": {
-    "@material-ui/core": "^4.1.0",
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -30,14 +29,10 @@
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.7.7",
     "nodemailer": "^6.3.0",
-    "object-hash": "^1.3.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
-    "react-intl": "^2.9.0",
-    "react-redux": "^7.0.3",
     "react-scripts": "^3.0.1",
-    "redux": "^4.0.1",
     "validator": "^11.1.0"
   }
 }

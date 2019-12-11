@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl'; 
 import { Helmet } from 'react-helmet';
+import NavDiscover from './NavDiscover';
 import search from '../../images/search.png';
 import timersand from '../../images/timer-sand.png';
 import nature from '../../images/nature.png';
@@ -10,12 +11,14 @@ import currencyusdoff from '../../images/currency-usd-off.png';
 
 export default function Who() {
     return (
-        <div>
+        <div style={{marginBottom: '12vh'}}>
             <Helmet>
                 <title>גלה את המכבסה שלנו || discover our laundry || decouvrez notre pressing</title>
                 <meta name='decription' content="המכבסה שלכם מציעה שירותי תחזוקת כביסה, כביסה, ניקיון וכביסה נגישים לכל. גלה את ההיסטוריה שלה" />
             </Helmet>
+            <NavDiscover />
             <br/>
+            <div className='container'>
             <div className='justify-content-center'>
             <FormattedMessage id="discover.who.1"/>            
             <br/>
@@ -47,6 +50,7 @@ export default function Who() {
                 </div>
             </div>
             </div>
+        </div>
         </div>
     )
 }

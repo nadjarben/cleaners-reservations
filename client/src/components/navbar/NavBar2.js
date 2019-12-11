@@ -11,15 +11,6 @@ import Menu from '@material-ui/core/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import PropTypes from "prop-types";
-import { flash } from 'react-animations';
-import Radium, {StyleRoot} from 'radium';
-
-const styles = {
-    bounce: {
-      animation: 'x 8s',
-      animationName: Radium.keyframes(flash, 'bounce')
-    }
-  }
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -83,11 +74,7 @@ function NavBar(props) {
         <Toolbar className={classes.toolbar}>
         <NavItem2 />
           <Typography variant="h6" className={classes.title}>
-          <StyleRoot>
-          <div style={styles.bounce}>
           <Link className='title-link' to="/home">THE CLEANERS</Link>
-          </div>
-          </StyleRoot>
           </Typography>
           <Languages2 />
             <div>

@@ -7,6 +7,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import NavDiscover from './NavDiscover';
 
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -22,15 +23,15 @@ const useStyles = makeStyles(theme => ({
 export default function EngagementsFR() {
     const classes = useStyles();
     return (
-        <div>
+        <div style={{marginBottom: '12vh'}}>
             <Helmet>
                 <title>ידע המכבסה || the laundry knowledge || savoir faire du pressing</title>
                 <meta name='decription' content="המומחיות של המכבסה שלך מבטיחה לך טיפול מיטבי במצעים: ניקוי ושטיפה, תחזוקת המצעים, הבגדים, ..." />
             </Helmet>
+            <NavDiscover />
             <br/>
-            <div>
+            <div className='container'>
                 <FormattedMessage id="discover.know"/>
-            </div>
             <div style={{marginTop:'5vh'}}>
                 <ExpansionPanel>
                     <ExpansionPanelSummary
@@ -117,6 +118,7 @@ export default function EngagementsFR() {
                     </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
+            </div>
             </div>
         </div>
     )
