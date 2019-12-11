@@ -1,17 +1,14 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl'; 
 import './css/NavDiscover.css';
-import Engagements from './Engagements';
-import Knowledge from './Knowledge';
-import Charte from './Charte';
-import Who from './Who';
+
 
 export default function NavDiscover() {
     const [title, setTitle] = React.useState('NOUS DECOUVRIR')
     return (
         <div>
-            <div className='title'>
+            <div style={{backgroundColor:'orange'}}>
                 <h1 style={{fontSize:'25px'}}>{title}</h1>
             </div>
             <div>
